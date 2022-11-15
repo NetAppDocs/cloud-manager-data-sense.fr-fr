@@ -1,0 +1,40 @@
+---
+sidebar: sidebar 
+permalink: task-view-compliance-actions.html 
+keywords: compliance, actions, view progress 
+summary: 'Lorsque vous exécutez une action à partir du volet Résultats de l"enquête sur de nombreux fichiers, par exemple la suppression de 100 fichiers, le processus peut prendre un certain temps. Vous pouvez surveiller l"état de ces actions asynchrones dans le volet Etat de l"action pour savoir quand elles ont été appliquées à tous les fichiers.' 
+---
+= Affichage de l'état de vos actions de conformité
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Lorsque vous exécutez une action à partir du volet Résultats de l'enquête sur de nombreux fichiers, par exemple la suppression de 100 fichiers, le processus peut prendre un certain temps. Vous pouvez surveiller l'état de ces actions asynchrones dans le volet _action Status_ pour savoir quand elles ont été appliquées à tous les fichiers.
+
+Cela vous permet de voir les actions effectuées avec succès, celles en cours et celles qui ont échoué pour diagnostiquer et résoudre tout problème.
+
+Le statut peut être :
+
+* Terminé
+* En cours
+* En file d'attente
+* Annulée
+* Échec
+
+
+Notez que vous pouvez annuler toutes les actions ayant le statut « en attente » ou « en cours ».
+
+.Étapes
+. Dans le coin inférieur droit de l'interface utilisateur de détection de données, vous pouvez voir le bouton *actions Status* image:button_actions_status.png[""].
+. Cliquez sur ce bouton et les 20 actions les plus récentes sont répertoriées.
++
+image:screenshot_compliance_action_status.png["Capture d'écran présentant les 20 dernières actions et leur état dans la page Configuration."]
+
+
+
+Vous pouvez cliquer sur le nom d'une action pour afficher les détails correspondant à cette opération.

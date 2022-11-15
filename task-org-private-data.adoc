@@ -1,0 +1,506 @@
+---
+sidebar: sidebar 
+permalink: task-org-private-data.html 
+keywords: compliance, privacy, filter data, highlights, policies, email alerts, notifications, aip labels, azure information protection, add labels, change labels, tags, data sense 
+summary: Avec Cloud Data Sense, vous pouvez gérer et organiser vos données privées de plusieurs façons. Vous pouvez ainsi consulter plus facilement les données qui vous sont les plus importantes. 
+---
+= Organiser vos données privées
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Avec Cloud Data Sense, vous pouvez gérer et organiser vos données privées de plusieurs façons. Vous pouvez ainsi consulter plus facilement les données qui vous sont les plus importantes.
+
+* Si vous êtes abonné à link:https://azure.microsoft.com/en-us/services/information-protection/["Protection des informations Azure (AIP)"^] Pour classer et protéger vos fichiers, vous pouvez utiliser Cloud Data Sense pour gérer ces étiquettes AIP.
+* Vous pouvez ajouter des balises aux fichiers que vous souhaitez marquer pour une organisation ou pour un type de suivi.
+* Vous pouvez affecter un utilisateur BlueXP à un fichier spécifique ou à plusieurs fichiers, de sorte que cette personne puisse être responsable de la gestion du fichier.
+* Grâce à la fonctionnalité « Stratégie », vous pouvez créer vos propres requêtes de recherche personnalisées afin de pouvoir voir facilement les résultats en cliquant sur un bouton.
+* Vous pouvez envoyer des alertes par e-mail aux utilisateurs de BlueXP lorsque certaines stratégies critiques renvoient des résultats.
+
+
+
+NOTE: Les fonctionnalités décrites dans cette section ne sont disponibles que si vous avez choisi d'effectuer une analyse de classification complète sur vos sources de données. Les sources de données qui ont une analyse avec mappage uniquement n'affichent pas de détails au niveau des fichiers.
+
+
+
+== Dois-je utiliser des étiquettes ou des étiquettes ?
+
+Vous trouverez ci-dessous une comparaison du balisage Data Sense et de l'étiquetage Azure information protection.
+
+[cols="50,50"]
+|===
+| Étiquettes | Étiquettes 
+
+
+| Les balises de fichier font partie intégrante de Data Sense. | Vous devez vous être abonné à Azure information protection (AIP). 
+
+
+| La balise est conservée uniquement dans la base de données de détection des données - elle n'est pas écrite dans le fichier. Il ne modifie pas le fichier, ni les heures d'accès ou de modification du fichier. | Le libellé fait partie du fichier et, lorsque le libellé change, le fichier change. Cette modification modifie également les heures d'accès et de modification du fichier. 
+
+
+| Vous pouvez avoir plusieurs balises sur un seul fichier. | Vous pouvez avoir une étiquette sur un seul fichier. 
+
+
+| Cette balise peut être utilisée pour une action interne de détection des données, telle que copie, déplacement, suppression, exécution d'une règle, etc | Les autres systèmes qui peuvent lire le fichier peuvent voir l'étiquette, qui peut être utilisée pour une automatisation supplémentaire. 
+
+
+| Un seul appel API est utilisé pour voir si un fichier a une balise. |  
+|===
+
+
+== Catégorisation de vos données à l'aide de libellés AIP
+
+Vous pouvez gérer les étiquettes AIP dans les fichiers que Cloud Data SENSE analyse si vous vous êtes abonné link:https://azure.microsoft.com/en-us/services/information-protection/["Protection des informations Azure (AIP)"^]. AIP vous permet de classer et de protéger les documents et les fichiers en appliquant des étiquettes au contenu. Data Sense vous permet d'afficher les étiquettes déjà affectées aux fichiers, d'ajouter des étiquettes aux fichiers et de modifier les étiquettes lorsqu'une étiquette existe déjà.
+
+Cloud Data SENSE prend en charge les libellés AIP dans les types de fichiers suivants : .DOC, .DOCX, .PDF, .PPTX, .XLS, XLSX.
+
+[NOTE]
+====
+* Vous ne pouvez pas modifier actuellement les étiquettes dans des fichiers de plus de 30 Mo. Pour OneDrive, SharePoint et Google Drive, la taille maximale de fichier est de 4 Mo.
+* Si un fichier a un libellé qui n'existe plus dans AIP, Cloud Data SENSE le considère comme un fichier sans étiquette.
+* Si vous avez déployé Data Sense dans une région gouvernementale ou dans un emplacement sur site sans accès à Internet (également connu sous le nom de site sombre), la fonctionnalité AIP label n'est pas disponible.
+
+
+====
+
+
+=== Intégration des libellés AIP dans votre espace de travail
+
+Avant de gérer les étiquettes AIP, vous devez intégrer la fonctionnalité AIP label dans Cloud Data Sense en vous connectant à votre compte Azure existant. Une fois activée, vous pouvez gérer les libellés AIP dans les fichiers pour tous link:concept-cloud-compliance.html#supported-data-sources["sources des données"^] Dans votre espace de travail BlueXP.
+
+.De formation
+* Vous devez disposer d'un compte et d'une licence Azure information protection.
+* Vous devez disposer des identifiants de connexion pour le compte Azure.
+* Si vous prévoyez de modifier les étiquettes dans les fichiers qui résident dans les compartiments Amazon S3, assurez-vous que l'autorisation est requise `s3:PutObject` Est inclus dans le rôle IAM. Voir link:task-scanning-s3.html#reviewing-s3-prerequisites["Configuration du rôle IAM"^].
+
+
+.Étapes
+. Dans la page Configuration de la détection des données du cloud, cliquez sur *intégrer des étiquettes AIP*.
++
+image:screenshot_compliance_integrate_aip_labels.png["Une capture d'écran qui montre que vous cliquez sur le bouton pour intégrer la fonctionnalité AIP labels dans Cloud Data SENSE."]
+
+. Dans la boîte de dialogue intégrer des libellés AIP, cliquez sur *connexion à Azure*.
+. Sur la page Microsoft qui s'affiche, sélectionnez le compte et saisissez les informations d'identification requises.
+. Revenez à l'onglet Cloud Data Sense et le message «_AIP Labels a été intégré avec succès au compte <Account_name>_ ».
+. Cliquez sur *Fermer* et vous verrez le texte _AIP Labels Integrated_ en haut de la page.
++
+image:screenshot_compliance_aip_labels_int.png["Une capture d'écran qui montre les étiquettes AIP a été intégrée avec succès."]
+
+
+
+Vous pouvez afficher et affecter des libellés AIP à partir du volet des résultats de la page Investigation. Vous pouvez également attribuer des libellés AIP aux fichiers à l'aide de stratégies.
+
+
+
+=== Affichage des libellés AIP dans vos fichiers
+
+Vous pouvez afficher le libellé AIP actuel attribué à un fichier.
+
+Dans le volet Résultats de l'enquête de données, cliquez sur image:button_down_caret.png["le bas-caret"] pour que le fichier développe les détails des métadonnées du fichier.
+
+image:screenshot_compliance_show_label.png["Capture d'écran présentant les détails des métadonnées pour un seul fichier, y compris le libellé AIP affecté."]
+
+
+
+=== Attribution manuelle d'étiquettes AIP
+
+Vous pouvez ajouter, modifier et supprimer des étiquettes AIP de vos fichiers à l'aide de Cloud Data Sense.
+
+Procédez comme suit pour attribuer un libellé AIP à un seul fichier.
+
+.Étapes
+. Dans le volet Résultats de l'enquête de données, cliquez sur image:button_down_caret.png["le bas-caret"] pour que le fichier développe les détails des métadonnées du fichier.
++
+image:screenshot_compliance_add_label_manually.png["Capture d'écran affichant les détails des métadonnées d'un fichier dans la page Data Investigation."]
+
+. Cliquez sur *attribuer un libellé à ce fichier*, puis sélectionnez le libellé.
++
+Le libellé apparaît dans les métadonnées du fichier.
+
+
+
+Pour attribuer un libellé AIP à plusieurs fichiers :
+
+.Étapes
+. Dans le volet Résultats de l'enquête de données, sélectionnez le ou les fichiers que vous souhaitez étiqueter.
++
+image:screenshot_compliance_tag_multi_files.png["Capture d'écran indiquant comment sélectionner les fichiers à étiqueter et le bouton libellé de la page recherche de données."]
+
++
+** Pour sélectionner des fichiers individuels, cochez la case de chaque fichier (image:button_backup_1_volume.png[""]).
+** Pour sélectionner tous les fichiers de la page en cours, cochez la case dans la ligne de titre (image:button_select_all_files.png[""]).
+
+
+. Dans la barre de boutons, cliquez sur *Label* et sélectionnez le libellé AIP :
++
+image:screenshot_compliance_select_aip_label_multi.png["Capture d'écran indiquant comment affecter une étiquette AIP à plusieurs fichiers dans la page Data Investigation."]
+
++
+L'étiquette AIP est ajoutée aux métadonnées pour tous les fichiers sélectionnés.
+
+
+
+
+
+=== Attribution automatique d'étiquettes AIP à l'aide de stratégies
+
+Vous pouvez affecter un libellé AIP à tous les fichiers qui répondent aux critères de la stratégie. Vous pouvez spécifier l'étiquette AIP lors de la création de la stratégie ou ajouter l'étiquette lors de la modification d'une stratégie.
+
+Les étiquettes sont ajoutées ou mises à jour dans les fichiers en continu lors de l'analyse de vos fichiers par Cloud Data SENSE.
+
+Selon qu'une étiquette est déjà appliquée à un fichier et le niveau de classification de l'étiquette, les actions suivantes sont prises lors de la modification d'une étiquette :
+
+[cols="60,40"]
+|===
+| Si le fichier... | Alors... 
+
+
+| N'a pas d'étiquette | L'étiquette est ajoutée 
+
+
+| Possède une étiquette existante d'un niveau de classification inférieur | L'étiquette de niveau supérieur est ajoutée 
+
+
+| Possède un libellé existant d'un niveau de classification supérieur | L'étiquette de niveau supérieur est conservée 
+
+
+| Est affectée à une étiquette manuellement et par une police | L'étiquette de niveau supérieur est ajoutée 
+
+
+| Deux étiquettes différentes sont attribuées par deux polices | L'étiquette de niveau supérieur est ajoutée 
+|===
+Procédez comme suit pour ajouter une étiquette AIP à une stratégie existante.
+
+.Étapes
+. Dans la page liste des stratégies, cliquez sur *Modifier* pour la stratégie dans laquelle vous souhaitez ajouter (ou modifier) l'étiquette AIP.
++
+image:screenshot_compliance_add_label_highlight_1.png["Capture d'écran indiquant comment modifier une police existante."]
+
+. Dans la page Modifier la stratégie, cochez la case pour activer les libellés automatiques des fichiers qui correspondent aux paramètres de la stratégie, puis sélectionnez l'étiquette (par exemple, *général*).
++
+image:screenshot_compliance_add_label_highlight_2.png["Capture d'écran indiquant comment sélectionner l'étiquette à attribuer aux fichiers correspondant à la stratégie."]
+
+. Cliquez sur *Enregistrer la stratégie* et le libellé apparaît dans la description de la stratégie.
+
+
+
+NOTE: Si une stratégie a été configurée avec un libellé, mais que le libellé a depuis été supprimé de l'AIP, le nom de l'étiquette est désactivé et l'étiquette n'est plus affectée.
+
+
+
+=== Suppression de l'intégration AIP
+
+Si vous ne souhaitez plus pouvoir gérer les étiquettes AIP dans des fichiers, vous pouvez supprimer le compte AIP de l'interface Cloud Data SENSE.
+
+Notez qu'aucune modification n'est apportée aux étiquettes que vous avez ajoutées à l'aide de Data Sense. Les étiquettes qui existent dans les fichiers resteront telles qu'elles existent actuellement.
+
+.Étapes
+. Dans la page _Configuration_, cliquez sur *libellés AIP intégrés > Supprimer intégration*.
++
+image:screenshot_compliance_un_integrate_aip_labels.png["Capture d'écran montrant comment supprimer les intégrations AIP avec Cloud Data Sense."]
+
+. Cliquez sur *Supprimer l'intégration* dans la boîte de dialogue de confirmation.
+
+
+
+
+== Application de balises pour gérer vos fichiers numérisés
+
+Vous pouvez ajouter une balise aux fichiers que vous souhaitez marquer pour un type de suivi. Par exemple, vous avez peut-être trouvé des fichiers en double et vous voulez en supprimer un, mais vous devez vérifier lequel supprimer. Vous pouvez ajouter une balise « vérifier pour supprimer » au fichier afin que vous sachiez que ce fichier nécessite une recherche et un certain type d'action future.
+
+Data Sense vous permet d'afficher les balises affectées aux fichiers, d'ajouter ou de supprimer des balises des fichiers et de modifier le nom ou de supprimer une balise existante.
+
+Notez que la balise n'est pas ajoutée au fichier de la même manière que les étiquettes AIP font partie des métadonnées du fichier. La balise vient d'être visible par les utilisateurs de BlueXP à l'aide de Cloud Data SENSE. Ainsi, vous pouvez voir si un fichier doit être supprimé ou vérifié pour un certain type de suivi.
+
+
+TIP: Les balises attribuées aux fichiers dans Cloud Data SENSE ne sont pas liées aux balises que vous pouvez ajouter aux ressources, telles que des volumes ou des instances de machines virtuelles. Des balises de détection de données sont appliquées au niveau du fichier.
+
+
+
+=== Affichage des fichiers dont certaines balises sont appliquées
+
+Vous pouvez afficher tous les fichiers auxquels des étiquettes spécifiques sont attribuées.
+
+. Cliquez sur l'onglet *Investigation* dans Cloud Data Sense.
+. Dans la page recherche de données, cliquez sur *balises* dans le volet filtres, puis sélectionnez les balises requises.
++
+image:screenshot_compliance_filter_status.png["Capture d'écran indiquant comment sélectionner des balises dans le volet filtres."]
+
++
+Le volet Résultats de l'enquête affiche tous les fichiers auxquels ces balises sont affectées.
+
+
+
+
+
+=== Attribution de balises aux fichiers
+
+Vous pouvez ajouter des balises à un seul fichier ou à un groupe de fichiers.
+
+Pour ajouter une balise à un seul fichier :
+
+.Étapes
+. Dans le volet Résultats de l'enquête de données, cliquez sur image:button_down_caret.png["le bas-caret"] pour que le fichier développe les détails des métadonnées du fichier.
+. Cliquez sur le champ *Tags* pour afficher les balises actuellement affectées.
+. Ajoutez la ou les balises :
++
+** Pour affecter une balise existante, cliquez dans le champ *Nouvelle balise...* et commencez à taper le nom de la balise. Lorsque la balise que vous cherchez s'affiche, sélectionnez-la et appuyez sur *entrée*.
+** Pour créer une nouvelle balise et l'affecter au fichier, cliquez dans le champ *Nouvelle balise...*, saisissez le nom de la nouvelle balise et appuyez sur *entrée*.
++
+image:screenshot_compliance_add_status_manually.png["Capture d'écran indiquant comment affecter une balise à un fichier dans la page recherche de données."]
+
++
+La balise s'affiche dans les métadonnées de fichier.
+
+
+
+
+
+Pour ajouter une balise à plusieurs fichiers :
+
+.Étapes
+. Dans le volet Résultats de l'enquête de données, sélectionnez le ou les fichiers que vous souhaitez marquer.
++
+image:screenshot_compliance_tag_multi_files.png["Capture d'écran indiquant comment sélectionner les fichiers à étiqueter et le bouton Etiquettes dans la page recherche de données."]
+
++
+** Pour sélectionner des fichiers individuels, cochez la case de chaque fichier (image:button_backup_1_volume.png[""]).
+** Pour sélectionner tous les fichiers de la page en cours, cochez la case dans la ligne de titre (image:button_select_all_files.png[""]).
+
+
+. Dans la barre de boutons, cliquez sur *Tags* et les balises actuellement affectées sont affichées.
+. Ajoutez la ou les balises :
++
+** Pour affecter une balise existante, cliquez dans le champ *Nouvelle balise...* et commencez à taper le nom de la balise. Lorsque la balise que vous cherchez s'affiche, sélectionnez-la et appuyez sur *entrée*.
+** Pour créer une nouvelle balise et l'affecter au fichier, cliquez dans le champ *Nouvelle balise...*, saisissez le nom de la nouvelle balise et appuyez sur *entrée*.
++
+image:screenshot_compliance_select_tags_multi.png["Capture d'écran indiquant comment affecter une balise à plusieurs fichiers dans la page recherche de données."]
+
+
+
+. Approuver l'ajout des balises dans la boîte de dialogue de confirmation et les balises sont ajoutées aux métadonnées pour tous les fichiers sélectionnés.
+
+
+
+
+=== Suppression de balises de fichiers
+
+Vous pouvez supprimer une balise si vous n'avez plus besoin de l'utiliser.
+
+Il vous suffit de cliquer sur *x* pour obtenir une balise existante.
+
+image:button_delete_datasense_file_tag.png["ajoutez cela quelque part dans ce sujet"]
+
+Si vous avez sélectionné plusieurs fichiers, la balise est supprimée de tous les fichiers.
+
+
+
+== Affectation d'utilisateurs pour gérer certains fichiers
+
+Vous pouvez affecter un utilisateur BlueXP à un fichier spécifique ou à plusieurs fichiers, de sorte que personne puisse être responsable des actions de suivi qui doivent être effectuées sur le fichier. Cette fonctionnalité est souvent utilisée avec la fonction pour ajouter des balises d'état personnalisées à un fichier.
+
+Par exemple, vous pouvez avoir un fichier contenant certaines données personnelles qui autorise un trop grand nombre d'utilisateurs à accéder en lecture et en écriture (autorisations ouvertes). Vous pouvez donc attribuer l'étiquette d'état « Modifier les autorisations » et attribuer ce fichier à l'utilisateur « Joan Smith » afin qu'il puisse décider comment résoudre le problème. Lorsqu'ils ont résolu le problème, ils peuvent changer l'étiquette d'état en « terminé ».
+
+Notez que le nom d'utilisateur n'est pas ajouté au fichier dans le cadre des métadonnées du fichier. Il est simplement visible par les utilisateurs de BlueXP lors de l'utilisation de Cloud Data Sense.
+
+Un nouveau filtre dans la page Investigation vous permet d'afficher facilement tous les fichiers qui ont la même personne dans le champ « assigné à ».
+
+Pour affecter un utilisateur à un seul fichier :
+
+.Étapes
+. Dans le volet Résultats de l'enquête de données, cliquez sur image:button_down_caret.png["le bas-caret"] pour que le fichier développe les détails des métadonnées du fichier.
+. Cliquez sur le champ *affecté à* et sélectionnez le nom d'utilisateur.
++
+image:screenshot_compliance_add_user_manually.png["Capture d'écran indiquant comment affecter un utilisateur à un fichier dans la page Data Investigation."]
+
++
+Le nom d'utilisateur apparaît dans les métadonnées de fichier.
+
+
+
+Pour affecter un utilisateur à plusieurs fichiers :
+
+.Étapes
+. Dans le volet Résultats de l'enquête de données, sélectionnez le ou les fichiers que vous souhaitez attribuer à un utilisateur.
++
+image:screenshot_compliance_tag_multi_files.png["Capture d'écran indiquant comment sélectionner les fichiers à affecter à un utilisateur, et le bouton affecter à, dans la page recherche de données."]
+
++
+** Pour sélectionner des fichiers individuels, cochez la case de chaque fichier (image:button_backup_1_volume.png[""]).
+** Pour sélectionner tous les fichiers de la page en cours, cochez la case dans la ligne de titre (image:button_select_all_files.png[""]).
+
+
+. Dans la barre de boutons, cliquez sur *affecter à* et sélectionnez le nom d'utilisateur :
++
+image:screenshot_compliance_select_user_multi.png["Capture d'écran indiquant comment affecter un utilisateur à plusieurs fichiers dans la page recherche de données."]
+
++
+L'utilisateur est ajouté aux métadonnées pour tous les fichiers sélectionnés.
+
+
+
+
+
+== Contrôler vos données à l'aide de règles
+
+Les stratégies sont comme une liste de favoris de filtres personnalisés qui fournissent des résultats de recherche dans la page Investigation pour les requêtes de conformité les plus fréquemment demandées. Cloud Data Sense fournit un ensemble de règles prédéfinies en fonction des demandes courantes des clients. Vous pouvez créer des stratégies personnalisées fournissant des résultats de recherches spécifiques à votre organisation.
+
+Les règles offrent les fonctionnalités suivantes :
+
+*  of predefined Policies,Stratégies prédéfinies De NetApp en fonction des demandes des utilisateurs
+* Possibilité de créer vos propres règles personnalisées
+* Lancez la page Investigation avec les résultats de vos polices en un seul clic
+* Envoyez des alertes par e-mail à des utilisateurs BlueXP lorsque certaines stratégies critiques renvoient des résultats afin que vous puissiez obtenir des notifications pour protéger vos données
+* Attribuez automatiquement des étiquettes AIP (Azure information protection) à tous les fichiers qui correspondent aux critères définis dans une stratégie
+* Supprimez des fichiers automatiquement (une fois par jour) lorsque certaines stratégies renvoient des résultats pour protéger vos données automatiquement
+
+
+L'onglet *Policies* du tableau de bord de conformité répertorie toutes les stratégies prédéfinies et personnalisées disponibles sur cette instance de Cloud Data Sense.
+
+image:screenshot_compliance_highlights_tab.png["Capture d'écran de l'onglet « règles » du tableau de bord Cloud Data Sense."]
+
+De plus, les polices apparaissent dans la liste des filtres de la page Investigation.
+
+
+
+=== Affichage des résultats de la police dans la page Investigation
+
+Pour afficher les résultats d'une police dans la page Investigation, cliquez sur le bouton image:screenshot_gallery_options.gif["Bouton plus"] Pour une stratégie spécifique, puis sélectionnez *étudier les résultats*.
+
+image:screenshot_compliance_highlights_investigate.png["Capture d'écran de la sélection de l'option analyser les résultats d'une police spécifique dans l'onglet stratégies."]
+
+
+
+=== Création de stratégies personnalisées
+
+Vous pouvez créer vos propres stratégies personnalisées qui fournissent des résultats pour les recherches spécifiques à votre organisation. Les résultats sont renvoyés pour tous les fichiers et répertoires (partages et dossiers) qui correspondent aux critères de recherche.
+
+Notez que les actions de suppression de données et d'attribution de libellés AIP basés sur les résultats de la stratégie sont uniquement valides pour les fichiers. Les répertoires qui correspondent aux critères de recherche ne peuvent pas être supprimés automatiquement ou affectés à des libellés AIP.
+
+.Étapes
+. Dans la page recherche de données, définissez votre recherche en sélectionnant tous les filtres que vous souhaitez utiliser. Voir link:task-controlling-private-data.html#filtering-data-in-the-data-investigation-page["Filtrage des données dans la page Data Investigation"^] pour plus d'informations.
+. Une fois que vous avez toutes les caractéristiques de filtre comme vous le souhaitez, cliquez sur *Créer une stratégie à partir de cette recherche*.
++
+image:screenshot_compliance_save_as_highlight.png["Capture d'écran indiquant comment enregistrer une requête filtrée en tant que stratégie."]
+
+. Nommez la stratégie et sélectionnez d'autres actions pouvant être effectuées par la stratégie :
++
+.. Entrez un nom et une description uniques.
+.. Si vous le souhaitez, cochez la case pour supprimer automatiquement les fichiers qui correspondent aux paramètres de la stratégie. En savoir plus sur link:task-managing-highlights.html#deleting-source-files-automatically-using-policies["suppression de fichiers source à l'aide d'une stratégie"].
+.. Si vous souhaitez envoyer des e-mails de notification aux utilisateurs BlueXP, cochez la case correspondante et choisissez l'intervalle d'envoi de l'e-mail. En savoir plus sur link:task-org-private-data.html#sending-email-alerts-when-non-compliant-data-is-found["envoi d'alertes par e-mail en fonction des résultats de règles"].
+.. Si vous le souhaitez, cochez la case pour attribuer automatiquement des libellés AIP aux fichiers qui correspondent aux paramètres de la stratégie, puis sélectionnez le libellé. (Uniquement si vous avez déjà intégré des étiquettes AIP. En savoir plus sur link:task-org-private-data.html#categorizing-your-data-using-aip-labels["Libellés AIP"].)
+.. Cliquez sur *Créer une stratégie*.
++
+image:screenshot_compliance_save_highlight.png["Capture d'écran indiquant comment configurer la stratégie et l'enregistrer."]
+
+
+
+
+
+La nouvelle stratégie s'affiche dans l'onglet stratégies.
+
+
+
+=== Envoi d'alertes par e-mail lorsque des données non conformes sont trouvées
+
+Cloud Data SENSE peut envoyer des alertes par e-mail aux utilisateurs BlueXP lorsque certaines stratégies critiques renvoient des résultats pour que vous puissiez recevoir des notifications afin de protéger vos données. Vous pouvez choisir d'envoyer les notifications par e-mail tous les jours, toutes les semaines ou tous les mois.
+
+Vous pouvez configurer ce paramètre lors de la création de la stratégie ou lors de la modification d'une stratégie.
+
+Procédez comme suit pour ajouter des mises à jour par e-mail à une stratégie existante.
+
+.Étapes
+. Dans la page liste des stratégies, cliquez sur *Modifier* pour la stratégie dans laquelle vous souhaitez ajouter (ou modifier) le paramètre de messagerie.
++
+image:screenshot_compliance_add_email_alert_1.png["Capture d'écran indiquant comment modifier une police existante."]
+
+. Dans la page Modifier la stratégie, cochez la case si vous souhaitez envoyer des e-mails de notification aux utilisateurs BlueXP et choisissez l'intervalle d'envoi de l'e-mail (par exemple, chaque *semaine*).
++
+image:screenshot_compliance_add_email_alert_2.png["Capture d'écran indiquant comment choisir les critères d'e-mail à envoyer pour la police."]
+
+. Cliquez sur *Enregistrer la stratégie* et l'intervalle auquel l'e-mail est envoyé apparaît dans la description de la stratégie.
+
+
+Le premier e-mail est envoyé dès maintenant s'il y a des résultats de la politique - mais seulement si des fichiers répondent aux critères de police. Aucune information personnelle n'est envoyée dans les e-mails de notification. L'e-mail indique qu'il existe des fichiers qui correspondent aux critères de la police et qu'il fournit un lien vers les résultats de la police.
+
+
+
+=== Modification de stratégies
+
+Vous pouvez modifier les critères d'une stratégie existante que vous avez déjà créée. Cela peut être particulièrement utile si vous souhaitez modifier la requête (les éléments que vous avez définis à l'aide de filtres) pour ajouter ou supprimer certains paramètres.
+
+Notez que pour les stratégies prédéfinies, vous pouvez uniquement modifier si les notifications par e-mail sont envoyées et si des étiquettes AIP sont ajoutées. Aucune autre valeur ne peut être modifiée.
+
+.Étapes
+. Dans la page liste des stratégies, cliquez sur *Modifier* pour la stratégie que vous souhaitez modifier.
++
+image:screenshot_compliance_edit_policy_button.png["Capture d'écran indiquant comment lancer une modification vers une police existante."]
+
+. Si vous souhaitez simplement modifier les éléments de cette page (le Nom, la Description, si les notifications par e-mail sont envoyées et si des étiquettes AIP sont ajoutées), effectuez la modification et cliquez sur *Enregistrer la stratégie*.
++
+Si vous souhaitez modifier les filtres de la requête enregistrée, cliquez sur *Modifier la requête*.
+
++
+image:screenshot_compliance_edit_policy_dialog.png["Capture d'écran indiquant la sélection du bouton Modifier la requête sur la page Modifier la stratégie."]
+
+. Dans la page Investigation qui définit cette requête, modifiez la requête en ajoutant, supprimant ou personnalisant les filtres, puis cliquez sur *Enregistrer les modifications* .
++
+image:screenshot_compliance_edit_policy_query.png["Capture d'écran indiquant comment modifier la requête en modifiant les paramètres du filtre."]
+
+
+
+La police est modifiée immédiatement. Toutes les actions définies pour cette stratégie pour envoyer un e-mail, ajouter des étiquettes AIP ou supprimer des fichiers seront effectuées à l'interne suivant.
+
+
+
+=== Suppression de polices
+
+Vous pouvez supprimer toute stratégie personnalisée que vous avez créée si vous n'en avez plus besoin. Vous ne pouvez supprimer aucune des stratégies prédéfinies.
+
+Pour supprimer une stratégie, cliquez sur image:screenshot_gallery_options.gif["Bouton plus"] Pour une stratégie spécifique, cliquez sur *Supprimer la stratégie*, puis cliquez à nouveau sur *Supprimer la stratégie* dans la boîte de dialogue de confirmation.
+
+
+
+=== Liste des stratégies prédéfinies
+
+Cloud Data Sense fournit plusieurs règles définies par le système :
+
+[cols="25,40,40"]
+|===
+| Nom | Description | Logique 
+
+
+| Données privées exposées publiquement | Objets S3 contenant des informations personnelles ou sensibles, avec un accès public en lecture ouvert. | S3 public ET contient des informations personnelles ou sensibles 
+
+
+| PCI DSS : données obsolètes pendant 30 jours | Fichiers contenant des informations de carte de crédit, modifié pour la dernière fois il y a plus de 30 jours. | Contient la carte de crédit ET la dernière modification sur 30 jours 
+
+
+| HIPAA : données obsolètes de plus de 30 jours | Fichiers contenant des informations de santé, modifié pour la dernière fois il y a plus de 30 jours. | Contient des données de santé (définies de la même manière que dans le rapport HIPAA) ET modifiées pour la dernière fois sur 30 jours 
+
+
+| Les données privées sont obsolètes au fil des 7 ans | Fichiers contenant des données personnelles ou sensibles, modifié pour la dernière fois il y a plus de 7 ans. | Fichiers contenant des données personnelles ou sensibles, modifié pour la dernière fois il y a plus de 7 ans 
+
+
+| RGPD : citoyens européens | Dossiers contenant plus de 5 identificateurs de citoyens d’un pays de l’UE ou tables DB contenant des identificateurs de citoyens d’un pays de l’UE. | Dossiers contenant plus de 5 identificateurs d’un (un) citoyen de l’UE ou de tables de données contenant des lignes contenant plus de 15% des colonnes avec des identificateurs de l’UE d’un pays. (Tout identifiant national des pays européens. N'inclut pas le Brésil, la Californie, le SSN des États-Unis, Israël et l'Afrique du Sud) 
+
+
+| CCPA – résidents de Californie | Fichiers contenant plus de 10 identificateurs de permis de conduire californiens ou tables de BD contenant cet identifiant. | Fichiers contenant plus de 10 identificateurs de permis de conduire californiens OU tables DB contenant la licence de conducteur californien 
+
+
+| Noms des sujets de données – risque élevé | Fichiers avec plus de 50 noms de sujet de données. | Fichiers avec plus de 50 noms de sujet de données 
+
+
+| Adresses e-mail – risque élevé | Fichiers contenant plus de 50 adresses électroniques ou colonnes DB contenant plus de 50 % de leurs lignes contenant des adresses électroniques | Fichiers contenant plus de 50 adresses électroniques ou colonnes DB contenant plus de 50 % de leurs lignes contenant des adresses électroniques 
+
+
+| Données personnelles – risque élevé | Fichiers contenant plus de 20 identificateurs de données personnelles, ou colonnes de bases de données contenant plus de 50 % de leurs lignes contenant des identificateurs de données personnelles. | Fichiers avec plus de 20 colonnes personnelles ou DB avec plus de 50 % de leurs lignes contenant des colonnes personnelles 
+
+
+| Données personnelles sensibles – risque élevé | Fichiers contenant plus de 20 identificateurs de données personnelles sensibles, ou colonnes de bases de données contenant plus de 50 % de leurs lignes contenant des données personnelles sensibles. | Les fichiers contenant plus de 20 colonnes personnelles sensibles ou DB contenant plus de 50 % de leurs lignes contenant des données personnelles sensibles 
+|===

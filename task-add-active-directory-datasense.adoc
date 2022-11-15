@@ -1,0 +1,119 @@
+---
+sidebar: sidebar 
+permalink: task-add-active-directory-datasense.html 
+keywords: active directory, ad, data sense, cloud data sense 
+summary: Vous pouvez intégrer Active Directory global avec Cloud Data Sense pour améliorer les résultats de Data SENSE rapports sur les propriétaires de fichiers et quels utilisateurs et groupes ont accès à vos fichiers. 
+---
+= Intégrez Active Directory avec le sens des données dans le cloud
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez intégrer Active Directory global avec Cloud Data Sense pour améliorer les résultats de Data SENSE rapports sur les propriétaires de fichiers et quels utilisateurs et groupes ont accès à vos fichiers.
+
+Lorsque vous configurez certaines sources de données (répertoriées ci-dessous), vous devez entrer les informations d'identification Active Directory pour que Data Sense puisse analyser les volumes CIFS. Cette intégration fournit des informations sur le propriétaire des fichiers et les autorisations des données qui résident dans ces sources. L'Active Directory saisi pour ces sources de données peut être différent des informations d'identification Active Directory globales que vous saisissez ici. Data Sense recherche dans tous les répertoires actifs intégrés les détails de l'utilisateur et de l'autorisation.
+
+Cette intégration fournit des informations supplémentaires aux emplacements suivants dans Data Sense :
+
+* Vous pouvez utiliser le « propriétaire de fichier » link:task-controlling-private-data.html#filtering-data-in-the-data-investigation-page["filtre"] Et voir les résultats dans les métadonnées du fichier dans le volet Investigation. Au lieu du propriétaire du fichier contenant le SID (identificateur de sécurité), il est renseigné avec le nom d'utilisateur réel.
+* Vous pouvez voir link:task-controlling-private-data.html#viewing-permissions-for-files-and-directories["autorisations complètes sur les fichiers"] Pour chaque fichier et répertoire lorsque vous cliquez sur le bouton « Afficher toutes les autorisations ».
+* Dans le link:task-controlling-governance-data.html["Tableau de bord gouvernance"], Le panneau Ouvrir les autorisations affiche un niveau de détail plus élevé sur vos données.
+
+
+
+NOTE: Les SID des utilisateurs locaux et les SID des domaines inconnus ne sont pas traduits par le nom d'utilisateur réel.
+
+
+
+== Sources de données prises en charge
+
+Une intégration d'Active Directory avec Cloud Data SENSE peut identifier les données à partir de ces sources :
+
+* Systèmes ONTAP sur site
+* Cloud Volumes ONTAP
+* Azure NetApp Files
+* FSX pour ONTAP
+* Partages de fichiers CIFS non NetApp (et non partages de fichiers NFS)
+
+
+L'identification des informations d'utilisateur et d'autorisation à partir des schémas de base de données, des comptes OneDrive, des comptes SharePoint, des comptes Google Drive, des comptes Amazon S3 n'est pas prise en charge. Ou du stockage objet qui utilise le protocole simple Storage Service (S3).
+
+
+
+== Connexion à votre serveur Active Directory
+
+Une fois que vous avez déployé Data Sense et activé l'analyse sur vos sources de données, vous pouvez intégrer Data Sense à votre Active Directory. Il est possible d'accéder à Active Directory à l'aide d'une adresse IP de serveur DNS ou d'une adresse IP de serveur LDAP.
+
+Les informations d'identification Active Directory peuvent être en lecture seule, mais fournir des informations d'identification d'administrateur garantit que Data Sense peut lire toutes les données qui requièrent des autorisations élevées. Les identifiants sont stockés sur l'instance Cloud Data Sense.
+
+Pour les volumes/partages de fichiers CIFS, si vous voulez vous assurer que les « dernières heures d'accès » de vos fichiers ne sont pas modifiées par les analyses de classification de détection de données, nous recommandons à l'utilisateur de disposer des droits Write Attributes. Si possible, nous vous recommandons de faire en sorte que l'utilisateur configuré Active Directory fasse partie d'un groupe parent de l'organisation qui dispose des autorisations pour tous les fichiers.
+
+.De formation
+* Un Active Directory doit déjà être configuré pour les utilisateurs de votre entreprise.
+* Vous devez disposer des informations pour Active Directory :
++
+** Adresse IP du serveur DNS, ou adresses IP multiples
++
+ou
+
++
+Adresse IP du serveur LDAP, ou adresses IP multiples
+
+** Nom d'utilisateur et mot de passe pour accéder au serveur
+** Nom de domaine (nom Active Directory)
+** Que vous utilisiez ou non le protocole LDAP sécurisé (LDAPS)
+** Port serveur LDAP (généralement 389 pour LDAP et 636 pour LDAP sécurisé)
+
+
+* Les ports suivants doivent être ouverts pour les communications sortantes par l'instance de détection de données :
++
+[cols="20,20,30,30"]
+|===
+| Protocole | Port | Destination | Objectif 
+
+
+| TCP ET UDP | 389 | Active Directory | LDAP 
+
+
+| TCP | 636 | Active Directory | LDAP sur SSL 
+
+
+| TCP | 3268 | Active Directory | Catalogue global 
+
+
+| TCP | 3269 | Active Directory | Catalogue global sur SSL 
+|===
+
+
+.Étapes
+. Dans la page Configuration de la détection des données du Cloud, cliquez sur *Ajouter Active Directory*.
++
+image:screenshot_compliance_integrate_active_directory.png["Une capture d'écran qui montre que vous cliquez sur le bouton pour ajouter un serveur Active Directory dans Cloud Data Sense."]
+
+. Dans la boîte de dialogue connexion à Active Directory, entrez les détails d'Active Directory et cliquez sur *connexion*.
++
+Si nécessaire, vous pouvez ajouter plusieurs adresses IP en cliquant sur *Ajouter IP*.
+
++
+image:screenshot_compliance_active_directory_dialog.png["Capture d'écran de la boîte de dialogue dans laquelle vous définissez Active Directory que vous souhaitez intégrer à Data Sense."]
+
++
+Data Sense s'intègre à Active Directory et une nouvelle section est ajoutée à la page Configuration.
+
++
+image:screenshot_compliance_active_directory_added.png["Capture d'écran montrant le nouvel Active Directory intégré dans Data Sense."]
+
+
+
+
+
+== Gestion de votre intégration à Active Directory
+
+Si vous devez modifier des valeurs dans votre intégration Active Directory, cliquez sur le bouton *Modifier* et apportez les modifications nécessaires.
+
+Vous pouvez également supprimer l'intégration si vous n'en avez plus besoin en cliquant sur le bouton image:screenshot_gallery_options.gif["Bouton plus"] Puis *Supprimer Active Directory*.

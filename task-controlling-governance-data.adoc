@@ -1,0 +1,133 @@
+---
+sidebar: sidebar 
+permalink: task-controlling-governance-data.html 
+keywords: savings, stale data, non-business data, duplicate data, age or data, size of data, highlights, policies 
+summary: Maîtrisez les coûts liés aux données stockées sur les ressources de stockage de votre entreprise. Cloud Data SENSE identifie la quantité de données obsolètes, de données non stratégiques, de fichiers en double et de fichiers très volumineux dans vos systèmes. Vous pouvez ainsi décider si vous souhaitez supprimer ou hiérarchiser certains fichiers dans un stockage objet moins coûteux. 
+---
+= Affichage des détails de gouvernance concernant les données stockées dans votre organisation
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Maîtrisez les coûts liés aux données stockées sur les ressources de stockage de votre entreprise. Cloud Data SENSE identifie la quantité de données obsolètes, de données non stratégiques, de fichiers en double et de fichiers très volumineux dans vos systèmes. Vous pouvez ainsi décider si vous souhaitez supprimer ou hiérarchiser certains fichiers dans un stockage objet moins coûteux.
+
+En outre, si vous prévoyez de migrer les données depuis des emplacements sur site vers le cloud, vous pouvez vérifier la taille des données et si chacune d'entre elles contient des informations sensibles avant de les transférer.
+
+
+
+== Tableau de bord gouvernance
+
+Le tableau de bord de gouvernance fournit des informations vous permettant d'améliorer votre efficacité et de contrôler les coûts liés aux données stockées sur vos ressources de stockage.
+
+image:screenshot_compliance_governance_dashboard.png["Capture d'écran du tableau de bord Cloud Data Sense Governance."]
+
+
+
+=== Enregistrement d'opportunités
+
+Vous pouvez étudier les éléments de la zone _Saving Opportunities_ pour voir s'il y a des données que vous devez supprimer ou mettre en Tier vers un stockage objet moins coûteux. Cliquez sur chaque élément pour afficher les résultats filtrés dans la page Investigation.
+
+* *Données obsolètes* - données qui ont été modifiées pour la dernière fois il y a 3 ans.
+* *Données non commerciales* - données considérées comme non liées à l'entreprise, en fonction de leur catégorie ou de leur type de fichier. Les points suivants sont notamment :
++
+** Données applicatives
+** Audio
+** Exécutables
+** Images
+** Journaux
+** Vidéos
+** Divers (catégorie « autre » générale)
+
+
+* *Dupliquer les fichiers* - fichiers qui sont dupliqués à d'autres emplacements dans les sources de données que vous numérisez. link:task-controlling-private-data.html#viewing-all-duplicated-files["Voir quels types de fichiers dupliqués sont affichés"].
+
+
+
+
+=== Règles avec le plus grand nombre de résultats
+
+Cliquez sur le nom d'une police dans la zone _Policy_ pour afficher les résultats dans la page Investigation. Cliquez sur *Afficher tout* pour afficher la liste de toutes les stratégies disponibles.
+
+Cliquez sur link:task-org-private-data.html#controlling-your-data-using-policies["ici"] Pour en savoir plus sur les politiques.
+
+
+
+=== Présentation des données
+
+Présentation rapide de toutes les données en cours de numérisation. Cliquez sur le bouton pour télécharger un rapport de mappage de données complet incluant la capacité d'utilisation, l'âge des données, la taille des données et les types de fichiers pour tous les environnements de travail et toutes les sources de données. Voir link:task-generating-compliance-reports.html#data-mapping-report["Rapport de mappage de données"] pour plus d'informations.
+
+
+
+=== Principaux référentiels de données répertoriés par sensibilité des données
+
+La zone _Top Data Repositories by Sensitivity Level_ répertorie jusqu'aux quatre principaux référentiels de données (environnements de travail et sources de données) contenant les éléments les plus sensibles. Le graphique à barres de chaque environnement de travail est divisé en :
+
+* Données non personnelles
+* Données personnelles
+* Données personnelles sensibles
+
+
+Vous pouvez passer le curseur sur chaque section pour voir le nombre total d'éléments dans chaque catégorie.
+
+Cliquez sur chaque zone pour afficher les résultats filtrés dans la page Investigation afin que vous puissiez approfondir votre recherche.
+
+
+
+=== Données répertoriées par type d'autorisations ouvertes
+
+La zone _Ouvrir autorisations_ affiche le pourcentage pour chaque type d'autorisations existant pour tous les fichiers en cours d'analyse. Le graphique montre les types d'autorisations suivants :
+
+* Aucun accès ouvert
+* Ouvert à l'organisation
+* Ouvert au public
+* Accès inconnu
+
+
+Vous pouvez passer le curseur de la souris sur chaque section pour voir le nombre total de fichiers dans chaque catégorie. Cliquez sur chaque zone pour afficher les résultats filtrés dans la page Investigation afin que vous puissiez approfondir votre recherche.
+
+
+
+=== Age des données et taille des données graphiques
+
+Vous pouvez étudier les éléments des graphiques _Age_ et _Size_ afin de voir s'il y a des données que vous devez supprimer ou placer dans un stockage objet moins coûteux.
+
+Vous pouvez passer le curseur sur un point dans les graphiques pour afficher des détails sur l'âge ou la taille des données de cette catégorie. Cliquez pour afficher tous les fichiers filtrés en fonction de l'âge ou de la plage de tailles.
+
+* *Age of Data Graph* - catégorise les données en fonction de l'heure de création, de la dernière fois où il a été accédé ou de la dernière fois qu'il a été modifié.
+* *Taille du graphique de données* - classe les données en fonction de leur taille.
+
+
+
+
+=== Classification des données la plus identifiée
+
+La zone _Classification_ fournit une liste des plus identifiés link:task-controlling-private-data.html#viewing-files-by-categories["Catégories"^], link:task-controlling-private-data.html#viewing-files-by-file-types["Types de fichiers"^], et link:task-org-private-data.html#categorizing-your-data-using-aip-labels["Etiquettes AIP"^] dans vos données numérisées.
+
+
+
+==== Catégories
+
+Les catégories peuvent vous aider à comprendre ce qui se passe avec vos données en vous montrant les types d'informations dont vous disposez. Par exemple, une catégorie telle que « CV » ou « contrats employés » peut inclure des données sensibles. Lorsque vous étudiez les résultats, vous pouvez constater que les contrats d'employés sont stockés dans un emplacement non sécurisé. Vous pouvez ensuite corriger ce problème.
+
+Voir link:task-controlling-private-data.html#viewing-files-by-categories["Affichage des fichiers par catégories"^] pour en savoir plus.
+
+
+
+==== Types de fichiers
+
+La vérification de vos types de fichiers peut vous aider à contrôler vos données sensibles car il se peut que certains types de fichiers ne soient pas stockés correctement.
+
+Voir link:task-controlling-private-data.html#viewing-files-by-file-types["Affichage des types de fichiers"^] pour en savoir plus.
+
+
+
+==== Libellés AIP
+
+Si vous vous êtes abonné à Azure information protection (AIP), vous pouvez classer et protéger les documents et les fichiers en appliquant des étiquettes au contenu. La vérification des étiquettes AIP les plus utilisées qui sont attribuées aux fichiers vous permet de voir les étiquettes les plus utilisées dans vos fichiers.
+
+Voir link:task-org-private-data.html#categorizing-your-data-using-aip-labels["Etiquettes AIP"^] pour en savoir plus.

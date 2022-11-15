@@ -1,0 +1,182 @@
+---
+sidebar: sidebar 
+permalink: task-scanning-anf.html 
+keywords: cloud compliance, get started, enable cloud compliance, cloud compliance access, privacy, compliance, ANF, Azure NetApp Files, data sense 
+summary: Suivez ces quelques étapes pour commencer à utiliser Cloud Data Sense for Azure NetApp Files. 
+---
+= Mise en route de Cloud Data Sense for Azure NetApp Files
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Suivez ces quelques étapes pour commencer à utiliser Cloud Data Sense for Azure NetApp Files.
+
+
+
+== Démarrage rapide
+
+Pour commencer rapidement, suivez ces étapes ou faites défiler jusqu'aux sections restantes pour obtenir de plus amples informations.
+
+[role="quick-margin-para"]
+Avant de pouvoir analyser des volumes Azure NetApp Files, https://docs.netapp.com/us-en/cloud-manager-azure-netapp-files/task-quick-start.html["BlueXP doit être configuré pour détecter la configuration"^].
+
+[role="quick-margin-para"]
+link:task-deploy-cloud-compliance.html["Déployez Cloud Data Sense dans BlueXP"^] si aucune instance n'est déjà déployée.
+
+[role="quick-margin-para"]
+Cliquez sur *Compliance*, sélectionnez l'onglet *Configuration* et activez les analyses de conformité pour les volumes dans des environnements de travail spécifiques.
+
+[role="quick-margin-para"]
+Lorsque Cloud Data SENSE est activé, assurez-vous qu'il peut accéder à tous les volumes.
+
+* L'instance Cloud Data SENSE doit disposer d'une connexion réseau à chaque sous-réseau Azure NetApp Files.
+* Assurez-vous que ces ports sont ouverts à l'instance de détection de données :
++
+** Pour NFS – ports 111 et 2049.
+** Pour CIFS – ports 139 et 445.
+
+
+* Les règles d'exportation de volumes NFS doivent autoriser l'accès à partir de l'instance Data Sense.
+* La détection de données a besoin des identifiants Active Directory pour analyser les volumes CIFS.
++
+Cliquez sur *Compliance* > *Configuration* > *Modifier les informations d'identification CIFS* et fournissez les informations d'identification.
+
+
+
+[role="quick-margin-para"]
+Sélectionnez ou désélectionnez les volumes que vous souhaitez scanner et Cloud Data SENSE démarre ou arrête l'acquisition.
+
+
+
+== Détection du système Azure NetApp Files que vous souhaitez numériser
+
+Si le système Azure NetApp Files que vous voulez numériser n'est pas déjà dans BlueXP comme environnement de travail, vous pouvez l'ajouter au canevas pour le moment.
+
+https://docs.netapp.com/us-en/cloud-manager-azure-netapp-files/task-quick-start.html["Découvrez comment découvrir le système Azure NetApp Files dans BlueXP"^].
+
+
+
+== Déploiement de l'instance Cloud Data Sense
+
+link:task-deploy-cloud-compliance.html["Déployez des données adaptées au cloud"^] si aucune instance n'est déjà déployée.
+
+Il est nécessaire de déployer Data Sense dans le cloud lors de l'analyse des volumes Azure NetApp Files, et il doit être déployé dans la même région que les volumes que vous souhaitez analyser.
+
+*Remarque :* le déploiement de Cloud Data Sense dans un emplacement sur site n'est pas pris en charge actuellement lors de l'analyse de volumes Azure NetApp Files.
+
+Les mises à niveau du logiciel Data Sense sont automatisées tant que l'instance est connectée à Internet.
+
+
+
+== Activation des données cloud dans vos environnements de travail
+
+Vous pouvez activer Cloud Data SENSE sur vos volumes Azure NetApp Files.
+
+. Dans le menu de navigation de gauche BlueXP, cliquez sur *gouvernance > Classification*, puis sélectionnez l'onglet *Configuration*.
++
+image:screenshot_cloud_compliance_anf_scan_config.png["Une capture d'écran de l'onglet Configuration immédiatement après le déploiement de l'instance Cloud Data Sense."]
+
+. Sélectionnez le mode de numérisation des volumes dans chaque environnement de travail. link:concept-cloud-compliance.html#whats-the-difference-between-mapping-and-classification-scans["En savoir plus sur les acquisitions de mappage et de classification"]:
++
+** Pour mapper tous les volumes, cliquez sur *mapper tous les volumes*.
+** Pour mapper et classer tous les volumes, cliquez sur *cartographier et classer tous les volumes*.
+** Pour personnaliser la numérisation de chaque volume, cliquez sur *ou sélectionnez le type de numérisation pour chaque volume*, puis choisissez les volumes que vous souhaitez mapper et/ou classer.
++
+Voir  and disabling compliance scans on volumes,Activation et désactivation des analyses de conformité sur les volumes pour plus d'informations.
+
+
+
+. Dans la boîte de dialogue de confirmation, cliquez sur *approuver* pour que Data Sense commence à analyser vos volumes.
+
+
+Cloud Data SENSE commence à analyser les volumes que vous avez sélectionnés dans l'environnement de travail. Les résultats seront disponibles dans le tableau de bord de conformité dès que Cloud Data SENSE aura terminé les analyses initiales. Le temps nécessaire dépend de la quantité de données--il peut être de quelques minutes ou heures.
+
+
+
+== Vérifier que le sens des données cloud a accès aux volumes
+
+Assurez-vous que Cloud Data est capable d'accéder aux volumes en vérifiant vos groupes de sécurité et vos règles d'exportation. Vous devez fournir un « logique de données » avec des identifiants CIFS pour pouvoir accéder aux volumes CIFS.
+
+.Étapes
+. Vérifiez qu'il existe une connexion réseau entre l'instance Cloud Data Sense et chaque réseau incluant des volumes pour Azure NetApp Files.
++
+
+NOTE: Pour Azure NetApp Files, Cloud Data SENSE ne peut analyser que les volumes se trouvant dans la même région que BlueXP.
+
+. Assurez-vous que les ports suivants sont ouverts à l'instance de détection de données :
++
+** Pour NFS – ports 111 et 2049.
+** Pour CIFS – ports 139 et 445.
+
+
+. Assurez-vous que les règles d'exportation de volume NFS incluent l'adresse IP de l'instance Data Sense afin qu'elle puisse accéder aux données sur chaque volume.
+. Si vous utilisez le protocole CIFS, fournissez Data Sense avec des identifiants Active Directory afin qu'il puisse analyser les volumes CIFS.
++
+.. Dans le menu de navigation de gauche BlueXP, cliquez sur *gouvernance > Classification*, puis sélectionnez l'onglet *Configuration*.
++
+image:screenshot_cifs_credentials.gif["Capture d'écran de l'onglet conformité affichant le bouton Etat de la numérisation disponible dans le coin supérieur droit du volet contenu."]
+
+.. Pour chaque environnement de travail, cliquez sur *Modifier les informations d'identification CIFS* et entrez le nom d'utilisateur et le mot de passe dont Data Sense a besoin pour accéder aux volumes CIFS sur le système.
++
+Les informations d'identification peuvent être en lecture seule, mais fournir des informations d'identification admin garantit que Data Sense peut lire toutes les données qui requièrent des autorisations élevées. Les identifiants sont stockés sur l'instance Cloud Data Sense.
+
++
+Si vous voulez vous assurer que vos fichiers “dernières heures d’accès” sont inchangés par les analyses de classification de détection de données, nous recommandons à l’utilisateur de disposer de l’autorisation Write Attributes. Si possible, nous vous recommandons de faire en sorte que l'utilisateur configuré Active Directory fasse partie d'un groupe parent de l'organisation qui dispose des autorisations pour tous les fichiers.
+
++
+Une fois les informations d'identification saisies, un message indiquant que tous les volumes CIFS ont été authentifiés avec succès s'affiche.
+
++
+image:screenshot_cifs_status.gif["Capture d'écran affichant la page de configuration et un système Cloud Volumes ONTAP pour lequel les informations d'identification CIFS ont été fournies avec succès."]
+
+
+
+. Sur la page _Configuration_, cliquez sur *View Details* pour vérifier l'état de chaque volume CIFS et NFS et corriger les erreurs éventuelles.
++
+L'image suivante montre par exemple quatre volumes dont l'un des types de données cloud n'est pas capable de se scanner en raison de problèmes de connectivité réseau entre l'instance Data Sense et le volume.
+
++
+image:screenshot_compliance_volume_details.gif["Capture d'écran de la page View Details de la configuration de numérisation qui montre quatre volumes dont l'un n'est pas analysé en raison de la connectivité réseau entre Data Sense et le volume."]
+
+
+
+
+
+== Activation et désactivation des analyses de conformité sur les volumes
+
+Vous pouvez démarrer ou arrêter des analyses de mappage uniquement, ou des analyses de mappage et de classification, dans un environnement de travail à tout moment à partir de la page Configuration. Vous pouvez également passer des acquisitions avec mappage uniquement à des acquisitions avec mappage et classification, et inversement. Nous vous recommandons de scanner tous les volumes.
+
+image:screenshot_volume_compliance_selection.png["Capture d'écran de la page Configuration dans laquelle vous pouvez activer ou désactiver la numérisation de volumes individuels."]
+
+[cols="45,45"]
+|===
+| À : | Procédez comme suit : 
+
+
+| Activez les acquisitions avec mappage uniquement sur un volume | Dans la zone du volume, cliquez sur *Map* 
+
+
+| Activer la numérisation complète sur un volume | Dans la zone de volume, cliquez sur *carte et classement* 
+
+
+| Désactiver la numérisation sur un volume | Dans la zone du volume, cliquez sur *Off* 
+
+
+|  |  
+
+
+| Activez les analyses de mappage uniquement sur tous les volumes | Dans la zone d'en-tête, cliquez sur *carte* 
+
+
+| Activez l'analyse complète sur tous les volumes | Dans la zone d'en-tête, cliquez sur *carte et classement* 
+
+
+| Désactiver l'analyse de tous les volumes | Dans la zone d'en-tête, cliquez sur *Off* 
+|===
+
+NOTE: Les nouveaux volumes ajoutés à l'environnement de travail sont automatiquement analysés uniquement lorsque vous avez défini le paramètre *Map* ou *Map & Classify* dans la zone d'en-tête. Lorsque vous sélectionnez *personnalisé* ou *Désactivé* dans la zone de titre, vous devez activer le mappage et/ou la numérisation complète sur chaque nouveau volume que vous ajoutez à l'environnement de travail.

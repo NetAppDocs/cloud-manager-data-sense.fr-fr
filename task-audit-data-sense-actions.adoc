@@ -1,0 +1,80 @@
+---
+sidebar: sidebar 
+permalink: task-audit-data-sense-actions.html 
+keywords: compliance, actions, view progress 
+summary: 'Data Sense consigne les activités de gestion qui ont été effectuées sur des fichiers de tous les environnements de travail et des sources de données que Data Sense est en train d"analyser. Vous pouvez afficher le contenu des fichiers journaux d"audit de détection de données ou les télécharger pour voir quels changements de fichier ont eu lieu, et quand.' 
+---
+= Audit de l'historique des actions de détection de données
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Data Sense consigne les activités de gestion qui ont été effectuées sur des fichiers de tous les environnements de travail et des sources de données que Data Sense est en train d'analyser. Vous pouvez afficher le contenu des fichiers journaux d'audit de détection de données ou les télécharger pour voir quels changements de fichier ont eu lieu, et quand.
+
+Par exemple, vous pouvez voir quelle demande a été émise, l'heure de la demande et des détails tels que l'emplacement source en cas de suppression d'un fichier ou l'emplacement source et de destination en cas de déplacement d'un fichier.
+
+
+
+== Contenu du fichier journal
+
+Chaque ligne du journal d'audit contient des informations dans ce format :
+
+`<full date> | <status> | ds_audit_logger | <module> | 0 | 0 | File <full file path> deleted from device <device path> - <result>`
+
+* Date et heure : horodatage complet de l'événement
+* État - INFO, AVERTISSEMENT
+* Type d'action (supprimer, copier, déplacer, créer la stratégie, mettre à jour la stratégie, Analyse des fichiers, téléchargement du rapport JSON, etc.)
+* Nom du fichier (si l'action est pertinente pour un fichier)
+* Détails de l'action - ce qui a été fait : dépend de l'action
++
+** Nom de la règle
+** Pour déplacer - Source et destination
+** Pour la copie - Source et destination
+** Pour balise - nom de balise
+** Pour attribuer à - nom d'utilisateur
+** Pour une alerte par e-mail : adresse e-mail/compte
+
+
+
+
+Par exemple, les lignes suivantes du fichier journal indiquent une opération de copie réussie et une opération de copie ayant échoué.
+
+....
+2022-06-06 15:23:08,910 | INFO | ds_audit_logger | es_scanned_file | 237 | 49 | Copy file /CIFS_share/data/dop1/random_positives.tsv from device 10.31.133.183 (type: SMB_SHARE) to device 10.31.130.133:/export_reports (NFS_SHARE) - SUCCESS
+2022-06-06 15:23:08,968 | WARNING | ds_audit_logger | es_scanned_file | 239 | 153 | Copy file /CIFS_share/data/compliance-netapp.tar.gz from device 10.31.133.183 (type: SMB_SHARE) to device 10.31.130.133:/export_reports (NFS_SHARE) - FAILURE
+....
+
+
+== Accès au fichier journal
+
+Les fichiers journaux d'audit se trouvent sur la machine Data Sense dans : `/opt/netapp/audit_logs/`
+
+Chaque fichier journal peut avoir une taille maximale de 10 Mo. Lorsque cette limite est atteinte, un nouveau fichier journal démarre. Les fichiers journaux sont nommés « DataSense_audit.log », « DataSense_audit.log.1 », « DataSense_audit.log.2 », etc. Un maximum de 100 fichiers journaux sont conservés sur le système. Les anciens fichiers journaux sont supprimés automatiquement une fois le maximum atteint.
+
+Lorsque Data Sense est installé sur votre site, vous pouvez naviguer directement vers le fichier journal.
+
+Lorsque Data Sense est déployé dans le cloud, vous devez utiliser SSH vers l'instance Data Sense. Vous vous SSH dans le système en saisissant l'utilisateur et le mot de passe, ou en utilisant la clé SSH fournie lors de l'installation du connecteur BlueXP. La commande SSH est :
+
+ ssh -i <path_to_the_ssh_key> <machine_user>@<datasense_ip>
+* <path_to_the_ssh_key> = emplacement des clés d'authentification ssh
+* <machine_utilisateur> :
++
+** Pour AWS : utilisez <utilisateur ec2>
+** Pour Azure : utilisez l'utilisateur créé pour l'instance BlueXP
+** Pour GCP : utilisez l'utilisateur créé pour l'instance BlueXP
+
+
+* <dataense_ip> = adresse IP de l'instance de la machine virtuelle
+
+
+Notez que vous devrez modifier les règles entrantes du groupe de sécurité pour accéder au système dans le cloud. Pour plus de détails, voir :
+
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-ports-aws.html["Règles de groupe de sécurité dans AWS"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-ports-azure.html["Règles de groupe de sécurité dans Azure"^]
+* https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-ports-gcp.html["Règles de pare-feu dans Google Cloud"^]
+

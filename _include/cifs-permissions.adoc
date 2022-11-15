@@ -1,0 +1,5 @@
+= 
+:allow-uri-read: 
+
+
++ si vous voulez vous assurer que vos fichiers "dernières heures d'accès" ne sont pas modifiés par les analyses de classification de détection de données, nous recommandons à l'utilisateur de disposer de l'autorisation Write Attributes. Si possible, nous vous recommandons de faire en sorte que l'utilisateur configuré Active Directory fasse partie d'un groupe parent de l'organisation qui dispose des autorisations pour tous les fichiers.

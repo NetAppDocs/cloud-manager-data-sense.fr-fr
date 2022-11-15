@@ -1,0 +1,36 @@
+---
+sidebar: sidebar 
+permalink: task-reduce-scan-speed.html 
+keywords: slow scans, reduce speed 
+summary: 'L"analyse des données a un impact négligeable sur vos systèmes de stockage et sur vos données. Cependant, si vous êtes préoccupé par un impact même très faible, vous pouvez configurer Data Sense pour effectuer des acquisitions « lentes ».' 
+---
+= Réduction de la vitesse d'acquisition de détection de données
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+L'analyse des données a un impact négligeable sur vos systèmes de stockage et sur vos données. Cependant, si vous êtes préoccupé par un impact même très faible, vous pouvez configurer Data Sense pour effectuer des acquisitions « lentes ».
+
+Lorsqu'elle est activée, l'analyse lente est utilisée sur toutes les sources de données ; vous ne pouvez pas configurer la numérisation lente pour un environnement de travail unique ou une source de données.
+
+
+TIP: La vitesse de numérisation ne peut pas être réduite lors de la numérisation de bases de données.
+
+.Étapes
+. Depuis le bas de la _Configuration_ page, déplacez le curseur vers la droite pour activer la numérisation lente.
++
+image:screenshot_slow_scan_enable.png["Capture d'écran montrant comment activer la numérisation à faible conformité."]
+
++
+Le haut de la page Configuration indique que la numérisation lente est activée.
+
++
+image:screenshot_slow_scan_disable.png["Capture d'écran montrant comment activer la numérisation à faible conformité."]
+
+. Vous pouvez désactiver la numérisation lente en cliquant sur *Désactiver* dans ce message.
+

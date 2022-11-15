@@ -1,0 +1,119 @@
+---
+sidebar: sidebar 
+permalink: task-scanning-object-storage.html 
+keywords: cloud compliance, enable cloud compliance, privacy, compliance, object storage, Data Sense 
+summary: 'Suivez quelques étapes pour commencer à analyser les données dans le stockage objet directement avec Cloud Data Sense. La fonction Data Sense peut analyser les données depuis n"importe quel service de stockage objet utilisant le protocole simple Storage Service (S3). Notamment NetApp StorageGRID, IBM Cloud Object Store, Azure Blob (via MiniO), Linode, B2 Cloud Storage, Amazon S3, et bien plus encore.' 
+---
+= Analyse du stockage objet à l'aide du protocole S3
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Suivez quelques étapes pour commencer à analyser les données dans le stockage objet directement avec Cloud Data Sense. La fonction Data Sense peut analyser les données depuis n'importe quel service de stockage objet utilisant le protocole simple Storage Service (S3). Notamment NetApp StorageGRID, IBM Cloud Object Store, Azure Blob (via MiniO), Linode, B2 Cloud Storage, Amazon S3, et bien plus encore.
+
+
+
+== Démarrage rapide
+
+Pour commencer rapidement, suivez ces étapes ou faites défiler jusqu'aux sections restantes pour obtenir de plus amples informations.
+
+[role="quick-margin-para"]
+Vous devez disposer de l'URL du terminal pour vous connecter au service de stockage objet.
+
+[role="quick-margin-para"]
+Vous devez disposer de la clé d'accès et de la clé secrète du fournisseur de stockage objet pour que le Cloud Data SENSE puisse accéder aux compartiments.
+
+[role="quick-margin-para"]
+link:task-deploy-cloud-compliance.html["Déployez des données adaptées au cloud"^] si aucune instance n'est déjà déployée.
+
+[role="quick-margin-para"]
+Ajoutez le service de stockage objet au sens des données dans le cloud.
+
+[role="quick-margin-para"]
+Sélectionnez les compartiments que vous souhaitez analyser et Cloud Data SENSE commence à les analyser.
+
+
+
+== Examen des besoins en stockage objet
+
+Avant d'activer le Cloud Data sens, lisez les conditions préalables suivantes pour vérifier que la configuration est prise en charge.
+
+* Vous devez disposer de l'URL du terminal pour vous connecter au service de stockage objet.
+* Vous devez disposer de la clé d'accès et de la clé secrète du fournisseur de stockage objet afin que Data Sense puisse accéder aux compartiments.
+* La prise en charge d'Azure Blob requiert que vous utilisiez le link:https://min.io/["Service MiniO"^].
+
+
+
+
+== Déploiement de l'instance Cloud Data Sense
+
+Déployez Cloud Data si aucune instance n'est déjà déployée.
+
+Si vous analysant des données à partir du stockage objet S3 accessible via Internet, vous pouvez link:task-deploy-cloud-compliance.html["Déployez les données du cloud dans le cloud"^] ou link:task-deploy-compliance-onprem.html["Déployer Data Sense dans un emplacement sur site avec accès Internet"^].
+
+Si vous analysant les données à partir du stockage objet S3 qui a été installé dans un site sombre mais qui n'a pas d'accès à Internet, vous devez link:task-deploy-compliance-dark-site.html["Déployez les données cloud sur site qui ne disposent pas d'un accès Internet"^]. Cela nécessite également que le connecteur BlueXP soit déployé dans le même emplacement sur site.
+
+Les mises à niveau du logiciel Data Sense sont automatisées tant que l'instance est connectée à Internet.
+
+
+
+== Ajout du service de stockage objet au sens Cloud Data
+
+Ajoutez le service de stockage objet.
+
+.Étapes
+. Dans la page Configuration des environnements de travail, cliquez sur *Ajouter une source de données* > *Ajouter un service de stockage d'objet*.
++
+image:screenshot_compliance_add_object_storage_button.png["Capture d'écran de la page Configuration de lecture dans laquelle vous pouvez cliquer sur le bouton Ajouter un groupe de partages de fichiers."]
+
+. Dans la boîte de dialogue Ajouter un service de stockage objet, entrez les détails du service de stockage objet et cliquez sur *Continuer*.
++
+.. Entrez le nom que vous souhaitez utiliser pour l'environnement de travail. Ce nom doit correspondre au nom du service de stockage objet auquel vous vous connectez.
+.. Entrez l'URL du point final pour accéder au service de stockage d'objets.
+.. Entrez la clé d'accès et la clé secrète pour que le cloud Data SENSE puisse accéder aux compartiments du stockage objet.
++
+image:screenshot_compliance_add_object_storage.png["Capture d'écran de la boîte de dialogue dans laquelle vous saisissez les valeurs pour accéder au service de stockage objet."]
+
+
+
+
+
+Le nouveau service de stockage objet est ajouté à la liste des environnements de travail.
+
+
+
+== Activation et désactivation des analyses de conformité dans les compartiments de stockage objet
+
+Une fois que vous avez activé le contrôle des données dans le cloud sur votre service de stockage objet, l'étape suivante consiste à configurer les compartiments à analyser. Data Sense détecte ces compartiments et les affiche dans l'environnement de travail que vous avez créé.
+
+.Étapes
+. Dans la page Configuration, cliquez sur *Configuration* dans l'environnement de travail Object Storage Service.
++
+image:screenshot_compliance_object_storage_config.png["Capture d'écran de l'environnement de travail en cliquant sur Configuration pour vous permettre de choisir les compartiments à numériser."]
+
+. Activez les analyses de mappage uniquement ou les analyses de mappage et de classification sur vos compartiments.
++
+image:screenshot_compliance_object_storage_select_buckets.png["Capture d'écran indiquant la sélection des compartiments de stockage d'objet à numériser."]
+
++
+[cols="45,45"]
+|===
+| À : | Procédez comme suit : 
+
+
+| Activez les acquisitions avec mappage uniquement sur un compartiment | Cliquez sur *carte* 
+
+
+| Activer les acquisitions complètes sur un compartiment | Cliquez sur *carte et classement* 
+
+
+| Désactiver l'acquisition sur un godet | Cliquez sur *Off* 
+|===
+
+
+Cloud Data Sense commence l'analyse des compartiments que vous avez activés. En cas d'erreur, elles apparaîtront dans la colonne État, ainsi que l'action requise pour corriger l'erreur.

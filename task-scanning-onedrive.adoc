@@ -1,0 +1,134 @@
+---
+sidebar: sidebar 
+permalink: task-scanning-onedrive.html 
+keywords: cloud compliance, enable cloud compliance, privacy, compliance, onedrive, Data Sense 
+summary: Procédez comme suit pour lancer la numérisation des fichiers dans les dossiers OneDrive de votre utilisateur avec Cloud Data Sense. 
+---
+= En analysant les comptes OneDrive
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Procédez comme suit pour lancer la numérisation des fichiers dans les dossiers OneDrive de votre utilisateur avec Cloud Data Sense.
+
+
+
+== Démarrage rapide
+
+Pour commencer rapidement, suivez ces étapes ou faites défiler jusqu'aux sections restantes pour obtenir de plus amples informations.
+
+[role="quick-margin-para"]
+Assurez-vous que vous disposez des informations d'identification Admin pour vous connecter au compte OneDrive.
+
+[role="quick-margin-para"]
+link:task-deploy-cloud-compliance.html["Déployez des données adaptées au cloud"^] si aucune instance n'est déjà déployée.
+
+[role="quick-margin-para"]
+À l'aide des informations d'identification utilisateur Admin, connectez-vous au compte OneDrive auquel vous souhaitez accéder afin qu'il soit ajouté en tant que nouvel environnement de travail.
+
+[role="quick-margin-para"]
+Ajoutez la liste des utilisateurs du compte OneDrive que vous souhaitez numériser et sélectionnez le type de numérisation. Vous pouvez ajouter jusqu'à 100 utilisateurs à la fois.
+
+
+
+== Vérification des exigences OneDrive
+
+Avant d'activer le Cloud Data sens, lisez les conditions préalables suivantes pour vérifier que la configuration est prise en charge.
+
+* Vous devez disposer des informations d'identification d'administrateur pour le compte OneDrive entreprise qui permet d'accéder en lecture aux fichiers de l'utilisateur.
+* Vous aurez besoin d'une liste séparée en ligne des adresses e-mail pour tous les utilisateurs dont vous souhaitez numériser les dossiers OneDrive.
+
+
+
+
+== Déploiement de l'instance Cloud Data Sense
+
+Déployez Cloud Data si aucune instance n'est déjà déployée.
+
+Il peut y avoir un sens des données link:task-deploy-cloud-compliance.html["déploiement dans le cloud"^] ou link:task-deploy-compliance-onprem.html["dans un emplacement sur site avec accès à internet"^].
+
+Les mises à niveau du logiciel Data Sense sont automatisées tant que l'instance est connectée à Internet.
+
+Il est également possible de détecter des données link:task-deploy-compliance-dark-site.html["déploiement dans un emplacement sur site qui ne dispose pas d'un accès internet"^]. Cependant, vous devez fournir un accès Internet à quelques points de terminaison sélectionnés pour analyser vos fichiers OneDrive locaux. link:task-deploy-compliance-dark-site.html#sharepoint-and-onedrive-special-requirements["Voir la liste des points finaux requis ici"].
+
+
+
+== Ajout du compte OneDrive
+
+Ajoutez le compte OneDrive où résident les fichiers utilisateur.
+
+.Étapes
+. Dans la page Configuration des environnements de travail, cliquez sur *Ajouter une source de données* > *Ajouter un compte OneDrive*.
++
+image:screenshot_compliance_add_onedrive_button.png["Capture d'écran de la page Configuration de la numérisation dans laquelle vous pouvez cliquer sur le bouton Ajouter OneDrive."]
+
+. Dans la boîte de dialogue Ajouter un compte OneDrive, cliquez sur *connexion à OneDrive*.
+. Dans la page Microsoft qui s'affiche, sélectionnez le compte OneDrive et entrez l'utilisateur et le mot de passe d'administration requis, puis cliquez sur *Accept* pour permettre à Cloud Data SENSE de lire les données de ce compte.
+
+
+Le compte OneDrive est ajouté à la liste des environnements de travail.
+
+
+
+== Ajout d'utilisateurs OneDrive aux analyses de conformité
+
+Vous pouvez ajouter des utilisateurs OneDrive individuels ou tous vos utilisateurs OneDrive, de sorte que leurs fichiers soient analysés par Cloud Data Sense.
+
+.Étapes
+. Dans la page _Configuration_, cliquez sur le bouton *Configuration* du compte OneDrive.
++
+image:screenshot_compliance_onedrive_add_users.png["Capture d'écran de la page Configuration de la numérisation dans laquelle vous pouvez sélectionner le bouton Configuration."]
+
+. S'il s'agit de la première fois que vous ajoutez des utilisateurs pour ce compte OneDrive, cliquez sur *Ajouter vos premiers utilisateurs OneDrive*.
++
+image:screenshot_compliance_onedrive_add_initial_users.png["Capture d'écran affichant le bouton Ajouter vos premiers utilisateurs OneDrive pour ajouter les premiers utilisateurs à un compte."]
+
++
+Si vous ajoutez des utilisateurs supplémentaires à partir d'un compte OneDrive, cliquez sur *Ajouter des utilisateurs OneDrive*.
+
++
+image:screenshot_compliance_onedrive_add_more_users.png["Capture d'écran affichant le bouton Ajouter des utilisateurs OneDrive pour ajouter d'autres utilisateurs à un compte."]
+
+. Ajoutez les adresses e-mail des utilisateurs dont vous souhaitez numériser les fichiers - une adresse e-mail par ligne (jusqu'à 100 par session) - et cliquez sur *Ajouter utilisateurs*.
++
+image:screenshot_compliance_onedrive_add_email_addresses.png["Capture d'écran de la page Ajouter des utilisateurs OneDrive dans laquelle vous pouvez ajouter des utilisateurs à numériser."]
+
++
+Une boîte de dialogue de confirmation affiche le nombre d'utilisateurs ajoutés.
+
++
+Si la boîte de dialogue répertorie tous les utilisateurs qui n'ont pas pu être ajoutés, capturez ces informations pour résoudre le problème. Dans certains cas, vous pouvez ajouter à nouveau l'utilisateur avec une adresse e-mail corrigée.
+
+. Activez les analyses de mappage uniquement, ou les analyses de mappage et de classification, sur les fichiers utilisateur.
++
+[cols="45,45"]
+|===
+| À : | Procédez comme suit : 
+
+
+| Activer les analyses de mappage uniquement sur les fichiers utilisateur | Cliquez sur *carte* 
+
+
+| Activer les analyses complètes sur les fichiers utilisateur | Cliquez sur *carte et classement* 
+
+
+| Désactiver la numérisation sur les fichiers utilisateur | Cliquez sur *Off* 
+|===
+
+
+Cloud Data SENSE commence à analyser les fichiers pour les utilisateurs que vous avez ajoutés, et les résultats sont affichés dans le tableau de bord et à d'autres emplacements.
+
+
+
+== Suppression d'un utilisateur OneDrive des analyses de conformité
+
+Si des utilisateurs quittent l'entreprise ou si leur adresse e-mail change, vous pouvez supprimer à tout moment les utilisateurs OneDrive de faire analyser leurs fichiers. Il vous suffit de cliquer sur *Supprimer l'utilisateur OneDrive* dans la page de configuration.
+
+image:screenshot_compliance_onedrive_remove_user.png["Capture d'écran indiquant comment supprimer un utilisateur unique de la numérisation de ses fichiers."]
+
+Notez que vous pouvez link:task-managing-compliance.html#removing-a-onedrive-sharepoint-or-google-drive-account-from-cloud-data-sense["Supprimez l'ensemble du compte OneDrive de Data Sense"] Si vous ne souhaitez plus numériser de données utilisateur à partir du compte OneDrive.

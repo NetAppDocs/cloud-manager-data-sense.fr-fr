@@ -1,0 +1,135 @@
+---
+sidebar: sidebar 
+permalink: task-scanning-databases.html 
+keywords: cloud compliance, enable cloud compliance, outbound internet, endpoints, cloud compliance internet, web browser connectivity, cloud compliance access, privacy, compliance, databases, database schemas, Oracle, SAP HANA, SQL Server, MongoDB, PostgreSQL, Data Sense 
+summary: 'Suivez quelques étapes pour commencer à scanner vos schémas de base de données à l"aide de Cloud Data Sense.' 
+---
+= Analyse des schémas de base de données
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Suivez quelques étapes pour commencer à scanner vos schémas de base de données à l'aide de Cloud Data Sense.
+
+
+
+== Démarrage rapide
+
+Pour commencer rapidement, suivez ces étapes ou faites défiler jusqu'aux sections restantes pour obtenir de plus amples informations.
+
+[role="quick-margin-para"]
+Assurez-vous que votre base de données est prise en charge et que vous disposez des informations nécessaires pour vous connecter à la base de données.
+
+[role="quick-margin-para"]
+link:task-deploy-cloud-compliance.html["Déployez des données adaptées au cloud"^] si aucune instance n'est déjà déployée.
+
+[role="quick-margin-para"]
+Ajoutez le serveur de base de données auquel vous souhaitez accéder.
+
+[role="quick-margin-para"]
+Sélectionnez les schémas à numériser.
+
+
+
+== Vérification des prérequis
+
+Avant d'activer le Cloud Data sens, lisez les conditions préalables suivantes pour vérifier que la configuration est prise en charge.
+
+
+
+=== Bases de données prises en charge
+
+Cloud Data SENSE peut scanner des schémas à partir des bases de données suivantes :
+
+* Amazon Relational Database Service (Amazon RDS)
+* MongoDB
+* MySQL
+* Oracle
+* PostgreSQL
+* SAP HANA
+* Serveur SQL (MSSQL)
+
+
+
+CAUTION: La fonction de collecte de statistiques *doit être activée* dans la base de données.
+
+
+
+=== Configuration requise pour les bases de données
+
+Toutes les bases de données connectée à l'instance Cloud Data SENSE peuvent être analysées, quel que soit l'endroit où elles sont hébergées. Pour vous connecter à la base de données, il vous suffit de disposer des informations suivantes :
+
+* Adresse IP ou nom d'hôte
+* Port
+* Nom du service (uniquement pour l'accès aux bases de données Oracle)
+* Références permettant l'accès en lecture aux schémas
++
+Lorsque vous choisissez un nom d'utilisateur et un mot de passe, il est important de choisir un nom qui dispose des autorisations de lecture complètes pour tous les schémas et tables que vous souhaitez numériser. Nous vous recommandons de créer un utilisateur dédié pour le système Cloud Data SENSE avec toutes les autorisations requises.
+
+
+
+*Remarque :* pour MongoDB, un rôle d'administrateur en lecture seule est requis.
+
+
+
+== Déploiement de l'instance Cloud Data Sense
+
+Déployez Cloud Data si aucune instance n'est déjà déployée.
+
+Si vous numérisez des schémas de base de données accessibles via Internet, vous pouvez link:task-deploy-cloud-compliance.html["Déployez les données du cloud dans le cloud"^] ou link:task-deploy-compliance-onprem.html["Déployer Data Sense dans un emplacement sur site avec accès Internet"^].
+
+Si vous numérisez des schémas de base de données qui ont été installés sur un site sombre sans accès à Internet, vous devez le faire link:task-deploy-compliance-dark-site.html["Déployez les données cloud sur site qui ne disposent pas d'un accès Internet"^]. Cela nécessite également que le connecteur BlueXP soit déployé dans le même emplacement sur site.
+
+Les mises à niveau du logiciel Data Sense sont automatisées tant que l'instance est connectée à Internet.
+
+
+
+== Ajout du serveur de base de données
+
+Ajoutez le serveur de base de données où se trouvent les schémas.
+
+. Dans la page Configuration des environnements de travail, cliquez sur *Ajouter une source de données* > *Ajouter un serveur de base de données*.
++
+image:screenshot_compliance_add_db_server_button.png["Capture d'écran de la page Configuration de la numérisation dans laquelle vous pouvez cliquer sur le bouton Ajouter un serveur de base de données."]
+
+. Entrez les informations requises pour identifier le serveur de base de données.
++
+.. Sélectionnez le type de base de données.
+.. Entrez le port et le nom d'hôte ou l'adresse IP pour vous connecter à la base de données.
+.. Pour les bases de données Oracle, entrez le nom du service.
+.. Entrez les identifiants afin que Cloud Data SENSE puisse accéder au serveur.
+.. Cliquez sur *Ajouter serveur DB*.
++
+image:screenshot_compliance_add_db_server_dialog.png["Capture d'écran de la page Ajouter un serveur de base de données pour identifier la base de données."]
+
+
+
+
+
+La base de données est ajoutée à la liste des environnements de travail.
+
+
+
+== Activation et désactivation des analyses de conformité sur les schémas de base de données
+
+Vous pouvez arrêter ou démarrer la numérisation complète de vos schémas à tout moment.
+
+
+TIP: Il n'existe pas d'option permettant de sélectionner des analyses de mappage uniquement pour les schémas de base de données.
+
+. Dans la page _Configuration_, cliquez sur le bouton *Configuration* de la base de données à configurer.
++
+image:screenshot_compliance_db_server_config.png["Capture d'écran de la page Configuration de la numérisation dans laquelle vous pouvez sélectionner le bouton Configuration."]
+
+. Sélectionnez les schémas à numériser en déplaçant le curseur vers la droite.
++
+image:screenshot_compliance_select_schemas.png["Capture d'écran de la page Configuration de la numérisation dans laquelle vous pouvez choisir les schémas à numériser."]
+
+
+
+Cloud Data SENSE commence à analyser les schémas de base de données que vous avez activés. S’il y a des erreurs, elles apparaîtront dans la colonne État, ainsi que l’action requise pour corriger l’erreur.

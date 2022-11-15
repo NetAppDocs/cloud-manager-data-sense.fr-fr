@@ -1,0 +1,114 @@
+---
+sidebar: sidebar 
+permalink: task-managing-repo-scanning.html 
+keywords: compliance, stop scan, start scan, map scan, classify scan, data sense, pause scan, resume scan 
+summary: 'Vous pouvez gérer les données en cours d"analyse dans chacun de vos environnements de travail et de vos sources de données. Vous pouvez effectuer les modifications selon le référentiel ; vous pouvez donc modifier chaque volume, compartiment, partage, schéma, utilisateur, etc. selon le type de source de données que vous numérisez.' 
+---
+= Modification des paramètres de numérisation de vos référentiels
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Vous pouvez gérer les données en cours d'analyse dans chacun de vos environnements de travail et de vos sources de données. Vous pouvez effectuer les modifications selon le référentiel ; vous pouvez donc modifier chaque volume, compartiment, partage, schéma, utilisateur, etc. selon le type de source de données que vous numérisez.
+
+Certaines des choses que vous pouvez changer sont les scannées ou non d'un référentiel et si Data SENSE effectue une link:concept-cloud-compliance.html#whats-the-difference-between-mapping-and-classification-scans["acquisition de mappage ou cartographie etamp ; acquisition de classification"]. Vous pouvez également interrompre et reprendre la numérisation, par exemple si vous devez arrêter la numérisation d'un volume pendant un certain temps.
+
+
+
+== Affichage de l'état de numérisation de vos référentiels
+
+Vous pouvez afficher les référentiels individuels où Data Sense effectue des analyses (volumes, compartiments, etc.) pour chaque environnement de travail et chaque source de données. De plus, vous pouvez voir combien ont été « mappés » et combien ont été « classés ». Le classement est plus rapide lorsque l'identification complète de l'IA est effectuée sur toutes les données.
+
+.Étapes
+. Dans l'onglet Configuration, cliquez sur le bouton *Configuration* de l'environnement de travail.
++
+image:screenshot_compliance_config_button.png["Capture d'écran indiquant comment cliquer sur le bouton Configuration pour un environnement de travail."]
+
+. Dans la page Configuration de la numérisation, vous pouvez afficher les paramètres de numérisation de tous les référentiels.
++
+image:screenshot_compliance_repo_scan_settings.png["Capture d'écran indiquant si vos compartiments sont en cours de numérisation et l'état actuel de la numérisation."]
+
+
+
+Vous pouvez placer le curseur sur le graphique dans la colonne _Scan Status_ pour voir le nombre de fichiers qui restent à mapper ou à classer dans chaque référentiel (rubrique dans cet exemple).
+
+
+
+== Modification du type de numérisation d'un référentiel
+
+Vous pouvez démarrer ou arrêter des analyses de mappage uniquement, ou des analyses de mappage et de classification, dans un environnement de travail à tout moment à partir de la page Configuration. Vous pouvez également passer des acquisitions avec mappage uniquement à des acquisitions avec mappage et classification, et inversement.
+
+
+TIP: Les bases de données ne peuvent pas être définies pour des analyses de mappage uniquement. L'analyse de la base de données peut être désactivée ou activée, où on équivaut à la cartographie et à la classification.
+
+.Étapes
+. Dans l'onglet Configuration, cliquez sur le bouton *Configuration* de l'environnement de travail.
++
+image:screenshot_compliance_config_button.png["Capture d'écran indiquant comment cliquer sur le bouton Configuration pour un environnement de travail."]
+
+. Dans la page Configuration de l'acquisition, vous pouvez modifier n'importe quel référentiel (compartiments dans cet exemple) pour effectuer des acquisitions *Map* ou *Map & Classify*, ou sélectionner *Off* pour arrêter la numérisation pour un compartiment particulier.
++
+image:screenshot_compliance_repo_scanning.png["Capture d'écran montrant comment sélectionner le type de numérisation pour un compartiment."]
+
+
+
+Certains types d'environnements de travail vous permettent de modifier le type de numérisation global pour tous les référentiels à l'aide d'une barre de boutons située en haut de la page. Valable pour les systèmes Cloud Volumes ONTAP, ONTAP sur site, Azure NetApp Files et Amazon FSX pour ONTAP.
+
+L'exemple ci-dessous montre cette barre de boutons pour un système Azure NetApp Files.
+
+image:screenshot_compliance_repo_scan_all.png["Capture d'écran indiquant comment configurer le même paramètre de numérisation pour tous les volumes d'un environnement de travail."]
+
+
+
+== Interruption et reprise de la numérisation pour un référentiel
+
+Vous pouvez interrompre la numérisation dans un référentiel si vous souhaitez arrêter temporairement la numérisation de certains contenus. Ce n'est pas le même que la désactivation de la numérisation. Lorsque la numérisation est désactivée, toutes les informations et l'indexation relatives à ce volume sont supprimées du système. La mise en pause de l'analyse signifie que Data Sense n'effectue aucune analyse future pour les modifications ou ajouts au référentiel, mais que tous les résultats actuels seront toujours affichés dans le système.
+
+Vous pouvez reprendre la numérisation à tout moment.
+
+.Étapes
+. Dans l'onglet Configuration, cliquez sur le bouton *Configuration* de l'environnement de travail.
++
+image:screenshot_compliance_config_button.png["Capture d'écran indiquant comment cliquer sur le bouton Configuration pour un environnement de travail."]
+
+. Sur la page Configuration de la numérisation, cliquez sur le bouton Pause pour interrompre l'acquisition d'un volume ou appuyez sur le bouton reprise pour reprendre l'acquisition d'un volume précédemment mis en pause.
++
+image:screenshot_compliance_repo_pause_resume.png["Capture d'écran montrant comment interrompre et reprendre la numérisation sur un volume."]
+
++
+Notez que certaines sources de données fournissent la fonctionnalité Pause et reprise dans un menu, comme indiqué ci-dessous pour les sites SharePoint.
+
++
+image:screenshot_compliance_repo_pause_resume2.png["Capture d'écran montrant comment interrompre et reprendre la numérisation sur un site SharePoint."]
+
+
+
+
+
+== Renumérisation des données d'un référentiel existant
+
+Data Sense analyse en continu vos données pour détecter les modifications incrémentielles dans les référentiels que vous avez ajoutés. Cependant, il faut du temps pour analyser tous les environnements et il n'existe aucune méthode pour contrôler l'ordre des référentiels analysés. Si vous devez relancer une nouvelle analyse d'un référentiel particulier immédiatement afin que les modifications soient répercutées dans le système, vous pouvez sélectionner le référentiel et le relancer. Cela vous permet de hiérarchiser la numérisation de certaines données avant d'autres données. Après l'action de nouvelle analyse, le référentiel sélectionné revient à être numérisé dans le programme normal de détection des données.
+
+Data Sense prend en charge l'analyse des répertoires sur tous les types de sources de données, à l'exception d'Amazon S3 et des bases de données. Actuellement, nous prenons en charge la réanalyse d'un seul répertoire (dossier ou partage) ou de plusieurs répertoires. La prise en charge future comprendra la réanalyse de types de référentiel supplémentaires (fichiers, bases de données, etc.).
+
+* Lors de la recréation d'un répertoire, tous les fichiers du répertoire sont réarchivés, mais les sous-dossiers du répertoire ne sont pas réprédéfinis.
+* Lors du recanning d'un partage, seules les métadonnées du partage sont réprédéfinies.
+* Un maximum de 1 000 éléments peut être réanalysé à la fois.
+
+
+.Étapes
+. Dans le volet Résultats de l'enquête de données, sélectionnez les dossiers ou les partages que vous souhaitez relancer, puis cliquez sur *Rescan*.
++
+image:screenshot_compliance_rescan_directory.png["Capture d'écran montrant comment sélectionner et relancer un répertoire."]
+
+. Dans la boîte de dialogue _Rescan Directory_, cliquez sur *Rescan*.
+
+
+Notez que vous pouvez également relancer une analyse d'un répertoire individuel lors de l'affichage des détails de métadonnées. Cliquez simplement sur *Rescan*.
+
+image:screenshot_compliance_rescan_single_file.png["Capture d'écran indiquant comment réanalyser un seul dossier ou partage."]

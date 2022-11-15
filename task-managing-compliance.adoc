@@ -1,0 +1,70 @@
+---
+sidebar: sidebar 
+permalink: task-managing-compliance.html 
+keywords: remove, stop, stop scans, stop scanning, cloud compliance, stop cloud compliance, deactivate, deactivating cloud compliance, data sense 
+summary: 'Si nécessaire, vous pouvez arrêter l"analyse de Cloud Data SENSE pour un ou plusieurs environnements de travail, bases de données, groupes de partage de fichiers, comptes OneDrive, comptes Google Drive, Ou des comptes SharePoint.' 
+---
+= Suppression des sources de données du cloud au bon sens
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Si nécessaire, vous pouvez arrêter l'analyse de Cloud Data SENSE pour un ou plusieurs environnements de travail, bases de données, groupes de partage de fichiers, comptes OneDrive, comptes Google Drive, Ou des comptes SharePoint.
+
+
+
+== Désactivation des analyses de conformité pour un environnement de travail
+
+Lorsque vous désactivez les analyses, Cloud Data SENSE ne analyse plus les données de l'environnement de travail et supprime les informations de conformité indexées de l'instance Data Sense (les données de l'environnement de travail lui-même ne sont plus supprimées).
+
+. Dans la page _Configuration_, cliquez sur image:screenshot_gallery_options.gif["Bouton plus"] Dans la ligne de l'environnement de travail, puis cliquez sur *Désactiver la détection de données*.
+
+
+image:screenshot_deactivate_compliance_scan.png["Capture d'écran de l'icône d'action dans laquelle vous pouvez sélectionner Désactiver la détection de données. Cette option est disponible après avoir sélectionné un environnement de travail dans la page Canevas."]
+
+
+TIP: Vous pouvez également désactiver les analyses de conformité pour un environnement de travail à partir du panneau Services lorsque vous sélectionnez l'environnement de travail.
+
+
+
+== Suppression d'une base de données du Cloud Data SENSE
+
+Si vous ne souhaitez plus scanner une certaine base de données, vous pouvez la supprimer de l'interface Cloud Data SENSE et arrêter toutes les analyses.
+
+. Dans la page _Configuration_, cliquez sur image:screenshot_gallery_options.gif["Bouton plus"] Dans la ligne de la base de données, puis cliquez sur *Supprimer serveur DB*.
+
+
+image:screenshot_compliance_remove_db.png["Capture d'écran du bouton Supprimer le serveur de BD de la page Configuration de la numérisation."]
+
+
+
+== Suppression d'un compte OneDrive, SharePoint ou Google Drive de Cloud Data Sense
+
+Si vous ne souhaitez plus analyser les fichiers utilisateur d'un compte OneDrive spécifique, d'un compte SharePoint spécifique ou d'un compte Google Drive, vous pouvez supprimer ce compte de l'interface Cloud Data Sense et arrêter toutes les analyses.
+
+.Étapes
+. Dans la page _Configuration_, cliquez sur image:screenshot_gallery_options.gif["Bouton plus"] Dans la ligne du compte OneDrive, SharePoint ou Google Drive, puis cliquez sur *Supprimer le compte OneDrive*, *Supprimer le compte SharePoint* ou *Supprimer le compte Google Drive*.
++
+image:screenshot_compliance_remove_onedrive.png["Capture d'écran du bouton Supprimer OneDrive de la page Configuration de la numérisation."]
+
+. Cliquez sur *Supprimer le compte* dans la boîte de dialogue de confirmation.
+
+
+
+
+== Suppression d'un groupe de partages de fichiers du Cloud Data Sense
+
+Si vous ne souhaitez plus analyser les fichiers utilisateur d'un groupe de partages de fichiers, vous pouvez supprimer le groupe de partages de fichiers de l'interface Cloud Data Sense et arrêter toutes les analyses.
+
+.Étapes
+. Dans la page _Configuration_, cliquez sur image:screenshot_gallery_options.gif["Bouton plus"] Dans la ligne du groupe de partages de fichiers, puis cliquez sur *Supprimer le groupe de partages de fichiers*.
++
+image:screenshot_compliance_remove_fileshare_group.png["Capture d'écran du bouton Supprimer le groupe de partage de fichiers de la page Configuration de la numérisation."]
+
+. Cliquez sur *Supprimer le groupe de partages* dans la boîte de dialogue de confirmation.
+

@@ -1,0 +1,361 @@
+---
+sidebar: sidebar 
+permalink: reference-private-data-categories.html 
+keywords: personal files, personal data, sensitive personal files, sensitive personal data, categories, health data, ethnic origin, political opinions, gdpr, email address, credit card, ip address, iban, national ID, identifier, sex, criminal, compliance, privacy, 
+summary: Il existe de nombreux types de données privées que Cloud Data sens détecte dans vos volumes, compartiments Amazon S3, bases de données, dossiers OneDrive, comptes SharePoint, Et les comptes Google Drive. 
+---
+= Catégories de données privées
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il existe de nombreux types de données privées que Cloud Data sens détecte dans vos volumes, compartiments Amazon S3, bases de données, dossiers OneDrive, comptes SharePoint, Et les comptes Google Drive. Voir les catégories ci-dessous.
+
+
+TIP: Si vous avez besoin que les données cloud soient utiles pour identifier d'autres types de données privées, comme des numéros d'identification nationaux supplémentaires ou des identifiants de santé, envoyez un e-mail à l'adresse ng-contact-data-sense@netapp.com avec votre demande.
+
+
+
+== Types de données personnelles
+
+Les données personnelles contenues dans les dossiers peuvent être des données personnelles générales ou des identificateurs nationaux. La troisième colonne indique si le logiciel Cloud Data sens utilise link:task-controlling-private-data.html#viewing-files-that-contain-personal-data["validation de proximité"^] pour valider ses résultats pour l'identificateur.
+
+Les éléments de cette catégorie peuvent être reconnus dans n'importe quelle langue.
+
+Notez que vous pouvez ajouter à la liste des données personnelles qui se trouvent dans vos fichiers si vous scannez un serveur de base de données. La fonction _Data Fusion_ vous permet de choisir les identifiants supplémentaires que Cloud Data SENSE recherche dans ses acquisitions en sélectionnant des colonnes dans une table de base de données. Voir link:task-managing-data-fusion.html["Ajout d'identifiants de données personnels à l'aide de Data Fusion"^] pour plus d'informations.
+
+[cols="20,50,18"]
+|===
+| Type | Identificateur | Validation de proximité ? 
+
+
+.6+| Généralités | Adresse électronique | Non 
+
+
+| Numéro de carte de crédit | Non 
+
+
+| Sujets de données | Non 
+
+
+| Numéro IBAN (Numéro de compte bancaire international) | Non 
+
+
+| Adresse IP | Non 
+
+
+| Mot de passe | Oui. 
+
+
+.50+| Identifiants nationaux | TFN australien (Numéro de dossier fiscal) | Oui. 
+
+
+| Permis de conduire australien | Oui. 
+
+
+| Numéro d'assurance-maladie australien | Oui. 
+
+
+| Numéro de passeport australien | Oui. 
+
+
+| SSN autrichien | Oui. 
+
+
+| Carte d'identité belge (Numero National) | Oui. 
+
+
+| ID brésilien (CPF) | Oui. 
+
+
+| Passeport britannique | Oui. 
+
+
+| ID bulgare (UCN) | Oui. 
+
+
+| Permis de conduire californien | Oui. 
+
+
+| ID croate (OIB) | Oui. 
+
+
+| Chypre Numéro d'identification fiscale (TIC) | Oui. 
+
+
+| Tchèque/slovaque ID | Oui. 
+
+
+| ID danois (RCP) | Oui. 
+
+
+| ID néerlandais (BSN) | Oui. 
+
+
+| ID estonien | Oui. 
+
+
+| ID finlandais (HETU) | Oui. 
+
+
+| Permis de conduire français | Oui. 
+
+
+| ID en français | Oui. 
+
+
+| INSEE français | Oui. 
+
+
+| Numéro de sécurité sociale en français | Oui. 
+
+
+| Numéro d'identification fiscale (SPI) | Oui. 
+
+
+| Numéro d'identification fiscale allemand (identifiant Steierliche) | Oui. 
+
+
+| Pièce d'identité grecque | Oui. 
+
+
+| Numéro d'identification fiscale hongrois | Oui. 
+
+
+| Permis de conduire Indiana | Oui. 
+
+
+| Irish ID (PPS) | Oui. 
+
+
+| ID israélien | Oui. 
+
+
+| Numéro d'identification fiscal italien | Oui. 
+
+
+| Carte d'identité lettone | Oui. 
+
+
+| Carte d'identité lituanienne | Oui. 
+
+
+| Luxembourg ID | Oui. 
+
+
+| Identifiant maltais | Oui. 
+
+
+| Numéro du Service national de santé (NHS) | Oui. 
+
+
+| Permis de conduire de New York | Oui. 
+
+
+| Compte bancaire de la Nouvelle-Zélande | Oui. 
+
+
+| Licence de conducteur de la Nouvelle-Zélande | Oui. 
+
+
+| Numéro IRD de Nouvelle-Zélande (ID taxe) | Oui. 
+
+
+| Numéro NHI (National Health Index) de la Nouvelle-Zélande  | Oui. 
+
+
+| Numéro de passeport de la Nouvelle-Zélande | Oui. 
+
+
+| ID polonais (PESEL) | Oui. 
+
+
+| Numéro d'identification fiscale portugais (FNI) | Oui. 
+
+
+| ID roumain (CNP) | Oui. 
+
+
+| ID slovène (EMSO) | Oui. 
+
+
+| Carte d'identité sud-africaine | Oui. 
+
+
+| Numéro d'identification fiscale espagnol | Oui. 
+
+
+| Carte d'identité suédoise | Oui. 
+
+
+| Permis de conduire Texas | Oui. 
+
+
+| ROYAUME-UNI ID (NINO) | Oui. 
+
+
+| Numéro de sécurité sociale des États-Unis (SSN) | Oui. 
+|===
+
+
+== Types de données personnelles sensibles
+
+Les données personnelles sensibles que Cloud Data Sense peuvent trouver dans les fichiers incluent la liste suivante. Les éléments de cette catégorie ne peuvent être reconnus qu'en anglais pour le moment.
+
+Référence des procédures pénales:: Données concernant les condamnations pénales et les infractions d'une personne physique.
+Référence ethnique:: Données concernant l'origine raciale ou ethnique d'une personne physique.
+Référence santé:: Données concernant la santé d'une personne physique.
+Codes médicaux ICD-9-cm:: Codes utilisés dans l'industrie médicale et de la santé.
+Codes médicaux ICD-10-cm:: Codes utilisés dans l'industrie médicale et de la santé.
+Références philosophiques:: Données concernant les croyances philosophiques d'une personne naturelle.
+Opinions politiques référence:: Données concernant les opinions politiques d’une personne physique.
+Croyances religieuses:: Données concernant les croyances religieuses d'une personne naturelle.
+Référence de la vie sexuelle ou de l'orientation:: Données concernant la vie sexuelle ou l’orientation sexuelle d’une personne physique.
+
+
+
+
+== Types de catégories
+
+Il classe les données dans le cloud comme suit. La plupart de ces catégories peuvent être reconnues en anglais, allemand et espagnol.
+
+[cols="25,25,15,15,15"]
+|===
+| Catégorie | Type | Anglais | Allemand | Espagnol 
+
+
+.4+| Finances | Bilans | ✓ | ✓ | ✓ 
+
+
+| Bons de commande | ✓ | ✓ | ✓ 
+
+
+| Factures | ✓ | ✓ | ✓ 
+
+
+| Rapports trimestriels | ✓ | ✓ | ✓ 
+
+
+.6+| RH | Vérifications des antécédents | ✓ |  | ✓ 
+
+
+| Plans de rémunération | ✓ | ✓ | ✓ 
+
+
+| Contrats employés | ✓ |  | ✓ 
+
+
+| Évaluations des employés | ✓ |  | ✓ 
+
+
+| Santé | ✓ |  | ✓ 
+
+
+| Reprend | ✓ | ✓ | ✓ 
+
+
+.2+| Légal | NDAS | ✓ | ✓ | ✓ 
+
+
+| Contrats fournisseur-client | ✓ | ✓ | ✓ 
+
+
+.2+| Marketing | Campagnes | ✓ | ✓ | ✓ 
+
+
+| Conférences | ✓ | ✓ | ✓ 
+
+
+| Exploitation | Rapports d'audit | ✓ | ✓ | ✓ 
+
+
+| Ventes | Commandes | ✓ | ✓ |  
+
+
+.4+| Administratifs | RFI | ✓ |  | ✓ 
+
+
+| RFP | ✓ |  | ✓ 
+
+
+| CAHIER DES CHARGES | ✓ | ✓ | ✓ 
+
+
+| Formation | ✓ | ✓ | ✓ 
+
+
+| Assistance | Plaintes et tickets | ✓ | ✓ | ✓ 
+|===
+Les métadonnées suivantes sont également classées en catégories et identifiées dans les mêmes langues prises en charge :
+
+* Données applicatives
+* Archiver les fichiers
+* Audio
+* Données d'applications d'entreprise
+* Fichiers CAO
+* Code
+* Corrompu
+* Base de données et fichiers d'index
+* Fil d'Ariane de détection des données
+* Fichiers de conception
+* Données d'application de messagerie
+* Chiffrées
+* Exécutables
+* Données d'applications financières
+* Données d'application de santé
+* Images
+* Journaux
+* Documents divers
+* Présentations diverses
+* Feuilles de calcul diverses
+* Divers « Inconnu »
+* Données structurées
+* Vidéos
+* Fichiers de zéro octet
+
+
+
+
+== Types de fichiers
+
+Cloud Data SENSE analyse tous les fichiers pour chaque catégorie et chaque métadonnées, et affiche tous les types de fichiers dans la section types de fichiers du tableau de bord.
+
+Mais lorsque Data SENSE détecte des informations à caractère personnel (PII) ou lorsqu'il effectue une recherche DSAR, seuls les formats de fichier suivants sont pris en charge :
+
+`+.CSV, .DCM, .DICOM, .DOC, .DOCX, .JSON, .PDF, .PPTX, .RTF, .TXT, .XLS, .XLSX, Docs, Sheets, and Slides+`
+
+
+
+== Exactitude des informations trouvées
+
+NetApp ne garantit pas une précision de 100 % des données personnelles et des données personnelles sensibles que Cloud Data sens identifie. Vous devez toujours valider les informations en examinant les données.
+
+Selon nos tests, le tableau ci-dessous montre la précision des informations que Data Sense trouve. Nous la décomposent par _Precision_ et _rappel_:
+
+Précision:: La probabilité que le détection de données ait été correctement identifié. Par exemple, un taux de précision de 90 % pour les données personnelles signifie que 9 fichiers sur 10 identifiés comme contenant des renseignements personnels, contiennent en fait des renseignements personnels. 1 fichier sur 10 serait un faux positif.
+Rappel:: La probabilité pour le sens des données de trouver ce qu'il devrait. Par exemple, un taux de rappel de 70 % pour les données personnelles signifie que Data Sense peut identifier 7 fichiers sur 10 qui contiennent réellement des informations personnelles dans votre organisation. 30 % des données ne seront pas stockées dans le tableau de bord.
+
+
+Nous améliorons constamment la précision de nos résultats. Ces améliorations seront automatiquement disponibles dans les prochaines versions de Data Sense.
+
+[cols="25,20,20"]
+|===
+| Type | Précision | Rappel 
+
+
+| Données personnelles - général | 90 à 95 % | 60 à 80 % 
+
+
+| Données personnelles - identificateurs de pays | 30 à 60 % | 40 à 60 % 
+
+
+| Données personnelles sensibles | 80 à 95 % | 20 à 30 % 
+
+
+| Catégories | 90 à 97 % | 60 à 80 % 
+|===

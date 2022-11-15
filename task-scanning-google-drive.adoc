@@ -1,0 +1,120 @@
+---
+sidebar: sidebar 
+permalink: task-scanning-google-drive.html 
+keywords: cloud compliance, enable cloud compliance, privacy, compliance, google drive, data sense 
+summary: Procédez comme suit pour lancer la numérisation des fichiers utilisateur dans vos comptes Google Drive avec Cloud Data Sense. 
+---
+= Numérisation de comptes Google Drive
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Procédez comme suit pour lancer la numérisation des fichiers utilisateur dans vos comptes Google Drive avec Cloud Data Sense.
+
+
+
+== Démarrage rapide
+
+Pour commencer rapidement, suivez ces étapes ou faites défiler jusqu'aux sections restantes pour obtenir de plus amples informations.
+
+[role="quick-margin-para"]
+Assurez-vous que vous disposez des informations d'identification Admin pour vous connecter au compte Google Drive.
+
+[role="quick-margin-para"]
+link:task-deploy-cloud-compliance.html["Déployez des données adaptées au cloud"^] si aucune instance n'est déjà déployée.
+
+[role="quick-margin-para"]
+À l'aide des informations d'identification utilisateur Admin, connectez-vous au compte Google Drive auquel vous souhaitez accéder afin qu'il soit ajouté en tant que nouvelle source de données.
+
+[role="quick-margin-para"]
+Sélectionnez le type de numérisation que vous souhaitez effectuer sur les fichiers utilisateur : mappage ou mappage et classification.
+
+
+
+== Vérification de la configuration requise pour Google Drive
+
+Consultez les conditions préalables suivantes pour vous assurer que vous êtes prêt à activer Cloud Data SENSE sur un compte Google Drive.
+
+* Vous devez disposer des informations d'identification Admin pour le compte Google Drive qui fournissent un accès en lecture aux fichiers de l'utilisateur
+
+
+
+
+=== Restrictions actuelles
+
+Les fonctions suivantes de détection de données ne sont pas prises en charge actuellement avec les fichiers Google Drive :
+
+* Lorsque vous affichez des fichiers dans la page recherche de données, les actions de la barre de boutons ne sont pas actives. Vous ne pouvez copier, déplacer, supprimer, etc. Aucun fichier.
+* Les autorisations ne peuvent pas être identifiées dans les fichiers de Google Drive. Aucune information d'autorisation n'est donc affichée dans la page Investigation.
+
+
+
+
+== Déployer des solutions Cloud Data est logique
+
+Déployez Cloud Data si aucune instance n'est déjà déployée.
+
+Il peut y avoir un sens des données link:task-deploy-cloud-compliance.html["déploiement dans le cloud"^] ou link:task-deploy-compliance-onprem.html["dans un emplacement sur site avec accès à internet"^].
+
+Les mises à niveau du logiciel Data Sense sont automatisées tant que l'instance est connectée à Internet.
+
+
+
+== Ajout du compte Google Drive
+
+Ajoutez le compte Google Drive où résident les fichiers utilisateur. Si vous souhaitez analyser des fichiers de plusieurs utilisateurs, vous devez exécuter cette étape pour chaque utilisateur.
+
+.Étapes
+. Dans la page Configuration des environnements de travail, cliquez sur *Ajouter une source de données* > *Ajouter un compte Google Drive*.
++
+image:screenshot_compliance_add_google_drive_button.png["Capture d'écran de la page Configuration de la numérisation dans laquelle vous pouvez cliquer sur le bouton Ajouter un lecteur Google."]
+
+. Dans la boîte de dialogue Ajouter un compte Google Drive, cliquez sur *Connectez-vous à Google Drive*.
+. Sur la page Google qui s'affiche, sélectionnez le compte Google Drive et entrez l'utilisateur et le mot de passe d'administration requis, puis cliquez sur *Accept* pour permettre à Cloud Data SENSE de lire les données de ce compte.
+
+
+Le compte Google Drive est ajouté à la liste des environnements de travail.
+
+
+
+== Sélection du type de numérisation des données utilisateur
+
+Sélectionnez le type d'analyse que Cloud Data SENSE effectuera sur les données de l'utilisateur.
+
+.Étapes
+. Dans la page _Configuration_, cliquez sur le bouton *Configuration* du compte Google Drive.
++
+image:screenshot_compliance_google_drive_add_sites.png["Capture d'écran de la page Configuration dans laquelle vous pouvez sélectionner le bouton Configuration."]
+
+. Activez les analyses de mappage uniquement, ou les analyses de mappage et de classification, sur les fichiers du compte Google Drive.
++
+image:screenshot_compliance_google_drive_select_scan.png["Une capture d'écran indiquant comment sélectionner le type de numérisation détection de données s'effectue sur les données de Google Drive."]
+
++
+[cols="45,45"]
+|===
+| À : | Procédez comme suit : 
+
+
+| Activer les analyses de mappage uniquement sur les fichiers | Cliquez sur *carte* 
+
+
+| Activez les analyses complètes sur les fichiers | Cliquez sur *carte et classement* 
+
+
+| Désactiver la numérisation sur les fichiers | Cliquez sur *Off* 
+|===
+
+
+Cloud Data SENSE commence à analyser les fichiers du compte Google Drive que vous avez ajouté et les résultats sont affichés dans le tableau de bord et à d'autres emplacements.
+
+
+
+== Suppression d'un compte Google Drive des analyses de conformité
+
+Étant donné que les fichiers Google Drive d'un seul utilisateur font partie d'un seul compte Google Drive, si vous voulez arrêter de numériser des fichiers à partir du compte Google Drive d'un utilisateur, alors vous devriez link:task-managing-compliance.html#removing-a-onedrive-sharepoint-or-google-drive-account-from-cloud-data-sense["Supprimez le compte Google Drive de Data Sense"].

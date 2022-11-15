@@ -1,0 +1,320 @@
+---
+sidebar: sidebar 
+permalink: task-managing-highlights.html 
+keywords: compliance, privacy, filter data, delete files, move files, copy files, clone files, sync files, data sense, migration 
+summary: 'Avec Cloud Data Sense, vous pouvez gérer vos données privées de plusieurs façons. Certaines fonctionnalités facilitent la préparation de la migration des données, tandis que d"autres vous permettent de modifier ces dernières.' 
+---
+= La gestion de vos données privées
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Avec Cloud Data Sense, vous pouvez gérer vos données privées de plusieurs façons. Certaines fonctionnalités facilitent la préparation de la migration des données, tandis que d'autres vous permettent de modifier ces dernières.
+
+* Vous pouvez copier des fichiers vers un partage NFS de destination si vous souhaitez effectuer une copie de certaines données et les déplacer vers un autre emplacement NFS.
+* Vous pouvez cloner un volume ONTAP sur un nouveau volume, tout en incluant uniquement les fichiers sélectionnés du volume source dans le nouveau volume cloné. Ceci est utile dans les situations où vous migrez des données et que vous souhaitez exclure certains fichiers du volume d'origine.
+* Vous pouvez copier et synchroniser des fichiers d'un référentiel source vers un répertoire dans un emplacement de destination spécifique. Cela est utile dans les situations où vous migrez des données d'un système source vers un autre alors qu'il y a encore une activité finale sur les fichiers source.
+* Vous pouvez déplacer les fichiers source que Data Sense analyse vers n'importe quel partage NFS.
+* Vous pouvez supprimer des fichiers qui semblent non sécurisés ou trop risqués pour l'éviter dans votre système de stockage, ou que vous avez identifiés comme doublons.
+
+
+[NOTE]
+====
+* Les fonctionnalités décrites dans cette section ne sont disponibles que si vous avez choisi d'effectuer une analyse de classification complète sur vos sources de données. Les sources de données qui ont une analyse avec mappage uniquement n'affichent pas de détails au niveau des fichiers.
+* Les données des comptes Google Drive ne peuvent pas actuellement utiliser ces fonctionnalités.
+
+
+====
+
+
+== Copie des fichiers source
+
+Vous pouvez copier tous les fichiers source que Data Sense est en cours d'analyse. Il existe trois types d'opérations de copie en fonction de l'objectif que vous essayez d'effectuer :
+
+* *Copier des fichiers* de volumes ou de sources de données identiques ou différentes vers un partage NFS de destination.
++
+Cette fonction est utile pour effectuer une copie de certaines données et les déplacer vers un autre emplacement NFS.
+
+* *Cloner un volume ONTAP* sur un nouveau volume dans le même agrégat, mais inclure uniquement les fichiers sélectionnés du volume source dans le nouveau volume cloné.
++
+Cette fonction est utile lorsque vous migrez des données et que vous souhaitez exclure certains fichiers du volume d'origine. Cette action utilise le link:https://docs.netapp.com/us-en/ontap/volumes/flexclone-efficient-copies-concept.html["NetApp FlexClone ®"^] fonctionnalité permettant de dupliquer rapidement le volume, puis de supprimer les fichiers que vous avez sélectionnés.
+
+* *Copier et synchroniser des fichiers* à partir d'un référentiel source unique (volume ONTAP, compartiment S3, partage NFS, etc.) vers un répertoire dans un emplacement de destination spécifique (cible).
++
+Cette fonction est utile lorsque vous migrez des données d'un système source vers un autre. Après la copie initiale, le service synchronise toutes les données modifiées en fonction de la planification que vous avez définie. Cette action utilise le https://docs.netapp.com/us-en/cloud-manager-sync/concept-cloud-sync.html["NetApp Cloud Sync"^] fonctionnalité permettant de copier et de synchroniser les données d'une source vers une cible.
+
+
+
+
+
+=== Copie des fichiers source vers un partage NFS
+
+Vous pouvez copier les fichiers source que Data Sense analyse vers n'importe quel partage NFS. Il n'est pas nécessaire d'intégrer le partage NFS avec Data Sense, il vous suffit de connaître le nom du partage NFS où tous les fichiers sélectionnés seront copiés dans le format `<host_name>:/<share_path>`.
+
+
+TIP: Vous ne pouvez pas copier les fichiers qui résident dans les bases de données.
+
+.De formation
+* Vous devez avoir le rôle Administrateur de compte ou Administrateur d'espace de travail pour copier des fichiers.
+* La copie de fichiers requiert que le partage NFS de destination autorise l'accès à partir de l'instance Data Sense.
+* Vous pouvez copier un maximum de 100,000 fichiers à la fois.
+
+
+.Étapes
+. Dans le volet Résultats de l'enquête de données, sélectionnez le ou les fichiers que vous souhaitez copier, puis cliquez sur *Copier*.
++
+image:screenshot_compliance_copy_multi_files.png["Capture d'écran indiquant comment sélectionner les fichiers à copier et le bouton Copier dans la page recherche de données."]
+
++
+** Pour sélectionner des fichiers individuels, cochez la case de chaque fichier (image:button_backup_1_volume.png[""]).
+** Pour sélectionner tous les fichiers de la page en cours, cochez la case dans la ligne de titre (image:button_select_all_files.png[""]).
+** Pour sélectionner tous les fichiers sur toutes les pages, cochez la case dans la ligne de titre (image:button_select_all_files.png[""]), puis dans le message contextuel image:screenshot_select_all_items.png[""], Cliquez sur *Sélectionner tous les éléments de la liste (xxx items)*.
+
+
+. Dans la boîte de dialogue _Copy Files_, sélectionnez l'onglet *Regular Copy*.
++
+image:screenshot_compliance_copy_files_dialog.png["Capture d'écran affichant la boîte de dialogue Copier les fichiers, vous pouvez spécifier le nom du partage NFS sur lequel tous les fichiers sélectionnés seront copiés."]
+
+. Entrez le nom du partage NFS dans lequel tous les fichiers sélectionnés seront copiés au format `<host_name>:/<share_path>`, Puis cliquez sur *copie*.
++
+Une boîte de dialogue apparaît avec l'état de l'opération de copie.
+
+
+
+Vous pouvez afficher la progression de l'opération de copie dans link:task-view-compliance-actions.html["Volet État des actions"].
+
+Notez que vous pouvez également copier un fichier individuel lors de l'affichage des détails de métadonnées d'un fichier. Cliquez simplement sur *Copier fichier*.
+
+image:screenshot_compliance_copy_file.png["Capture d'écran montrant la sélection du bouton Copier fichier à partir des détails de métadonnées d'un fichier dans la page recherche de données."]
+
+
+
+=== Clonage de données de volume sur un nouveau volume
+
+Vous pouvez cloner un volume ONTAP existant que l'analyse des données est en cours à l'aide de la fonctionnalité NetApp _FlexClone_. Cela vous permet de dupliquer le volume rapidement tout en incluant uniquement les fichiers que vous avez sélectionnés. Cela est utile si vous migrez des données et que vous souhaitez exclure certains fichiers du volume d'origine, ou si vous souhaitez créer une copie d'un volume pour le test.
+
+Le nouveau volume est créé dans le même agrégat que le volume source. Assurez-vous de disposer d'un espace suffisant pour ce nouveau volume dans l'agrégat avant de commencer cette tâche. Contactez votre administrateur du stockage si nécessaire.
+
+*Remarque :* les volumes FlexGroup ne peuvent pas être clonés, car ils ne sont pas pris en charge par FlexClone.
+
+.De formation
+* Vous devez avoir le rôle Administrateur de compte ou Administrateur d'espace de travail pour copier des fichiers.
+* Tous les fichiers sélectionnés doivent se trouver dans le même volume et le volume doit être en ligne.
+* Le volume doit correspondre à un système Cloud Volumes ONTAP ou ONTAP sur site. Aucune autre source de données n'est actuellement prise en charge.
+* La licence FlexClone doit être installée sur le cluster. Cette licence est installée par défaut sur les systèmes Cloud Volumes ONTAP.
+
+
+.Étapes
+. Dans le volet enquête de données, créez un filtre en sélectionnant un seul *Environnement de travail* et un seul *référentiel de stockage* pour vous assurer que tous les fichiers proviennent du même volume ONTAP.
++
+image:screenshot_compliance_filter_1_repo.png["Capture d'écran de la création d'un filtre qui inclut les fichiers d'un référentiel de stockage unique dans un environnement de travail unique."]
+
++
+Appliquez tous les autres filtres afin que vous ne voyez que les fichiers que vous souhaitez cloner vers le nouveau volume.
+
+. Dans le volet Résultats de l'enquête, sélectionnez les fichiers à cloner et cliquez sur *Copier*.
++
+image:screenshot_compliance_copy_multi_files.png["Capture d'écran indiquant comment sélectionner les fichiers à copier et le bouton Copier dans la page recherche de données."]
+
++
+** Pour sélectionner des fichiers individuels, cochez la case de chaque fichier (image:button_backup_1_volume.png[""]).
+** Pour sélectionner tous les fichiers de la page en cours, cochez la case dans la ligne de titre (image:button_select_all_files.png[""]).
+** Pour sélectionner tous les fichiers sur toutes les pages, cochez la case dans la ligne de titre (image:button_select_all_files.png[""]), puis dans le message contextuel image:screenshot_select_all_items.png[""], Cliquez sur *Sélectionner tous les éléments de la liste (xxx items)*.
+
+
+. Dans la boîte de dialogue _Copy Files_, sélectionnez l'onglet *FlexClone*. Cette page affiche le nombre total de fichiers qui seront clonés à partir du volume (fichiers que vous avez sélectionnés) et le nombre de fichiers qui ne sont pas inclus/supprimés (fichiers que vous n'avez pas sélectionnés) du volume cloné.
++
+image:screenshot_compliance_clone_files_dialog.png["Capture d'écran affichant la boîte de dialogue Copier les fichiers, vous pouvez spécifier le nom du nouveau volume qui sera cloné à partir du volume source."]
+
+. Entrez le nom du nouveau volume et cliquez sur *FlexClone*.
++
+Une boîte de dialogue affichant l'état de l'opération de clonage s'affiche.
+
+
+
+Le nouveau volume cloné est créé dans le même agrégat que le volume source.
+
+Vous pouvez afficher la progression de l'opération de clonage dans link:task-view-compliance-actions.html["Volet État des actions"].
+
+Si vous avez initialement sélectionné *mapper tous les volumes* ou *mapper et classer tous les volumes* lorsque vous avez activé Data Sense pour l'environnement de travail où réside le volume source, Data Sense va analyser le nouveau volume cloné automatiquement. Si vous n'avez pas utilisé l'une ou l'autre de ces sélections au départ, vous devrez effectuer une acquisition pour ce nouveau volume link:task-getting-started-compliance.html#enabling-and-disabling-compliance-scans-on-volumes["activer la numérisation sur le volume manuellement"].
+
+
+
+=== Copie et synchronisation des fichiers source sur un système cible
+
+Vous pouvez copier les fichiers source que Data Sense analyse depuis n'importe quelle source de données non structurées prise en charge vers un répertoire dans un emplacement cible spécifique (https://docs.netapp.com/us-en/cloud-manager-sync/reference-supported-relationships.html["Emplacements cibles pris en charge par Cloud Sync"^]). Après la copie initiale, toutes les données modifiées dans les fichiers sont synchronisées en fonction du calendrier que vous configurez.
+
+Cette fonction est utile lorsque vous migrez des données d'un système source vers un autre. Cette action utilise le https://docs.netapp.com/us-en/cloud-manager-sync/concept-cloud-sync.html["NetApp Cloud Sync"^] fonctionnalité permettant de copier et de synchroniser les données d'une source vers une cible.
+
+
+TIP: Vous ne pouvez pas copier et synchroniser les fichiers qui résident dans les bases de données, les comptes OneDrive ou les comptes SharePoint.
+
+.De formation
+* Vous devez disposer du rôle Administrateur de compte ou Administrateur d'espace de travail pour copier et synchroniser les fichiers.
+* Tous les fichiers sélectionnés doivent se trouver dans le même référentiel source (volume ONTAP, compartiment S3, partage NFS ou CIFS, etc.).
+* Vous devrez activer le service Cloud Sync et configurer au moins un courtier de données qui peut être utilisé pour transférer des fichiers entre les systèmes source et cible. Vérifiez les exigences Cloud Sync en commençant par le https://docs.netapp.com/us-en/cloud-manager-sync/task-quick-start.html["Description de Quick Start"^].
++
+Notez que le service Cloud Sync facture séparément les services de synchronisation et entraîne des frais de ressources si vous déployez le courtier en données dans le cloud.
+
+
+
+.Étapes
+. Dans le volet investigation de données, créez un filtre en sélectionnant un seul *Environnement de travail* et un seul *référentiel de stockage* pour vous assurer que tous les fichiers proviennent du même référentiel.
++
+image:screenshot_compliance_filter_1_repo.png["Capture d'écran de la création d'un filtre qui inclut les fichiers d'un référentiel de stockage unique dans un environnement de travail unique."]
+
++
+Appliquez tous les autres filtres de sorte que vous ne voyez que les fichiers que vous voulez copier et synchroniser vers le système de destination.
+
+. Dans le volet Résultats de l'enquête, sélectionnez tous les fichiers sur toutes les pages en cochant la case dans la ligne de titre (image:button_select_all_files.png[""]), puis dans le message contextuel image:screenshot_select_all_items.png[""] Cliquez sur *Sélectionner tous les éléments de la liste (xxx items)*, puis sur *Copier*.
++
+image:screenshot_compliance_sync_multi_files.png["Capture d'écran indiquant comment sélectionner les fichiers à copier et le bouton Copier dans la page recherche de données."]
+
+. Dans la boîte de dialogue _Copy Files_, sélectionnez l'onglet *Sync*.
++
+image:screenshot_compliance_sync_files_dialog.png["Capture d'écran affichant la boîte de dialogue Copier des fichiers pour vous permettre de sélectionner l'option Synchroniser."]
+
+. Si vous êtes sûr de vouloir synchroniser les fichiers sélectionnés vers un emplacement de destination, cliquez sur *OK*.
++
+L'interface utilisateur Cloud Sync est ouverte dans BlueXP.
+
++
+Vous êtes invité à définir la relation de synchronisation. Le système source est pré-rempli en fonction du référentiel et des fichiers que vous avez déjà sélectionnés dans le champ logique de données.
+
+. Vous devez sélectionner le système cible, puis sélectionner (ou créer) le courtier de données que vous prévoyez d'utiliser. Vérifiez les exigences Cloud Sync en commençant par le link:https://docs.netapp.com/us-en/cloud-manager-sync/task-quick-start.html.html["Description de Quick Start"^].
+
+
+Les fichiers sont copiés sur le système cible et ils seront synchronisés en fonction du planning que vous définissez. Si vous sélectionnez une synchronisation unique, les fichiers sont copiés et synchronisés une seule fois. Si vous choisissez une synchronisation périodique, les fichiers sont synchronisés en fonction du planning. Notez que si le système source ajoute de nouveaux fichiers qui correspondent à la requête que vous avez créée à l'aide de filtres, ces _nouveaux_ fichiers seront copiés vers la destination et synchronisés ultérieurement.
+
+Notez que certaines des opérations Cloud Sync habituelles sont désactivées lorsqu'elles sont appelées depuis Data Sense :
+
+* Vous ne pouvez pas utiliser les boutons *Supprimer les fichiers sur la source* ou *Supprimer les fichiers sur la cible*.
+* L'exécution d'un rapport est désactivée.
+
+
+
+
+== Déplacement des fichiers source vers un partage NFS
+
+Vous pouvez déplacer les fichiers source que Data Sense analyse vers n'importe quel partage NFS. Le partage NFS n'a pas besoin d'être intégré avec Data Sense (voir link:task-scanning-file-shares.html["Analyse des partages de fichiers"]).
+
+Vous pouvez également laisser un fichier de navigation à l'emplacement du fichier déplacé. Un fichier de navigation permet à vos utilisateurs de comprendre pourquoi un fichier a été déplacé de son emplacement d'origine. Pour chaque fichier déplacé, le système crée un fichier de navigation à l'emplacement source nommé `<filename>-breadcrumb-<date>.txt`. Vous pouvez ajouter du texte dans la boîte de dialogue qui sera ajoutée au fichier de navigation pour indiquer l'emplacement où le fichier a été déplacé et l'utilisateur qui a déplacé le fichier.
+
+Si un fichier du même nom existe dans l'emplacement de destination, le fichier ne sera pas déplacé.
+
+
+TIP: Vous ne pouvez pas déplacer les fichiers qui résident dans les bases de données.
+
+.De formation
+* Vous devez avoir le rôle Administrateur de compte ou Administrateur d'espace de travail pour déplacer des fichiers.
+* Les fichiers source peuvent se trouver dans les sources de données suivantes : systèmes ONTAP sur site, Cloud Volumes ONTAP, Azure NetApp Files, partages de fichiers et SharePoint Online.
+* Le déplacement de fichiers nécessite que le partage NFS autorise l'accès à partir de l'adresse IP de l'instance Data Sense.
+* Vous pouvez déplacer un maximum de 100,000 fichiers à la fois.
+
+
+.Étapes
+. Dans le volet Résultats de l'enquête de données, sélectionnez le ou les fichiers que vous souhaitez déplacer.
++
+image:screenshot_compliance_move_multi_files.png["Capture d'écran indiquant comment sélectionner les fichiers à déplacer et le bouton déplacer dans la page recherche de données."]
+
++
+** Pour sélectionner des fichiers individuels, cochez la case de chaque fichier (image:button_backup_1_volume.png[""]).
+** Pour sélectionner tous les fichiers de la page en cours, cochez la case dans la ligne de titre (image:button_select_all_files.png[""]).
+** Pour sélectionner tous les fichiers sur toutes les pages, cochez la case dans la ligne de titre (image:button_select_all_files.png[""]), puis dans le message contextuel image:screenshot_select_all_items.png[""], Cliquez sur *Sélectionner tous les éléments de la liste (xxx items)*.
+
+
+. Dans la barre de boutons, cliquez sur *déplacer*.
++
+image:screenshot_compliance_move_files_dialog.png["Capture d'écran affichant la boîte de dialogue de déplacement des fichiers, vous permettant de spécifier le nom du partage NFS sur lequel tous les fichiers sélectionnés seront déplacés."]
+
+. Dans la boîte de dialogue _Move Files_, entrez le nom du partage NFS dans lequel tous les fichiers sélectionnés seront déplacés au format `<host_name>:/<share_path>`.
+. Si vous voulez laisser un fichier de navigation, cochez la case _laisser fil fil fil fil fil à fil_. Vous pouvez entrer du texte dans la boîte de dialogue pour indiquer l'emplacement où le fichier a été déplacé et l'utilisateur qui a déplacé le fichier, ainsi que toute autre information, comme la raison pour laquelle le fichier a été déplacé.
+. Cliquez sur *déplacer les fichiers*.
+
+
+Notez que vous pouvez également déplacer un fichier individuel lors de l'affichage des détails de métadonnées d'un fichier. Cliquez simplement sur *déplacer le fichier*.
+
+image:screenshot_compliance_move_file.png["Capture d'écran montrant la sélection du bouton déplacer le fichier à partir des détails de métadonnées d'un fichier dans la page recherche de données."]
+
+
+
+== Suppression des fichiers source
+
+Vous pouvez supprimer de manière définitive les fichiers source qui semblent non sécurisés ou trop risqués pour laisser dans votre système de stockage, ou que vous avez identifiés comme un doublon. Cette action est permanente et il n'y a pas d'annulation ou de restauration.
+
+Vous pouvez supprimer des fichiers manuellement à partir du volet Investigation ou automatiquement à l'aide de stratégies.
+
+
+TIP: Vous ne pouvez pas supprimer les fichiers qui résident dans les bases de données.
+
+La suppression de fichiers nécessite les autorisations suivantes :
+
+* Pour les données NFS : il est nécessaire de définir la export policy avec les autorisations d'écriture.
+* Pour les données CIFS, les identifiants CIFS doivent disposer d'autorisations d'écriture.
+* Pour les données S3, le rôle IAM doit inclure les autorisations suivantes : `s3:DeleteObject`.
+
+
+
+
+=== Suppression manuelle des fichiers source
+
+.De formation
+* Vous devez avoir le rôle Administrateur de compte ou Administrateur d'espace de travail pour supprimer des fichiers.
+* Vous pouvez supprimer un maximum de 100,000 fichiers à la fois.
+
+
+.Étapes
+. Dans le volet Résultats de l'enquête de données, sélectionnez le ou les fichiers que vous souhaitez supprimer.
++
+image:screenshot_compliance_delete_multi_files.png["Capture d'écran indiquant comment sélectionner les fichiers à supprimer et le bouton Supprimer de la page recherche de données."]
+
++
+** Pour sélectionner des fichiers individuels, cochez la case de chaque fichier (image:button_backup_1_volume.png[""]).
+** Pour sélectionner tous les fichiers de la page en cours, cochez la case dans la ligne de titre (image:button_select_all_files.png[""]).
+** Pour sélectionner tous les fichiers sur toutes les pages, cochez la case dans la ligne de titre (image:button_select_all_files.png[""]), puis dans le message contextuel image:screenshot_select_all_items.png[""], Cliquez sur *Sélectionner tous les éléments de la liste (xxx items)*.
+
+
+. Dans la barre de boutons, cliquez sur *Supprimer*.
+. Comme l'opération de suppression est permanente, vous devez taper "*définitivement delete*" dans la boîte de dialogue _Delete File_ suivante et cliquer sur *Delete File*.
+
+
+Vous pouvez afficher la progression de l'opération de suppression dans link:task-view-compliance-actions.html["Volet État des actions"].
+
+Notez que vous pouvez également supprimer un fichier individuel lors de l'affichage des détails de métadonnées d'un fichier. Cliquez simplement sur *Supprimer le fichier*.
+
+image:screenshot_compliance_delete_file.png["Capture d'écran montrant la sélection du bouton Supprimer le fichier dans les détails de métadonnées d'un fichier dans la page recherche de données."]
+
+
+
+=== Suppression automatique des fichiers source à l'aide de stratégies
+
+Vous pouvez créer une stratégie personnalisée pour supprimer des fichiers qui correspondent à la stratégie. Par exemple, vous pouvez vouloir supprimer des fichiers contenant des informations sensibles et ayant été découverts par Data Sense au cours des 30 derniers jours.
+
+Seuls les administrateurs de compte peuvent créer une stratégie de suppression automatique des fichiers.
+
+
+NOTE: Tous les fichiers qui correspondent à la stratégie seront définitivement supprimés une fois par jour.
+
+.Étapes
+. Dans la page recherche de données, définissez votre recherche en sélectionnant tous les filtres que vous souhaitez utiliser. Voir link:task-controlling-private-data.html#filtering-data-in-the-data-investigation-page["Filtrage des données dans la page Data Investigation"^] pour plus d'informations.
+. Une fois que vous avez toutes les caractéristiques de filtre comme vous le souhaitez, cliquez sur *Créer une stratégie à partir de cette recherche*.
+. Nommez la stratégie et sélectionnez d'autres actions pouvant être effectuées par la stratégie :
++
+.. Entrez un nom et une description uniques.
+.. Cochez la case "Supprimer automatiquement les fichiers qui correspondent à cette stratégie" et tapez *Supprimer définitivement* pour confirmer que vous voulez que les fichiers soient définitivement supprimés par cette stratégie.
+.. Cliquez sur *Créer une stratégie*.
++
+image:screenshot_compliance_delete_files_using_policies.png["Capture d'écran indiquant comment configurer la stratégie et l'enregistrer."]
+
+
+
+
+
+La nouvelle stratégie s'affiche dans l'onglet stratégies. Les fichiers qui correspondent à la stratégie sont supprimés une fois par jour au moment de l'exécution de la stratégie.
+
+Vous pouvez afficher la liste des fichiers qui ont été supprimés dans le link:task-view-compliance-actions.html["Volet État des actions"].

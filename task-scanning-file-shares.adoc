@@ -1,0 +1,151 @@
+---
+sidebar: sidebar 
+permalink: task-scanning-file-shares.html 
+keywords: cloud compliance, enable cloud compliance, privacy, compliance, file shares, nfs, cifs, smb, Data Sense 
+summary: 'Procédez comme suit pour lancer l"analyse des partages de fichiers NFS ou CIFS non NetApp directement avec Cloud Data SENSE. Ces partages de fichiers peuvent résider sur site ou dans le cloud.' 
+---
+= Analyse des partages de fichiers
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Procédez comme suit pour lancer l'analyse des partages de fichiers NFS ou CIFS non NetApp directement avec Cloud Data SENSE. Ces partages de fichiers peuvent résider sur site ou dans le cloud.
+
+
+
+== Démarrage rapide
+
+Pour commencer rapidement, suivez ces étapes ou faites défiler jusqu'aux sections restantes pour obtenir de plus amples informations.
+
+[role="quick-margin-para"]
+Pour les partages CIFS (SMB), assurez-vous que vous disposez des identifiants pour accéder aux partages.
+
+[role="quick-margin-para"]
+link:task-deploy-cloud-compliance.html["Déployez des données adaptées au cloud"^] si aucune instance n'est déjà déployée.
+
+[role="quick-margin-para"]
+Le groupe est un conteneur pour les partages de fichiers que vous souhaitez analyser et il est utilisé comme nom d'environnement de travail pour ces partages de fichiers.
+
+[role="quick-margin-para"]
+Ajoutez la liste des partages de fichiers que vous souhaitez numériser et sélectionnez le type de numérisation. Vous pouvez ajouter jusqu'à 100 partages de fichiers à la fois.
+
+
+
+== Vérification des exigences relatives au partage de fichiers
+
+Avant d'activer le Cloud Data sens, lisez les conditions préalables suivantes pour vérifier que la configuration est prise en charge.
+
+* Ils peuvent être hébergés partout, y compris dans le cloud ou sur site. Il s'agit de partages de fichiers qui résident sur des systèmes de stockage non NetApp.
+* Il faut une connectivité réseau entre l'instance Data Sense et les partages.
+* Assurez-vous que ces ports sont ouverts à l'instance de détection de données :
++
+** Pour NFS – ports 111 et 2049.
+** Pour CIFS – ports 139 et 445.
+
+
+* Vous aurez besoin de la liste des partages que vous souhaitez ajouter au format `<host_name>:/<share_path>`. Vous pouvez entrer les partages individuellement ou fournir une liste séparée par des lignes des partages de fichiers que vous souhaitez scanner.
+* Pour les partages CIFS (SMB), assurez-vous que vous disposez des identifiants Active Directory qui fournissent un accès en lecture aux partages. Les identifiants d'administrateur sont à privilégier dans le cas où Cloud Data SENSE doit analyser toutes les données qui exigent des autorisations élevées.
++
+Si vous voulez vous assurer que vos fichiers “dernières heures d’accès” sont inchangés par les analyses de classification de détection de données, nous recommandons à l’utilisateur de disposer de l’autorisation Write Attributes. Si possible, nous vous recommandons de faire en sorte que l'utilisateur configuré Active Directory fasse partie d'un groupe parent de l'organisation qui dispose des autorisations pour tous les fichiers.
+
+
+
+
+
+== Déploiement de l'instance Cloud Data Sense
+
+Déployez Cloud Data si aucune instance n'est déjà déployée.
+
+Si vous scannez des partages de fichiers NFS ou CIFS non NetApp accessibles via Internet, vous pouvez link:task-deploy-cloud-compliance.html["Déployez les données du cloud dans le cloud"^] ou link:task-deploy-compliance-onprem.html["Déployer Data Sense dans un emplacement sur site avec accès Internet"^].
+
+Si vous scannez des partages de fichiers NFS ou CIFS non NetApp installés dans un site sombre qui n'offrent pas d'accès à Internet, vous devez le faire link:task-deploy-compliance-dark-site.html["Déployez les données cloud sur site qui ne disposent pas d'un accès Internet"^]. Cela nécessite également que le connecteur BlueXP soit déployé dans le même emplacement sur site.
+
+Les mises à niveau du logiciel Data Sense sont automatisées tant que l'instance est connectée à Internet.
+
+
+
+== Création du groupe pour les partages de fichiers
+
+Vous devez ajouter un « groupe » de partages de fichiers avant de pouvoir ajouter vos partages de fichiers. Le groupe est un conteneur pour les partages de fichiers que vous souhaitez analyser et le nom du groupe est utilisé comme nom d'environnement de travail pour ces partages de fichiers.
+
+Vous pouvez mélanger des partages NFS et CIFS dans le même groupe, mais tous les partages de fichiers CIFS d'un groupe doivent utiliser les mêmes informations d'identification Active Directory. Si vous prévoyez d'ajouter des partages CIFS qui utilisent des identifiants différents, vous devez créer un groupe distinct pour chaque ensemble unique d'informations d'identification.
+
+.Étapes
+. Dans la page Configuration des environnements de travail, cliquez sur *Ajouter une source de données* > *Ajouter un groupe de partages de fichiers*.
++
+image:screenshot_compliance_add_fileshares_button.png["Capture d'écran de la page Configuration de lecture dans laquelle vous pouvez cliquer sur le bouton Ajouter un groupe de partages de fichiers."]
+
+. Dans la boîte de dialogue Ajouter un groupe de partages de fichiers, entrez le nom du groupe de partages et cliquez sur *Continuer*.
+
+
+Le nouveau groupe de partages de fichiers est ajouté à la liste des environnements de travail.
+
+
+
+== Ajout de partages de fichiers à un groupe
+
+Vous ajoutez des partages de fichiers au groupe de partages de fichiers afin que les fichiers de ces partages soient analysés par Cloud Data Sense. Vous ajoutez les partages au format `<host_name>:/<share_path>`.
+
+Vous pouvez ajouter des partages de fichiers individuels, ou vous pouvez fournir une liste séparée par des lignes des partages de fichiers que vous souhaitez analyser. Vous pouvez ajouter jusqu'à 100 partages à la fois.
+
+Lorsque vous ajoutez à la fois des partages NFS et CIFS au sein d'un seul groupe, vous devez recommencer le processus à deux reprises, après avoir ajouté des partages NFS, puis à nouveau en ajoutant les partages CIFS.
+
+.Étapes
+. Dans la page _Working Environments_, cliquez sur le bouton *Configuration* pour le groupe de partages de fichiers.
++
+image:screenshot_compliance_fileshares_add_shares.png["Capture d'écran de la page Configuration de la numérisation dans laquelle vous pouvez sélectionner le bouton Configuration."]
+
+. Si c'est la première fois que vous ajoutez des partages de fichiers pour ce groupe de partages de fichiers, cliquez sur *Ajouter vos premiers partages*.
++
+image:screenshot_compliance_fileshares_add_initial_shares.png["Capture d'écran montrant le bouton Ajouter vos premiers partages pour ajouter des partages initiaux au groupe."]
+
++
+Si vous ajoutez des partages de fichiers à un groupe existant, cliquez sur *Ajouter des partages*.
+
++
+image:screenshot_compliance_fileshares_add_more_shares.png["Capture d'écran affichant le bouton Ajouter des partages pour ajouter d'autres partages au groupe."]
+
+. Sélectionnez le protocole pour les partages de fichiers que vous ajoutez, ajoutez les partages de fichiers que vous souhaitez analyser - un partage de fichiers par ligne - et cliquez sur *Continuer*.
++
+Lors de l'ajout de partages CIFS (SMB), vous devez entrer les identifiants Active Directory qui fournissent un accès en lecture aux partages. Les identifiants d'administrateur sont privilégiés.
+
++
+image:screenshot_compliance_fileshares_add_file_shares.png["Capture d'écran de la page Ajouter des partages de fichiers où vous pouvez ajouter les partages à scanner."]
+
++
+Une boîte de dialogue de confirmation affiche le nombre de partages ajoutés.
+
++
+Si la boîte de dialogue répertorie tous les partages qui n'ont pas pu être ajoutés, capturez ces informations pour résoudre le problème. Dans certains cas, vous pouvez ajouter à nouveau le partage avec un nom d'hôte ou un nom de partage corrigé.
+
+. Activez les analyses de mappage uniquement, ou les analyses de mappage et de classification, sur chaque partage de fichiers.
++
+[cols="45,45"]
+|===
+| À : | Procédez comme suit : 
+
+
+| Activez les analyses de mappage uniquement sur les partages de fichiers | Cliquez sur *carte* 
+
+
+| Activez les analyses complètes sur les partages de fichiers | Cliquez sur *carte et classement* 
+
+
+| Désactiver l'analyse sur les partages de fichiers | Cliquez sur *Off* 
+|===
+
+
+Cloud Data Sense commence à analyser les fichiers dans les partages de fichiers que vous avez ajoutés, et les résultats sont affichés dans le Tableau de bord et à d'autres emplacements.
+
+
+
+== Suppression d'un partage de fichiers des analyses de conformité
+
+Si vous n'avez plus besoin d'analyser certains partages de fichiers, vous pouvez supprimer chaque partage de fichiers de l'analyse de leurs fichiers à tout moment. Il vous suffit de cliquer sur *Supprimer le partage* dans la page Configuration.
+
+image:screenshot_compliance_fileshares_remove_share.png["Capture d'écran indiquant comment supprimer un partage de fichier unique de la numérisation de ses fichiers."]

@@ -1,0 +1,165 @@
+---
+sidebar: sidebar 
+permalink: task-scanning-sharepoint.html 
+keywords: cloud compliance, enable cloud compliance, privacy, compliance, sharepoint, sharepoint online, sharepoint on-premises, data sense 
+summary: Suivez quelques étapes pour commencer à analyser les fichiers de vos comptes sur site SharePoint Online et SharePoint avec Cloud Data Sense. 
+---
+= Analyse des comptes SharePoint
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Suivez quelques étapes pour commencer à analyser les fichiers de vos comptes sur site SharePoint Online et SharePoint avec Cloud Data Sense.
+
+
+
+== Démarrage rapide
+
+Pour commencer rapidement, suivez ces étapes ou faites défiler jusqu'aux sections restantes pour obtenir de plus amples informations.
+
+[role="quick-margin-para"]
+Assurez-vous que vous disposez des informations d'identification Admin pour vous connecter au compte SharePoint et que vous disposez des URL des sites SharePoint que vous souhaitez analyser.
+
+[role="quick-margin-para"]
+link:task-deploy-cloud-compliance.html["Déployez des données adaptées au cloud"^] si aucune instance n'est déjà déployée.
+
+[role="quick-margin-para"]
+À l'aide des informations d'identification utilisateur Admin, connectez-vous au compte SharePoint auquel vous souhaitez accéder afin qu'il soit ajouté en tant que nouvelle source de données/environnement de travail.
+
+[role="quick-margin-para"]
+Ajoutez la liste des URL du site SharePoint que vous souhaitez analyser dans le compte SharePoint et sélectionnez le type de numérisation. Vous pouvez ajouter jusqu'à 100 URL à la fois.
+
+
+
+== Révision des exigences SharePoint
+
+Lisez les conditions préalables suivantes pour vous assurer que vous êtes prêt à activer Cloud Data SENSE sur un compte SharePoint.
+
+* Vous devez disposer des informations d'identification d'administrateur pour le compte SharePoint qui fournissent un accès en lecture à tous les sites SharePoint.
+* Pour les solutions SharePoint sur site, vous aurez également besoin de l'URL de SharePoint Server.
+* Vous aurez besoin d'une liste séparée en plusieurs lignes des URL du site SharePoint pour toutes les données que vous souhaitez analyser.
+
+
+
+
+== Déploiement de l'instance Cloud Data Sense
+
+Déployez Cloud Data si aucune instance n'est déjà déployée.
+
+* Pour SharePoint Online, il est possible de détecter les données link:task-deploy-cloud-compliance.html["déploiement dans le cloud"^] ou link:task-deploy-compliance-onprem.html["installé dans un emplacement sur site avec accès à internet"^].
++
+Il est également possible de détecter des données link:task-deploy-compliance-dark-site.html["déploiement dans un emplacement sur site qui ne dispose pas d'un accès internet"^]. Cependant, vous devrez fournir un accès Internet à quelques points de terminaison sélectionnés pour analyser vos fichiers SharePoint Online. link:task-deploy-compliance-dark-site.html#sharepoint-and-onedrive-special-requirements["Voir la liste des points finaux requis ici"].
+
+* Dans le cas d'une solution SharePoint sur site, Data Sense peut être installé link:task-deploy-compliance-onprem.html["dans un emplacement sur site avec accès à internet"^] ou link:task-deploy-compliance-dark-site.html["dans un emplacement sur site qui ne dispose pas d'un accès internet"^].
+
+
+Lorsque Data SENSE est installé sur un site sans accès à Internet, le connecteur BlueXP doit également être installé sur ce même site sans accès à Internet. https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-connector-onprem-no-internet.html["En savoir plus >>"^].
+
+Les mises à niveau du logiciel Data Sense sont automatisées tant que l'instance est connectée à Internet.
+
+
+
+== Ajout d'un compte SharePoint Online
+
+Ajoutez le compte SharePoint Online où se trouvent les fichiers utilisateur.
+
+.Étapes
+. Dans la page Configuration des environnements de travail, cliquez sur *Ajouter une source de données* > *Ajouter un compte SharePoint en ligne*.
++
+image:screenshot_compliance_add_sharepoint_button.png["Capture d'écran de la page de configuration dans laquelle vous pouvez cliquer sur le bouton Ajouter SharePoint en ligne."]
+
+. Dans la boîte de dialogue Ajouter un compte SharePoint en ligne, cliquez sur *se connecter à SharePoint*.
+. Dans la page Microsoft qui s'affiche, sélectionnez le compte SharePoint et entrez l'utilisateur et le mot de passe d'administration requis, puis cliquez sur *Accept* pour permettre à Cloud Data SENSE de lire les données de ce compte.
+
+
+Le compte SharePoint Online est ajouté à la liste des environnements de travail.
+
+
+
+== Ajout d'un compte SharePoint sur site
+
+Ajoutez le compte SharePoint sur site où résident les fichiers utilisateur.
+
+.Étapes
+. Dans la page Configuration des environnements de travail, cliquez sur *Ajouter une source de données* > *Ajouter un compte SharePoint sur site*.
++
+image:screenshot_compliance_add_sharepoint_onprem_button.png["Capture d'écran de la page de configuration dans laquelle vous pouvez cliquer sur le bouton Ajouter SharePoint sur site."]
+
+. Dans la boîte de dialogue se connecter à SharePoint On-Premise Server, entrez les informations suivantes :
++
+** Admin user au format « domain/user » ou « user@domain », et le mot de passe admin
+** URL du serveur SharePoint
++
+image:screenshot_compliance_sharepoint_onprem.png["Capture d'écran affichant les informations de connexion d'un compte SharePoint sur site."]
+
+
+
+. Cliquez sur *connexion*.
+
+
+Le compte sur site SharePoint est ajouté à la liste des environnements de travail.
+
+
+
+== Ajout de sites SharePoint aux analyses de conformité
+
+Vous pouvez ajouter des sites SharePoint individuels ou tous les sites SharePoint du compte, de sorte que les fichiers associés soient analysés par Cloud Data Sense. Les étapes sont identiques lors de l'ajout de sites SharePoint Online ou SharePoint sur site.
+
+.Étapes
+. Dans la page _Configuration_, cliquez sur le bouton *Configuration* du compte SharePoint.
++
+image:screenshot_compliance_sharepoint_add_sites.png["Capture d'écran de la page Configuration de la numérisation dans laquelle vous pouvez sélectionner le bouton Configuration."]
+
+. Si c'est la première fois que vous ajoutez des sites pour ce compte SharePoint, cliquez sur *Ajouter votre premier site SharePoint*.
++
+image:screenshot_compliance_sharepoint_add_initial_sites.png["Une capture d'écran montrant le bouton Ajouter vos premiers sites SharePoint pour ajouter les sites initiaux à numériser."]
+
++
+Si vous ajoutez des utilisateurs supplémentaires à partir d'un compte SharePoint, cliquez sur *Ajouter des sites SharePoint*.
+
++
+image:screenshot_compliance_sharepoint_add_more_sites.png["Capture d'écran montrant le bouton Ajouter des sites SharePoint pour ajouter d'autres sites à un compte."]
+
+. Ajoutez les URL des sites dont vous voulez numériser les fichiers - une URL par ligne (jusqu'à 100 maximum par session) - et cliquez sur *Ajouter des sites*.
++
+image:screenshot_compliance_sharepoint_add_site.png["Capture d'écran de la page Ajouter des sites SharePoint où vous pouvez ajouter des sites à numériser."]
+
++
+Une boîte de dialogue de confirmation affiche le nombre de sites ajoutés.
+
++
+Si la boîte de dialogue répertorie des sites qui n'ont pas pu être ajoutés, capturez ces informations pour résoudre le problème. Dans certains cas, vous pouvez ajouter à nouveau le site avec une URL corrigée.
+
+. Activez les analyses de mappage uniquement, ou les analyses de mappage et de classification, sur les fichiers des sites SharePoint.
++
+[cols="45,45"]
+|===
+| À : | Procédez comme suit : 
+
+
+| Activer les analyses de mappage uniquement sur les fichiers | Cliquez sur *carte* 
+
+
+| Activez les analyses complètes sur les fichiers | Cliquez sur *carte et classement* 
+
+
+| Désactiver la numérisation sur les fichiers | Cliquez sur *Off* 
+|===
+
+
+Cloud Data SENSE commence à analyser les fichiers des sites SharePoint que vous avez ajoutés, et les résultats sont affichés dans le tableau de bord et à d'autres emplacements.
+
+
+
+== Suppression d'un site SharePoint des analyses de conformité
+
+Si vous supprimez un site SharePoint à l'avenir ou décidez de ne pas analyser les fichiers d'un site SharePoint, vous pouvez supprimer chaque site SharePoint de la façon dont ses fichiers sont analysés à tout moment. Il vous suffit de cliquer sur *Supprimer le site SharePoint* dans la page Configuration.
+
+image:screenshot_compliance_sharepoint_remove_site.png["Capture d'écran indiquant comment supprimer un site SharePoint unique de la numérisation de leurs fichiers."]
+
+Notez que vous pouvez link:task-managing-compliance.html#removing-a-onedrive-sharepoint-or-google-drive-account-from-cloud-data-sense["Supprimez tout le compte SharePoint de Data Sense"] Si vous ne souhaitez plus analyser les données utilisateur du compte SharePoint.

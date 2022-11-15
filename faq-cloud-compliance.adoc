@@ -1,0 +1,399 @@
+---
+sidebar: sidebar 
+permalink: faq-cloud-compliance.html 
+keywords: faq, frequently asked questions, questions, cloud compliance, data sense 
+summary: Cette FAQ peut vous aider si vous cherchez simplement une réponse rapide à une question. 
+---
+= Les questions les plus fréquemment posées à propos des données du cloud sont pertinentes
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Cette FAQ peut vous aider si vous cherchez simplement une réponse rapide à une question.
+
+
+
+== Service cloud Data Sense
+
+Les questions suivantes présentent une compréhension générale du sens des données du cloud.
+
+
+
+=== Qu'est-ce que les données cloud sont sensé ?
+
+Cloud Data Sense est une offre cloud qui utilise la technologie d'intelligence artificielle (IA) pour vous aider à comprendre le contexte des données et à identifier les données sensibles dans vos systèmes de stockage. Les systèmes peuvent être des environnements de travail que vous avez ajoutés à BlueXP Canvas et de nombreux types de sources de données que Data Sense peut accéder sur vos réseaux. link:faq-cloud-compliance.html#what-sources-of-data-can-be-scanned-with-data-sense["Voir la liste complète ci-dessous"].
+
+Cloud Data SENSE fournit des paramètres prédéfinis (par exemple, des types d'informations sensibles et des catégories) pour respecter les nouvelles réglementations en matière de conformité des données concernant la confidentialité et la sensibilité des données, notamment le RGPD, la loi CCPA, HIPAA.
+
+
+
+=== Comment fonctionne Cloud Data Sense ?
+
+Cloud Data Sense déploie une autre couche d'intelligence artificielle avec votre système et vos systèmes de stockage BlueXP. Il analyse ensuite les données sur des volumes, des compartiments, des bases de données, ainsi que d'autres comptes de stockage, et indexe les informations exploitables concernant les données. Data Sense exploite à la fois l'intelligence artificielle et le traitement du langage naturel, contrairement aux solutions alternatives habituellement développées autour d'expressions régulières et de la mise en correspondance de modèles. Cloud Data Sense utilise l'IA pour comprendre les données de façon contextuelle et assurer une détection et une classification précises. Elle est axée sur l'IA, car elle est conçue pour répondre aux besoins de types et d'évolutivité des données modernes. Il comprend également le contexte des données afin d'assurer une découverte et une classification solides et précises.
+
+link:concept-cloud-compliance.html["Découvrez le fonctionnement de Cloud Data SENSE"^].
+
+
+
+=== Quelles sont les utilisations courantes du Cloud Data Sense ?
+
+* Identifier les informations à caractère personnel
+* Localiser et créer facilement des rapports sur des données spécifiques en réponse à des sujets de données, conformément aux exigences du RGPD, de la loi CCPA, de l'HIPAA et d'autres réglementations en matière de confidentialité des données.
+* Respectez les nouvelles réglementations sur la confidentialité des données, ainsi que celles à venir.
+* Respectez les réglementations en matière de conformité et de confidentialité des données.
+* Migrer les données des systèmes existants vers le cloud.
+* Respectez les règles de conservation des données.
+
+
+https://cloud.netapp.com/netapp-cloud-data-sense["Pour en savoir plus sur les utilisations de Cloud Data Sense"^].
+
+
+
+=== Qu'en est-il de l'architecture de données cloud SENSE ?
+
+Cloud Data Sense déploie un seul serveur ou un seul cluster, où que vous choisissiez, dans le cloud ou sur site. Les serveurs se connectent via des protocoles standard aux sources de données et indexent les résultats dans un cluster Elasticsearch, qui est également déployé sur les mêmes serveurs. Cette prise en charge permet la prise en charge d'environnements multicloud, interclouds, clouds privés et sur site.
+
+
+
+=== Quels sont les fournisseurs de cloud pris en charge ?
+
+Cloud Data Sense fonctionne dans le cadre de BlueXP et prend en charge AWS, Azure et GCP. Votre entreprise peut ainsi bénéficier d'une visibilité unifiée sur la confidentialité des données entre les différents fournisseurs de cloud.
+
+
+
+=== Cloud Data SENSE propose-t-il une API REST qui est compatible avec des outils tiers ?
+
+BlueXP prend en charge les fonctionnalités d'API REST pour ses services. Si BlueXP n'est pas le point de gestion préféré, il est également possible d'utiliser des services comme Cloud Data Sense via une API REST. Chaque action utilisateur dispose d'une API REST qui peut être intégrée à des systèmes tiers.
+
+
+
+=== Est-il logique que les données cloud soient disponibles sur tous les marchés ?
+
+Oui, BlueXP et Cloud Data Sense sont disponibles sur les marchés AWS, Azure et GCP.
+
+
+
+== Analyse et analyse des données détecter les clouds
+
+Les questions suivantes concernent les performances d'analyse de Cloud Data Sense et l'analytique disponible pour les utilisateurs.
+
+
+
+=== Quelle est la fréquence d'analyse de mes données par Cloud Data SENSE ?
+
+Comme les données changent fréquemment, Cloud Data SENSE analyse vos données en continu, sans aucune incidence sur vos données. Alors que l'analyse initiale de vos données peut prendre plus de temps, les analyses suivantes ne scannent que les modifications incrémentielles, ce qui réduit les temps d'analyse du système.
+
+link:concept-cloud-compliance.html#how-scans-work["Découvrez le fonctionnement des acquisitions"].
+
+L'analyse des données a un impact négligeable sur vos systèmes de stockage et sur vos données. Cependant, si vous êtes préoccupé par un impact même très faible, vous pouvez configurer Data Sense pour effectuer des acquisitions « lentes ». link:task-reduce-scan-speed.html["Découvrez comment réduire la vitesse de numérisation"].
+
+
+
+=== Puis-je rechercher des données à l'aide du logiciel Cloud Data SENSE ?
+
+Cloud Data Sense offre une fonctionnalité de recherche complète qui permet de rechercher facilement un fichier ou une pièce de données spécifique dans toutes les sources connectées. Le sens des données permet aux utilisateurs d'effectuer des recherches plus approfondies que ce que les métadonnées reflètent. Il s'agit d'un service indépendant de la langue qui peut également lire les fichiers et analyser une multitude de types de données sensibles, tels que les noms et les ID. Par exemple, les utilisateurs peuvent effectuer des recherches dans des magasins de données structurés et non structurées pour trouver des données qui peuvent s'être divulguées des bases de données aux fichiers des utilisateurs, en violation de la stratégie de l'entreprise. Les recherches peuvent être enregistrées ultérieurement et des règles peuvent être créées pour rechercher et prendre des mesures sur les résultats à une fréquence définie.
+
+Une fois les fichiers qui vous intéressent trouvés, les caractéristiques peuvent être listées, y compris les balises, le compte de l'environnement de travail, le compartiment, le chemin du fichier, catégorie (à partir de la classification), taille du fichier, dernière modification, statut d'autorisation, doublons, niveau de sensibilité, données personnelles, types de données sensibles dans le fichier, propriétaire, type de fichier, taille de fichier, heure de création, hachage de fichier, si les données ont été attribuées à une personne demandant son attention, et plus encore. Les filtres peuvent être appliqués aux caractéristiques de tramage qui ne sont pas pertinentes. Data Sense possède également des contrôles RBAC permettant de déplacer ou de supprimer des fichiers, si les autorisations appropriées sont présentes. Si les autorisations appropriées ne sont pas présentes, les tâches peuvent être affectées à une personne de l'entreprise qui dispose des autorisations appropriées.
+
+
+
+=== Quels types d'analyses Cloud Data SENSE apporte-t-il ?
+
+Les sources de données peuvent être représentées visuellement, et les relations définies et représentées graphiquement. Par exemple, les administrateurs peuvent visualiser toutes les données obsolètes, dupliquées et non liées à l'activité dans l'ensemble des sources de données de l'entreprise (systèmes sur site, bases de données, partages de fichiers, magasins S3, OneDrive, etc.). Elles peuvent ensuite copier, déplacer, supprimer et gérer des données afin d'optimiser les coûts de stockage et de réduire les risques. Les utilisateurs peuvent réduire les risques en voyant les données sensibles et créer des tâches de gestion des autorisations pour une protection renforcée des données. Data Sense classe également tous les différents types de données, afin que les administrateurs puissent analyser des données par type et voir les actions qui ont été effectuées sur les données et quand.
+
+
+
+=== Cloud Data SENSE propose-t-il des rapports ?
+
+Oui. Les informations offertes par Cloud Data SENSE peuvent être pertinentes pour les autres parties prenantes de votre entreprise. Nous vous permettons donc de générer des rapports pour partager les informations exploitables. Les rapports suivants sont disponibles pour Data Sense :
+
+Rapport d'évaluation des risques pour la confidentialité:: Fournit des informations sur la confidentialité à partir de vos données et un score de risque lié à la confidentialité. link:task-generating-compliance-reports.html#privacy-risk-assessment-report["En savoir plus >>"^].
+Rapport de demande d'accès au sujet des données:: Vous permet d'extraire un rapport de tous les fichiers contenant des informations concernant le nom spécifique ou l'identifiant personnel d'un sujet de données. link:task-responding-to-dsar.html["En savoir plus >>"^].
+Rapport PCI DSS:: Vous aide à identifier la distribution des informations de carte de crédit dans vos dossiers. link:task-generating-compliance-reports.html#pci-dss-report["En savoir plus >>"^].
+Rapport HIPAA:: Vous aide à identifier la distribution de l'information sur la santé dans vos dossiers. link:task-generating-compliance-reports.html#hipaa-report["En savoir plus >>"^].
+Rapport de mappage de données:: Fournit des informations sur la taille et le nombre de fichiers dans vos environnements de travail. Cela inclut la capacité d'utilisation, l'âge des données, la taille des données et les types de fichiers. link:task-generating-compliance-reports.html#data-mapping-report["En savoir plus >>"^].
+Rapports sur un type d'information spécifique:: Des rapports sont disponibles, incluant des détails sur les fichiers identifiés qui contiennent des données personnelles et des données personnelles sensibles. Vous pouvez également voir les fichiers dérépartis par catégorie et par type de fichier. link:task-controlling-private-data.html["En savoir plus >>"^].
+
+
+
+
+=== Les performances d'acquisition varient-t-elles ?
+
+Les performances de l'analyse peuvent varier en fonction de la bande passante réseau et de la taille moyenne des fichiers dans votre environnement. Elle peut également dépendre des caractéristiques de taille du système hôte (dans le cloud ou sur site). Voir link:concept-cloud-compliance.html#the-cloud-data-sense-instance["Instance Cloud Data SENSE"^] et link:task-deploy-cloud-compliance.html["Déployer des solutions Cloud Data est logique"^] pour en savoir plus.
+
+Lors de l'ajout initial de nouvelles sources de données, vous pouvez également choisir d'effectuer uniquement une analyse de « mappage » au lieu d'une analyse de « classification » complète. Le mappage peut être effectué très rapidement sur vos sources de données car il n'accède pas aux fichiers pour voir les données à l'intérieur. link:concept-cloud-compliance.html#whats-the-difference-between-mapping-and-classification-scans["Voir la différence entre une acquisition de cartographie et une acquisition de classification"^].
+
+
+
+== Gestion et confidentialité des données cloud SENSE
+
+Les questions suivantes fournissent des informations sur la façon de gérer les paramètres de détection et de confidentialité des données dans le cloud.
+
+
+
+=== Comment activer le sens des données du cloud ?
+
+Il vous faut tout d'abord déployer une instance de Cloud Data Sense dans BlueXP ou sur un système sur site. Une fois l'instance en cours d'exécution, vous pouvez activer le service sur les environnements de travail existants, les bases de données et d'autres sources de données à partir de l'onglet *Data Sense* ou en sélectionnant un environnement de travail spécifique.
+
+link:task-getting-started-compliance.html["Découvrez comment démarrer"^].
+
+
+NOTE: L'activation de Cloud Data Sense sur une source de données entraîne une analyse initiale immédiate. Les résultats de l'analyse s'affichent peu de temps après.
+
+
+
+=== Comment désactiver le détection des données dans le cloud ?
+
+Vous pouvez désactiver Cloud Data Sense lors de l'analyse d'un environnement de travail, d'une base de données, d'un groupe de partage de fichiers, d'un compte OneDrive ou d'un compte SharePoint individuel à partir de la page Data Sense Configuration.
+
+link:task-managing-compliance.html["En savoir plus >>"^].
+
+
+NOTE: Pour supprimer complètement l'instance Cloud Data SENSE, vous pouvez supprimer manuellement l'instance Data Sense du portail de votre fournisseur cloud ou sur site.
+
+
+
+=== Puis-je personnaliser le service en fonction des besoins de mon entreprise ?
+
+Cloud Data Sense fournit des informations prêtes à l'emploi pour vos données. Ces informations peuvent être extraites et utilisées en fonction des besoins de votre entreprise.
+
+En outre, Data Sense offre de nombreuses façons d'ajouter une liste personnalisée de « données personnelles » que Data Sense identifiera dans les analyses, ce qui vous donne une idée complète de l'emplacement des données potentiellement sensibles dans les fichiers _All_ de votre entreprise.
+
+* Vous pouvez ajouter des identificateurs uniques basés sur des colonnes spécifiques dans les bases de données que vous scannez -- nous appelons cela *Data Fusion*.
+* Vous pouvez ajouter des mots-clés personnalisés à partir d'un fichier texte.
+* Vous pouvez ajouter des répétitions personnalisées à l'aide d'une expression régulière (regex).
+
+
+link:task-managing-data-fusion.html["En savoir plus >>"^].
+
+
+
+=== Est-il possible de limiter les informations SENSE relatives aux données cloud à des utilisateurs spécifiques ?
+
+Oui, Cloud Data SENSE est entièrement intégré à BlueXP. Les utilisateurs de BlueXP ne peuvent voir que les informations pour les environnements de travail qu'ils peuvent afficher en fonction de leurs privilèges d'espace de travail.
+
+En outre, si vous souhaitez autoriser certains utilisateurs à simplement afficher les résultats d'analyse de détection de données sans pouvoir gérer les paramètres de détection de données, vous pouvez attribuer à ces utilisateurs le rôle Cloud Compliance Viewer.
+
+link:concept-cloud-compliance.html#user-access-to-compliance-information["En savoir plus >>"^].
+
+
+
+=== Quelqu'un peut-il accéder aux données privées envoyées entre mon navigateur et Data Sense ?
+
+Non Les données privées envoyées entre votre navigateur et l'instance Data Sense sont sécurisées par un cryptage de bout en bout, ce qui signifie que NetApp et des tiers ne peuvent pas les lire. NetApp Data Sense ne partagera aucune donnée ou aucun résultat sauf si vous en faites la demande et que vous approuvez les accès.
+
+
+
+=== Que se passe-t-il si le Tiering des données est activé sur vos volumes ONTAP ?
+
+Vous pouvez activer la détection des données cloud sur les systèmes ONTAP qui transférant les données inactives vers le stockage objet. Lorsque le Tiering est activé, Data Sense analyse toutes les données (sur des disques et les données inactives hiérarchisées vers le stockage objet).
+
+L'analyse de conformité ne chauffe pas les données inactives : elles restent inactives et hiérarchisées vers le stockage objet.
+
+
+
+=== Cloud Data SENSE peut-il envoyer des notifications à mon entreprise ?
+
+Oui. En association avec la fonction stratégies, vous pouvez envoyer des alertes par e-mail aux utilisateurs BlueXP (tous les jours, toutes les semaines ou tous les mois) lorsqu'une police renvoie des résultats afin de recevoir des notifications pour protéger vos données. En savoir plus sur link:task-org-private-data.html#controlling-your-data-using-policies["Stratégies"^].
+
+Vous pouvez également télécharger des rapports de statut à partir de la page gouvernance et de la page Investigation que vous pouvez partager en interne dans votre organisation.
+
+
+
+=== Cloud Data Sense peut-il fonctionner avec les étiquettes AIP que j'ai intégrées dans mes fichiers ?
+
+Oui. Vous pouvez gérer les étiquettes AIP dans les fichiers que Cloud Data SENSE analyse si vous vous êtes abonné link:https://azure.microsoft.com/en-us/services/information-protection/["Protection des informations Azure (AIP)"^]. Vous pouvez afficher les libellés déjà affectés aux fichiers, ajouter des libellés aux fichiers et modifier les libellés existants.
+
+link:task-org-private-data.html#categorizing-your-data-using-aip-labels["En savoir plus >>"^].
+
+
+
+== Types de systèmes source et de types de données
+
+Les questions suivantes se rapportent aux types de stockage pouvant être analysés et aux types de données analysées.
+
+
+
+=== Quelles sources de données peuvent être analysées à l'aide de Data Sense ?
+
+Cloud Data SENSE peut analyser les données à partir d'environnements de travail que vous avez ajoutés à BlueXP Canvas et à partir de nombreux types de sources de données structurées et non structurées auxquelles Data Sense peut accéder sur vos réseaux.
+
+*Environnements de travail:*
+
+* Cloud Volumes ONTAP (déployé dans AWS, Azure ou GCP)
+* Clusters ONTAP sur site
+* Azure NetApp Files
+* Amazon FSX pour ONTAP
+* Amazon S3
+
+
+*Sources de données:*
+
+* Partages de fichiers non NetApp
+* Stockage objet (qui utilise le protocole S3)
+* Bases de données (Amazon RDS, MongoDB, MySQL, Oracle, PostgreSQL, SAP HANA ET SQL SERVER)
+* Comptes OneDrive
+* SharePoint Online et des comptes sur site
+* Comptes Google Drive
+
+
+Data Sense prend en charge les versions NFS 3.x, 4.0 et 4.1 et CIFS 1.x, 2.0, 2.1 et 3.0.
+
+
+
+=== Y a-t-il des restrictions lorsqu'elles sont déployées dans une région gouvernementale?
+
+Cloud Data Sense est pris en charge lorsque le connecteur est déployé dans une région gouvernementale (AWS GovCloud, Azure Government ou Azure DoD). Lorsqu'il est déployé de cette manière, Data SENSE présente les restrictions suivantes :
+
+* Les comptes OneDrive, les comptes SharePoint et Google Drive ne peuvent pas être analysés.
+* Impossible d'intégrer la fonctionnalité de label Microsoft Azure information protection (AIP).
+
+
+
+
+=== Quelles sources de données puis-je analyser si j'installe Data SENSE sur un site sans accès à Internet ?
+
+Data Sense peut analyser uniquement les données à partir de sources locales vers le site. À l'heure actuelle, Data Sense peut analyser les sources de données locales suivantes dans un site « sombre » :
+
+* Systèmes ONTAP sur site
+* Schémas de base de données
+* Comptes SharePoint sur site (SharePoint Server)
+* Partages de fichiers CIFS ou NFS non NetApp
+* Stockage objet qui utilise le protocole simple Storage Service (S3)
+
+
+
+
+=== Quels types de fichiers sont pris en charge ?
+
+Cloud Data SENSE analyse tous les fichiers pour chaque catégorie et métadonnées, et affiche tous les types de fichiers dans la section types de fichiers du tableau de bord.
+
+Lorsque Data SENSE détecte des informations à caractère personnel (PII) ou lorsqu'il effectue une recherche DSAR, seuls les formats de fichier suivants sont pris en charge :
+
+`+.CSV, .DCM, .DICOM, .DOC, .DOCX, .JSON, .PDF, .PPTX, .RTF, .TXT, .XLS, .XLSX, Docs, Sheets, and Slides+`
+
+
+
+=== Quels types de données et de métadonnées Cloud Data détecte-t-il ?
+
+Cloud Data SENSE vous permet d'exécuter une analyse « mapping » générale ou une analyse « complète » des sources de données. La cartographie ne fournit qu'une vue d'ensemble de haut niveau de vos données, tandis que Classification permet une analyse approfondie de vos données. Le mappage peut être effectué très rapidement sur vos sources de données car il n'accède pas aux fichiers pour voir les données à l'intérieur.
+
+* Acquisition de mappage de données.
++
+L'analyse des métadonnées uniquement. Ce qui est utile pour la gestion et la gouvernance globales des données, la définition rapide des projets, les gros domaines et la définition des priorités. Le mappage de données est basé sur les métadonnées et est considéré comme une acquisition *FAST*.
+
++
+Après une acquisition rapide, vous pouvez générer un rapport de mappage de données. Ce rapport présente les données stockées dans vos sources de données d'entreprise et vous aide à prendre les bonnes décisions en matière d'utilisation des ressources, de migration, de sauvegarde, de sécurité et de conformité.
+
+* Analyse de classification des données (approfondie).
++
+Analyse de la détection de données à l'aide de protocoles standard et d'autorisations en lecture seule dans l'ensemble de vos environnements. Les fichiers sélectionnés sont ouverts et analysés afin de détecter toute donnée sensible concernant l'entreprise, des informations privées et des problèmes liés aux attaques par ransomware.
+
++
+Après une analyse complète, vous pouvez appliquer de nombreuses fonctions de détection de données supplémentaires à vos données, telles que la consultation et le raffinage des données dans la page recherche de données, la recherche de noms dans des fichiers, la copie, le déplacement et la suppression de fichiers source, etc.
+
+
+
+
+
+== Licences et coût
+
+Les questions suivantes se rapportent aux licences et aux coûts pour utiliser Cloud Data SENSE.
+
+
+
+=== Quel est le coût des données cloud ?
+
+Le coût d'utilisation des données du cloud SENSE dépend de la quantité de données que vous scannez. Les 1 premiers To de données analysés par Data Sense dans un espace de travail BlueXP sont gratuits. Une fois cette limite atteinte, vous aurez besoin de l'une des options suivantes pour poursuivre l'analyse des données sur 1 To :
+
+* Un abonnement à la liste BlueXP Marketplace de votre fournisseur cloud, ou
+* Modèle BYOL (Bring Your Own License) de NetApp
+
+
+Voir https://cloud.netapp.com/netapp-cloud-data-sense#Pricing["tarifs"^] pour plus d'informations.
+
+
+
+=== Que se passe-t-il si la limite de capacité BYOL est atteinte ?
+
+Si vous atteignez une limite de capacité BYOL, Data Sense continue à fonctionner, mais l'accès aux tableaux de bord est bloqué de sorte que vous ne puissiez pas afficher les informations concernant vos données numérisées. Seule la page de configuration est disponible au cas où vous souhaitez réduire le nombre de volumes analysés afin d'augmenter votre capacité de stockage sous la limite de licence. Vous devez renouveler votre licence BYOL pour rétablir l'accès complet à Data Sense.
+
+
+
+== Déploiement de connecteurs
+
+Les questions suivantes concernent le connecteur BlueXP.
+
+
+
+=== Quel est le connecteur ?
+
+Il s'agit d'un logiciel exécuté sur une instance de calcul dans votre compte cloud ou sur site, permettant ainsi à BlueXP de gérer les ressources cloud de manière sécurisée. Vous devez déployer un connecteur pour utiliser le Cloud Data SENSE.
+
+
+
+=== Où le connecteur doit-il être installé ?
+
+* Pour l'analyse des données dans Cloud Volumes ONTAP dans AWS, Amazon FSX pour ONTAP ou dans des compartiments AWS S3, vous utilisez un connecteur dans AWS.
+* Pour analyser les données dans Cloud Volumes ONTAP dans Azure ou dans Azure NetApp Files, vous utilisez un connecteur dans Azure.
+* Pour l'analyse des données dans Cloud Volumes ONTAP dans GCP, vous utilisez un connecteur dans GCP.
+* Lors de l'analyse des données dans des systèmes ONTAP sur site, des partages de fichiers non NetApp, un stockage objet S3 générique, des bases de données, des dossiers OneDrive, des comptes SharePoint et des comptes Google Drive, vous pouvez utiliser un connecteur dans tous ces emplacements cloud.
+
+
+Donc, si vous disposez de données à plusieurs de ces emplacements, vous devrez peut-être les utiliser https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html#when-to-use-multiple-connectors["Plusieurs connecteurs"].
+
+
+
+=== Puis-je déployer le connecteur sur mon propre hôte ?
+
+Oui. C'est possible https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-installing-linux.html["Déployez le connecteur sur site"^] Sur un hôte Linux de votre réseau ou dans le cloud. Si vous envisagez de déployer Data Sense sur site, vous pouvez aussi installer le connecteur sur site, mais ce n'est pas obligatoire.
+
+
+
+=== Qu'en est-il des sites sécurisés sans accès à Internet ?
+
+Oui, cela est également pris en charge. C'est possible https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-connector-onprem-no-internet.html["Déployez le connecteur sur un hôte Linux sur site qui n'a pas accès à Internet"^]. Vous pouvez ensuite détecter les clusters ONTAP sur site et d'autres sources de données locales et analyser les données à l'aide de Data Sense.
+
+
+
+== Le déploiement du sens des données
+
+Les questions suivantes se rapportent à l'instance séparée de détection de données.
+
+
+
+=== Quels sont les modèles de déploiement pris en charge par Cloud Data ?
+
+BlueXP permet à l'utilisateur d'effectuer des analyses et des rapports sur des systèmes pratiquement n'importe où, y compris sur site, dans le cloud et dans les environnements hybrides. Cloud Data SENSE est généralement déployé à l'aide d'un modèle SaaS dans lequel le service est activé via l'interface BlueXP, et ne nécessite aucune installation matérielle ou logicielle. Même en ce mode de déploiement cliquer-exécuter, il est possible de gérer les données, que les datastores soient sur site ou dans le cloud public.
+
+
+
+=== Quel type d'instance ou de machine virtuelle est requis pour le contrôle de données dans le cloud ?
+
+Quand link:task-deploy-cloud-compliance.html["déploiement dans le cloud"]:
+
+* Dans AWS, Cloud Data SENSE s'exécute sur une instance m5.4xlarge avec un disque GP2 de 500 Go.
+* Dans Azure, Cloud Data Sense s'exécute sur une machine virtuelle standard_D16s_v3 avec un disque de 512 Go.
+* Dans GCP, Cloud Data Sense s'exécute sur une machine virtuelle n2-standard-16 avec un disque persistant standard de 512 Go.
+
+
+Notez que vous pouvez déployer Data Sense sur un système avec moins de processeurs et moins de RAM, mais il y a des limites lors de l'utilisation de ces systèmes. Voir link:concept-cloud-compliance.html#using-a-smaller-instance-type["Utilisation d'un type d'instance plus petit"] pour plus d'informations.
+
+link:concept-cloud-compliance.html["Découvrez le fonctionnement de Cloud Data SENSE"^].
+
+
+
+=== Puis-je déployer l'analyse des données sur mon propre hôte ?
+
+Oui. Vous pouvez installer le logiciel Data Sense sur un hôte Linux qui a accès à Internet dans votre réseau ou dans le cloud. Tout fonctionne de la même façon et vous continuez à gérer votre configuration de numérisation et vos résultats via BlueXP. Voir link:task-deploy-compliance-onprem.html["Déploiement de Cloud Data SENSE sur site"] pour connaître la configuration système requise et les détails de l'installation.
+
+
+
+=== Qu'en est-il des sites sécurisés sans accès à Internet ?
+
+Oui, cela est également pris en charge. C'est possible link:task-deploy-compliance-dark-site.html["Déployer Data Sense dans un site sur site qui ne dispose pas d'un accès Internet"] pour des sites totalement sécurisés.
