@@ -1,0 +1,1708 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head class="at-element-marker">
+  <title>Tout savoir sur le sens des données du cloud | NetApp Documentation</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta http-equiv="language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="Tout savoir sur le sens des données du cloud | NetApp Documentation" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://docs.netapp.com/fr-fr/cloud-manager-data-sense/concept-cloud-compliance.html" />
+	<meta property="og:description" content="Cloud Data Sense est un service de gouvernance des données pour BlueXP qui analyse les sources de données sur site et dans le cloud de votre entreprise pour ..." />
+  <meta property="og:image" content="https://docs.netapp.com/fr-fr/cloud-manager-data-sense/images/logo-tophat-social.png" />
+  <meta property="og:image:alt" content="NetApp Logo" />
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="encoding" content="utf-8">
+  <meta http-equiv="nss-type" content="Product Documentation"/>
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Cloud Data Sense est un service de gouvernance des données pour BlueXP qui analyse les sources de données sur site et dans le cloud de votre entreprise pour ...">
+  <meta name="keywords" content=" artificial intelligence, ai, compliance, cloud compliance, dsar, personal data, personal information, sensitive, personal sensitive data, gdpr, hipaa, scans, scanning, aip labels, governance, data sense, privacy control, classification, optimization"><!-- Icons -->
+  <link rel="icon" href="/fr-fr/cloud-manager-data-sense/images/favicon.ico" type="image/x-icon">
+
+  <!-- RSS Feed --><link rel="alternate" type="application/rss+xml" title="NetApp Documentation" href="/fr-fr/cloud-manager-data-sense/feed.xml"><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
+
+  <!-- Elastic Search -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/searchkit/0.10.0/theme.css">
+
+  <!-- Combined CSS -->
+  <link rel="stylesheet" type="text/css" href="/fr-fr/cloud-manager-data-sense/css/netappdocs.css">
+
+  
+  <link rel="stylesheet" href="/fr-fr/cloud-manager-data-sense/css/landing-page.css" type="text/css">
+  <link rel="stylesheet" href="/fr-fr/cloud-manager-data-sense/css/tabbed-blocks.css" type="text/css">
+  <!-- Canonical url -->
+  <link rel='stylesheet' href='/fr-fr/cloud-manager-data-sense/css/na-feature.css' type='text/css'><!-- Top level site integrations --><script>
+    function addAdobeLaunch(adobeId) {
+      var head = document.getElementsByTagName('head')[0];
+      var adobe = document.createElement("script");
+      adobe.type = "text/plain";
+      adobe.className = "optanon-category-C0002";
+      adobe.src = "//assets.adobedtm.com/60287eadf1ee/c284da483c83/"+adobeId+".min.js";
+      head.appendChild(adobe);
+    }
+
+    function addGoogleAnalytics(gtagId) {
+      var google = document.createElement("script");
+      google.type = "text/plain";
+      google.className = "optanon-category-C0002";
+      google.src = "https://www.googletagmanager.com/gtag/js?id="+gtagId;
+      var head = document.getElementsByTagName('head')[0];
+      head.appendChild(google);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', gtagId);
+    }
+
+    function addConsent(consentId) {
+      var head = document.getElementsByTagName('head')[0];
+      var onetrustConsent = document.createElement("script");
+      onetrustConsent.type = "text/javascript";
+      onetrustConsent.src = "https://cdn.cookielaw.org/consent/"+consentId+"/OtAutoBlock.js";
+      head.appendChild(onetrustConsent);
+
+      var onetrustScript = document.createElement("script");
+      onetrustScript.type = "text/javascript";
+      onetrustScript.src = "https://cdn.cookielaw.org/scripttemplates/otSDKStub.js";
+      onetrustScript.charset = "UTF-8";
+      onetrustScript.dataset.documentLanguage = "true";
+      onetrustScript.dataset.domainScript = consentId;
+      head.appendChild(onetrustScript);
+    }addConsent("72570c5c-fe30-465f-b0e0-b77f7fb4ae34");
+    addAdobeLaunch("launch-e9ff3acac59f");
+    addGoogleAnalytics("UA-81697994-3");function OptanonWrapper() { }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+  <!-- Used for Product Family Page Sidebar Visibility --><!-- Used to import Promise for IE. Required for SearchKit -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script><script src='/fr-fr/cloud-manager-data-sense/js/na-search.js'></script><script src='/fr-fr/cloud-manager-data-sense/js/na-pagenav.js'></script><script src='/fr-fr/cloud-manager-data-sense/js/na-utility.js'></script>
+  <script src='/fr-fr/cloud-manager-data-sense/js/clouddocs.js'></script>
+  <script src='/fr-fr/cloud-manager-data-sense/js/jquery.navgoco.min.js'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src='/fr-fr/cloud-manager-data-sense/js/toc.js'></script>
+  <script src='/fr-fr/cloud-manager-data-sense/js/customscripts.js'></script><script>
+      $(document).ready(function() {
+          
+          var collapseOnInit = true;
+          
+
+          var navSettings = {
+              "caretHtml": '',
+              "accordion": collapseOnInit,
+              "openClass": 'active', // open
+              "save": false, // leave false or nav highlighting doesn't work right
+              "cookie": {
+                  "name": 'navgoco',
+                  "expires": false,
+                  "path": '/'
+              },
+              "slide": {
+                  "duration": 400,
+                  "easing": 'swing'
+              }
+          };
+
+          // Initialize navgoco with default options
+          $("#mysidebar").navgoco(navSettings);
+          
+
+          $("#collapseAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', false);
+          });
+
+          $("#expandAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', true);
+          });
+
+          $(".sidebar-nav-container").on("scroll", function() {
+            $.cookie("sidebarScroll", $(".sidebar-nav-container").scrollTop(), {
+              path    : "/fr-fr/cloud-manager-data-sense"  
+            });
+          });
+          $(function() {
+            if ($.cookie("sidebarScroll")) {
+              $(".sidebar-nav-container").scrollTop($.cookie("sidebarScroll"));
+            }
+          });
+
+      });
+
+  </script>
+  <script>
+      $(document).ready(function() {
+          $("#tg-sb-link").click(function() {
+              $("#tg-sb-sidebar").toggle();
+              $("#tg-sb-content").toggleClass('col-md-9');
+              $("#tg-sb-content").toggleClass('col-md-12');
+              $("#tg-sb-icon").toggleClass('fa-toggle-on');
+              $("#tg-sb-icon").toggleClass('fa-toggle-off');
+          });
+      });
+  </script>
+  <script src='/fr-fr/cloud-manager-data-sense/js/custom-dropdown.js'></script>
+  <script src='/fr-fr/cloud-manager-data-sense/js/FileSaver.min.js'></script>
+  <script src='/fr-fr/cloud-manager-data-sense/js/jszip-utils.min.js'></script>
+  <script src='/fr-fr/cloud-manager-data-sense/js/jszip.min.js'></script>
+  <script src='/fr-fr/cloud-manager-data-sense/js/pdf-ux.js'></script>
+</head>
+
+
+  <body class role="document" data-flavor="">
+    <div id="page" class="n-off-canvas-menu">
+      <div class="n-off-canvas-menu__menu"><!--TODO: Add offcanvas code --></div>
+      <div class="n-off-canvas-menu__content-wrap">
+        <header class="site-header" id="banner">
+  
+  <!-- Start Page Toolbar -->
+  
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-data-sense/issues/new?body=Page%3A%20[Tout savoir sur le sens des données du cloud](https://docs.netapp.com/fr-fr/cloud-manager-data-sense/concept-cloud-compliance.html)&template=public-issue-template.md" class="page-nav-contribute-link" role="button"><img src="/fr-fr/cloud-manager-data-sense/images/discuss-sm.svg" alt="" class="github-icon" />Demander de modifier un document</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-data-sense/blob/main/concept-cloud-compliance.adoc" class="page-nav-contribute-link" role="button"><img src="/fr-fr/cloud-manager-data-sense/images/edit-sm.svg" alt="" class="github-icon" />Modifier sur GitHub</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/fr-fr/cloud-manager-data-sense/images/article-sm.svg" alt="" class="github-icon" />Guide des contributeurs</a></div>
+    <div class="page-nav-container">
+      <nav class="page-nav-fixed">
+        <div class="page-nav-title">SUR CETTE PAGE</div>
+        <div class="page-nav-links">
+          <ul class="page-nav-inner" id="page-menu"></ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  
+  
+  <!-- Start top_hat -->
+  <div class="n-top-hat">
+    <div class="n-container">
+      <div class="n-top-hat__cross-property-nav">
+        <ul class="n-top-hat__list">
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/products-a-z/" class="n-top-hat__link">Produits et solutions</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/support-and-training/netapp-university/" class="n-top-hat__link">Support et formation</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://cloud.netapp.com" class="n-top-hat__link">Cloud Central</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://community.netapp.com/" class="n-top-hat__link">Communauté</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://blog.netapp.com/" class="n-top-hat__link">Blog</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://customers.netapp.com/en/" class="n-top-hat__link">Témoignages clients</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">Contact</a>
+          </li>
+        </ul>
+      </div>
+      <div class="n-top-hat__utils">
+        <ul class="n-top-hat__list">
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- End top_hat -->
+
+  <!-- Start property bar -->
+  <style>
+    .n-property-navigation-bar__menus--desktop-experience .n-menu--mega__default-content__heading span {
+    color: #34B0FF;
+    }
+  </style>
+  <div class="n-property-bar " data-ntap-ui="sticky-nav">
+    <div class="n-property-bar__inner-wrap">
+      <div class="n-property-bar__menu-toggle">
+        <a href="#" class="n-property-bar__menu-toggle-link">
+          <span class="n-property-bar__menu-toggle-text">Menu</span>
+          <svg class="n-icon-bars n-property-bar__menu-toggle-icon" aria-labelledby="title">
+            <title>bars</title>
+            <use xlink:href="/fr-fr/cloud-manager-data-sense/common/svg/sprite.svg#bars"></use>
+          </svg>
+        </a>
+      </div>
+      <div class="n-property-bar__property-mark ">
+        <a href="https://www.netapp.com" class="n-property-bar__property-link">
+          <div class="n-property-bar__logo">
+            <svg class="n-icon-netapp-mark n-icon-netapp-mark n-property-bar__netapp-mark-icon" aria-labelledby="title">
+              <title>netapp-mark</title>
+              <use xlink:href="/fr-fr/cloud-manager-data-sense/common/svg/sprite.svg#netapp-mark"></use>
+            </svg>
+            <svg class="n-icon-netapp-logo n-property-bar__logo-svg" aria-labelledby="title">
+              <title>netapp-logo</title>
+              <use xlink:href="/fr-fr/cloud-manager-data-sense/common/svg/sprite.svg#netapp-logo"></use>
+            </svg>
+          </div>
+        </a>
+      </div>
+
+      
+      
+      
+      <div class="search-property-bar">
+        <div id="search-demo-container" class="searchbox n-property-bar__search">
+          <div id="react-search" 
+          data-search-html="/fr-fr/cloud-manager-data-sense/search.html"
+          data-type="widget" 
+          data-placeholder="Rechercher une documentation"
+          data-no-results-found="Aucun résultat n'a été trouvé pour {query}"
+          data-did-you-mean="Rechercher {suggestion}."
+          data-no-results-found-did-you-mean="Aucun résultat n’a été trouvé pour {query}. Voulez-vous dire {suggestion} ?"
+          data-results-found="{hitCount} résultats trouvés"
+          data-error-message="We're sorry, an issue occurred when fetching your results. Please try again."
+          data-error-reset="Reset Search"
+          data-sk-es-pf-indexes=""
+          data-flavor=""></div>
+          <button class="n-property-bar__search-toggle-button" type="button">
+            <svg class="n-icon-search n-property-bar__search-toggle-button-icon" aria-labelledby="title">
+              <title>search</title>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/fr-fr/cloud-manager-data-sense/common/svg/sprite.svg#search"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <div class="n-property-bar__toolbar">
+    <!-- Start Language Selector --><div id="language-dropdown" class="custom-dropdown custom-dropdown-lang">
+      <div class="custom-dropdown-select custom-dropdown-select-lang">
+      <span class="lang-name">Français</span>
+          <svg class="n-globe__icon" aria-labelledby="title">
+            <title>globe</title>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/fr-fr/cloud-manager-data-sense/common/svg/sprite.svg#globe"></use>
+          </svg>
+        </button>
+      </div>
+
+      <ul class="custom-dropdown-menu"><li>
+          <a href="https://docs.netapp.com/fr-fr/cloud-manager-data-sense/concept-cloud-compliance.html" target="_self"><span translate="no" class="notranslate">Français</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/us-en/cloud-manager-data-sense/concept-cloud-compliance.html" target="_self"><span translate="no" class="notranslate">English</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ja-jp/cloud-manager-data-sense/concept-cloud-compliance.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-cn/cloud-manager-data-sense/concept-cloud-compliance.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-tw/cloud-manager-data-sense/concept-cloud-compliance.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ko-kr/cloud-manager-data-sense/concept-cloud-compliance.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/de-de/cloud-manager-data-sense/concept-cloud-compliance.html" target="_self"><span translate="no" class="notranslate">Deutsch</span></a>
+        </li></ul>
+    </div><!-- End Language Selector -->
+
+    <div class="n-property-bar__cta"></div>
+  </div>
+  <script>
+    $(function(){
+        var currentLocalization = $('html').attr('lang');
+
+        var localizationsDictionary = {
+            "en-CA" : "https://www.netapp.com/search/index.aspx?for_cr=canada&",
+            "en-IN" : "https://www.netapp.com/search/index.aspx?for_cr=india&",
+            "nl-NL" : "https://www.netapp.com/search/index.aspx?for_cr=netherlands&",
+            "ru-RU" : "https://www.netapp.com/search/index.aspx?for_cr=russia&",
+            "sv-SE" : "https://www.netapp.com/search/index.aspx?for_cr=sweden&",
+            "it-IT" : "https://www.netapp.com/search/index.aspx?for_cr=italy&",
+            "he-IL" : "https://www.netapp.com/search/index.aspx?for_cr=israel&",
+            "ko-KR" : "https://www.netapp.com/search/index.aspx?for_cr=korea&",
+            "zh-TW" : "https://www.netapp.com/search/index.aspx?for_cr=taiwan&",
+            "en-GB" : "https://www.netapp.com/search/index.aspx?for_cr=unitedkingdom&",
+            "en-SG" : "https://www.netapp.com/search/index.aspx?for_cr=asean&",
+            "en-AU" : "https://www.netapp.com/search/index.aspx?for_cr=australia&",
+            "pt-BR" : "https://www.netapp.com/search/index.aspx?for_cr=brasil&",
+            "de-CH" : "https://www.netapp.com/search/index.aspx?for_cr=switzerland&",
+            "es-MX" : "https://www.netapp.com/search/index.aspx?for_cr=mexico&"
+        };
+
+        if($('html').hasClass('ntap-whitelisted') && localizationsDictionary.hasOwnProperty(currentLocalization)) {
+            $('.n-property-bar__property-link').attr('href', '/');
+        }
+    });
+  </script>
+  <!-- End property bar -->
+</header>
+
+
+        <main id="n-main-content" class="n-main-content">
+          <!-- Start Documentation Content -->
+<div class="ie-main">
+  <!-- Sidebar Column -->
+  
+  <div class="col-md-3" id="sidebar-height">
+      <button id="btn-sidebar-collapse" onclick="hideSidebar()"><img src="/fr-fr/cloud-manager-data-sense/images/collapse.png" alt="Réduire le panneau de navigation"></button>
+      <div class="n-pdf-header">
+  <a id="toggleButtonPdf" class="n-pdf-button" type="button">
+    <img src="/fr-fr/cloud-manager-data-sense/images/pdf.png" alt="" width="16" height="16"/>PDFs disponibles<span>
+    </span>
+  </a>
+</div>
+<div class="n-pdf-body-container">
+  <ul id="toggleContainerPdf" class="n-pdf-body" style="display:none;"><li class="pdf-ux-container">
+        
+        
+        
+        <a target="_blank" href="/fr-fr/cloud-manager-data-sense/pdfs/fullsite-sidebar/Documentation_Cloud_Data_Sense.pdf" >
+          <img src="/fr-fr/cloud-manager-data-sense/images/pdf.png" alt="" width="16" height="16"/>PDF de ce site de documentation</a>
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/fr-fr/cloud-manager-data-sense/pdfs/sidebar/Commencez.pdf" 
+            
+          >
+            <img src="/fr-fr/cloud-manager-data-sense/images/pdf.png" alt="" width="16" height="16"/>
+            Commencez
+          </a>
+          
+    <ul class="subfolders" id="pdf-remove" style="display:none;"><li class="active"></li></ul>
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/fr-fr/cloud-manager-data-sense/pdfs/sidebar/Déployez_des_données_adaptées_au_cloud.pdf" 
+            
+          >
+            <img src="/fr-fr/cloud-manager-data-sense/images/pdf.png" alt="" width="16" height="16"/>
+            Déployez des données adaptées au cloud
+          </a>
+          
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/fr-fr/cloud-manager-data-sense/pdfs/sidebar/Activez_la_numérisation_sur_vos_sources_de_données.pdf" 
+            
+          >
+            <img src="/fr-fr/cloud-manager-data-sense/images/pdf.png" alt="" width="16" height="16"/>
+            Activez la numérisation sur vos sources de données
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/fr-fr/cloud-manager-data-sense/pdfs/sidebar/Utilisez_le_sens_des_données_du_cloud.pdf" 
+            
+          >
+            <img src="/fr-fr/cloud-manager-data-sense/images/pdf.png" alt="" width="16" height="16"/>
+            Utilisez le sens des données du cloud
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/fr-fr/cloud-manager-data-sense/pdfs/sidebar/Gérez_les_données_cloud_comme_vous_le_pouvez.pdf" 
+            
+          >
+            <img src="/fr-fr/cloud-manager-data-sense/images/pdf.png" alt="" width="16" height="16"/>
+            Gérez les données cloud comme vous le pouvez
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/fr-fr/cloud-manager-data-sense/pdfs/sidebar/Connaissances_et_support.pdf" 
+            
+          >
+            <img src="/fr-fr/cloud-manager-data-sense/images/pdf.png" alt="" width="16" height="16"/>
+            Connaissances et support
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+</li></ul>
+  <div class="zip-pdf-link-container" style="display: none;">   
+    <a href="#" id="zipPdf">
+      <img src="/fr-fr/cloud-manager-data-sense/images/pdf-zip.png" alt="" width="16" height="16"/>
+      <pre>Collection de documents PDF séparés<span class="zip-size"></span></pre>
+    </a><div id="zip-link-popup" class="hide">
+    <div class="inner-modal">
+        <div class="downloading-progress">
+            <div class="spinner"></div>
+            <h1>Creating your file...</h1>
+            <div>This may take a few minutes. Thanks for your patience.</div>
+            <button class="cancel-download-btn" type="button">Cancel</button>
+        </div>
+        <div class="download-complete hide">
+            <div class="done-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>
+            </div>
+            <div>Your file is ready</div>
+            <button class="cancel-download-btn" type="button">OK</button>
+        </div>
+    </div>
+</div>
+<script>
+    $(".cancel-download-btn").click(function(){
+        $("#zip-link-popup").addClass("hide");
+        $("#zip-link-popup .downloading-progress").removeClass("hide");
+        $("#zip-link-popup .download-complete").addClass("hide");
+    });
+</script></div>
+</div>
+<script>
+  $("#toggleContainerPdf li.active:last-child").parents('ul.subfolders').toggle('display');
+  $("#toggleButtonPdf").click(function () {
+    $("#toggleContainerPdf").toggle('display');
+    $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
+  });
+</script><div class="prod-nav" id="product-nav">
+  <a target="_self" class="prod-fam-nav" href="https://docs.netapp.com/fr-fr/cloud-manager-family/"><img src="/fr-fr/cloud-manager-data-sense/images/left_arrow.png" alt=""><pre>Toute la documentation BlueXP</pre></a>
+</div><div class="sidebar-nav-container" id="mysidebardiv">
+  <ul id="mysidebar" class="nav"><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Documentation Cloud Data Sense"
+      data-li-level="1#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/index.html">
+        Documentation Cloud Data Sense
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Notes de mise à jour"
+      data-li-level="1#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/whats-new.html">
+        Notes de mise à jour
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Commencez"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Commencez</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Tout savoir sur le sens des données du cloud"
+      data-li-level="2#" 
+      class="  active "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/concept-cloud-compliance.html">
+        Tout savoir sur le sens des données du cloud
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Déployez des données adaptées au cloud"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Déployez des données adaptées au cloud</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Déploiement dans le cloud"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/task-deploy-cloud-compliance.html">
+        Déploiement dans le cloud
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Déploiement sur site avec accès à Internet"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/task-deploy-compliance-onprem.html">
+        Déploiement sur site avec accès à Internet
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Déploiement sur site sans accès Internet"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/task-deploy-compliance-dark-site.html">
+        Déploiement sur site sans accès Internet
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Activez la numérisation sur vos sources de données"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Activez la numérisation sur vos sources de données</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Cloud Volumes ONTAP et ONTAP sur site"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/task-getting-started-compliance.html">
+        Cloud Volumes ONTAP et ONTAP sur site
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Azure NetApp Files"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/task-scanning-anf.html">
+        Azure NetApp Files
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Amazon FSX pour ONTAP"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/task-scanning-fsx.html">
+        Amazon FSX pour ONTAP
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Compartiments Amazon S3"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/task-scanning-s3.html">
+        Compartiments Amazon S3
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Schémas de base de données"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/task-scanning-databases.html">
+        Schémas de base de données
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Comptes OneDrive"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/task-scanning-onedrive.html">
+        Comptes OneDrive
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Comptes SharePoint"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/task-scanning-sharepoint.html">
+        Comptes SharePoint
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Comptes Google Drive"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/task-scanning-google-drive.html">
+        Comptes Google Drive
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Partages de fichiers"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/task-scanning-file-shares.html">
+        Partages de fichiers
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Stockage objet"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/task-scanning-object-storage.html">
+        Stockage objet
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Intégrer Active Directory"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/task-add-active-directory-datasense.html">
+        Intégrer Active Directory
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Configuration des licences"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/task-licensing-datasense.html">
+        Configuration des licences
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="FAQ"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/faq-cloud-compliance.html">
+        FAQ
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Utilisez le sens des données du cloud"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Utilisez le sens des données du cloud</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Afficher les détails de gouvernance de vos données"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/task-controlling-governance-data.html">
+        Afficher les détails de gouvernance de vos données
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Affichez les détails de conformité de vos données"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/task-controlling-private-data.html">
+        Affichez les détails de conformité de vos données
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Organisez vos données privées"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/task-org-private-data.html">
+        Organisez vos données privées
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Gérez vos données privées"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/task-managing-highlights.html">
+        Gérez vos données privées
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Modifier les paramètres de numérisation"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/task-managing-repo-scanning.html">
+        Modifier les paramètres de numérisation
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Générer des rapports"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/task-generating-compliance-reports.html">
+        Générer des rapports
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Répondre à un DSAR"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/task-responding-to-dsar.html">
+        Répondre à un DSAR
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Catégories de données privées"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/reference-private-data-categories.html">
+        Catégories de données privées
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Gérez les données cloud comme vous le pouvez"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Gérez les données cloud comme vous le pouvez</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Ajoutez des identifiants de données personnels personnalisés"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/task-managing-data-fusion.html">
+        Ajoutez des identifiants de données personnels personnalisés
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Afficher l'état des actions de détection de données"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/task-view-compliance-actions.html">
+        Afficher l'état des actions de détection de données
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Auditer l'historique des actions de détection de données"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/task-audit-data-sense-actions.html">
+        Auditer l'historique des actions de détection de données
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Réduire la vitesse d'acquisition de détection de données"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/task-reduce-scan-speed.html">
+        Réduire la vitesse d'acquisition de détection de données
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Supprimer les sources de données de Data Sense"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/task-managing-compliance.html">
+        Supprimer les sources de données de Data Sense
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Désinstaller Data Sense"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/task-uninstall-data-sense.html">
+        Désinstaller Data Sense
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Connaissances et support"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Connaissances et support</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="S'inscrire pour obtenir de l'aide"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/task-support-registration.html">
+        S'inscrire pour obtenir de l'aide
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Obtenez de l'aide"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/task-get-help.html">
+        Obtenez de l'aide
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Mentions légales"
+      data-li-level="1#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/legal-notices.html">
+        Mentions légales
+      </a></li></ul>
+</div>
+<script>
+  window.onscroll = () => {
+    const value = -40 - (document.body.scrollHeight - (window.innerHeight + document.scrollingElement.scrollTop));
+    
+    document.getElementById("sidebar-height").style.bottom = Math.max(0,value) + "px";
+};
+</script>
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+<script>$("#mysidebar li.active").parents('ul').css("display","block");</script>
+
+
+  </div>
+  
+
+  <div class="ie-content-pane n-doc__component-detail-content n-doc__component-detail-content--show-code">
+    <!-- Begin of page container --><article class="page-content" id="main">
+      <div class="ie-utility">
+  <button id="btn-sidebar-expand" onclick="showSidebar()"><img src="/fr-fr/cloud-manager-data-sense/images/expand.png" alt="Développer le panneau de navigation"></button>
+  <div class="ie-menu">
+    <div class="n-breadcrumb">
+      <ul class="n-breadcrumb__list">
+        <li class="n-breadcrumb__list-item">
+          <a href="https://docs.netapp.com">docs.netapp.com</a>
+        </li>
+        
+        <li class="n-breadcrumb__list-item">
+          <a href="https://docs.netapp.com/us-en/cloud/">Documents dans le cloud</a>
+        </li>
+        
+
+        
+        <li class="n-breadcrumb__list-item">
+          <a href="https://docs.netapp.com/fr-fr/cloud-manager-family/">BlueXP</a>
+        </li>
+        
+
+        <li class="n-breadcrumb__list-item">
+          <a href="/fr-fr/cloud-manager-data-sense/">Cloud&nbsp;Data&nbsp;Sense</a>
+        </li>
+
+      </ul>
+    </div>
+    <div style="clear: both"></div><!-- Main needs to have height -->
+  </div>
+</div>
+
+      <div class="ie-nmt-disclaimer">
+  <span>
+    <div class="ie-nmt-disclaimer-container">
+      <div class="ie-nmt-disclaimer-icon">
+        <svg class="luci-icon" aria-hidden="true">
+          <use xlink:href="/fr-fr/cloud-manager-data-sense/common/svg/sprite.svg#circle-info">
+        </svg>
+      </div>
+      <div class="ie-nmt-disclaimer-content">
+        <span> La version française est une traduction automatique. La version anglaise prévaut sur la française en cas de divergence. </span>
+      </div>
+      <div style="clear:both;"></div>
+    </div>
+  </span>
+</div><div class="n-doc__component-detail-heading-wrap">
+  <h1 class="n-doc__component-detail-heading">Tout savoir sur le sens des données du cloud</h1>
+</div>
+
+
+<p class="page-details">
+  
+    
+    <time datetime="2022-11-15 17:35:19 +0000">11/15/2022</time>
+    
+  
+
+<span>Contributeurs
+</span>
+
+
+</p>
+
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph lead">
+<p>Cloud Data Sense est un service de gouvernance des données pour BlueXP (anciennement Cloud Manager) qui analyse vos sources de données sur site et dans le cloud de votre entreprise pour mapper et classer les données, et identifier des informations privées. Cela peut réduire les risques liés à la sécurité et à la conformité, diminuer les coûts de stockage et vous aider dans vos projets de migration des données.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://cloud.netapp.com/netapp-cloud-data-sense" target="_blank" rel="noopener">"Découvrez les utilisations de Cloud Data Sense"</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="caractéristiques">Caractéristiques</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Cloud Data Sense utilise l&#8217;intelligence artificielle (IA), le traitement du langage naturel (NLP) et l&#8217;apprentissage machine (ML) pour comprendre le contenu qu&#8217;il analyse afin d&#8217;extraire les entités et de catégoriser le contenu en conséquence. Cela permet à Data Sense de fournir les domaines de fonctionnalité suivants.</p>
+</div>
+<div class="sect2">
+<h3 id="préservez-la-conformité">Préservez la conformité</h3>
+<div class="paragraph">
+<p>Data SENSE fournit plusieurs outils qui peuvent vous aider dans vos efforts de conformité. Vous pouvez utiliser Data Sense pour :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Identifier les informations à caractère personnel</p>
+</li>
+<li>
+<p>Identifier une vaste portée des données personnelles sensibles, conformément aux réglementations en matière de confidentialité, RGPD, CCPA, PCI et HIPAA.</p>
+</li>
+<li>
+<p>Répondez aux demandes d&#8217;accès aux données (DSAR, Data Subject Access Requests) en fonction de votre nom ou de votre adresse e-mail.</p>
+</li>
+<li>
+<p>Identifiez si des identificateurs uniques de vos bases de données se trouvent dans des fichiers d&#8217;autres référentiels, en faisant simplement votre propre liste de « données personnelles » identifiées dans les analyses de détection de données.</p>
+</li>
+<li>
+<p>Notifier les utilisateurs BlueXP par courrier électronique lorsque des fichiers contiennent certains PII (vous définissez ce critère à l&#8217;aide de <a href="task-org-private-data.html#controlling-your-data-using-policies" target="_blank" rel="noopener">"Stratégies"</a>) de sorte que vous puissiez décider d&#8217;un plan d&#8217;action.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="renforcez-la-sécurité">Renforcez la sécurité</h3>
+<div class="paragraph">
+<p>Le sens des données permet d&#8217;identifier les données susceptibles d&#8217;être consultées à des fins criminelles. Vous pouvez utiliser Data Sense pour :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Identifiez tous les fichiers et répertoires (partages et dossiers) avec les autorisations ouvertes exposées à l&#8217;ensemble de votre organisation ou au public.</p>
+</li>
+<li>
+<p>Identifiez les données sensibles qui se trouvent en dehors de l&#8217;emplacement initial dédié.</p>
+</li>
+<li>
+<p>Respectez les règles de conservation des données.</p>
+</li>
+<li>
+<p>Utilisez <em>Policies</em> pour avertir automatiquement le personnel de sécurité de nouveaux problèmes de sécurité afin qu&#8217;il puisse agir immédiatement.</p>
+</li>
+<li>
+<p>Ajoutez des balises personnalisées aux fichiers (par exemple, "doit être déplacé") et affectez un utilisateur BlueXP pour que cette personne puisse posséder des mises à jour des fichiers.</p>
+</li>
+<li>
+<p>Afficher et modifier <a href="https://azure.microsoft.com/en-us/services/information-protection/" target="_blank" rel="noopener">"Étiquettes Azure information protection (AIP)"</a> dans vos fichiers.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="optimiser-lutilisation-du-stockage">Optimiser l&#8217;utilisation du stockage</h3>
+<div class="paragraph">
+<p>Data Sense fournit des outils qui peuvent vous aider dans votre coût total de possession (TCO) du stockage. Vous pouvez utiliser Data Sense pour :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Amélioration de l&#8217;efficacité du stockage grâce à l&#8217;identification des données dupliquées ou non liées à l&#8217;activité. Vous pouvez utiliser ces informations pour décider si vous voulez déplacer ou supprimer certains fichiers.</p>
+</li>
+<li>
+<p>Supprimez des fichiers qui semblent non sécurisés ou trop risqués pour l&#8217;éviter dans votre système de stockage, ou qui ont été identifiés en double. Vous pouvez utiliser <em>Policies</em> pour supprimer automatiquement des fichiers qui correspondent à certains critères.</p>
+</li>
+<li>
+<p>Réduisez les coûts du stockage en identifiant les données inactives que vous pouvez déplacer vers un stockage objet moins coûteux. <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-data-tiering.html" target="_blank" rel="noopener">"En savoir plus sur le Tiering"</a>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="accélérez-la-migration-des-données">Accélérez la migration des données</h3>
+<div class="paragraph">
+<p>Data Sense peut être utilisé pour analyser les données sur site avant de les migrer vers le cloud public ou privé. Vous pouvez utiliser Data Sense pour :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Permet d&#8217;afficher la taille des données et si l&#8217;une des données contient des informations sensibles avant de les déplacer.</p>
+</li>
+<li>
+<p>Filtrez les données source (en fonction de plus de 25 types de critères) pour pouvoir déplacer uniquement les fichiers requis vers la destination. Les données inutiles ne sont pas déplacées.</p>
+</li>
+<li>
+<p>Déplacez, copiez ou synchronisez uniquement les données requises dans le référentiel cloud de manière automatique et continue.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="sources-de-données-prises-en-charge">Sources de données prises en charge</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Cloud Data Sense peut analyser et analyser des données structurées et non structurées à partir de plusieurs types de sources de données :</p>
+</div>
+<div class="paragraph">
+<p><strong>NetApp:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Cloud Volumes ONTAP (déployé dans AWS, Azure ou GCP)</p>
+</li>
+<li>
+<p>Clusters ONTAP sur site</p>
+</li>
+<li>
+<p>StorageGRID</p>
+</li>
+<li>
+<p>Azure NetApp Files</p>
+</li>
+<li>
+<p>Amazon FSX pour ONTAP</p>
+</li>
+<li>
+<p>Cloud Volumes Service pour Google Cloud</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Non NetApp:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Dell EMC Isilon</p>
+</li>
+<li>
+<p>Pure Storage</p>
+</li>
+<li>
+<p>Nutanix</p>
+</li>
+<li>
+<p>Tout autre fournisseur de stockage</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Cloud:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Amazon S3</p>
+</li>
+<li>
+<p>Blob d&#8217;Azure</p>
+</li>
+<li>
+<p>Google Cloud Storage</p>
+</li>
+<li>
+<p>OneDrive</p>
+</li>
+<li>
+<p>SharePoint Online</p>
+</li>
+<li>
+<p>SharePoint sur site (SharePoint Server)</p>
+</li>
+<li>
+<p>Google Drive</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Bases de données:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Amazon Relational Database Service (Amazon RDS)</p>
+</li>
+<li>
+<p>MongoDB</p>
+</li>
+<li>
+<p>MySQL</p>
+</li>
+<li>
+<p>Oracle</p>
+</li>
+<li>
+<p>PostgreSQL</p>
+</li>
+<li>
+<p>SAP HANA</p>
+</li>
+<li>
+<p>Serveur SQL (MSSQL)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Data Sense prend en charge les versions NFS 3.x, 4.0 et 4.1 et CIFS 1.x, 2.0, 2.1 et 3.0.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="le-coût">Le coût</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Le coût d&#8217;utilisation des données du cloud SENSE dépend de la quantité de données que vous scannez. Les 1 premiers To de données analysés par Data Sense dans un espace de travail BlueXP sont gratuits. Cela inclut toutes les données issues de tous les environnements de travail et de toutes les sources de données. Un abonnement à AWS, Azure, GCP Marketplace ou une licence BYOL de NetApp est requis pour continuer l&#8217;analyse des données après ce point. Voir <a href="https://cloud.netapp.com/netapp-cloud-data-sense" target="_blank" rel="noopener">"tarifs"</a> pour plus d&#8217;informations.</p>
+<div class="paragraph">
+<p><a href="task-licensing-datasense.html" target="_blank" rel="noopener">"Découvrez comment obtenir des licences Cloud Data Sense"</a>.</p>
+</div>
+</li>
+<li>
+<p>Pour installer Cloud Data dans le cloud, il faut déployer une instance cloud, ce qui entraîne des frais supplémentaires du fournisseur cloud chargé du déploiement. Voir  Cloud Data Sense instance,type d&#8217;instance déployé pour chaque fournisseur cloud. L&#8217;installation de Data Sense sur un système sur site est gratuite.</p>
+</li>
+<li>
+<p>Cloud Data sens requiert que vous ayez déployé un connecteur BlueXP. Dans de nombreux cas, vous disposez déjà d&#8217;un connecteur en raison d&#8217;autres services et stockages que vous utilisez dans BlueXP. L&#8217;instance de connecteur entraîne des frais supplémentaires du fournisseur cloud sur lequel elle est déployée. Voir la <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-installing-linux.html" target="_blank" rel="noopener">"type d&#8217;instance déployé pour chaque fournisseur cloud"</a>. L&#8217;installation du connecteur sur un système sur site est gratuite.</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="coûts-de-transfert-de-données">Coûts de transfert de données</h3>
+<div class="paragraph">
+<p>Les coûts de transfert de données dépendent de votre configuration. Si l&#8217;instance de Cloud Data SENSE et la source de données se trouvent dans la même zone de disponibilité et la même région, aucun coût de transfert de données n&#8217;est observé. Mais si la source de données, telle qu&#8217;un système Cloud Volumes ONTAP ou un compartiment S3, se trouve dans une <em>autre</em> zone ou région de disponibilité, vous serez facturé par votre fournisseur cloud pour les coûts de transfert de données. Consultez ces liens pour en savoir plus :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://aws.amazon.com/ec2/pricing/on-demand/" target="_blank" rel="noopener">"AWS : tarification Amazon EC2"</a></p>
+</li>
+<li>
+<p><a href="https://azure.microsoft.com/en-us/pricing/details/bandwidth/" target="_blank" rel="noopener">"Microsoft Azure : détails de la tarification de la bande passante"</a></p>
+</li>
+<li>
+<p><a href="https://cloud.google.com/storage-transfer/pricing" target="_blank" rel="noopener">"Google Cloud : tarification du service de transfert du stockage"</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="instance-cloud-data-sense">Instance Cloud Data SENSE</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Lorsque vous déployez Data Sense dans le cloud, BlueXP déploie l&#8217;instance dans le même sous-réseau que le connecteur. <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html" target="_blank" rel="noopener">"En savoir plus sur les connecteurs."</a></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-data-sense/images/note.svg" alt="Note">
+</td>
+<td class="content">
+Si le connecteur est installé sur site, il déploie l&#8217;instance Cloud Data Sense dans le même VPC ou VNet que le premier système Cloud Volumes ONTAP de la demande. Vous pouvez également installer Data Sense sur site.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/diagram_cloud_compliance_instance.png" alt="Un diagramme présentant une instance BlueXP et une instance Cloud Data Sense exécutée dans votre fournisseur cloud."></span></p>
+</div>
+<div class="paragraph">
+<p>Voici la liste des éléments suivants pour l&#8217;instance par défaut :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Dans AWS, Cloud Data Sense s&#8217;exécute sur un <a href="https://aws.amazon.com/ec2/instance-types/m5/" target="_blank" rel="noopener">"m5.4xlarge instance"</a> Avec un disque GP2 de 500 Go. L&#8217;image du système d&#8217;exploitation est Amazon Linux 2 (Red Hat 7.3.1).</p>
+<div class="paragraph">
+<p>Dans les régions où m5.4xlarge n&#8217;est pas disponible, Data Sense s&#8217;exécute sur une instance m4.4xlarge au lieu de.</p>
+</div>
+</li>
+<li>
+<p>Dans Azure, Cloud Data Sense s&#8217;exécute sur un <a href="https://docs.microsoft.com/en-us/azure/virtual-machines/dv3-dsv3-series#dsv3-series" target="_blank" rel="noopener">"Machine virtuelle standard_D16s_v3"</a> Avec un disque de 512 Go. L&#8217;image du système d&#8217;exploitation est CentOS 7.8.</p>
+</li>
+<li>
+<p>Dans GCP, Cloud Data Sense s&#8217;exécute sur un <a href="https://cloud.google.com/compute/docs/machine-types#recommendations_for_machine_types" target="_blank" rel="noopener">"n2-standard-16 VM"</a> Avec disque persistant standard de 512 Go. L&#8217;image du système d&#8217;exploitation est CentOS 7.9.</p>
+<div class="paragraph">
+<p>Dans les régions où n2-standard-16 n&#8217;est pas disponible, Data Sense s&#8217;exécute sur une machine virtuelle n2d-standard-16 ou n1-standard-16.</p>
+</div>
+</li>
+<li>
+<p>L&#8217;instance s&#8217;appelle <em>CloudCompliance</em> avec un hachage (UUID) généré concaténé. Par exemple : <em>CloudCompliance-16bb6564-38ad-4080-9a92-36f5fd2f71c7</em></p>
+</li>
+<li>
+<p>Une seule instance de détection des données est déployée par connecteur.</p>
+</li>
+<li>
+<p>Les mises à niveau du logiciel Data Sense sont automatisées tant que l&#8217;instance a accès à Internet.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-data-sense/images/tip.svg" alt="Astuce">
+</td>
+<td class="content">
+L&#8217;instance doit rester en cours d&#8217;exécution à tout moment, car Cloud Data SENSE analyse en continu les données.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="utilisation-dun-type-dinstance-plus-petit">Utilisation d&#8217;un type d&#8217;instance plus petit</h3>
+<div class="paragraph">
+<p>Vous pouvez déployer Data Sense sur un système avec moins de processeurs et moins de RAM, mais il ya certaines limites quand l&#8217;utilisation de ces systèmes moins puissants.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 18%;">
+<col style="width: 26%;">
+<col style="width: 56%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Taille du système</th>
+<th class="tableblock halign-left valign-top">Caractéristiques</th>
+<th class="tableblock halign-left valign-top">Limites</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Très grand (par défaut)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">16 PROCESSEURS, 64 GO DE RAM, 500 GO DE SSD</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Aucune</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Moyen</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8 PROCESSEURS, 32 GO DE RAM, 200 GO DE SSD</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Numérisation plus lente et numérisation jusqu&#8217;à 1 million de fichiers uniquement.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Petit</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">8 PROCESSEURS, 16 GO DE RAM, 100 GO DE SSD</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mêmes limites que « Moyen », plus la capacité d&#8217;identifier <a href="task-responding-to-dsar.html">"noms des sujets de données"</a> les fichiers internes sont désactivés.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Si vous souhaitez utiliser l&#8217;un de ces systèmes plus petits, envoyez un e-mail à l&#8217;adresse <a href="mailto:ng-contact-data-sense@netapp.com">ng-contact-data-sense@netapp.com</a> pour obtenir de l&#8217;aide. Nous devons nous aider à déployer ces plus petites configurations cloud.</p>
+</div>
+<div class="paragraph">
+<p>Pour déployer Data Sense sur site, il vous suffit d&#8217;utiliser un hôte Linux avec des spécifications moindres. Vous n&#8217;avez pas besoin de contacter NetApp pour obtenir de l&#8217;aide.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="fonctionnement-du-cloud-data-sense">Fonctionnement du Cloud Data Sense</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>À un niveau élevé, Cloud Data sens fonctionne comme suit :</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Vous déployez une instance de Data Sense dans BlueXP.</p>
+</li>
+<li>
+<p>Vous activez la cartographie de haut niveau ou la numérisation de haut niveau sur une ou plusieurs sources de données.</p>
+</li>
+<li>
+<p>La détection des données analyse les données à l&#8217;aide d&#8217;un processus d&#8217;IA.</p>
+</li>
+<li>
+<p>Vous utilisez les tableaux de bord et les outils de génération de rapports fournis pour vous aider dans vos efforts de conformité et de gouvernance.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="fonctionnement-des-acquisitions">Fonctionnement des acquisitions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Une fois que vous avez activé Cloud Data SENSE et sélectionné les volumes, compartiments, schémas de base de données ou données utilisateur OneDrive ou SharePoint que vous souhaitez analyser, l&#8217;analyse des données démarre immédiatement pour identifier les données personnelles et sensibles. Il mappe les données de votre organisation, classe chaque fichier et identifie et extrait des entités et des modèles prédéfinis dans les données. Le résultat de l&#8217;analyse est un index des informations personnelles, des données personnelles sensibles, des catégories de données et des types de fichiers.</p>
+</div>
+<div class="paragraph">
+<p>Le Data Sense se connecte aux données comme n&#8217;importe quel autre client en montant les volumes NFS et CIFS. Les volumes NFS sont automatiquement accessibles en lecture seule, tandis que vous devez fournir des identifiants Active Directory pour analyser les volumes CIFS.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/diagram_cloud_compliance_scan.png" alt="Un diagramme présentant une instance BlueXP et une instance Cloud Data Sense exécutée dans votre fournisseur cloud. L&#8217;instance Data Sense se connecte aux volumes NFS et CIFS, aux compartiments S3, aux comptes OneDrive et aux bases de données pour les analyser."></span></p>
+</div>
+<div class="paragraph">
+<p>Après l&#8217;analyse initiale, Data Sense analyse en continu vos données pour détecter les modifications incrémentielles (c&#8217;est pourquoi il est important de maintenir l&#8217;instance en cours d&#8217;exécution).</p>
+</div>
+<div class="paragraph">
+<p>Vous pouvez activer et désactiver les analyses au niveau du volume, au niveau du compartiment, au niveau du schéma de la base de données, au niveau utilisateur OneDrive et au niveau du site SharePoint.</p>
+</div>
+<div class="sect2">
+<h3 id="quelle-est-la-différence-entre-les-acquisitions-de-mappage-et-de-classification">Quelle est la différence entre les acquisitions de mappage et de classification</h3>
+<div class="paragraph">
+<p>Cloud Data SENSE vous permet d&#8217;exécuter une analyse générale « mapping » sur certaines sources de données. La cartographie ne fournit qu&#8217;une vue d&#8217;ensemble de haut niveau de vos données, tandis que Classification permet une analyse approfondie de vos données. Le mappage peut être effectué très rapidement sur vos sources de données car il n&#8217;accède pas aux fichiers pour voir les données à l&#8217;intérieur.</p>
+</div>
+<div class="paragraph">
+<p>De nombreux utilisateurs apprécient cette fonctionnalité car ils souhaitent analyser rapidement leurs données afin d&#8217;identifier les sources de données qui nécessitent davantage de recherche. Ils ne peuvent ensuite activer des analyses de classification que sur les sources ou volumes de données requis.</p>
+</div>
+<div class="paragraph">
+<p>Le tableau ci-dessous présente certaines des différences :</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 55.5555%;">
+<col style="width: 22.2222%;">
+<col style="width: 22.2223%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Fonction</th>
+<th class="tableblock halign-left valign-top">Classement</th>
+<th class="tableblock halign-left valign-top">Mappage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vitesse de numérisation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Lentes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rapides</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Liste des types de fichiers et de la capacité utilisée</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Oui.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Oui.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Nombre de fichiers et capacité utilisée</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Oui.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Oui.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Âge et taille des fichiers</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Oui.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Oui.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Exécution d&#8217;un <a href="task-generating-compliance-reports.html#data-mapping-report">"Rapport de mappage de données"</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Oui.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Oui.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Page Data Investigation pour afficher les détails du fichier</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Oui.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Non</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rechercher des noms dans les fichiers</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Oui.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Non</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Création <a href="task-org-private-data.html#controlling-your-data-using-policies">"stratégies"</a> fournissant des résultats de recherche personnalisés</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Oui.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Non</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Catégoriser les données à l&#8217;aide d&#8217;étiquettes AIP et de balises d&#8217;état</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Oui.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Non</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Copier, supprimer et déplacer des fichiers source</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Oui.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Non</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Possibilité d&#8217;exécuter d&#8217;autres rapports</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Oui.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Non</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="informations-fournies-par-cloud-data-sense">Informations fournies par Cloud Data Sense</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Data Sense collecte, index et attribue des catégories à vos données (fichiers). Les données que les index Data Sense incluent les éléments suivants :</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Métadonnées standard</dt>
+<dd>
+<p>Cloud Data Sense collecte des métadonnées standard sur les fichiers : le type de fichier, sa taille, ses dates de création et de modification, etc.</p>
+</dd>
+<dt class="hdlist1">Données personnelles</dt>
+<dd>
+<p>Informations personnelles identifiables telles que les adresses électroniques, les numéros d&#8217;identification ou les numéros de carte de crédit. <a href="task-controlling-private-data.html#viewing-files-that-contain-personal-data" target="_blank" rel="noopener">"En savoir plus sur les données personnelles"</a>.</p>
+</dd>
+<dt class="hdlist1">Données personnelles sensibles</dt>
+<dd>
+<p>Des types spéciaux d&#8217;informations sensibles, comme les données de santé, l&#8217;origine ethnique ou les opinions politiques, tels que définis par le RGPD et d&#8217;autres réglementations sur la confidentialité. <a href="task-controlling-private-data.html#viewing-files-that-contain-sensitive-personal-data" target="_blank" rel="noopener">"En savoir plus sur les données personnelles sensibles"</a>.</p>
+</dd>
+<dt class="hdlist1">Catégories</dt>
+<dd>
+<p>Cloud Data SENSE répartit les données analysées et les divise en différents types de catégories. Les catégories sont des rubriques basées sur l&#8217;analyse par IA du contenu et des métadonnées de chaque fichier. <a href="task-controlling-private-data.html#viewing-files-by-categories" target="_blank" rel="noopener">"En savoir plus sur les catégories"</a>.</p>
+</dd>
+<dt class="hdlist1">Types</dt>
+<dd>
+<p>Cloud Data SENSE affecte les données analysées et les divise par type de fichier. <a href="task-controlling-private-data.html#viewing-files-by-file-types" target="_blank" rel="noopener">"En savoir plus sur les types"</a>.</p>
+</dd>
+<dt class="hdlist1">Reconnaissance de l&#8217;entité de nom</dt>
+<dd>
+<p>Cloud Data Sense utilise l&#8217;IA pour extraire les noms des personnes physiques des documents. <a href="task-responding-to-dsar.html" target="_blank" rel="noopener">"Découvrez comment répondre aux demandes d&#8217;accès aux données"</a>.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="présentation-du-réseau">Présentation du réseau</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>BlueXP déploie l&#8217;instance Cloud Data Sense avec un groupe de sécurité qui active les connexions HTTP entrantes à partir de l&#8217;instance de connecteur.</p>
+</div>
+<div class="paragraph">
+<p>Si vous utilisez BlueXP en mode SaaS, la connexion à BlueXP est assurée par HTTPS. Les données privées envoyées entre votre navigateur et l&#8217;instance Data Sense sont sécurisées par un cryptage de bout en bout, ce qui signifie que NetApp et des tiers ne peuvent pas les lire.</p>
+</div>
+<div class="paragraph">
+<p>Les règles sortantes sont complètement ouvertes. Un accès Internet est nécessaire pour installer et mettre à niveau le logiciel Data Sense et pour envoyer des mesures d&#8217;utilisation.</p>
+</div>
+<div class="paragraph">
+<p>Si vous avez des exigences de mise en réseau strictes, <a href="task-deploy-cloud-compliance.html#review-prerequisites" target="_blank" rel="noopener">"Découvrez les terminaux hébergés dans le cloud Data et leurs contacts"</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="accès-des-utilisateurs-aux-informations-de-conformité">Accès des utilisateurs aux informations de conformité</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Le rôle attribué à chaque utilisateur offre différentes fonctionnalités dans BlueXP et dans Cloud Data Sense :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Un <strong>Account Admin</strong> peut gérer les paramètres de conformité et afficher les informations de conformité pour tous les environnements de travail.</p>
+</li>
+<li>
+<p>Un <strong>Workspace Admin</strong> peut gérer les paramètres de conformité et afficher les informations de conformité uniquement pour les systèmes auxquels ils disposent d&#8217;autorisations d&#8217;accès. Si un administrateur d&#8217;espace de travail ne peut pas accéder à un environnement de travail dans BlueXP, il ne peut pas voir d&#8217;informations de conformité pour l&#8217;environnement de travail dans l&#8217;onglet Data Sense.</p>
+</li>
+<li>
+<p>Les utilisateurs disposant du rôle <strong>Compliance Viewer</strong> peuvent uniquement afficher les informations de conformité et générer des rapports pour les systèmes auxquels ils sont autorisés à accéder. Ces utilisateurs ne peuvent pas activer/désactiver la lecture des volumes, compartiments ou schémas de base de données. Ces utilisateurs ne peuvent pas non plus copier, déplacer ou supprimer des fichiers.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-user-roles.html" target="_blank" rel="noopener">"En savoir plus sur les rôles BlueXP"</a> et comment <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-netapp-accounts.html#adding-users" target="_blank" rel="noopener">"ajoutez des utilisateurs avec des rôles spécifiques"</a>.</p>
+</div>
+</div>
+</div>
+
+    </article>
+    <!-- Page Container -->
+  </div>
+
+  <div style="clear: both"></div><!-- Main needs to have height --></div>
+
+        </main>
+
+        <footer class="n-footer">
+  <div class="n-footer__bottom">
+    <div class="n-container">
+      <div class="n-footer__bottom-left">
+        <div class="n-footer__copyright">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/us/legal/copyright.aspx">© 2022 NetApp, Inc.</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/terms-of-use/">Conditions générales</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/privacy-policy/">Privacy Policy</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/cookie-policy/">Cookie Policy</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a class="ot-sdk-show-settings">Paramètres de cookies</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="n-footer__bottom-right">
+        <div class="n-footer__copyright">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+              <a target="_self" href="javascript:netapp_mailto()">Envoyer un avis à propos de cette page</a>
+            </li>
+          </ul>
+        </div>
+        <div class="n-footer__social-links">
+          <ul class="n-footer__social-link-list">
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-blog" href="https://blog.netapp.com"
+                target="_blank" title="blog" alt="blog">
+                <span class="n-footer__social-link-text">blog</span>
+                <svg class="n-icon-blog n-footer__social-link-icon" aria-labelledby="title">
+                  <title>blog@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/fr-fr/cloud-manager-data-sense/common/svg/sprite.svg#blog"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-community" href="https://community.netapp.com/"
+                target="_blank" title="community" alt="community">
+                <span class="n-footer__social-link-text">community</span>
+                <svg class="n-icon-community n-footer__social-link-icon" aria-labelledby="title">
+                  <title>community@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/fr-fr/cloud-manager-data-sense/common/svg/sprite.svg#comments"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-twitter" href="https://twitter.com/netapp"
+                target="_blank" title="twitter" alt="twitter">
+                <span class="n-footer__social-link-text">twitter</span>
+                <svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
+                  <title>twitter@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/fr-fr/cloud-manager-data-sense/common/svg/sprite.svg#twitter"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-facebook" href="https://www.facebook.com/NetApp"
+                target="_blank" title="facebook" alt="facebook">
+                <span class="n-footer__social-link-text">facebook</span>
+                <svg class="n-icon-facebook n-footer__social-link-icon" aria-labelledby="title">
+                  <title>facebook@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/fr-fr/cloud-manager-data-sense/common/svg/sprite.svg#facebook"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-linkedin"
+                href="https://www.linkedin.com/company/netapp" target="_blank" title="linkedin" alt="linkedin">
+                <span class="n-footer__social-link-text">linkedin</span>
+                <svg class="n-icon-linkedin n-footer__social-link-icon" aria-labelledby="title">
+                  <title>linkedin@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/fr-fr/cloud-manager-data-sense/common/svg/sprite.svg#linkedin"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-youtube"
+                href="https://www.youtube.com/user/NetAppTV" target="_blank" title="youtube" alt="youtube">
+                <span class="n-footer__social-link-text">youtube</span>
+                <svg class="n-icon-youtube n-footer__social-link-icon" aria-labelledby="title">
+                  <title>youtube@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/fr-fr/cloud-manager-data-sense/common/svg/sprite.svg#youtube"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-slideshare"
+                href="https://www.slideshare.net/NetApp" target="_blank" title="slideshare" alt="slideshare">
+                <span class="n-footer__social-link-text">slideshare</span>
+                <svg class="n-icon-slideshare n-footer__social-link-icon" aria-labelledby="title">
+                  <title>slideshare@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/fr-fr/cloud-manager-data-sense/common/svg/sprite.svg#slideshare"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+      </div><!-- Elasticsearch JS -->
+      <script type="text/javascript" src='/fr-fr/cloud-manager-data-sense/js/bundle.js'></script>
+
+      <!-- Syntax Highlighting -->
+      <script type="text/javascript" src='/fr-fr/cloud-manager-data-sense/js/prism.js'></script>
+      <script type="text/javascript" src='/fr-fr/cloud-manager-data-sense/js/prism-curl.js'></script>
+    </div>
+    <script>
+      document.body.offsetWidth=1903;
+      cookieLaw = {}
+      cookieLaw.euCountry = "US";
+      cookieLaw.invoke = function(){return false;}
+    </script>
+    <script src='/fr-fr/cloud-manager-data-sense/js/www-ntap.js'></script>
+    <script src='/fr-fr/cloud-manager-data-sense/js/tabbed-blocks.js'></script>
+    <script src='/fr-fr/cloud-manager-data-sense/js/sidebar.js'></script>
+  </body></html>

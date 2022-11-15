@@ -1,0 +1,1948 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head class="at-element-marker">
+  <title>Organiser vos données privées | NetApp Documentation</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta http-equiv="language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="Organiser vos données privées | NetApp Documentation" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://docs.netapp.com/fr-fr/cloud-manager-data-sense/task-org-private-data.html" />
+	<meta property="og:description" content="Avec Cloud Data Sense, vous pouvez gérer et organiser vos données privées de plusieurs façons. Vous pouvez ainsi consulter plus facilement les données qui vo..." />
+  <meta property="og:image" content="https://docs.netapp.com/fr-fr/cloud-manager-data-sense/images/logo-tophat-social.png" />
+  <meta property="og:image:alt" content="NetApp Logo" />
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="encoding" content="utf-8">
+  <meta http-equiv="nss-type" content="Product Documentation"/>
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Avec Cloud Data Sense, vous pouvez gérer et organiser vos données privées de plusieurs façons. Vous pouvez ainsi consulter plus facilement les données qui vo...">
+  <meta name="keywords" content=" compliance, privacy, filter data, highlights, policies, email alerts, notifications, aip labels, azure information protection, add labels, change labels, tags, data sense"><!-- Icons -->
+  <link rel="icon" href="/fr-fr/cloud-manager-data-sense/images/favicon.ico" type="image/x-icon">
+
+  <!-- RSS Feed --><link rel="alternate" type="application/rss+xml" title="NetApp Documentation" href="/fr-fr/cloud-manager-data-sense/feed.xml"><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
+
+  <!-- Elastic Search -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/searchkit/0.10.0/theme.css">
+
+  <!-- Combined CSS -->
+  <link rel="stylesheet" type="text/css" href="/fr-fr/cloud-manager-data-sense/css/netappdocs.css">
+
+  
+  <link rel="stylesheet" href="/fr-fr/cloud-manager-data-sense/css/landing-page.css" type="text/css">
+  <link rel="stylesheet" href="/fr-fr/cloud-manager-data-sense/css/tabbed-blocks.css" type="text/css">
+  <!-- Canonical url -->
+  <link rel='stylesheet' href='/fr-fr/cloud-manager-data-sense/css/na-feature.css' type='text/css'><!-- Top level site integrations --><script>
+    function addAdobeLaunch(adobeId) {
+      var head = document.getElementsByTagName('head')[0];
+      var adobe = document.createElement("script");
+      adobe.type = "text/plain";
+      adobe.className = "optanon-category-C0002";
+      adobe.src = "//assets.adobedtm.com/60287eadf1ee/c284da483c83/"+adobeId+".min.js";
+      head.appendChild(adobe);
+    }
+
+    function addGoogleAnalytics(gtagId) {
+      var google = document.createElement("script");
+      google.type = "text/plain";
+      google.className = "optanon-category-C0002";
+      google.src = "https://www.googletagmanager.com/gtag/js?id="+gtagId;
+      var head = document.getElementsByTagName('head')[0];
+      head.appendChild(google);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', gtagId);
+    }
+
+    function addConsent(consentId) {
+      var head = document.getElementsByTagName('head')[0];
+      var onetrustConsent = document.createElement("script");
+      onetrustConsent.type = "text/javascript";
+      onetrustConsent.src = "https://cdn.cookielaw.org/consent/"+consentId+"/OtAutoBlock.js";
+      head.appendChild(onetrustConsent);
+
+      var onetrustScript = document.createElement("script");
+      onetrustScript.type = "text/javascript";
+      onetrustScript.src = "https://cdn.cookielaw.org/scripttemplates/otSDKStub.js";
+      onetrustScript.charset = "UTF-8";
+      onetrustScript.dataset.documentLanguage = "true";
+      onetrustScript.dataset.domainScript = consentId;
+      head.appendChild(onetrustScript);
+    }addConsent("72570c5c-fe30-465f-b0e0-b77f7fb4ae34");
+    addAdobeLaunch("launch-e9ff3acac59f");
+    addGoogleAnalytics("UA-81697994-3");function OptanonWrapper() { }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+  <!-- Used for Product Family Page Sidebar Visibility --><!-- Used to import Promise for IE. Required for SearchKit -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script><script src='/fr-fr/cloud-manager-data-sense/js/na-search.js'></script><script src='/fr-fr/cloud-manager-data-sense/js/na-pagenav.js'></script><script src='/fr-fr/cloud-manager-data-sense/js/na-utility.js'></script>
+  <script src='/fr-fr/cloud-manager-data-sense/js/clouddocs.js'></script>
+  <script src='/fr-fr/cloud-manager-data-sense/js/jquery.navgoco.min.js'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src='/fr-fr/cloud-manager-data-sense/js/toc.js'></script>
+  <script src='/fr-fr/cloud-manager-data-sense/js/customscripts.js'></script><script>
+      $(document).ready(function() {
+          
+          var collapseOnInit = true;
+          
+
+          var navSettings = {
+              "caretHtml": '',
+              "accordion": collapseOnInit,
+              "openClass": 'active', // open
+              "save": false, // leave false or nav highlighting doesn't work right
+              "cookie": {
+                  "name": 'navgoco',
+                  "expires": false,
+                  "path": '/'
+              },
+              "slide": {
+                  "duration": 400,
+                  "easing": 'swing'
+              }
+          };
+
+          // Initialize navgoco with default options
+          $("#mysidebar").navgoco(navSettings);
+          
+
+          $("#collapseAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', false);
+          });
+
+          $("#expandAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', true);
+          });
+
+          $(".sidebar-nav-container").on("scroll", function() {
+            $.cookie("sidebarScroll", $(".sidebar-nav-container").scrollTop(), {
+              path    : "/fr-fr/cloud-manager-data-sense"  
+            });
+          });
+          $(function() {
+            if ($.cookie("sidebarScroll")) {
+              $(".sidebar-nav-container").scrollTop($.cookie("sidebarScroll"));
+            }
+          });
+
+      });
+
+  </script>
+  <script>
+      $(document).ready(function() {
+          $("#tg-sb-link").click(function() {
+              $("#tg-sb-sidebar").toggle();
+              $("#tg-sb-content").toggleClass('col-md-9');
+              $("#tg-sb-content").toggleClass('col-md-12');
+              $("#tg-sb-icon").toggleClass('fa-toggle-on');
+              $("#tg-sb-icon").toggleClass('fa-toggle-off');
+          });
+      });
+  </script>
+  <script src='/fr-fr/cloud-manager-data-sense/js/custom-dropdown.js'></script>
+  <script src='/fr-fr/cloud-manager-data-sense/js/FileSaver.min.js'></script>
+  <script src='/fr-fr/cloud-manager-data-sense/js/jszip-utils.min.js'></script>
+  <script src='/fr-fr/cloud-manager-data-sense/js/jszip.min.js'></script>
+  <script src='/fr-fr/cloud-manager-data-sense/js/pdf-ux.js'></script>
+</head>
+
+
+  <body class role="document" data-flavor="">
+    <div id="page" class="n-off-canvas-menu">
+      <div class="n-off-canvas-menu__menu"><!--TODO: Add offcanvas code --></div>
+      <div class="n-off-canvas-menu__content-wrap">
+        <header class="site-header" id="banner">
+  
+  <!-- Start Page Toolbar -->
+  
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-data-sense/issues/new?body=Page%3A%20[Organiser vos données privées](https://docs.netapp.com/fr-fr/cloud-manager-data-sense/task-org-private-data.html)&template=public-issue-template.md" class="page-nav-contribute-link" role="button"><img src="/fr-fr/cloud-manager-data-sense/images/discuss-sm.svg" alt="" class="github-icon" />Demander de modifier un document</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-data-sense/blob/main/task-org-private-data.adoc" class="page-nav-contribute-link" role="button"><img src="/fr-fr/cloud-manager-data-sense/images/edit-sm.svg" alt="" class="github-icon" />Modifier sur GitHub</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/fr-fr/cloud-manager-data-sense/images/article-sm.svg" alt="" class="github-icon" />Guide des contributeurs</a></div>
+    <div class="page-nav-container">
+      <nav class="page-nav-fixed">
+        <div class="page-nav-title">SUR CETTE PAGE</div>
+        <div class="page-nav-links">
+          <ul class="page-nav-inner" id="page-menu"></ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  
+  
+  <!-- Start top_hat -->
+  <div class="n-top-hat">
+    <div class="n-container">
+      <div class="n-top-hat__cross-property-nav">
+        <ul class="n-top-hat__list">
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/products-a-z/" class="n-top-hat__link">Produits et solutions</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/support-and-training/netapp-university/" class="n-top-hat__link">Support et formation</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://cloud.netapp.com" class="n-top-hat__link">Cloud Central</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://community.netapp.com/" class="n-top-hat__link">Communauté</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://blog.netapp.com/" class="n-top-hat__link">Blog</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://customers.netapp.com/en/" class="n-top-hat__link">Témoignages clients</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">Contact</a>
+          </li>
+        </ul>
+      </div>
+      <div class="n-top-hat__utils">
+        <ul class="n-top-hat__list">
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/us/contact-us/index.aspx" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- End top_hat -->
+
+  <!-- Start property bar -->
+  <style>
+    .n-property-navigation-bar__menus--desktop-experience .n-menu--mega__default-content__heading span {
+    color: #34B0FF;
+    }
+  </style>
+  <div class="n-property-bar " data-ntap-ui="sticky-nav">
+    <div class="n-property-bar__inner-wrap">
+      <div class="n-property-bar__menu-toggle">
+        <a href="#" class="n-property-bar__menu-toggle-link">
+          <span class="n-property-bar__menu-toggle-text">Menu</span>
+          <svg class="n-icon-bars n-property-bar__menu-toggle-icon" aria-labelledby="title">
+            <title>bars</title>
+            <use xlink:href="/fr-fr/cloud-manager-data-sense/common/svg/sprite.svg#bars"></use>
+          </svg>
+        </a>
+      </div>
+      <div class="n-property-bar__property-mark ">
+        <a href="https://www.netapp.com" class="n-property-bar__property-link">
+          <div class="n-property-bar__logo">
+            <svg class="n-icon-netapp-mark n-icon-netapp-mark n-property-bar__netapp-mark-icon" aria-labelledby="title">
+              <title>netapp-mark</title>
+              <use xlink:href="/fr-fr/cloud-manager-data-sense/common/svg/sprite.svg#netapp-mark"></use>
+            </svg>
+            <svg class="n-icon-netapp-logo n-property-bar__logo-svg" aria-labelledby="title">
+              <title>netapp-logo</title>
+              <use xlink:href="/fr-fr/cloud-manager-data-sense/common/svg/sprite.svg#netapp-logo"></use>
+            </svg>
+          </div>
+        </a>
+      </div>
+
+      
+      
+      
+      <div class="search-property-bar">
+        <div id="search-demo-container" class="searchbox n-property-bar__search">
+          <div id="react-search" 
+          data-search-html="/fr-fr/cloud-manager-data-sense/search.html"
+          data-type="widget" 
+          data-placeholder="Rechercher une documentation"
+          data-no-results-found="Aucun résultat n'a été trouvé pour {query}"
+          data-did-you-mean="Rechercher {suggestion}."
+          data-no-results-found-did-you-mean="Aucun résultat n’a été trouvé pour {query}. Voulez-vous dire {suggestion} ?"
+          data-results-found="{hitCount} résultats trouvés"
+          data-error-message="We're sorry, an issue occurred when fetching your results. Please try again."
+          data-error-reset="Reset Search"
+          data-sk-es-pf-indexes=""
+          data-flavor=""></div>
+          <button class="n-property-bar__search-toggle-button" type="button">
+            <svg class="n-icon-search n-property-bar__search-toggle-button-icon" aria-labelledby="title">
+              <title>search</title>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/fr-fr/cloud-manager-data-sense/common/svg/sprite.svg#search"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <div class="n-property-bar__toolbar">
+    <!-- Start Language Selector --><div id="language-dropdown" class="custom-dropdown custom-dropdown-lang">
+      <div class="custom-dropdown-select custom-dropdown-select-lang">
+      <span class="lang-name">Français</span>
+          <svg class="n-globe__icon" aria-labelledby="title">
+            <title>globe</title>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/fr-fr/cloud-manager-data-sense/common/svg/sprite.svg#globe"></use>
+          </svg>
+        </button>
+      </div>
+
+      <ul class="custom-dropdown-menu"><li>
+          <a href="https://docs.netapp.com/fr-fr/cloud-manager-data-sense/task-org-private-data.html" target="_self"><span translate="no" class="notranslate">Français</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/us-en/cloud-manager-data-sense/task-org-private-data.html" target="_self"><span translate="no" class="notranslate">English</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ja-jp/cloud-manager-data-sense/task-org-private-data.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-cn/cloud-manager-data-sense/task-org-private-data.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-tw/cloud-manager-data-sense/task-org-private-data.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ko-kr/cloud-manager-data-sense/task-org-private-data.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/de-de/cloud-manager-data-sense/task-org-private-data.html" target="_self"><span translate="no" class="notranslate">Deutsch</span></a>
+        </li></ul>
+    </div><!-- End Language Selector -->
+
+    <div class="n-property-bar__cta"></div>
+  </div>
+  <script>
+    $(function(){
+        var currentLocalization = $('html').attr('lang');
+
+        var localizationsDictionary = {
+            "en-CA" : "https://www.netapp.com/search/index.aspx?for_cr=canada&",
+            "en-IN" : "https://www.netapp.com/search/index.aspx?for_cr=india&",
+            "nl-NL" : "https://www.netapp.com/search/index.aspx?for_cr=netherlands&",
+            "ru-RU" : "https://www.netapp.com/search/index.aspx?for_cr=russia&",
+            "sv-SE" : "https://www.netapp.com/search/index.aspx?for_cr=sweden&",
+            "it-IT" : "https://www.netapp.com/search/index.aspx?for_cr=italy&",
+            "he-IL" : "https://www.netapp.com/search/index.aspx?for_cr=israel&",
+            "ko-KR" : "https://www.netapp.com/search/index.aspx?for_cr=korea&",
+            "zh-TW" : "https://www.netapp.com/search/index.aspx?for_cr=taiwan&",
+            "en-GB" : "https://www.netapp.com/search/index.aspx?for_cr=unitedkingdom&",
+            "en-SG" : "https://www.netapp.com/search/index.aspx?for_cr=asean&",
+            "en-AU" : "https://www.netapp.com/search/index.aspx?for_cr=australia&",
+            "pt-BR" : "https://www.netapp.com/search/index.aspx?for_cr=brasil&",
+            "de-CH" : "https://www.netapp.com/search/index.aspx?for_cr=switzerland&",
+            "es-MX" : "https://www.netapp.com/search/index.aspx?for_cr=mexico&"
+        };
+
+        if($('html').hasClass('ntap-whitelisted') && localizationsDictionary.hasOwnProperty(currentLocalization)) {
+            $('.n-property-bar__property-link').attr('href', '/');
+        }
+    });
+  </script>
+  <!-- End property bar -->
+</header>
+
+
+        <main id="n-main-content" class="n-main-content">
+          <!-- Start Documentation Content -->
+<div class="ie-main">
+  <!-- Sidebar Column -->
+  
+  <div class="col-md-3" id="sidebar-height">
+      <button id="btn-sidebar-collapse" onclick="hideSidebar()"><img src="/fr-fr/cloud-manager-data-sense/images/collapse.png" alt="Réduire le panneau de navigation"></button>
+      <div class="n-pdf-header">
+  <a id="toggleButtonPdf" class="n-pdf-button" type="button">
+    <img src="/fr-fr/cloud-manager-data-sense/images/pdf.png" alt="" width="16" height="16"/>PDFs disponibles<span>
+    </span>
+  </a>
+</div>
+<div class="n-pdf-body-container">
+  <ul id="toggleContainerPdf" class="n-pdf-body" style="display:none;"><li class="pdf-ux-container">
+        
+        
+        
+        <a target="_blank" href="/fr-fr/cloud-manager-data-sense/pdfs/fullsite-sidebar/Documentation_Cloud_Data_Sense.pdf" >
+          <img src="/fr-fr/cloud-manager-data-sense/images/pdf.png" alt="" width="16" height="16"/>PDF de ce site de documentation</a>
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/fr-fr/cloud-manager-data-sense/pdfs/sidebar/Commencez.pdf" 
+            
+          >
+            <img src="/fr-fr/cloud-manager-data-sense/images/pdf.png" alt="" width="16" height="16"/>
+            Commencez
+          </a>
+          
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/fr-fr/cloud-manager-data-sense/pdfs/sidebar/Déployez_des_données_adaptées_au_cloud.pdf" 
+            
+          >
+            <img src="/fr-fr/cloud-manager-data-sense/images/pdf.png" alt="" width="16" height="16"/>
+            Déployez des données adaptées au cloud
+          </a>
+          
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/fr-fr/cloud-manager-data-sense/pdfs/sidebar/Activez_la_numérisation_sur_vos_sources_de_données.pdf" 
+            
+          >
+            <img src="/fr-fr/cloud-manager-data-sense/images/pdf.png" alt="" width="16" height="16"/>
+            Activez la numérisation sur vos sources de données
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/fr-fr/cloud-manager-data-sense/pdfs/sidebar/Utilisez_le_sens_des_données_du_cloud.pdf" 
+            
+          >
+            <img src="/fr-fr/cloud-manager-data-sense/images/pdf.png" alt="" width="16" height="16"/>
+            Utilisez le sens des données du cloud
+          </a>
+          
+
+
+
+
+    <ul class="subfolders" id="pdf-remove" style="display:none;"><li class="active"></li></ul>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/fr-fr/cloud-manager-data-sense/pdfs/sidebar/Gérez_les_données_cloud_comme_vous_le_pouvez.pdf" 
+            
+          >
+            <img src="/fr-fr/cloud-manager-data-sense/images/pdf.png" alt="" width="16" height="16"/>
+            Gérez les données cloud comme vous le pouvez
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/fr-fr/cloud-manager-data-sense/pdfs/sidebar/Connaissances_et_support.pdf" 
+            
+          >
+            <img src="/fr-fr/cloud-manager-data-sense/images/pdf.png" alt="" width="16" height="16"/>
+            Connaissances et support
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+</li></ul>
+  <div class="zip-pdf-link-container" style="display: none;">   
+    <a href="#" id="zipPdf">
+      <img src="/fr-fr/cloud-manager-data-sense/images/pdf-zip.png" alt="" width="16" height="16"/>
+      <pre>Collection de documents PDF séparés<span class="zip-size"></span></pre>
+    </a><div id="zip-link-popup" class="hide">
+    <div class="inner-modal">
+        <div class="downloading-progress">
+            <div class="spinner"></div>
+            <h1>Creating your file...</h1>
+            <div>This may take a few minutes. Thanks for your patience.</div>
+            <button class="cancel-download-btn" type="button">Cancel</button>
+        </div>
+        <div class="download-complete hide">
+            <div class="done-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>
+            </div>
+            <div>Your file is ready</div>
+            <button class="cancel-download-btn" type="button">OK</button>
+        </div>
+    </div>
+</div>
+<script>
+    $(".cancel-download-btn").click(function(){
+        $("#zip-link-popup").addClass("hide");
+        $("#zip-link-popup .downloading-progress").removeClass("hide");
+        $("#zip-link-popup .download-complete").addClass("hide");
+    });
+</script></div>
+</div>
+<script>
+  $("#toggleContainerPdf li.active:last-child").parents('ul.subfolders').toggle('display');
+  $("#toggleButtonPdf").click(function () {
+    $("#toggleContainerPdf").toggle('display');
+    $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
+  });
+</script><div class="prod-nav" id="product-nav">
+  <a target="_self" class="prod-fam-nav" href="https://docs.netapp.com/fr-fr/cloud-manager-family/"><img src="/fr-fr/cloud-manager-data-sense/images/left_arrow.png" alt=""><pre>Toute la documentation BlueXP</pre></a>
+</div><div class="sidebar-nav-container" id="mysidebardiv">
+  <ul id="mysidebar" class="nav"><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Documentation Cloud Data Sense"
+      data-li-level="1#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/index.html">
+        Documentation Cloud Data Sense
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Notes de mise à jour"
+      data-li-level="1#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/whats-new.html">
+        Notes de mise à jour
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Commencez"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Commencez</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Tout savoir sur le sens des données du cloud"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/concept-cloud-compliance.html">
+        Tout savoir sur le sens des données du cloud
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Déployez des données adaptées au cloud"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Déployez des données adaptées au cloud</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Déploiement dans le cloud"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/task-deploy-cloud-compliance.html">
+        Déploiement dans le cloud
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Déploiement sur site avec accès à Internet"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/task-deploy-compliance-onprem.html">
+        Déploiement sur site avec accès à Internet
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Déploiement sur site sans accès Internet"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/task-deploy-compliance-dark-site.html">
+        Déploiement sur site sans accès Internet
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Activez la numérisation sur vos sources de données"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Activez la numérisation sur vos sources de données</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Cloud Volumes ONTAP et ONTAP sur site"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/task-getting-started-compliance.html">
+        Cloud Volumes ONTAP et ONTAP sur site
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Azure NetApp Files"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/task-scanning-anf.html">
+        Azure NetApp Files
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Amazon FSX pour ONTAP"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/task-scanning-fsx.html">
+        Amazon FSX pour ONTAP
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Compartiments Amazon S3"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/task-scanning-s3.html">
+        Compartiments Amazon S3
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Schémas de base de données"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/task-scanning-databases.html">
+        Schémas de base de données
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Comptes OneDrive"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/task-scanning-onedrive.html">
+        Comptes OneDrive
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Comptes SharePoint"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/task-scanning-sharepoint.html">
+        Comptes SharePoint
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Comptes Google Drive"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/task-scanning-google-drive.html">
+        Comptes Google Drive
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Partages de fichiers"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/task-scanning-file-shares.html">
+        Partages de fichiers
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Stockage objet"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/task-scanning-object-storage.html">
+        Stockage objet
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Intégrer Active Directory"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/task-add-active-directory-datasense.html">
+        Intégrer Active Directory
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Configuration des licences"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/task-licensing-datasense.html">
+        Configuration des licences
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="FAQ"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/faq-cloud-compliance.html">
+        FAQ
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Utilisez le sens des données du cloud"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Utilisez le sens des données du cloud</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Afficher les détails de gouvernance de vos données"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/task-controlling-governance-data.html">
+        Afficher les détails de gouvernance de vos données
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Affichez les détails de conformité de vos données"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/task-controlling-private-data.html">
+        Affichez les détails de conformité de vos données
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Organisez vos données privées"
+      data-li-level="2#" 
+      class="  active "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/task-org-private-data.html">
+        Organisez vos données privées
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Gérez vos données privées"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/task-managing-highlights.html">
+        Gérez vos données privées
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Modifier les paramètres de numérisation"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/task-managing-repo-scanning.html">
+        Modifier les paramètres de numérisation
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Générer des rapports"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/task-generating-compliance-reports.html">
+        Générer des rapports
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Répondre à un DSAR"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/task-responding-to-dsar.html">
+        Répondre à un DSAR
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Catégories de données privées"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/reference-private-data-categories.html">
+        Catégories de données privées
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Gérez les données cloud comme vous le pouvez"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Gérez les données cloud comme vous le pouvez</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Ajoutez des identifiants de données personnels personnalisés"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/task-managing-data-fusion.html">
+        Ajoutez des identifiants de données personnels personnalisés
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Afficher l'état des actions de détection de données"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/task-view-compliance-actions.html">
+        Afficher l'état des actions de détection de données
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Auditer l'historique des actions de détection de données"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/task-audit-data-sense-actions.html">
+        Auditer l'historique des actions de détection de données
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Réduire la vitesse d'acquisition de détection de données"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/task-reduce-scan-speed.html">
+        Réduire la vitesse d'acquisition de détection de données
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Supprimer les sources de données de Data Sense"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/task-managing-compliance.html">
+        Supprimer les sources de données de Data Sense
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Désinstaller Data Sense"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/task-uninstall-data-sense.html">
+        Désinstaller Data Sense
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Connaissances et support"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Connaissances et support</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="S'inscrire pour obtenir de l'aide"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/task-support-registration.html">
+        S'inscrire pour obtenir de l'aide
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Obtenez de l'aide"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/task-get-help.html">
+        Obtenez de l'aide
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Mentions légales"
+      data-li-level="1#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/fr-fr/cloud-manager-data-sense/legal-notices.html">
+        Mentions légales
+      </a></li></ul>
+</div>
+<script>
+  window.onscroll = () => {
+    const value = -40 - (document.body.scrollHeight - (window.innerHeight + document.scrollingElement.scrollTop));
+    
+    document.getElementById("sidebar-height").style.bottom = Math.max(0,value) + "px";
+};
+</script>
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+<script>$("#mysidebar li.active").parents('ul').css("display","block");</script>
+
+
+  </div>
+  
+
+  <div class="ie-content-pane n-doc__component-detail-content n-doc__component-detail-content--show-code">
+    <!-- Begin of page container --><article class="page-content" id="main">
+      <div class="ie-utility">
+  <button id="btn-sidebar-expand" onclick="showSidebar()"><img src="/fr-fr/cloud-manager-data-sense/images/expand.png" alt="Développer le panneau de navigation"></button>
+  <div class="ie-menu">
+    <div class="n-breadcrumb">
+      <ul class="n-breadcrumb__list">
+        <li class="n-breadcrumb__list-item">
+          <a href="https://docs.netapp.com">docs.netapp.com</a>
+        </li>
+        
+        <li class="n-breadcrumb__list-item">
+          <a href="https://docs.netapp.com/us-en/cloud/">Documents dans le cloud</a>
+        </li>
+        
+
+        
+        <li class="n-breadcrumb__list-item">
+          <a href="https://docs.netapp.com/fr-fr/cloud-manager-family/">BlueXP</a>
+        </li>
+        
+
+        <li class="n-breadcrumb__list-item">
+          <a href="/fr-fr/cloud-manager-data-sense/">Cloud&nbsp;Data&nbsp;Sense</a>
+        </li>
+
+      </ul>
+    </div>
+    <div style="clear: both"></div><!-- Main needs to have height -->
+  </div>
+</div>
+
+      <div class="ie-nmt-disclaimer">
+  <span>
+    <div class="ie-nmt-disclaimer-container">
+      <div class="ie-nmt-disclaimer-icon">
+        <svg class="luci-icon" aria-hidden="true">
+          <use xlink:href="/fr-fr/cloud-manager-data-sense/common/svg/sprite.svg#circle-info">
+        </svg>
+      </div>
+      <div class="ie-nmt-disclaimer-content">
+        <span> La version française est une traduction automatique. La version anglaise prévaut sur la française en cas de divergence. </span>
+      </div>
+      <div style="clear:both;"></div>
+    </div>
+  </span>
+</div><div class="n-doc__component-detail-heading-wrap">
+  <h1 class="n-doc__component-detail-heading">Organiser vos données privées</h1>
+</div>
+
+
+<p class="page-details">
+  
+    
+    <time datetime="2022-11-15 17:35:19 +0000">11/15/2022</time>
+    
+  
+
+<span>Contributeurs
+</span>
+
+
+</p>
+
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph lead">
+<p>Avec Cloud Data Sense, vous pouvez gérer et organiser vos données privées de plusieurs façons. Vous pouvez ainsi consulter plus facilement les données qui vous sont les plus importantes.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Si vous êtes abonné à <a href="https://azure.microsoft.com/en-us/services/information-protection/" target="_blank" rel="noopener">"Protection des informations Azure (AIP)"</a> Pour classer et protéger vos fichiers, vous pouvez utiliser Cloud Data Sense pour gérer ces étiquettes AIP.</p>
+</li>
+<li>
+<p>Vous pouvez ajouter des balises aux fichiers que vous souhaitez marquer pour une organisation ou pour un type de suivi.</p>
+</li>
+<li>
+<p>Vous pouvez affecter un utilisateur BlueXP à un fichier spécifique ou à plusieurs fichiers, de sorte que cette personne puisse être responsable de la gestion du fichier.</p>
+</li>
+<li>
+<p>Grâce à la fonctionnalité « Stratégie », vous pouvez créer vos propres requêtes de recherche personnalisées afin de pouvoir voir facilement les résultats en cliquant sur un bouton.</p>
+</li>
+<li>
+<p>Vous pouvez envoyer des alertes par e-mail aux utilisateurs de BlueXP lorsque certaines stratégies critiques renvoient des résultats.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-data-sense/images/note.svg" alt="Note">
+</td>
+<td class="content">
+Les fonctionnalités décrites dans cette section ne sont disponibles que si vous avez choisi d&#8217;effectuer une analyse de classification complète sur vos sources de données. Les sources de données qui ont une analyse avec mappage uniquement n&#8217;affichent pas de détails au niveau des fichiers.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="dois-je-utiliser-des-étiquettes-ou-des-étiquettes">Dois-je utiliser des étiquettes ou des étiquettes ?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Vous trouverez ci-dessous une comparaison du balisage Data Sense et de l&#8217;étiquetage Azure information protection.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Étiquettes</th>
+<th class="tableblock halign-left valign-top">Étiquettes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Les balises de fichier font partie intégrante de Data Sense.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vous devez vous être abonné à Azure information protection (AIP).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">La balise est conservée uniquement dans la base de données de détection des données - elle n&#8217;est pas écrite dans le fichier. Il ne modifie pas le fichier, ni les heures d&#8217;accès ou de modification du fichier.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Le libellé fait partie du fichier et, lorsque le libellé change, le fichier change. Cette modification modifie également les heures d&#8217;accès et de modification du fichier.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vous pouvez avoir plusieurs balises sur un seul fichier.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Vous pouvez avoir une étiquette sur un seul fichier.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cette balise peut être utilisée pour une action interne de détection des données, telle que copie, déplacement, suppression, exécution d&#8217;une règle, etc</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Les autres systèmes qui peuvent lire le fichier peuvent voir l&#8217;étiquette, qui peut être utilisée pour une automatisation supplémentaire.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Un seul appel API est utilisé pour voir si un fichier a une balise.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="catégorisation-de-vos-données-à-laide-de-libellés-aip">Catégorisation de vos données à l&#8217;aide de libellés AIP</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Vous pouvez gérer les étiquettes AIP dans les fichiers que Cloud Data SENSE analyse si vous vous êtes abonné <a href="https://azure.microsoft.com/en-us/services/information-protection/" target="_blank" rel="noopener">"Protection des informations Azure (AIP)"</a>. AIP vous permet de classer et de protéger les documents et les fichiers en appliquant des étiquettes au contenu. Data Sense vous permet d&#8217;afficher les étiquettes déjà affectées aux fichiers, d&#8217;ajouter des étiquettes aux fichiers et de modifier les étiquettes lorsqu&#8217;une étiquette existe déjà.</p>
+</div>
+<div class="paragraph">
+<p>Cloud Data SENSE prend en charge les libellés AIP dans les types de fichiers suivants : .DOC, .DOCX, .PDF, .PPTX, .XLS, XLSX.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-data-sense/images/note.svg" alt="Note">
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Vous ne pouvez pas modifier actuellement les étiquettes dans des fichiers de plus de 30 Mo. Pour OneDrive, SharePoint et Google Drive, la taille maximale de fichier est de 4 Mo.</p>
+</li>
+<li>
+<p>Si un fichier a un libellé qui n&#8217;existe plus dans AIP, Cloud Data SENSE le considère comme un fichier sans étiquette.</p>
+</li>
+<li>
+<p>Si vous avez déployé Data Sense dans une région gouvernementale ou dans un emplacement sur site sans accès à Internet (également connu sous le nom de site sombre), la fonctionnalité AIP label n&#8217;est pas disponible.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="intégration-des-libellés-aip-dans-votre-espace-de-travail">Intégration des libellés AIP dans votre espace de travail</h3>
+<div class="paragraph">
+<p>Avant de gérer les étiquettes AIP, vous devez intégrer la fonctionnalité AIP label dans Cloud Data Sense en vous connectant à votre compte Azure existant. Une fois activée, vous pouvez gérer les libellés AIP dans les fichiers pour tous <a href="concept-cloud-compliance.html#supported-data-sources" target="_blank" rel="noopener">"sources des données"</a> Dans votre espace de travail BlueXP.</p>
+</div>
+<div class="ulist">
+<div class="title">De formation</div>
+<ul>
+<li>
+<p>Vous devez disposer d&#8217;un compte et d&#8217;une licence Azure information protection.</p>
+</li>
+<li>
+<p>Vous devez disposer des identifiants de connexion pour le compte Azure.</p>
+</li>
+<li>
+<p>Si vous prévoyez de modifier les étiquettes dans les fichiers qui résident dans les compartiments Amazon S3, assurez-vous que l&#8217;autorisation est requise <code>s3:PutObject</code> Est inclus dans le rôle IAM. Voir <a href="task-scanning-s3.html#reviewing-s3-prerequisites" target="_blank" rel="noopener">"Configuration du rôle IAM"</a>.</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Étapes</div>
+<ol class="arabic">
+<li>
+<p>Dans la page Configuration de la détection des données du cloud, cliquez sur <strong>intégrer des étiquettes AIP</strong>.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_compliance_integrate_aip_labels.png" alt="Une capture d&#8217;écran qui montre que vous cliquez sur le bouton pour intégrer la fonctionnalité AIP labels dans Cloud Data SENSE."></span></p>
+</div>
+</li>
+<li>
+<p>Dans la boîte de dialogue intégrer des libellés AIP, cliquez sur <strong>connexion à Azure</strong>.</p>
+</li>
+<li>
+<p>Sur la page Microsoft qui s&#8217;affiche, sélectionnez le compte et saisissez les informations d&#8217;identification requises.</p>
+</li>
+<li>
+<p>Revenez à l&#8217;onglet Cloud Data Sense et le message «<em>AIP Labels a été intégré avec succès au compte &lt;Account_name&gt;</em> ».</p>
+</li>
+<li>
+<p>Cliquez sur <strong>Fermer</strong> et vous verrez le texte <em>AIP Labels Integrated</em> en haut de la page.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_compliance_aip_labels_int.png" alt="Une capture d&#8217;écran qui montre les étiquettes AIP a été intégrée avec succès."></span></p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Vous pouvez afficher et affecter des libellés AIP à partir du volet des résultats de la page Investigation. Vous pouvez également attribuer des libellés AIP aux fichiers à l&#8217;aide de stratégies.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="affichage-des-libellés-aip-dans-vos-fichiers">Affichage des libellés AIP dans vos fichiers</h3>
+<div class="paragraph">
+<p>Vous pouvez afficher le libellé AIP actuel attribué à un fichier.</p>
+</div>
+<div class="paragraph">
+<p>Dans le volet Résultats de l&#8217;enquête de données, cliquez sur <span class="image"><img src="./media/button_down_caret.png" alt="le bas-caret"></span> pour que le fichier développe les détails des métadonnées du fichier.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_compliance_show_label.png" alt="Capture d&#8217;écran présentant les détails des métadonnées pour un seul fichier, y compris le libellé AIP affecté."></span></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="attribution-manuelle-détiquettes-aip">Attribution manuelle d&#8217;étiquettes AIP</h3>
+<div class="paragraph">
+<p>Vous pouvez ajouter, modifier et supprimer des étiquettes AIP de vos fichiers à l&#8217;aide de Cloud Data Sense.</p>
+</div>
+<div class="paragraph">
+<p>Procédez comme suit pour attribuer un libellé AIP à un seul fichier.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Étapes</div>
+<ol class="arabic">
+<li>
+<p>Dans le volet Résultats de l&#8217;enquête de données, cliquez sur <span class="image"><img src="./media/button_down_caret.png" alt="le bas-caret"></span> pour que le fichier développe les détails des métadonnées du fichier.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_compliance_add_label_manually.png" alt="Capture d&#8217;écran affichant les détails des métadonnées d&#8217;un fichier dans la page Data Investigation."></span></p>
+</div>
+</li>
+<li>
+<p>Cliquez sur <strong>attribuer un libellé à ce fichier</strong>, puis sélectionnez le libellé.</p>
+<div class="paragraph">
+<p>Le libellé apparaît dans les métadonnées du fichier.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Pour attribuer un libellé AIP à plusieurs fichiers :</p>
+</div>
+<div class="olist arabic">
+<div class="title">Étapes</div>
+<ol class="arabic">
+<li>
+<p>Dans le volet Résultats de l&#8217;enquête de données, sélectionnez le ou les fichiers que vous souhaitez étiqueter.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_compliance_tag_multi_files.png" alt="Capture d&#8217;écran indiquant comment sélectionner les fichiers à étiqueter et le bouton libellé de la page recherche de données."></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Pour sélectionner des fichiers individuels, cochez la case de chaque fichier (<span class="image"><img src="./media/button_backup_1_volume.png" alt=""></span>).</p>
+</li>
+<li>
+<p>Pour sélectionner tous les fichiers de la page en cours, cochez la case dans la ligne de titre (<span class="image"><img src="./media/button_select_all_files.png" alt=""></span>).</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Dans la barre de boutons, cliquez sur <strong>Label</strong> et sélectionnez le libellé AIP :</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_compliance_select_aip_label_multi.png" alt="Capture d&#8217;écran indiquant comment affecter une étiquette AIP à plusieurs fichiers dans la page Data Investigation."></span></p>
+</div>
+<div class="paragraph">
+<p>L&#8217;étiquette AIP est ajoutée aux métadonnées pour tous les fichiers sélectionnés.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="attribution-automatique-détiquettes-aip-à-laide-de-stratégies">Attribution automatique d&#8217;étiquettes AIP à l&#8217;aide de stratégies</h3>
+<div class="paragraph">
+<p>Vous pouvez affecter un libellé AIP à tous les fichiers qui répondent aux critères de la stratégie. Vous pouvez spécifier l&#8217;étiquette AIP lors de la création de la stratégie ou ajouter l&#8217;étiquette lors de la modification d&#8217;une stratégie.</p>
+</div>
+<div class="paragraph">
+<p>Les étiquettes sont ajoutées ou mises à jour dans les fichiers en continu lors de l&#8217;analyse de vos fichiers par Cloud Data SENSE.</p>
+</div>
+<div class="paragraph">
+<p>Selon qu&#8217;une étiquette est déjà appliquée à un fichier et le niveau de classification de l&#8217;étiquette, les actions suivantes sont prises lors de la modification d&#8217;une étiquette :</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 60%;">
+<col style="width: 40%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Si le fichier&#8230;&#8203;</th>
+<th class="tableblock halign-left valign-top">Alors&#8230;&#8203;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">N&#8217;a pas d&#8217;étiquette</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">L&#8217;étiquette est ajoutée</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Possède une étiquette existante d&#8217;un niveau de classification inférieur</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">L&#8217;étiquette de niveau supérieur est ajoutée</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Possède un libellé existant d&#8217;un niveau de classification supérieur</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">L&#8217;étiquette de niveau supérieur est conservée</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Est affectée à une étiquette manuellement et par une police</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">L&#8217;étiquette de niveau supérieur est ajoutée</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Deux étiquettes différentes sont attribuées par deux polices</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">L&#8217;étiquette de niveau supérieur est ajoutée</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Procédez comme suit pour ajouter une étiquette AIP à une stratégie existante.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Étapes</div>
+<ol class="arabic">
+<li>
+<p>Dans la page liste des stratégies, cliquez sur <strong>Modifier</strong> pour la stratégie dans laquelle vous souhaitez ajouter (ou modifier) l&#8217;étiquette AIP.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_compliance_add_label_highlight_1.png" alt="Capture d&#8217;écran indiquant comment modifier une police existante."></span></p>
+</div>
+</li>
+<li>
+<p>Dans la page Modifier la stratégie, cochez la case pour activer les libellés automatiques des fichiers qui correspondent aux paramètres de la stratégie, puis sélectionnez l&#8217;étiquette (par exemple, <strong>général</strong>).</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_compliance_add_label_highlight_2.png" alt="Capture d&#8217;écran indiquant comment sélectionner l&#8217;étiquette à attribuer aux fichiers correspondant à la stratégie."></span></p>
+</div>
+</li>
+<li>
+<p>Cliquez sur <strong>Enregistrer la stratégie</strong> et le libellé apparaît dans la description de la stratégie.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-data-sense/images/note.svg" alt="Note">
+</td>
+<td class="content">
+Si une stratégie a été configurée avec un libellé, mais que le libellé a depuis été supprimé de l&#8217;AIP, le nom de l&#8217;étiquette est désactivé et l&#8217;étiquette n&#8217;est plus affectée.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="suppression-de-lintégration-aip">Suppression de l&#8217;intégration AIP</h3>
+<div class="paragraph">
+<p>Si vous ne souhaitez plus pouvoir gérer les étiquettes AIP dans des fichiers, vous pouvez supprimer le compte AIP de l&#8217;interface Cloud Data SENSE.</p>
+</div>
+<div class="paragraph">
+<p>Notez qu&#8217;aucune modification n&#8217;est apportée aux étiquettes que vous avez ajoutées à l&#8217;aide de Data Sense. Les étiquettes qui existent dans les fichiers resteront telles qu&#8217;elles existent actuellement.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Étapes</div>
+<ol class="arabic">
+<li>
+<p>Dans la page <em>Configuration</em>, cliquez sur <strong>libellés AIP intégrés &gt; Supprimer intégration</strong>.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_compliance_un_integrate_aip_labels.png" alt="Capture d&#8217;écran montrant comment supprimer les intégrations AIP avec Cloud Data Sense."></span></p>
+</div>
+</li>
+<li>
+<p>Cliquez sur <strong>Supprimer l&#8217;intégration</strong> dans la boîte de dialogue de confirmation.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="application-de-balises-pour-gérer-vos-fichiers-numérisés">Application de balises pour gérer vos fichiers numérisés</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Vous pouvez ajouter une balise aux fichiers que vous souhaitez marquer pour un type de suivi. Par exemple, vous avez peut-être trouvé des fichiers en double et vous voulez en supprimer un, mais vous devez vérifier lequel supprimer. Vous pouvez ajouter une balise « vérifier pour supprimer » au fichier afin que vous sachiez que ce fichier nécessite une recherche et un certain type d&#8217;action future.</p>
+</div>
+<div class="paragraph">
+<p>Data Sense vous permet d&#8217;afficher les balises affectées aux fichiers, d&#8217;ajouter ou de supprimer des balises des fichiers et de modifier le nom ou de supprimer une balise existante.</p>
+</div>
+<div class="paragraph">
+<p>Notez que la balise n&#8217;est pas ajoutée au fichier de la même manière que les étiquettes AIP font partie des métadonnées du fichier. La balise vient d&#8217;être visible par les utilisateurs de BlueXP à l&#8217;aide de Cloud Data SENSE. Ainsi, vous pouvez voir si un fichier doit être supprimé ou vérifié pour un certain type de suivi.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-data-sense/images/tip.svg" alt="Astuce">
+</td>
+<td class="content">
+Les balises attribuées aux fichiers dans Cloud Data SENSE ne sont pas liées aux balises que vous pouvez ajouter aux ressources, telles que des volumes ou des instances de machines virtuelles. Des balises de détection de données sont appliquées au niveau du fichier.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="affichage-des-fichiers-dont-certaines-balises-sont-appliquées">Affichage des fichiers dont certaines balises sont appliquées</h3>
+<div class="paragraph">
+<p>Vous pouvez afficher tous les fichiers auxquels des étiquettes spécifiques sont attribuées.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Cliquez sur l&#8217;onglet <strong>Investigation</strong> dans Cloud Data Sense.</p>
+</li>
+<li>
+<p>Dans la page recherche de données, cliquez sur <strong>balises</strong> dans le volet filtres, puis sélectionnez les balises requises.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_compliance_filter_status.png" alt="Capture d&#8217;écran indiquant comment sélectionner des balises dans le volet filtres."></span></p>
+</div>
+<div class="paragraph">
+<p>Le volet Résultats de l&#8217;enquête affiche tous les fichiers auxquels ces balises sont affectées.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="attribution-de-balises-aux-fichiers">Attribution de balises aux fichiers</h3>
+<div class="paragraph">
+<p>Vous pouvez ajouter des balises à un seul fichier ou à un groupe de fichiers.</p>
+</div>
+<div class="paragraph">
+<p>Pour ajouter une balise à un seul fichier :</p>
+</div>
+<div class="olist arabic">
+<div class="title">Étapes</div>
+<ol class="arabic">
+<li>
+<p>Dans le volet Résultats de l&#8217;enquête de données, cliquez sur <span class="image"><img src="./media/button_down_caret.png" alt="le bas-caret"></span> pour que le fichier développe les détails des métadonnées du fichier.</p>
+</li>
+<li>
+<p>Cliquez sur le champ <strong>Tags</strong> pour afficher les balises actuellement affectées.</p>
+</li>
+<li>
+<p>Ajoutez la ou les balises :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pour affecter une balise existante, cliquez dans le champ <strong>Nouvelle balise&#8230;&#8203;</strong> et commencez à taper le nom de la balise. Lorsque la balise que vous cherchez s&#8217;affiche, sélectionnez-la et appuyez sur <strong>entrée</strong>.</p>
+</li>
+<li>
+<p>Pour créer une nouvelle balise et l&#8217;affecter au fichier, cliquez dans le champ <strong>Nouvelle balise&#8230;&#8203;</strong>, saisissez le nom de la nouvelle balise et appuyez sur <strong>entrée</strong>.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_compliance_add_status_manually.png" alt="Capture d&#8217;écran indiquant comment affecter une balise à un fichier dans la page recherche de données."></span></p>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>La balise s&#8217;affiche dans les métadonnées de fichier.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Pour ajouter une balise à plusieurs fichiers :</p>
+</div>
+<div class="olist arabic">
+<div class="title">Étapes</div>
+<ol class="arabic">
+<li>
+<p>Dans le volet Résultats de l&#8217;enquête de données, sélectionnez le ou les fichiers que vous souhaitez marquer.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_compliance_tag_multi_files.png" alt="Capture d&#8217;écran indiquant comment sélectionner les fichiers à étiqueter et le bouton Etiquettes dans la page recherche de données."></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Pour sélectionner des fichiers individuels, cochez la case de chaque fichier (<span class="image"><img src="./media/button_backup_1_volume.png" alt=""></span>).</p>
+</li>
+<li>
+<p>Pour sélectionner tous les fichiers de la page en cours, cochez la case dans la ligne de titre (<span class="image"><img src="./media/button_select_all_files.png" alt=""></span>).</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Dans la barre de boutons, cliquez sur <strong>Tags</strong> et les balises actuellement affectées sont affichées.</p>
+</li>
+<li>
+<p>Ajoutez la ou les balises :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pour affecter une balise existante, cliquez dans le champ <strong>Nouvelle balise&#8230;&#8203;</strong> et commencez à taper le nom de la balise. Lorsque la balise que vous cherchez s&#8217;affiche, sélectionnez-la et appuyez sur <strong>entrée</strong>.</p>
+</li>
+<li>
+<p>Pour créer une nouvelle balise et l&#8217;affecter au fichier, cliquez dans le champ <strong>Nouvelle balise&#8230;&#8203;</strong>, saisissez le nom de la nouvelle balise et appuyez sur <strong>entrée</strong>.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_compliance_select_tags_multi.png" alt="Capture d&#8217;écran indiquant comment affecter une balise à plusieurs fichiers dans la page recherche de données."></span></p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Approuver l&#8217;ajout des balises dans la boîte de dialogue de confirmation et les balises sont ajoutées aux métadonnées pour tous les fichiers sélectionnés.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="suppression-de-balises-de-fichiers">Suppression de balises de fichiers</h3>
+<div class="paragraph">
+<p>Vous pouvez supprimer une balise si vous n&#8217;avez plus besoin de l&#8217;utiliser.</p>
+</div>
+<div class="paragraph">
+<p>Il vous suffit de cliquer sur <strong>x</strong> pour obtenir une balise existante.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/button_delete_datasense_file_tag.png" alt="ajoutez cela quelque part dans ce sujet"></span></p>
+</div>
+<div class="paragraph">
+<p>Si vous avez sélectionné plusieurs fichiers, la balise est supprimée de tous les fichiers.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="affectation-dutilisateurs-pour-gérer-certains-fichiers">Affectation d&#8217;utilisateurs pour gérer certains fichiers</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Vous pouvez affecter un utilisateur BlueXP à un fichier spécifique ou à plusieurs fichiers, de sorte que personne puisse être responsable des actions de suivi qui doivent être effectuées sur le fichier. Cette fonctionnalité est souvent utilisée avec la fonction pour ajouter des balises d&#8217;état personnalisées à un fichier.</p>
+</div>
+<div class="paragraph">
+<p>Par exemple, vous pouvez avoir un fichier contenant certaines données personnelles qui autorise un trop grand nombre d&#8217;utilisateurs à accéder en lecture et en écriture (autorisations ouvertes). Vous pouvez donc attribuer l&#8217;étiquette d&#8217;état « Modifier les autorisations » et attribuer ce fichier à l&#8217;utilisateur « Joan Smith » afin qu&#8217;il puisse décider comment résoudre le problème. Lorsqu&#8217;ils ont résolu le problème, ils peuvent changer l&#8217;étiquette d&#8217;état en « terminé ».</p>
+</div>
+<div class="paragraph">
+<p>Notez que le nom d&#8217;utilisateur n&#8217;est pas ajouté au fichier dans le cadre des métadonnées du fichier. Il est simplement visible par les utilisateurs de BlueXP lors de l&#8217;utilisation de Cloud Data Sense.</p>
+</div>
+<div class="paragraph">
+<p>Un nouveau filtre dans la page Investigation vous permet d&#8217;afficher facilement tous les fichiers qui ont la même personne dans le champ « assigné à ».</p>
+</div>
+<div class="paragraph">
+<p>Pour affecter un utilisateur à un seul fichier :</p>
+</div>
+<div class="olist arabic">
+<div class="title">Étapes</div>
+<ol class="arabic">
+<li>
+<p>Dans le volet Résultats de l&#8217;enquête de données, cliquez sur <span class="image"><img src="./media/button_down_caret.png" alt="le bas-caret"></span> pour que le fichier développe les détails des métadonnées du fichier.</p>
+</li>
+<li>
+<p>Cliquez sur le champ <strong>affecté à</strong> et sélectionnez le nom d&#8217;utilisateur.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_compliance_add_user_manually.png" alt="Capture d&#8217;écran indiquant comment affecter un utilisateur à un fichier dans la page Data Investigation."></span></p>
+</div>
+<div class="paragraph">
+<p>Le nom d&#8217;utilisateur apparaît dans les métadonnées de fichier.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Pour affecter un utilisateur à plusieurs fichiers :</p>
+</div>
+<div class="olist arabic">
+<div class="title">Étapes</div>
+<ol class="arabic">
+<li>
+<p>Dans le volet Résultats de l&#8217;enquête de données, sélectionnez le ou les fichiers que vous souhaitez attribuer à un utilisateur.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_compliance_tag_multi_files.png" alt="Capture d&#8217;écran indiquant comment sélectionner les fichiers à affecter à un utilisateur, et le bouton affecter à, dans la page recherche de données."></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Pour sélectionner des fichiers individuels, cochez la case de chaque fichier (<span class="image"><img src="./media/button_backup_1_volume.png" alt=""></span>).</p>
+</li>
+<li>
+<p>Pour sélectionner tous les fichiers de la page en cours, cochez la case dans la ligne de titre (<span class="image"><img src="./media/button_select_all_files.png" alt=""></span>).</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Dans la barre de boutons, cliquez sur <strong>affecter à</strong> et sélectionnez le nom d&#8217;utilisateur :</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_compliance_select_user_multi.png" alt="Capture d&#8217;écran indiquant comment affecter un utilisateur à plusieurs fichiers dans la page recherche de données."></span></p>
+</div>
+<div class="paragraph">
+<p>L&#8217;utilisateur est ajouté aux métadonnées pour tous les fichiers sélectionnés.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contrôler-vos-données-à-laide-de-règles">Contrôler vos données à l&#8217;aide de règles</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Les stratégies sont comme une liste de favoris de filtres personnalisés qui fournissent des résultats de recherche dans la page Investigation pour les requêtes de conformité les plus fréquemment demandées. Cloud Data Sense fournit un ensemble de règles prédéfinies en fonction des demandes courantes des clients. Vous pouvez créer des stratégies personnalisées fournissant des résultats de recherches spécifiques à votre organisation.</p>
+</div>
+<div class="paragraph">
+<p>Les règles offrent les fonctionnalités suivantes :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>of predefined Policies,Stratégies prédéfinies De NetApp en fonction des demandes des utilisateurs</p>
+</li>
+<li>
+<p>Possibilité de créer vos propres règles personnalisées</p>
+</li>
+<li>
+<p>Lancez la page Investigation avec les résultats de vos polices en un seul clic</p>
+</li>
+<li>
+<p>Envoyez des alertes par e-mail à des utilisateurs BlueXP lorsque certaines stratégies critiques renvoient des résultats afin que vous puissiez obtenir des notifications pour protéger vos données</p>
+</li>
+<li>
+<p>Attribuez automatiquement des étiquettes AIP (Azure information protection) à tous les fichiers qui correspondent aux critères définis dans une stratégie</p>
+</li>
+<li>
+<p>Supprimez des fichiers automatiquement (une fois par jour) lorsque certaines stratégies renvoient des résultats pour protéger vos données automatiquement</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>L&#8217;onglet <strong>Policies</strong> du tableau de bord de conformité répertorie toutes les stratégies prédéfinies et personnalisées disponibles sur cette instance de Cloud Data Sense.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_compliance_highlights_tab.png" alt="Capture d&#8217;écran de l&#8217;onglet « règles » du tableau de bord Cloud Data Sense."></span></p>
+</div>
+<div class="paragraph">
+<p>De plus, les polices apparaissent dans la liste des filtres de la page Investigation.</p>
+</div>
+<div class="sect2">
+<h3 id="affichage-des-résultats-de-la-police-dans-la-page-investigation">Affichage des résultats de la police dans la page Investigation</h3>
+<div class="paragraph">
+<p>Pour afficher les résultats d&#8217;une police dans la page Investigation, cliquez sur le bouton <span class="image"><img src="./media/screenshot_gallery_options.gif" alt="Bouton plus"></span> Pour une stratégie spécifique, puis sélectionnez <strong>étudier les résultats</strong>.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_compliance_highlights_investigate.png" alt="Capture d&#8217;écran de la sélection de l&#8217;option analyser les résultats d&#8217;une police spécifique dans l&#8217;onglet stratégies."></span></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="création-de-stratégies-personnalisées">Création de stratégies personnalisées</h3>
+<div class="paragraph">
+<p>Vous pouvez créer vos propres stratégies personnalisées qui fournissent des résultats pour les recherches spécifiques à votre organisation. Les résultats sont renvoyés pour tous les fichiers et répertoires (partages et dossiers) qui correspondent aux critères de recherche.</p>
+</div>
+<div class="paragraph">
+<p>Notez que les actions de suppression de données et d&#8217;attribution de libellés AIP basés sur les résultats de la stratégie sont uniquement valides pour les fichiers. Les répertoires qui correspondent aux critères de recherche ne peuvent pas être supprimés automatiquement ou affectés à des libellés AIP.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Étapes</div>
+<ol class="arabic">
+<li>
+<p>Dans la page recherche de données, définissez votre recherche en sélectionnant tous les filtres que vous souhaitez utiliser. Voir <a href="task-controlling-private-data.html#filtering-data-in-the-data-investigation-page" target="_blank" rel="noopener">"Filtrage des données dans la page Data Investigation"</a> pour plus d&#8217;informations.</p>
+</li>
+<li>
+<p>Une fois que vous avez toutes les caractéristiques de filtre comme vous le souhaitez, cliquez sur <strong>Créer une stratégie à partir de cette recherche</strong>.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_compliance_save_as_highlight.png" alt="Capture d&#8217;écran indiquant comment enregistrer une requête filtrée en tant que stratégie."></span></p>
+</div>
+</li>
+<li>
+<p>Nommez la stratégie et sélectionnez d&#8217;autres actions pouvant être effectuées par la stratégie :</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Entrez un nom et une description uniques.</p>
+</li>
+<li>
+<p>Si vous le souhaitez, cochez la case pour supprimer automatiquement les fichiers qui correspondent aux paramètres de la stratégie. En savoir plus sur <a href="task-managing-highlights.html#deleting-source-files-automatically-using-policies">"suppression de fichiers source à l&#8217;aide d&#8217;une stratégie"</a>.</p>
+</li>
+<li>
+<p>Si vous souhaitez envoyer des e-mails de notification aux utilisateurs BlueXP, cochez la case correspondante et choisissez l&#8217;intervalle d&#8217;envoi de l&#8217;e-mail. En savoir plus sur <a href="task-org-private-data.html#sending-email-alerts-when-non-compliant-data-is-found">"envoi d&#8217;alertes par e-mail en fonction des résultats de règles"</a>.</p>
+</li>
+<li>
+<p>Si vous le souhaitez, cochez la case pour attribuer automatiquement des libellés AIP aux fichiers qui correspondent aux paramètres de la stratégie, puis sélectionnez le libellé. (Uniquement si vous avez déjà intégré des étiquettes AIP. En savoir plus sur <a href="task-org-private-data.html#categorizing-your-data-using-aip-labels">"Libellés AIP"</a>.)</p>
+</li>
+<li>
+<p>Cliquez sur <strong>Créer une stratégie</strong>.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_compliance_save_highlight.png" alt="Capture d&#8217;écran indiquant comment configurer la stratégie et l&#8217;enregistrer."></span></p>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>La nouvelle stratégie s&#8217;affiche dans l&#8217;onglet stratégies.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="envoi-dalertes-par-e-mail-lorsque-des-données-non-conformes-sont-trouvées">Envoi d&#8217;alertes par e-mail lorsque des données non conformes sont trouvées</h3>
+<div class="paragraph">
+<p>Cloud Data SENSE peut envoyer des alertes par e-mail aux utilisateurs BlueXP lorsque certaines stratégies critiques renvoient des résultats pour que vous puissiez recevoir des notifications afin de protéger vos données. Vous pouvez choisir d&#8217;envoyer les notifications par e-mail tous les jours, toutes les semaines ou tous les mois.</p>
+</div>
+<div class="paragraph">
+<p>Vous pouvez configurer ce paramètre lors de la création de la stratégie ou lors de la modification d&#8217;une stratégie.</p>
+</div>
+<div class="paragraph">
+<p>Procédez comme suit pour ajouter des mises à jour par e-mail à une stratégie existante.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Étapes</div>
+<ol class="arabic">
+<li>
+<p>Dans la page liste des stratégies, cliquez sur <strong>Modifier</strong> pour la stratégie dans laquelle vous souhaitez ajouter (ou modifier) le paramètre de messagerie.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_compliance_add_email_alert_1.png" alt="Capture d&#8217;écran indiquant comment modifier une police existante."></span></p>
+</div>
+</li>
+<li>
+<p>Dans la page Modifier la stratégie, cochez la case si vous souhaitez envoyer des e-mails de notification aux utilisateurs BlueXP et choisissez l&#8217;intervalle d&#8217;envoi de l&#8217;e-mail (par exemple, chaque <strong>semaine</strong>).</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_compliance_add_email_alert_2.png" alt="Capture d&#8217;écran indiquant comment choisir les critères d&#8217;e-mail à envoyer pour la police."></span></p>
+</div>
+</li>
+<li>
+<p>Cliquez sur <strong>Enregistrer la stratégie</strong> et l&#8217;intervalle auquel l&#8217;e-mail est envoyé apparaît dans la description de la stratégie.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Le premier e-mail est envoyé dès maintenant s&#8217;il y a des résultats de la politique - mais seulement si des fichiers répondent aux critères de police. Aucune information personnelle n&#8217;est envoyée dans les e-mails de notification. L&#8217;e-mail indique qu&#8217;il existe des fichiers qui correspondent aux critères de la police et qu&#8217;il fournit un lien vers les résultats de la police.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="modification-de-stratégies">Modification de stratégies</h3>
+<div class="paragraph">
+<p>Vous pouvez modifier les critères d&#8217;une stratégie existante que vous avez déjà créée. Cela peut être particulièrement utile si vous souhaitez modifier la requête (les éléments que vous avez définis à l&#8217;aide de filtres) pour ajouter ou supprimer certains paramètres.</p>
+</div>
+<div class="paragraph">
+<p>Notez que pour les stratégies prédéfinies, vous pouvez uniquement modifier si les notifications par e-mail sont envoyées et si des étiquettes AIP sont ajoutées. Aucune autre valeur ne peut être modifiée.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Étapes</div>
+<ol class="arabic">
+<li>
+<p>Dans la page liste des stratégies, cliquez sur <strong>Modifier</strong> pour la stratégie que vous souhaitez modifier.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_compliance_edit_policy_button.png" alt="Capture d&#8217;écran indiquant comment lancer une modification vers une police existante."></span></p>
+</div>
+</li>
+<li>
+<p>Si vous souhaitez simplement modifier les éléments de cette page (le Nom, la Description, si les notifications par e-mail sont envoyées et si des étiquettes AIP sont ajoutées), effectuez la modification et cliquez sur <strong>Enregistrer la stratégie</strong>.</p>
+<div class="paragraph">
+<p>Si vous souhaitez modifier les filtres de la requête enregistrée, cliquez sur <strong>Modifier la requête</strong>.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_compliance_edit_policy_dialog.png" alt="Capture d&#8217;écran indiquant la sélection du bouton Modifier la requête sur la page Modifier la stratégie."></span></p>
+</div>
+</li>
+<li>
+<p>Dans la page Investigation qui définit cette requête, modifiez la requête en ajoutant, supprimant ou personnalisant les filtres, puis cliquez sur <strong>Enregistrer les modifications</strong> .</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_compliance_edit_policy_query.png" alt="Capture d&#8217;écran indiquant comment modifier la requête en modifiant les paramètres du filtre."></span></p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>La police est modifiée immédiatement. Toutes les actions définies pour cette stratégie pour envoyer un e-mail, ajouter des étiquettes AIP ou supprimer des fichiers seront effectuées à l&#8217;interne suivant.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="suppression-de-polices">Suppression de polices</h3>
+<div class="paragraph">
+<p>Vous pouvez supprimer toute stratégie personnalisée que vous avez créée si vous n&#8217;en avez plus besoin. Vous ne pouvez supprimer aucune des stratégies prédéfinies.</p>
+</div>
+<div class="paragraph">
+<p>Pour supprimer une stratégie, cliquez sur <span class="image"><img src="./media/screenshot_gallery_options.gif" alt="Bouton plus"></span> Pour une stratégie spécifique, cliquez sur <strong>Supprimer la stratégie</strong>, puis cliquez à nouveau sur <strong>Supprimer la stratégie</strong> dans la boîte de dialogue de confirmation.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="liste-des-stratégies-prédéfinies">Liste des stratégies prédéfinies</h3>
+<div class="paragraph">
+<p>Cloud Data Sense fournit plusieurs règles définies par le système :</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 23.8095%;">
+<col style="width: 38.0952%;">
+<col style="width: 38.0953%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Nom</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Logique</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Données privées exposées publiquement</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Objets S3 contenant des informations personnelles ou sensibles, avec un accès public en lecture ouvert.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">S3 public ET contient des informations personnelles ou sensibles</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PCI DSS : données obsolètes pendant 30 jours</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fichiers contenant des informations de carte de crédit, modifié pour la dernière fois il y a plus de 30 jours.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Contient la carte de crédit ET la dernière modification sur 30 jours</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HIPAA : données obsolètes de plus de 30 jours</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fichiers contenant des informations de santé, modifié pour la dernière fois il y a plus de 30 jours.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Contient des données de santé (définies de la même manière que dans le rapport HIPAA) ET modifiées pour la dernière fois sur 30 jours</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Les données privées sont obsolètes au fil des 7 ans</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fichiers contenant des données personnelles ou sensibles, modifié pour la dernière fois il y a plus de 7 ans.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fichiers contenant des données personnelles ou sensibles, modifié pour la dernière fois il y a plus de 7 ans</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RGPD : citoyens européens</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dossiers contenant plus de 5 identificateurs de citoyens d’un pays de l’UE ou tables DB contenant des identificateurs de citoyens d’un pays de l’UE.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dossiers contenant plus de 5 identificateurs d’un (un) citoyen de l’UE ou de tables de données contenant des lignes contenant plus de 15% des colonnes avec des identificateurs de l’UE d’un pays. (Tout identifiant national des pays européens. N&#8217;inclut pas le Brésil, la Californie, le SSN des États-Unis, Israël et l&#8217;Afrique du Sud)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CCPA – résidents de Californie</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fichiers contenant plus de 10 identificateurs de permis de conduire californiens ou tables de BD contenant cet identifiant.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fichiers contenant plus de 10 identificateurs de permis de conduire californiens OU tables DB contenant la licence de conducteur californien</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Noms des sujets de données – risque élevé</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fichiers avec plus de 50 noms de sujet de données.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fichiers avec plus de 50 noms de sujet de données</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Adresses e-mail – risque élevé</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fichiers contenant plus de 50 adresses électroniques ou colonnes DB contenant plus de 50 % de leurs lignes contenant des adresses électroniques</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fichiers contenant plus de 50 adresses électroniques ou colonnes DB contenant plus de 50 % de leurs lignes contenant des adresses électroniques</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Données personnelles – risque élevé</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fichiers contenant plus de 20 identificateurs de données personnelles, ou colonnes de bases de données contenant plus de 50 % de leurs lignes contenant des identificateurs de données personnelles.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fichiers avec plus de 20 colonnes personnelles ou DB avec plus de 50 % de leurs lignes contenant des colonnes personnelles</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Données personnelles sensibles – risque élevé</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fichiers contenant plus de 20 identificateurs de données personnelles sensibles, ou colonnes de bases de données contenant plus de 50 % de leurs lignes contenant des données personnelles sensibles.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Les fichiers contenant plus de 20 colonnes personnelles sensibles ou DB contenant plus de 50 % de leurs lignes contenant des données personnelles sensibles</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+    </article>
+    <!-- Page Container -->
+  </div>
+
+  <div style="clear: both"></div><!-- Main needs to have height --></div>
+
+        </main>
+
+        <footer class="n-footer">
+  <div class="n-footer__bottom">
+    <div class="n-container">
+      <div class="n-footer__bottom-left">
+        <div class="n-footer__copyright">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/us/legal/copyright.aspx">© 2022 NetApp, Inc.</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/terms-of-use/">Conditions générales</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/privacy-policy/">Privacy Policy</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/cookie-policy/">Cookie Policy</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a class="ot-sdk-show-settings">Paramètres de cookies</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="n-footer__bottom-right">
+        <div class="n-footer__copyright">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+              <a target="_self" href="javascript:netapp_mailto()">Envoyer un avis à propos de cette page</a>
+            </li>
+          </ul>
+        </div>
+        <div class="n-footer__social-links">
+          <ul class="n-footer__social-link-list">
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-blog" href="https://blog.netapp.com"
+                target="_blank" title="blog" alt="blog">
+                <span class="n-footer__social-link-text">blog</span>
+                <svg class="n-icon-blog n-footer__social-link-icon" aria-labelledby="title">
+                  <title>blog@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/fr-fr/cloud-manager-data-sense/common/svg/sprite.svg#blog"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-community" href="https://community.netapp.com/"
+                target="_blank" title="community" alt="community">
+                <span class="n-footer__social-link-text">community</span>
+                <svg class="n-icon-community n-footer__social-link-icon" aria-labelledby="title">
+                  <title>community@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/fr-fr/cloud-manager-data-sense/common/svg/sprite.svg#comments"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-twitter" href="https://twitter.com/netapp"
+                target="_blank" title="twitter" alt="twitter">
+                <span class="n-footer__social-link-text">twitter</span>
+                <svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
+                  <title>twitter@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/fr-fr/cloud-manager-data-sense/common/svg/sprite.svg#twitter"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-facebook" href="https://www.facebook.com/NetApp"
+                target="_blank" title="facebook" alt="facebook">
+                <span class="n-footer__social-link-text">facebook</span>
+                <svg class="n-icon-facebook n-footer__social-link-icon" aria-labelledby="title">
+                  <title>facebook@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/fr-fr/cloud-manager-data-sense/common/svg/sprite.svg#facebook"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-linkedin"
+                href="https://www.linkedin.com/company/netapp" target="_blank" title="linkedin" alt="linkedin">
+                <span class="n-footer__social-link-text">linkedin</span>
+                <svg class="n-icon-linkedin n-footer__social-link-icon" aria-labelledby="title">
+                  <title>linkedin@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/fr-fr/cloud-manager-data-sense/common/svg/sprite.svg#linkedin"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-youtube"
+                href="https://www.youtube.com/user/NetAppTV" target="_blank" title="youtube" alt="youtube">
+                <span class="n-footer__social-link-text">youtube</span>
+                <svg class="n-icon-youtube n-footer__social-link-icon" aria-labelledby="title">
+                  <title>youtube@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/fr-fr/cloud-manager-data-sense/common/svg/sprite.svg#youtube"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-slideshare"
+                href="https://www.slideshare.net/NetApp" target="_blank" title="slideshare" alt="slideshare">
+                <span class="n-footer__social-link-text">slideshare</span>
+                <svg class="n-icon-slideshare n-footer__social-link-icon" aria-labelledby="title">
+                  <title>slideshare@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/fr-fr/cloud-manager-data-sense/common/svg/sprite.svg#slideshare"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+      </div><!-- Elasticsearch JS -->
+      <script type="text/javascript" src='/fr-fr/cloud-manager-data-sense/js/bundle.js'></script>
+
+      <!-- Syntax Highlighting -->
+      <script type="text/javascript" src='/fr-fr/cloud-manager-data-sense/js/prism.js'></script>
+      <script type="text/javascript" src='/fr-fr/cloud-manager-data-sense/js/prism-curl.js'></script>
+    </div>
+    <script>
+      document.body.offsetWidth=1903;
+      cookieLaw = {}
+      cookieLaw.euCountry = "US";
+      cookieLaw.invoke = function(){return false;}
+    </script>
+    <script src='/fr-fr/cloud-manager-data-sense/js/www-ntap.js'></script>
+    <script src='/fr-fr/cloud-manager-data-sense/js/tabbed-blocks.js'></script>
+    <script src='/fr-fr/cloud-manager-data-sense/js/sidebar.js'></script>
+  </body></html>
