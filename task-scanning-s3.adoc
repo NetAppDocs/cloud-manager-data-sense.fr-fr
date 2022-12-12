@@ -22,15 +22,19 @@ Cloud Data Sense peut analyser vos compartiments Amazon S3 pour identifier les d
 
 Pour commencer rapidement, suivez ces étapes ou faites défiler jusqu'aux sections restantes pour obtenir de plus amples informations.
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Une seule"] Configurez les exigences S3 dans votre environnement cloud
 [role="quick-margin-para"]
-Assurez-vous que votre environnement cloud répond aux exigences du Cloud Data SENSE, notamment la préparation d'un rôle IAM et la configuration de la connectivité depuis Data Sense vers S3.  S3 prerequisites,Voir la liste complète.
+Assurez-vous que votre environnement cloud répond aux exigences du Cloud Data SENSE, notamment la préparation d'un rôle IAM et la configuration de la connectivité depuis Data Sense vers S3. <<Vérification des prérequis S3,Voir la liste complète>>.
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Deux"] Déployez l'instance Cloud Data SENSE
 [role="quick-margin-para"]
 link:task-deploy-cloud-compliance.html["Déployez des données adaptées au cloud"^] si aucune instance n'est déjà déployée.
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Trois"] Activation de Data Sense dans votre environnement de travail S3
 [role="quick-margin-para"]
 Sélectionnez l'environnement de travail Amazon S3, cliquez sur *Activer* et sélectionnez un rôle IAM qui inclut les autorisations requises.
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Quatre"] Sélectionnez les compartiments à numériser
 [role="quick-margin-para"]
 Sélectionnez les compartiments que vous souhaitez analyser et Cloud Data SENSE commence à les analyser.
 
@@ -117,7 +121,7 @@ image:screenshot_s3_we.gif["Copie d'écran d'une icône d'environnement de trava
 +
 image:screenshot_s3_enable_compliance.gif["Capture d'écran du service Cloud Data Sense dans le panneau Services"]
 
-. Attribuez un rôle IAM à l'instance Cloud Data SENSE qui dispose de  S3 prerequisites,les autorisations requises.
+. Attribuez un rôle IAM à l'instance Cloud Data SENSE qui dispose de <<Vérification des prérequis S3,les autorisations requises>>.
 +
 image:screenshot_s3_compliance_iam_role.gif["Capture d'écran de l'entrée du rôle IAM AWS pour le sens des données cloud"]
 
@@ -127,6 +131,7 @@ image:screenshot_s3_compliance_iam_role.gif["Capture d'écran de l'entrée du r�
 
 TIP: Vous pouvez également activer les analyses de conformité pour un environnement de travail à partir de la page Configuration en cliquant sur image:screenshot_gallery_options.gif[""] Et en sélectionnant *Activer détection de données*.
 
+.Résultat
 BlueXP affecte le rôle IAM à l'instance.
 
 
@@ -137,7 +142,7 @@ Une fois que BlueXP a activé Cloud Data Sense sur Amazon S3, l'étape suivante 
 
 Lorsque BlueXP est exécuté dans le compte AWS doté des compartiments S3 que vous souhaitez analyser, il détecte ces compartiments et les affiche dans un environnement de travail Amazon S3.
 
-Cloud Data Sense peut également être  buckets from additional AWS accounts,Analysez les compartiments S3 qui se trouvent dans différents comptes AWS.
+Cloud Data Sense peut également être <<Analyse des compartiments à partir de comptes AWS supplémentaires,Analysez les compartiments S3 qui se trouvent dans différents comptes AWS>>.
 
 .Étapes
 . Sélectionnez l'environnement de travail Amazon S3.
@@ -165,6 +170,7 @@ image:screenshot_s3_select_buckets.png["Capture d'écran de la sélection des co
 |===
 
 
+.Résultat
 Cloud Data Sense commence l'analyse des compartiments S3 que vous avez activés. En cas d'erreur, elles apparaîtront dans la colonne État, ainsi que l'action requise pour corriger l'erreur.
 
 
@@ -248,4 +254,5 @@ image:screenshot_activate_and_select_buckets.png["Capture d'écran indiquant com
 . Cliquez sur *Activer la détection des données et sélectionnez les rubriques* et sélectionnez les rubriques que vous souhaitez numériser.
 
 
+.Résultat
 Cloud Data Sense commence l'analyse des nouveaux compartiments S3 que vous avez activés.

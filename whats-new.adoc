@@ -18,6 +18,28 @@ Découvrez les nouveautés du Cloud Data sens.
 
 
 
+== 11 décembre 2022 (version 1.18)
+
+
+
+=== Améliorations apportées à l'installation sur site
+
+Plusieurs améliorations ont été ajoutées à l'installation de Data Sense sur site :
+
+* Certaines conditions préalables supplémentaires sont maintenant vérifiées avant que l'installation ne démarre sur un hôte sur site. Ainsi, vous vous assurez que votre système hôte est 100 % prêt à installer le logiciel Data Sense :
++
+** vérifiez que l'espace est suffisant dans /var/lib/docker, /tmp et /opt
+** testez les autorisations pertinentes sur tous les dossiers requis
+
+
+* Dans la page Configuration, la section environnements de travail affiche maintenant le _ID de l'environnement de travail_ et le _scanner Group_ name. Vous devrez connaître l'ID de l'environnement de travail si vous prévoyez d'utiliser plusieurs hôtes Data Sense pour fournir une puissance de traitement supplémentaire pour analyser vos sources de données.
+* Dans la page Configuration, une nouvelle section affiche les groupes de scanner que vous avez configurés et les nœuds de scanner qui se trouvent dans chaque groupe.
+
+
+https://docs.netapp.com/us-en/cloud-manager-data-sense/task-deploy-compliance-onprem.html["En savoir plus sur l'installation de Data Sense sur un serveur hôte unique et sur plusieurs hôtes"].
+
+
+
 == 13 novembre 2022 (version 1.17)
 
 
@@ -145,7 +167,7 @@ La mise en pause de l'acquisition signifie que Data Sense n'effectue pas d'acqui
 
 
 
-=== Les données relatives aux permis de conduire AMÉRICAINS provenant de trois États supplémentaires peuvent être identifiées par Data Sense
+=== Les données RELATIVES aux licences de conducteur DES ÉTATS-UNIS provenant de trois États supplémentaires peuvent être identifiées par Data Sense
 
 Data Sense peut identifier et classer les fichiers contenant les données de licence du conducteur de l'Indiana, de New York et du Texas. link:reference-private-data-categories.html#types-of-personal-data["Consultez tous les types de données personnelles que Data Sense peut identifier dans vos données"].
 

@@ -93,6 +93,7 @@ image:screenshot_compliance_aip_labels_int.png["Une capture d'écran qui montre 
 
 
 
+.Résultat
 Vous pouvez afficher et affecter des libellés AIP à partir du volet des résultats de la page Investigation. Vous pouvez également attribuer des libellés AIP aux fichiers à l'aide de stratégies.
 
 
@@ -352,7 +353,7 @@ Les stratégies sont comme une liste de favoris de filtres personnalisés qui fo
 
 Les règles offrent les fonctionnalités suivantes :
 
-*  of predefined Policies,Stratégies prédéfinies De NetApp en fonction des demandes des utilisateurs
+* <<Liste des stratégies prédéfinies,Stratégies prédéfinies>> De NetApp en fonction des demandes des utilisateurs
 * Possibilité de créer vos propres règles personnalisées
 * Lancez la page Investigation avec les résultats de vos polices en un seul clic
 * Envoyez des alertes par e-mail à des utilisateurs BlueXP lorsque certaines stratégies critiques renvoient des résultats afin que vous puissiez obtenir des notifications pour protéger vos données
@@ -402,6 +403,7 @@ image:screenshot_compliance_save_highlight.png["Capture d'écran indiquant comme
 
 
 
+.Résultat
 La nouvelle stratégie s'affiche dans l'onglet stratégies.
 
 
@@ -426,6 +428,7 @@ image:screenshot_compliance_add_email_alert_2.png["Capture d'écran indiquant co
 . Cliquez sur *Enregistrer la stratégie* et l'intervalle auquel l'e-mail est envoyé apparaît dans la description de la stratégie.
 
 
+.Résultat
 Le premier e-mail est envoyé dès maintenant s'il y a des résultats de la politique - mais seulement si des fichiers répondent aux critères de police. Aucune information personnelle n'est envoyée dans les e-mails de notification. L'e-mail indique qu'il existe des fichiers qui correspondent aux critères de la police et qu'il fournit un lien vers les résultats de la police.
 
 
@@ -454,6 +457,7 @@ image:screenshot_compliance_edit_policy_query.png["Capture d'écran indiquant co
 
 
 
+.Résultat
 La police est modifiée immédiatement. Toutes les actions définies pour cette stratégie pour envoyer un e-mail, ajouter des étiquettes AIP ou supprimer des fichiers seront effectuées à l'interne suivant.
 
 

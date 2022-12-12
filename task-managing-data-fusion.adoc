@@ -36,6 +36,7 @@ Comme vous pouvez le voir, deux ID de client uniques ont été trouvés sur deux
 
 Notez que puisque vous scannez vos propres bases de données, quelle que soit la langue dans laquelle vos données sont stockées, vous pourrez identifier les données dans les futures analyses de détection de données.
 
+.Étapes
 Vous devez avoir link:task-scanning-databases.html#adding-the-database-server["ajout d'au moins un serveur de base de données"^] À Data Sense avant d'ajouter des sources de données Fusion.
 
 . Dans la page Configuration, cliquez sur *gérer Fusion de données* dans la base de données où résident les données source.
@@ -65,6 +66,7 @@ image:screenshot_compliance_data_fusion_list.png["Capture d'écran de toutes les
 
 
 
+.Résultats
 Après l'analyse suivante, les résultats incluent ces nouvelles informations dans le tableau de bord de conformité sous la section « Résultats personnels » et dans la page Investigation du filtre « données personnelles ». Chaque colonne source que vous avez ajoutée apparaît dans la liste des filtres au format Table.Column, par exemple `Customers.CustomerID`.
 
 image:screenshot_add_data_fusion_result.png["Capture d'écran montrant un exemple de résultats de Data Fusion dans le volet Résultats de l'enquête."]
@@ -167,6 +169,7 @@ Pour voir où vos noms de produits internes sont mentionnés dans tous vos fichi
 [user Datasense]$ sudo bash tools/datascience/custom_keywords/upload_custom_keywords.sh -s activate -f internal_product_names.txt
 ----
  log v1.0 | 2022-08-24 08:16:25,332 | INFO | ds_logger | upload_custom_keywords | 126 | 1 | None | upload_custom_keywords_126 | All legal keywords were successfully inserted
+.Résultats
 Après l'analyse suivante, les résultats incluent ces nouvelles informations dans le tableau de bord de conformité sous la section « Résultats personnels » et dans la page Investigation du filtre « données personnelles ».
 
 image:screenshot_add_keywords_result.png["Une capture d'écran montrant un exemple de résultats de mot-clé personnalisé se trouve dans le volet Résultats de l'enquête."]
@@ -202,7 +205,7 @@ Après avoir ajouté la fenêtre regex, Data Sense redémarre l'acquisition de t
 
 === Syntaxe de commande pour ajouter le regex
 
-Vous devrez accéder au système Data Sense pour ajouter le fichier contenant les modèles de mots-clés personnalisés et lancer la commande pour ajouter les mots-clés personnalisés.  the command line,Voir comment accéder à la ligne de commande Que vous ayez installé Data Sense dans votre site ou dans le cloud.
+Vous devrez accéder au système Data Sense pour ajouter le fichier contenant les modèles de mots-clés personnalisés et lancer la commande pour ajouter les mots-clés personnalisés. <<Accès à la ligne de commande,Voir comment accéder à la ligne de commande>> Que vous ayez installé Data Sense dans votre site ou dans le cloud.
 
 La syntaxe de commande permettant d'ajouter un regex personnalisé est la suivante :
 
@@ -235,6 +238,7 @@ Pour voir où vos ID de produit internes sont mentionnés dans tous vos fichiers
 [+] Adding Custom Regex to Data Sense
 log v1.0 | 2022-08-23 13:19:01,476 | INFO | ds_logger | custom_regex | 154 | 1 | None | custom_regex_154 | A pattern named 'Internal Product ID' was added successfully to Data Sense
 ....
+.Résultats
 Après l'analyse suivante, les résultats incluent ces nouvelles informations dans le tableau de bord de conformité sous la section « Résultats personnels » et dans la page Investigation du filtre « données personnelles ».
 
 image:screenshot_add_regex_result.png["Capture d'écran montrant un exemple de résultats regex personnalisés dans le volet Résultats de l'enquête."]

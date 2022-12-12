@@ -22,15 +22,19 @@ Suivez quelques étapes pour commencer à analyser les fichiers de vos comptes s
 
 Pour commencer rapidement, suivez ces étapes ou faites défiler jusqu'aux sections restantes pour obtenir de plus amples informations.
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Une seule"] Consultez les prérequis pour SharePoint
 [role="quick-margin-para"]
 Assurez-vous que vous disposez des informations d'identification Admin pour vous connecter au compte SharePoint et que vous disposez des URL des sites SharePoint que vous souhaitez analyser.
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Deux"] Déployez l'instance Cloud Data SENSE
 [role="quick-margin-para"]
 link:task-deploy-cloud-compliance.html["Déployez des données adaptées au cloud"^] si aucune instance n'est déjà déployée.
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Trois"] Connectez-vous au compte SharePoint
 [role="quick-margin-para"]
 À l'aide des informations d'identification utilisateur Admin, connectez-vous au compte SharePoint auquel vous souhaitez accéder afin qu'il soit ajouté en tant que nouvelle source de données/environnement de travail.
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Quatre"] Ajoutez les URL du site SharePoint à analyser
 [role="quick-margin-para"]
 Ajoutez la liste des URL du site SharePoint que vous souhaitez analyser dans le compte SharePoint et sélectionnez le type de numérisation. Vous pouvez ajouter jusqu'à 100 URL à la fois.
 
@@ -152,6 +156,7 @@ Si la boîte de dialogue répertorie des sites qui n'ont pas pu être ajoutés, 
 |===
 
 
+.Résultat
 Cloud Data SENSE commence à analyser les fichiers des sites SharePoint que vous avez ajoutés, et les résultats sont affichés dans le tableau de bord et à d'autres emplacements.
 
 

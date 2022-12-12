@@ -34,6 +34,7 @@ Vous pouvez vous abonner à tout moment et vous ne serez facturé que lorsque la
 
 image:screenshot_compliance_subscribe.png["Une capture d'écran indiquant la quantité de données analysées et le bouton s'abonner pour s'abonner au service."]
 
+.Étapes
 Ces étapes doivent être effectuées par un utilisateur qui a le rôle _Account Admin_.
 
 . Dans le coin supérieur droit de la console BlueXP, cliquez sur l'icône Paramètres et sélectionnez *informations d'identification*.
@@ -135,6 +136,7 @@ image:screenshot_services_license_add.png["Capture d'écran affichant la page pe
 
 
 
+.Résultat
 BlueXP ajoute la licence pour que votre service Cloud Data Sense soit actif.
 
 
@@ -158,7 +160,7 @@ Une fois que vous avez payé la licence et qu'elle est enregistrée sur le site 
 
 . Si BlueXP ne peut pas mettre à jour automatiquement la licence (par exemple, lorsqu'elle est installée sur un site sombre), vous devrez charger manuellement le fichier de licence.
 +
-.. C'est possible  your Cloud Data Sense license file,Procurez-vous le fichier de licence sur le site de support NetApp.
+.. C'est possible <<Procurez-vous votre fichier de licence Cloud Data Sense,Procurez-vous le fichier de licence sur le site de support NetApp>>.
 .. Sur la page porte-monnaie numérique de l'onglet _Data Services Licenses_, cliquez sur image:screenshot_horizontal_more_button.gif["Plus d'icône"] Pour le numéro de série de service que vous mettez à jour, cliquez sur *mettre à jour la licence*.
 +
 image:screenshot_services_license_update.png["Capture d'écran de la sélection du bouton mettre à jour la licence pour un service particulier."]
@@ -168,6 +170,7 @@ image:screenshot_services_license_update.png["Capture d'écran de la sélection 
 
 
 
+.Résultat
 BlueXP met à jour la licence pour que votre service Cloud Data Sense reste actif.
 
 
@@ -184,7 +187,7 @@ Utilisez l'icône de chat en bas à droite de l'interface BlueXP pour renouveler
 
 Si votre licence expire, Data Sense continue à fonctionner, mais l'accès aux tableaux de bord est bloqué afin que vous ne puissiez pas afficher les informations concernant vos données numérisées. Seule la page _Configuration_ est disponible au cas où vous souhaitez réduire le nombre de volumes analysés afin d'augmenter votre capacité de stockage sous la limite de licence.
 
-Une fois que vous renouvelez votre licence BYOL, BlueXP met automatiquement à jour la licence dans le porte-monnaie numérique et offre un accès complet à tous les tableaux de bord. Si BlueXP ne parvient pas à accéder au fichier de licence via la connexion Internet sécurisée (par exemple, lorsqu'il est installé sur un site sombre), vous pouvez obtenir le fichier vous-même et le télécharger manuellement vers BlueXP. Pour obtenir des instructions, reportez-vous à la section  a Cloud Data Sense BYOL license,Comment mettre à jour une licence Cloud Data Sense.
+Une fois que vous renouvelez votre licence BYOL, BlueXP met automatiquement à jour la licence dans le porte-monnaie numérique et offre un accès complet à tous les tableaux de bord. Si BlueXP ne parvient pas à accéder au fichier de licence via la connexion Internet sécurisée (par exemple, lorsqu'il est installé sur un site sombre), vous pouvez obtenir le fichier vous-même et le télécharger manuellement vers BlueXP. Pour obtenir des instructions, reportez-vous à la section <<Mise à jour d'une licence BYOL Cloud Data Sense,Comment mettre à jour une licence Cloud Data Sense>>.
 
 
 TIP: Si le compte que vous utilisez possède à la fois une licence BYOL et un abonnement PAYGO, Data Sense _ne_ pas passer à l'abonnement PAYGO lorsque la licence BYOL expire. Vous devez renouveler la licence BYOL.

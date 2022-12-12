@@ -39,18 +39,23 @@ https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html["Interfaces r
 
 Pour commencer rapidement, suivez ces étapes ou faites défiler vers le bas pour obtenir plus de détails.
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Une seule"] Découvrez le FSX pour les systèmes de fichiers ONTAP que vous souhaitez analyser
 [role="quick-margin-para"]
 Avant de pouvoir analyser FSX pour des volumes ONTAP, https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/start/concept-fsx-aws.html["Vous devez disposer d'un environnement de travail FSX avec des volumes configurés"^].
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Deux"] Déployez l'instance Cloud Data SENSE
 [role="quick-margin-para"]
 link:task-deploy-cloud-compliance.html["Déployez Cloud Data Sense dans BlueXP"^] si aucune instance n'est déjà déployée.
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Trois"] Activez Cloud Data SENSE et sélectionnez les volumes à analyser
 [role="quick-margin-para"]
 Cliquez sur *Data Sense*, sélectionnez l'onglet *Configuration* et activez les analyses de conformité pour les volumes dans des environnements de travail spécifiques.
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Quatre"] Vérifiez l'accès aux volumes
 [role="quick-margin-para"]
 Lorsque Cloud Data SENSE est activé, assurez-vous qu'il peut accéder à tous les volumes.
 
+[role="quick-margin-list"]
 * L'instance Cloud Data SENSE doit disposer d'une connexion réseau à chaque sous-réseau FSX pour ONTAP.
 * Assurez-vous que les ports suivants sont ouverts à l'instance de détection de données :
 +
@@ -62,6 +67,7 @@ Lorsque Cloud Data SENSE est activé, assurez-vous qu'il peut accéder à tous l
 * La détection de données a besoin des identifiants Active Directory pour analyser les volumes CIFS. + cliquez sur *conformité* > *Configuration* > *Modifier les informations d'identification CIFS* et fournissez les informations d'identification.
 
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Cinq"] Gérer les volumes à analyser
 [role="quick-margin-para"]
 Sélectionnez ou désélectionnez les volumes que vous souhaitez analyser et Cloud Data SENSE démarre ou arrête l'acquisition.
 
@@ -101,13 +107,14 @@ image:screenshot_fsx_scanning_activate.png["Une capture d'écran de l'onglet Con
 ** Pour mapper et classer tous les volumes, cliquez sur *cartographier et classer tous les volumes*.
 ** Pour personnaliser la numérisation de chaque volume, cliquez sur *ou sélectionnez le type de numérisation pour chaque volume*, puis choisissez les volumes que vous souhaitez mapper et/ou classer.
 +
-Voir  and disabling compliance scans on volumes,Activation et désactivation des analyses de conformité sur les volumes pour plus d'informations.
+Voir <<Activation et désactivation des analyses de conformité sur les volumes,Activation et désactivation des analyses de conformité sur les volumes>> pour plus d'informations.
 
 
 
 . Dans la boîte de dialogue de confirmation, cliquez sur *approuver* pour que Data Sense commence à analyser vos volumes.
 
 
+.Résultat
 Cloud Data SENSE commence à analyser les volumes que vous avez sélectionnés dans l'environnement de travail. Les résultats seront disponibles dans le tableau de bord de conformité dès que Cloud Data SENSE aura terminé les analyses initiales. Le temps nécessaire dépend de la quantité de données--il peut être de quelques minutes ou heures.
 
 
@@ -201,6 +208,7 @@ Initialement, la liste de volumes identifie ces volumes comme _Type_ *DP* avec _
 
 image:screenshot_cloud_compliance_dp_volumes.png["Capture d'écran montrant le bouton Activer l'accès aux volumes DP que vous pouvez sélectionner pour analyser les volumes de protection des données."]
 
+.Étapes
 Pour analyser ces volumes de protection des données :
 
 . Cliquez sur *Activer l'accès aux volumes DP* en haut de la page.
@@ -213,9 +221,10 @@ image:screenshot_compliance_dp_cifs_volumes.png["Capture d'écran des deux optio
 
 
 
-. Activez chaque volume DP que vous souhaitez analyser  and disabling compliance scans on volumes,de la même façon que vous avez activé d'autres volumes.
+. Activez chaque volume DP que vous souhaitez analyser <<Activation et désactivation des analyses de conformité sur les volumes,de la même façon que vous avez activé d'autres volumes>>.
 
 
+.Résultat
 Une fois activée, Cloud Data Sense crée un partage NFS à partir de chaque volume DP activé pour l'analyse. Les règles d'exportation de partage autorisent uniquement l'accès à partir de l'instance de détection de données.
 
 *Remarque :* si vous ne aviez pas de volumes de protection des données CIFS lorsque vous avez activé l'accès initial aux volumes DP, puis en ajoutant d'autres, le bouton *Activer l'accès à CIFS DP* s'affiche en haut de la page Configuration. Cliquez sur ce bouton et ajoutez des identifiants CIFS pour permettre l'accès à ces volumes CIFS DP.

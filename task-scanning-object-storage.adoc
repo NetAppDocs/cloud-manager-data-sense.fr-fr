@@ -22,18 +22,22 @@ Suivez quelques étapes pour commencer à analyser les données dans le stockage
 
 Pour commencer rapidement, suivez ces étapes ou faites défiler jusqu'aux sections restantes pour obtenir de plus amples informations.
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Une seule"] Examiner les prérequis en matière de stockage objet
 [role="quick-margin-para"]
 Vous devez disposer de l'URL du terminal pour vous connecter au service de stockage objet.
 
 [role="quick-margin-para"]
 Vous devez disposer de la clé d'accès et de la clé secrète du fournisseur de stockage objet pour que le Cloud Data SENSE puisse accéder aux compartiments.
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Deux"] Déployez l'instance Cloud Data SENSE
 [role="quick-margin-para"]
 link:task-deploy-cloud-compliance.html["Déployez des données adaptées au cloud"^] si aucune instance n'est déjà déployée.
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Trois"] Ajoutez le service de stockage objet
 [role="quick-margin-para"]
 Ajoutez le service de stockage objet au sens des données dans le cloud.
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Quatre"] Sélectionnez les compartiments à numériser
 [role="quick-margin-para"]
 Sélectionnez les compartiments que vous souhaitez analyser et Cloud Data SENSE commence à les analyser.
 
@@ -83,6 +87,7 @@ image:screenshot_compliance_add_object_storage.png["Capture d'écran de la boît
 
 
 
+.Résultat
 Le nouveau service de stockage objet est ajouté à la liste des environnements de travail.
 
 
@@ -116,4 +121,5 @@ image:screenshot_compliance_object_storage_select_buckets.png["Capture d'écran 
 |===
 
 
+.Résultat
 Cloud Data Sense commence l'analyse des compartiments que vous avez activés. En cas d'erreur, elles apparaîtront dans la colonne État, ainsi que l'action requise pour corriger l'erreur.

@@ -22,15 +22,19 @@ Procédez comme suit pour lancer la numérisation des fichiers dans les dossiers
 
 Pour commencer rapidement, suivez ces étapes ou faites défiler jusqu'aux sections restantes pour obtenir de plus amples informations.
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Une seule"] Vérifiez les prérequis OneDrive
 [role="quick-margin-para"]
 Assurez-vous que vous disposez des informations d'identification Admin pour vous connecter au compte OneDrive.
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Deux"] Déployez l'instance Cloud Data SENSE
 [role="quick-margin-para"]
 link:task-deploy-cloud-compliance.html["Déployez des données adaptées au cloud"^] si aucune instance n'est déjà déployée.
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Trois"] Ajoutez le compte OneDrive
 [role="quick-margin-para"]
 À l'aide des informations d'identification utilisateur Admin, connectez-vous au compte OneDrive auquel vous souhaitez accéder afin qu'il soit ajouté en tant que nouvel environnement de travail.
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Quatre"] Ajoutez les utilisateurs et sélectionnez le type de numérisation
 [role="quick-margin-para"]
 Ajoutez la liste des utilisateurs du compte OneDrive que vous souhaitez numériser et sélectionnez le type de numérisation. Vous pouvez ajouter jusqu'à 100 utilisateurs à la fois.
 
@@ -121,6 +125,7 @@ Si la boîte de dialogue répertorie tous les utilisateurs qui n'ont pas pu êtr
 |===
 
 
+.Résultat
 Cloud Data SENSE commence à analyser les fichiers pour les utilisateurs que vous avez ajoutés, et les résultats sont affichés dans le tableau de bord et à d'autres emplacements.
 
 

@@ -31,7 +31,7 @@ Lorsqu'il est installé de cette manière (parfois appelé site « hors ligne »
 * Stockage objet qui utilise le protocole simple Storage Service (S3)
 
 
-Dans les cas particuliers où vous avez besoin d'une installation BlueXP très sécurisée, mais que vous souhaitez également numériser des données locales à partir de comptes OneDrive ou de comptes SharePoint Online, vous pouvez utiliser le programme d'installation hors ligne Data Sense et fournir un accès Internet à quelques points de terminaison sélectionnés. Voir  and OneDrive special requirements,Exigences spéciales relatives à SharePoint et OneDrive pour plus d'informations.
+Dans les cas particuliers où vous avez besoin d'une installation BlueXP très sécurisée, mais que vous souhaitez également numériser des données locales à partir de comptes OneDrive ou de comptes SharePoint Online, vous pouvez utiliser le programme d'installation hors ligne Data Sense et fournir un accès Internet à quelques points de terminaison sélectionnés. Voir <<Exigences spéciales relatives à SharePoint et OneDrive,Exigences spéciales relatives à SharePoint et OneDrive>> pour plus d'informations.
 
 L'analyse des comptes Cloud Volumes ONTAP, Azure NetApp Files, FSX pour ONTAP, AWS S3 ou Google Drive n'est pas prise en charge lorsque Data SENSE est déployé sur un site sombre.
 
@@ -48,7 +48,7 @@ La plupart des fonctions de détection de données fonctionnent lorsqu'elles son
 * Réception des commentaires de l'utilisateur
 * Mises à niveau logicielles automatisées depuis BlueXP
 +
-Le connecteur BlueXP et Data Sense nécessitent tous deux des mises à niveau manuelles régulières pour activer de nouvelles fonctionnalités. Vous pouvez voir la version de détection de données au bas des pages de l'interface utilisateur de détection de données. Vérifier le link:whats-new.html["Notes de version de Cloud Data Sense"] pour voir les nouvelles fonctionnalités dans chaque version et si vous voulez ou non ces fonctionnalités. Vous pouvez ensuite suivre les étapes à  Data Sense software,Mettez à niveau votre logiciel Data Sense.
+Le connecteur BlueXP et Data Sense nécessitent tous deux des mises à niveau manuelles régulières pour activer de nouvelles fonctionnalités. Vous pouvez voir la version de détection de données au bas des pages de l'interface utilisateur de détection de données. Vérifier le link:whats-new.html["Notes de version de Cloud Data Sense"] pour voir les nouvelles fonctionnalités dans chaque version et si vous voulez ou non ces fonctionnalités. Vous pouvez ensuite suivre les étapes à <<Mettre à niveau le logiciel Data Sense,Mettez à niveau votre logiciel Data Sense>>.
 
 
 
@@ -58,15 +58,19 @@ Le connecteur BlueXP et Data Sense nécessitent tous deux des mises à niveau ma
 
 Pour commencer rapidement, suivez ces étapes ou faites défiler jusqu'aux sections restantes pour obtenir de plus amples informations.
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Une seule"] Installez le connecteur BlueXP
 [role="quick-margin-para"]
 Si aucun connecteur n'est déjà installé sur votre site hors ligne sur site, https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-connector-onprem-no-internet.html["Déployer le connecteur"^] Sur un hôte Linux.
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Deux"] Passer en revue les prérequis Data Sense
 [role="quick-margin-para"]
-Assurez-vous que votre système Linux est conforme au  the Linux host system,configuration requise pour l'hôte, que tous les logiciels requis sont installés, et que votre environnement hors ligne répond aux exigences  BlueXP and Data Sense prerequisites,autorisations et connectivité.
+Assurez-vous que votre système Linux est conforme au <<Préparez le système hôte Linux,configuration requise pour l'hôte>>, que tous les logiciels requis sont installés, et que votre environnement hors ligne répond aux exigences <<Vérifier les prérequis BlueXP et Data Sense,autorisations et connectivité>>.
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Trois"] Téléchargez et déployez Data Sense
 [role="quick-margin-para"]
 Téléchargez le logiciel Cloud Data SENSE sur le site de support NetApp et copiez le fichier d'installation sur l'hôte Linux que vous prévoyez d'utiliser. Lancez ensuite l'assistant d'installation et suivez les invites pour déployer l'instance Cloud Data Sense.
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Quatre"] Abonnez-vous au service Cloud Data Sense
 [role="quick-margin-para"]
 Les 1 premiers To de données scanners Cloud Data SENSE dans BlueXP sont gratuits. Une licence NetApp BYOL est requise pour continuer l'analyse des données après ce point.
 
@@ -82,30 +86,46 @@ Si vous n'avez pas encore de connecteur BlueXP installé sur votre site hors lig
 
 Le logiciel de détection des données doit être exécuté sur un hôte qui répond à des exigences spécifiques du système d'exploitation, de la RAM, des exigences logicielles, etc. Data Sense n'est pas pris en charge sur un hôte partagé avec d'autres applications ; l'hôte doit être un hôte dédié.
 
-* Système d'exploitation : Red Hat Enterprise Linux ou CentOS versions 8.0 à 8.6
+* *Système d'exploitation* : Red Hat Enterprise Linux ou CentOS versions 8.0 à 8.6
 +
 ** La version 7.8 ou 7.9 peut être utilisée, mais la version du noyau Linux doit être 4.0 ou supérieure
-** Le système d'exploitation doit pouvoir installer Docker Engine (par exemple, désactiver le service _firewalld_ si nécessaire)
+** Le système d'exploitation doit pouvoir installer le moteur Docker
 
 
-* Disque : SSD avec 500 Gio disponible sur /, ou
+* *Disque* : SSD avec 500 Gio disponible sur /, ou
 +
 ** 100 Gio disponible sur /opt
 ** 400 Gio disponible sur /var
 ** 5 Gio sur /tmp
 
 
-* RAM : 64 Go (la mémoire d'échange doit être désactivée sur l'hôte)
-* Processeur : 16 cœurs
+* *RAM* : 64 Go (la mémoire d'échange doit être désactivée sur l'hôte)
+* *CPU* : 16 cœurs
 +
 Notez que vous pouvez déployer Data Sense sur un système avec moins de processeurs et moins de RAM, mais il y a des limites lors de l'utilisation de ces systèmes. Voir link:concept-cloud-compliance.html#using-a-smaller-instance-type["Utilisation d'un type d'instance plus petit"] pour plus d'informations.
 
+* *Logiciel supplémentaire*: Vous devez installer le logiciel suivant sur l'hôte avant d'installer Data Sense:
++
+** Docker Engine version 19 ou ultérieure. https://docs.docker.com/engine/install/["Voir les instructions d'installation"^].
+** Python 3 version 3.6 ou ultérieure. https://www.python.org/downloads/["Voir les instructions d'installation"^].
 
 
-Vous devez installer le logiciel suivant sur l'hôte avant d'installer Data Sense :
+* *Firesund considérations*: Si vous prévoyez d'utiliser `firewalld`, Nous vous recommandons de l'activer avant d'installer Data Sense. Exécutez les commandes suivantes pour configurer `firewalld` Pour qu'il soit compatible avec Data Sense :
++
+....
+firewall-cmd --permanent --add-service=http
+firewall-cmd --permanent --add-service=https
+firewall-cmd --permanent --add-service=mysql
+firewall-cmd --permanent --add-port=80/tcp
+firewall-cmd --permanent --add-port=8080/tcp
+firewall-cmd --permanent --add-port=443/tcp
+firewall-cmd --permanent --add-port=555/tcp
+firewall-cmd --permanent --add-port=3306/tcp
+firewall-cmd --reload
+....
++
+Si vous activez `firewalld` Après avoir installé Data Sense, vous devez redémarrer docker.
 
-* Docker Engine version 19 ou ultérieure. https://docs.docker.com/engine/install/["Voir les instructions d'installation"^].
-* Python 3 version 3.6 ou ultérieure. https://www.python.org/downloads/["Voir les instructions d'installation"^].
 
 
 
@@ -117,14 +137,7 @@ NOTE: L'adresse IP du système hôte Data Sense ne peut pas être modifiée apr�
 
 Avant de déployer Cloud Data, lisez les conditions préalables suivantes pour vérifier que la configuration est prise en charge.
 
-* Assurez-vous que BlueXP dispose d'autorisations pour déployer des ressources et créer des groupes de sécurité pour l'instance Cloud Data Sense.
-* Assurez-vous que le connecteur BlueXP peut accéder à l'instance de détection de données. Le groupe de sécurité du connecteur doit autoriser le trafic entrant et sortant via le port 443 vers et depuis l'instance de détection des données.
-+
-Cette connexion permet le déploiement de l'instance Data Sense et vous permet d'afficher les informations de conformité et de gouvernance.
-
-+
-Assurez-vous que le port 8080 est ouvert pour voir la progression de l'installation dans BlueXP.
-
+* Assurez-vous que le connecteur dispose d'autorisations pour déployer des ressources et créer des groupes de sécurité pour l'instance Cloud Data Sense. Vous trouverez les dernières autorisations BlueXP dans https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions.html["Règles fournies par NetApp"^].
 * Assurez-vous de continuer d'exécuter le contrôle des données cloud. L'instance Cloud Data SENSE doit rester active pour analyser en continu vos données.
 * Assurez la connectivité de votre navigateur Web au cloud Data Sense. Une fois Cloud Data SENSE activé, assurez-vous que les utilisateurs accèdent à l'interface BlueXP à partir d'un hôte connecté à l'instance Data Sense.
 +
@@ -134,11 +147,66 @@ L'instance de détection de données utilise une adresse IP privée pour s'assur
 
 
 
+== Vérifiez que tous les ports requis sont activés
+
+Vous devez vous assurer que tous les ports requis sont ouverts pour la communication entre le connecteur, Data Sense, Active Directory et vos sources de données.
+
+[cols="25,25,50"]
+|===
+| Type de connexion | Ports | Description 
+
+
+| Connecteur <> détection des données | 8080 (TCP), 443 (TCP) et 80 | Le groupe de sécurité du connecteur doit autoriser le trafic entrant et sortant via le port 443 vers et depuis l'instance de détection des données. Assurez-vous que le port 8080 est ouvert pour voir la progression de l'installation dans BlueXP. 
+
+
+| Connecteur <> cluster ONTAP (NAS) | 443 (TCP)  a| 
+BlueXP détecte les clusters ONTAP via HTTPS. Si vous utilisez des stratégies de pare-feu personnalisées, elles doivent répondre aux exigences suivantes :
+
+* L'hôte du connecteur doit autoriser l'accès HTTPS sortant via le port 443. Si le connecteur est dans le Cloud, toutes les communications sortantes sont autorisées par le groupe de sécurité prédéfini.
+* Le cluster ONTAP doit autoriser l'accès HTTPS entrant via le port 443. La stratégie de pare-feu " mgmt " par défaut permet l'accès HTTPS entrant à partir de toutes les adresses IP. Si vous avez modifié cette stratégie par défaut ou si vous avez créé votre propre stratégie de pare-feu, vous devez associer le protocole HTTPS à cette politique et activer l'accès à partir de l'hôte du connecteur.
+
+
+
+
+| Cluster de détection des données <> ONTAP  a| 
+* Pour NFS - 111 (TCP/UDP) et 2049 (TCP/UDP)
+* Pour CIFS - 139 (TCP/UDP) et 445 (TCP/UDP)
+
+ a| 
+La détection des données requiert une connexion réseau à chaque sous-réseau Cloud Volumes ONTAP ou système ONTAP sur site. Les groupes de sécurité pour Cloud Volumes ONTAP doivent autoriser les connexions entrantes à partir de l'instance de détection de données.
+
+Assurez-vous que ces ports sont ouverts à l'instance de détection de données :
+
+* Pour NFS - 111 et 2049
+* Pour CIFS : 139 et 445
+
+
+Les règles d'exportation de volumes NFS doivent autoriser l'accès à partir de l'instance Data Sense.
+
+
+
+| Détection de données <> Active Directory | 389 (TCP ET UDP), 636 (TCP), 3268 (TCP) ET 3269 (TCP)  a| 
+Un Active Directory doit déjà être configuré pour les utilisateurs de votre entreprise. En outre, Data Sense nécessite des identifiants Active Directory pour analyser les volumes CIFS.
+
+Vous devez disposer des informations pour Active Directory :
+
+* Adresse IP du serveur DNS ou adresses IP multiples
+* Nom d'utilisateur et mot de passe du serveur
+* Nom de domaine (nom Active Directory)
+* Que vous utilisiez ou non le protocole LDAP sécurisé (LDAPS)
+* Port serveur LDAP (généralement 389 pour LDAP et 636 pour LDAP sécurisé)
+
+
+|===
+Si vous utilisez plusieurs hôtes Data Sense pour fournir une puissance de traitement supplémentaire pour analyser vos sources de données, vous devez activer des ports/protocoles supplémentaires. link:task-deploy-compliance-dark-site.html#multi-host-installation-for-large-configurations["Voir la configuration de port supplémentaire requise"].
+
+
+
 == Exigences spéciales relatives à SharePoint et OneDrive
 
 Lorsque BlueXP et Data Sense sont déployés sur un site sans accès à Internet, vous pouvez analyser les fichiers dans les comptes SharePoint Online et OneDrive en fournissant un accès Internet à quelques points de terminaison sélectionnés.
 
-Les comptes SharePoint sur site peuvent être numérisés sans fournir d'accès à Internet.
+Les comptes sur site SharePoint installés localement peuvent être analysés sans accès à Internet.
 
 [cols="50,50"]
 |===
@@ -148,9 +216,9 @@ Les comptes SharePoint sur site peuvent être numérisés sans fournir d'accès 
 | \login.microsoft.com \graph.microsoft.com | Communication avec les serveurs Microsoft pour se connecter au service en ligne sélectionné. 
 
 
-| \https://cloudmanager.cloud.netapp.com | Communication avec le service BlueXP, qui inclut les comptes NetApp. 
+| \https://api.bluexp.netapp.com | Communication avec le service BlueXP, qui inclut les comptes NetApp. 
 |===
-L'accès à _cloudmanager.cloud.netapp.com_ n'est nécessaire que lors des connexions initiales à ces services externes.
+L'accès à _api.bluexp.netapp.com_ n'est nécessaire que lors des connexions initiales à ces services externes.
 
 
 
@@ -170,11 +238,11 @@ image:diagram_deploy_onprem_multi_host_no_internet.png["Un diagramme indiquant l
 
 Procédez comme suit lors de l'installation du logiciel Data Sense sur un hôte sur site unique dans un environnement hors ligne.
 
-.Ce dont vous avez besoin, 8217;ll
-* Vérifiez que votre système Linux est conforme à la  the Linux host system,configuration requise pour l'hôte.
+.Ce dont vous avez besoin
+* Vérifiez que votre système Linux est conforme à la <<Préparez le système hôte Linux,configuration requise pour l'hôte>>.
 * Vérifiez que vous avez installé les deux modules de prérequis logiciels (Docker Engine et Python 3).
 * Assurez-vous que vous disposez des privilèges root sur le système Linux.
-* Vérifiez que votre environnement hors ligne répond aux besoins  BlueXP and Data Sense prerequisites,autorisations et connectivité.
+* Vérifiez que votre environnement hors ligne répond aux besoins <<Vérifier les prérequis BlueXP et Data Sense,autorisations et connectivité>>.
 
 
 .Étapes
@@ -240,10 +308,12 @@ Valeurs variables :
 
 
 
+.Résultat
 Le programme d'installation de Data Sense installe les packages, enregistre l'installation et installe Data Sense. L'installation peut prendre entre 10 et 20 minutes.
 
 S'il y a une connectivité sur le port 8080 entre la machine hôte et l'instance de connecteur, vous verrez la progression de l'installation dans l'onglet détection de données de BlueXP.
 
+.Et la suite
 Dans la page Configuration, vous pouvez sélectionner local link:task-getting-started-compliance.html["Clusters ONTAP sur site"] et link:task-scanning-databases.html["les bases de données"] que vous voulez numériser.
 
 Vous pouvez également link:task-licensing-datasense.html#use-a-cloud-data-sense-byol-license["Configurez les licences BYOL pour Cloud Data Sense"] À partir de la page du porte-monnaie numérique. Vous ne serez facturé que lorsque la quantité de données dépasse 1 To.
@@ -256,11 +326,11 @@ Pour les très grandes configurations dans lesquelles vous numérisez des pétao
 
 Procédez comme suit lors de l'installation du logiciel Data Sense sur plusieurs hôtes sur site dans un environnement hors ligne.
 
-.Ce dont vous avez besoin, 8217;ll
-* Vérifiez que tous vos systèmes Linux pour les nœuds Manager et scanner sont conformes à la  the Linux host system,configuration requise pour l'hôte.
+.Ce dont vous avez besoin
+* Vérifiez que tous vos systèmes Linux pour les nœuds Manager et scanner sont conformes à la <<Préparez le système hôte Linux,configuration requise pour l'hôte>>.
 * Vérifiez que vous avez installé les deux modules de prérequis logiciels (Docker Engine et Python 3).
 * Assurez-vous que vous disposez des privilèges root sur les systèmes Linux.
-* Vérifiez que votre environnement hors ligne répond aux besoins  BlueXP and Data Sense prerequisites,autorisations et connectivité.
+* Vérifiez que votre environnement hors ligne répond aux besoins <<Vérifier les prérequis BlueXP et Data Sense,autorisations et connectivité>>.
 * Vous devez disposer des adresses IP des hôtes du nœud de scanner que vous prévoyez d'utiliser.
 * Les ports et protocoles suivants doivent être activés sur tous les hôtes :
 +
@@ -314,8 +384,10 @@ Une fois l'installation terminée sur tous les nœuds du scanner et qu'ils ont �
 
 
 
+.Résultat
 Le programme d'installation de Cloud Data Sense termine l'installation des packages et enregistre l'installation. L'installation peut prendre entre 15 et 25 minutes.
 
+.Et la suite
 Dans la page Configuration, vous pouvez sélectionner local link:task-getting-started-compliance.html["Clusters ONTAP sur site"] et locales link:task-scanning-databases.html["les bases de données"] que vous voulez numériser.
 
 Vous pouvez également link:task-licensing-datasense.html#use-a-cloud-data-sense-byol-license["Configurez les licences BYOL pour Cloud Data Sense"] À partir de la page du porte-monnaie numérique. Vous ne serez facturé que lorsque la quantité de données dépasse 1 To.
@@ -360,6 +432,7 @@ start_darksite_upgrade.sh
 ----
 
 
+.Résultat
 Le logiciel Data Sense est mis à niveau sur votre hôte. La mise à jour peut prendre entre 5 et 10 minutes.
 
 Notez qu'aucune mise à niveau n'est requise sur les nœuds du scanner si vous avez déployé Data Sense sur plusieurs systèmes hôtes pour analyser des configurations très volumineuses.

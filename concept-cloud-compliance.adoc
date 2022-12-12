@@ -129,7 +129,7 @@ Data Sense prend en charge les versions NFS 3.x, 4.0 et 4.1 et CIFS 1.x, 2.0, 2.
 +
 link:task-licensing-datasense.html["Découvrez comment obtenir des licences Cloud Data Sense"^].
 
-* Pour installer Cloud Data dans le cloud, il faut déployer une instance cloud, ce qui entraîne des frais supplémentaires du fournisseur cloud chargé du déploiement. Voir  Cloud Data Sense instance,type d'instance déployé pour chaque fournisseur cloud. L'installation de Data Sense sur un système sur site est gratuite.
+* Pour installer Cloud Data dans le cloud, il faut déployer une instance cloud, ce qui entraîne des frais supplémentaires du fournisseur cloud chargé du déploiement. Voir <<Instance Cloud Data SENSE,type d'instance déployé pour chaque fournisseur cloud>>. L'installation de Data Sense sur un système sur site est gratuite.
 * Cloud Data sens requiert que vous ayez déployé un connecteur BlueXP. Dans de nombreux cas, vous disposez déjà d'un connecteur en raison d'autres services et stockages que vous utilisez dans BlueXP. L'instance de connecteur entraîne des frais supplémentaires du fournisseur cloud sur lequel elle est déployée. Voir la https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-installing-linux.html["type d'instance déployé pour chaque fournisseur cloud"^]. L'installation du connecteur sur un système sur site est gratuite.
 
 
@@ -185,7 +185,7 @@ Vous pouvez déployer Data Sense sur un système avec moins de processeurs et mo
 | Taille du système | Caractéristiques | Limites 
 
 
-| Très grand (par défaut) | 16 PROCESSEURS, 64 GO DE RAM, 500 GO DE SSD | Aucune 
+| Grand (par défaut) | 16 PROCESSEURS, 64 GO DE RAM, 500 GO DE SSD | Aucune 
 
 
 | Moyen | 8 PROCESSEURS, 32 GO DE RAM, 200 GO DE SSD | Numérisation plus lente et numérisation jusqu'à 1 million de fichiers uniquement. 

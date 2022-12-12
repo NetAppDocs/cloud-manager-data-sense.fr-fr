@@ -137,6 +137,7 @@ Une boîte de dialogue affichant l'état de l'opération de clonage s'affiche.
 
 
 
+.Résultat
 Le nouveau volume cloné est créé dans le même agrégat que le volume source.
 
 Vous pouvez afficher la progression de l'opération de clonage dans link:task-view-compliance-actions.html["Volet État des actions"].
@@ -189,6 +190,7 @@ Vous êtes invité à définir la relation de synchronisation. Le système sourc
 . Vous devez sélectionner le système cible, puis sélectionner (ou créer) le courtier de données que vous prévoyez d'utiliser. Vérifiez les exigences Cloud Sync en commençant par le link:https://docs.netapp.com/us-en/cloud-manager-sync/task-quick-start.html.html["Description de Quick Start"^].
 
 
+.Résultat
 Les fichiers sont copiés sur le système cible et ils seront synchronisés en fonction du planning que vous définissez. Si vous sélectionnez une synchronisation unique, les fichiers sont copiés et synchronisés une seule fois. Si vous choisissez une synchronisation périodique, les fichiers sont synchronisés en fonction du planning. Notez que si le système source ajoute de nouveaux fichiers qui correspondent à la requête que vous avez créée à l'aide de filtres, ces _nouveaux_ fichiers seront copiés vers la destination et synchronisés ultérieurement.
 
 Notez que certaines des opérations Cloud Sync habituelles sont désactivées lorsqu'elles sont appelées depuis Data Sense :
@@ -315,6 +317,7 @@ image:screenshot_compliance_delete_files_using_policies.png["Capture d'écran in
 
 
 
+.Résultat
 La nouvelle stratégie s'affiche dans l'onglet stratégies. Les fichiers qui correspondent à la stratégie sont supprimés une fois par jour au moment de l'exécution de la stratégie.
 
 Vous pouvez afficher la liste des fichiers qui ont été supprimés dans le link:task-view-compliance-actions.html["Volet État des actions"].

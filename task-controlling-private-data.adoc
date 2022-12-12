@@ -23,9 +23,9 @@ Par défaut, le tableau de bord Cloud Data Sense affiche les données de conform
 
 image:screenshot_compliance_dashboard.png["Capture d'écran du tableau de bord Cloud Data Sense"]
 
-Si vous ne souhaitez voir des données que pour certains environnements de travail,  Dashboard data for specific working environments,sélectionnez ces environnements de travail.
+Si vous ne souhaitez voir des données que pour certains environnements de travail, <<Affichage des données du tableau de bord pour des environnements de travail spécifiques,sélectionnez ces environnements de travail>>.
 
-Vous pouvez également filtrer les résultats à partir de la page Data Investigation et télécharger un rapport des résultats sous forme de fichier CSV. Voir  data in the Data Investigation page,Filtrage des données dans la page Data Investigation pour plus d'informations.
+Vous pouvez également filtrer les résultats à partir de la page Data Investigation et télécharger un rapport des résultats sous forme de fichier CSV. Voir <<Filtrage des données dans la page Data Investigation,Filtrage des données dans la page Data Investigation>> pour plus d'informations.
 
 
 

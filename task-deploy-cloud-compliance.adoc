@@ -24,21 +24,25 @@ Notez que vous pouvez également link:task-deploy-compliance-onprem.html["Déplo
 
 Pour commencer rapidement, suivez ces étapes ou faites défiler jusqu'aux sections restantes pour obtenir de plus amples informations.
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Une seule"] Créer un connecteur
 [role="quick-margin-para"]
 Si vous n'avez pas encore de connecteur, créez-en un maintenant. Voir https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html["Création d'un connecteur dans AWS"^], https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-azure.html["Création d'un connecteur dans Azure"^], ou https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-gcp.html["Création d'un connecteur dans GCP"^].
 
 [role="quick-margin-para"]
 Vous pouvez également https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-installing-linux.html["Déployez le connecteur sur site"^] Sur un hôte Linux de votre réseau ou dans le cloud.
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Deux"] Passer en revue les prérequis
 [role="quick-margin-para"]
-Assurez-vous que votre environnement est conforme aux conditions préalables. Cela inclut l'accès Internet sortant pour l'instance, la connectivité entre le connecteur et Cloud Data SENSE sur le port 443, etc.  prerequisites,Voir la liste complète.
+Assurez-vous que votre environnement est conforme aux conditions préalables. Cela inclut l'accès Internet sortant pour l'instance, la connectivité entre le connecteur et Cloud Data SENSE sur le port 443, etc. <<Passer en revue les prérequis,Voir la liste complète>>.
 
 [role="quick-margin-para"]
 La configuration par défaut requiert 16 vCPU pour l'instance de Cloud Data Sense. Voir link:concept-cloud-compliance.html#the-cloud-data-sense-instance["plus de détails sur le type d'instance"^].
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Trois"] Déployez des données adaptées au cloud
 [role="quick-margin-para"]
 Lancez l'assistant d'installation pour déployer l'instance Cloud Data SENSE dans le cloud.
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Quatre"] Abonnez-vous au service Cloud Data Sense
 [role="quick-margin-para"]
 Les 1 premiers To de données scanners Cloud Data SENSE dans BlueXP sont gratuits. Un abonnement BlueXP via votre fournisseur cloud Marketplace, ou une licence BYOL auprès de NetApp, est nécessaire pour continuer à analyser les données après ce point.
 
@@ -93,7 +97,7 @@ Consultez le tableau approprié ci-dessous selon que vous déployez Cloud Data S
 | Terminaux | Objectif 
 
 
-| \https://cloudmanager.cloud.netapp.com | Communication avec le service BlueXP, qui inclut les comptes NetApp. 
+| \https://api.bluexp.netapp.com | Communication avec le service BlueXP, qui inclut les comptes NetApp. 
 
 
 | \https://netapp-cloud-account.auth0.com \https://auth0.com | Communication avec le site Web BlueXP pour l'authentification centralisée des utilisateurs. 
@@ -114,16 +118,16 @@ Consultez le tableau approprié ci-dessous selon que vous déployez Cloud Data S
 | Terminaux | Objectif 
 
 
-| \https://cloudmanager.cloud.netapp.com | Communication avec le service BlueXP, qui inclut les comptes NetApp. 
+| \https://api.bluexp.netapp.com | Communication avec le service BlueXP, qui inclut les comptes NetApp. 
 
 
 | \https://netapp-cloud-account.auth0.com \https://auth0.com | Communication avec le site Web BlueXP pour l'authentification centralisée des utilisateurs. 
 
 
-| \https://support.compliance.cloudmanager.cloud.netapp.com/ \https://hub.docker.com \https://auth.docker.io \https://registry-1.docker.io \https://index.docker.io/ \https://dseasb33srnrn.cloudfront.net/ \https://production.cloudflare.docker.com/ | Permet d'accéder aux images logicielles, aux manifestes, aux modèles et à l'envoi de journaux et de mesures. 
+| \https://support.compliance.api.bluexp.netapp.com/ \https://hub.docker.com \https://auth.docker.io \https://registry-1.docker.io \https://index.docker.io/ \https://dseasb33srnrn.cloudfront.net/ \https://production.cloudflare.docker.com/ | Permet d'accéder aux images logicielles, aux manifestes, aux modèles et à l'envoi de journaux et de mesures. 
 
 
-| \https://support.compliance.cloudmanager.cloud.netapp.com/ | Permet à NetApp de diffuser des données à partir d'enregistrements d'audit. 
+| \https://support.compliance.api.bluexp.netapp.com/ | Permet à NetApp de diffuser des données à partir d'enregistrements d'audit. 
 |===
 --
 Assurez-vous que BlueXP dispose des autorisations requises:: Assurez-vous que BlueXP dispose d'autorisations pour déployer des ressources et créer des groupes de sécurité pour l'instance Cloud Data Sense. Vous trouverez les dernières autorisations BlueXP dans https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions.html["Règles fournies par NetApp"^].
@@ -181,8 +185,10 @@ image:screenshot_cloud_compliance_wizard_start.png["Capture d'écran de l'assist
 . Lorsque l'instance est déployée, cliquez sur *Continuer la configuration* pour accéder à la page _Configuration_.
 
 
+.Résultat
 BlueXP déploie l'instance Cloud Data Sense dans votre fournisseur cloud.
 
+.Et la suite
 Dans la page Configuration, vous pouvez sélectionner les sources de données à numériser.
 
 Vous pouvez également link:task-licensing-datasense.html["Configurez les licences pour Cloud Data Sense"] à ce moment-là. Vous ne serez facturé que lorsque la quantité de données dépasse 1 To.

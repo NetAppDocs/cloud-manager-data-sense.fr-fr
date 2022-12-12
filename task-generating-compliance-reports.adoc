@@ -16,7 +16,7 @@ summary: 'Cloud Data SENSE fournit des rapports qui vous aideront à mieux compr
 [role="lead"]
 Cloud Data SENSE fournit des rapports qui vous aideront à mieux comprendre l'état du programme de confidentialité des données de votre entreprise.
 
-Par défaut, les tableaux de bord Cloud Data Sense affichent des données de conformité et de gouvernance pour tous les environnements de travail, bases de données et sources de données. Si vous souhaitez afficher des rapports contenant des données pour certains environnements de travail uniquement,  the working environments for reports,sélectionnez ces environnements de travail.
+Par défaut, les tableaux de bord Cloud Data Sense affichent des données de conformité et de gouvernance pour tous les environnements de travail, bases de données et sources de données. Si vous souhaitez afficher des rapports contenant des données pour certains environnements de travail uniquement, <<Sélection des environnements de travail pour les rapports,sélectionnez ces environnements de travail>>.
 
 [NOTE]
 ====
@@ -31,7 +31,7 @@ Par défaut, les tableaux de bord Cloud Data Sense affichent des données de con
 
 Le rapport d’évaluation des risques pour la protection de la vie privée fournit une vue d’ensemble de l’état des risques pour la confidentialité de votre organisation, conformément aux réglementations en matière de confidentialité, telles que le Règlement sur la protection de la vie privée et l’ACFPC. Le rapport contient les informations suivantes :
 
-Statut de conformité:: A  score,indice de gravité et la distribution des données, qu'elles soient non sensibles, personnelles ou sensibles.
+Statut de conformité:: A <<Indice de gravité,indice de gravité>> et la distribution des données, qu'elles soient non sensibles, personnelles ou sensibles.
 Présentation de l'évaluation:: Une ventilation des types de données personnelles ainsi que des catégories de données.
 Sujets de données dans cette évaluation:: Nombre de personnes, par lieu, pour lesquelles des identificateurs nationaux ont été trouvés.
 
@@ -50,6 +50,7 @@ image:screenshot_privacy_risk_assessment.gif["Capture d'écran de l'onglet confo
 
 
 
+.Résultat
 Cloud Data SENSE génère un rapport PDF que vous pouvez consulter et envoyer à d'autres groupes, le cas échéant.
 
 
@@ -129,6 +130,7 @@ image:screenshot_pci_dss.gif["Capture d'écran de l'onglet conformité dans Blue
 
 
 
+.Résultat
 Cloud Data SENSE génère un rapport PDF que vous pouvez consulter et envoyer à d'autres groupes, le cas échéant.
 
 
@@ -167,6 +169,7 @@ image:screenshot_hipaa.gif["Capture d'écran de l'onglet conformité dans BlueXP
 
 
 
+.Résultat
 Cloud Data SENSE génère un rapport PDF que vous pouvez consulter et envoyer à d'autres groupes, le cas échéant.
 
 
@@ -197,6 +200,7 @@ image:screenshot_compliance_data_mapping_report_button.png["Capture d'écran du 
 
 
 
+.Résultat
 Cloud Data SENSE génère un rapport PDF que vous pouvez consulter et envoyer à d'autres groupes, le cas échéant.
 
 
@@ -224,6 +228,7 @@ Lors de la sélection d'un rapport .JSON, entrez le nom du partage NFS dans lequ
 
 
 
+.Résultat
 Une boîte de dialogue affiche un message indiquant que les rapports sont en cours de téléchargement.
 
 Vous pouvez afficher la progression de la génération du rapport JSON dans le link:task-view-compliance-actions.html["Volet État des actions"].

@@ -22,15 +22,19 @@ Suivez quelques étapes pour commencer à scanner vos schémas de base de donné
 
 Pour commencer rapidement, suivez ces étapes ou faites défiler jusqu'aux sections restantes pour obtenir de plus amples informations.
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Une seule"] Vérifiez les prérequis de la base de données
 [role="quick-margin-para"]
 Assurez-vous que votre base de données est prise en charge et que vous disposez des informations nécessaires pour vous connecter à la base de données.
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Deux"] Déployez l'instance Cloud Data SENSE
 [role="quick-margin-para"]
 link:task-deploy-cloud-compliance.html["Déployez des données adaptées au cloud"^] si aucune instance n'est déjà déployée.
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Trois"] Ajoutez le serveur de base de données
 [role="quick-margin-para"]
 Ajoutez le serveur de base de données auquel vous souhaitez accéder.
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Quatre"] Sélectionnez les schémas
 [role="quick-margin-para"]
 Sélectionnez les schémas à numériser.
 
@@ -132,4 +136,5 @@ image:screenshot_compliance_select_schemas.png["Capture d'écran de la page Conf
 
 
 
+.Résultat
 Cloud Data SENSE commence à analyser les schémas de base de données que vous avez activés. S’il y a des erreurs, elles apparaîtront dans la colonne État, ainsi que l’action requise pour corriger l’erreur.
