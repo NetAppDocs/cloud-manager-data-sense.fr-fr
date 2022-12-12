@@ -979,7 +979,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-15 17:35:19 +0000">11/15/2022</time>
+    <time datetime="2022-12-12 20:20:34 +0000">12/12/2022</time>
     
   
 
@@ -1003,15 +1003,19 @@
 <p>Pour commencer rapidement, suivez ces étapes ou faites défiler jusqu&#8217;aux sections restantes pour obtenir de plus amples informations.</p>
 </div>
 <div class="paragraph quick-margin-para">
-<p>Assurez-vous que votre environnement cloud répond aux exigences du Cloud Data SENSE, notamment la préparation d&#8217;un rôle IAM et la configuration de la connectivité depuis Data Sense vers S3.  S3 prerequisites,Voir la liste complète.</p>
+<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png" alt="Une seule"></span> Configurez les exigences S3 dans votre environnement cloud</div>
+<p>Assurez-vous que votre environnement cloud répond aux exigences du Cloud Data SENSE, notamment la préparation d&#8217;un rôle IAM et la configuration de la connectivité depuis Data Sense vers S3. <a href="#vérification-des-prérequis-s3">Voir la liste complète</a>.</p>
 </div>
 <div class="paragraph quick-margin-para">
+<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png" alt="Deux"></span> Déployez l&#8217;instance Cloud Data SENSE</div>
 <p><a href="task-deploy-cloud-compliance.html" target="_blank" rel="noopener">"Déployez des données adaptées au cloud"</a> si aucune instance n&#8217;est déjà déployée.</p>
 </div>
 <div class="paragraph quick-margin-para">
+<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png" alt="Trois"></span> Activation de Data Sense dans votre environnement de travail S3</div>
 <p>Sélectionnez l&#8217;environnement de travail Amazon S3, cliquez sur <strong>Activer</strong> et sélectionnez un rôle IAM qui inclut les autorisations requises.</p>
 </div>
 <div class="paragraph quick-margin-para">
+<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png" alt="Quatre"></span> Sélectionnez les compartiments à numériser</div>
 <p>Sélectionnez les compartiments que vous souhaitez analyser et Cloud Data SENSE commence à les analyser.</p>
 </div>
 </div>
@@ -1137,7 +1141,7 @@ Vous ne pouvez pas utiliser de proxy pour accéder à S3 sur Internet.
 </div>
 </li>
 <li>
-<p>Attribuez un rôle IAM à l&#8217;instance Cloud Data SENSE qui dispose de  S3 prerequisites,les autorisations requises.</p>
+<p>Attribuez un rôle IAM à l&#8217;instance Cloud Data SENSE qui dispose de <a href="#vérification-des-prérequis-s3">les autorisations requises</a>.</p>
 <div class="paragraph">
 <p><span class="image"><img src="./media/screenshot_s3_compliance_iam_role.gif" alt="Capture d&#8217;écran de l&#8217;entrée du rôle IAM AWS pour le sens des données cloud"></span></p>
 </div>
@@ -1160,6 +1164,7 @@ Vous pouvez également activer les analyses de conformité pour un environnement
 </table>
 </div>
 <div class="paragraph">
+<div class="title">Résultat</div>
 <p>BlueXP affecte le rôle IAM à l&#8217;instance.</p>
 </div>
 </div>
@@ -1174,7 +1179,7 @@ Vous pouvez également activer les analyses de conformité pour un environnement
 <p>Lorsque BlueXP est exécuté dans le compte AWS doté des compartiments S3 que vous souhaitez analyser, il détecte ces compartiments et les affiche dans un environnement de travail Amazon S3.</p>
 </div>
 <div class="paragraph">
-<p>Cloud Data Sense peut également être  buckets from additional AWS accounts,Analysez les compartiments S3 qui se trouvent dans différents comptes AWS.</p>
+<p>Cloud Data Sense peut également être <a href="#analyse-des-compartiments-à-partir-de-comptes-aws-supplémentaires">Analysez les compartiments S3 qui se trouvent dans différents comptes AWS</a>.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Étapes</div>
@@ -1223,6 +1228,7 @@ Vous pouvez également activer les analyses de conformité pour un environnement
 </ol>
 </div>
 <div class="paragraph">
+<div class="title">Résultat</div>
 <p>Cloud Data Sense commence l&#8217;analyse des compartiments S3 que vous avez activés. En cas d&#8217;erreur, elles apparaîtront dans la colonne État, ainsi que l&#8217;action requise pour corriger l&#8217;erreur.</p>
 </div>
 </div>
@@ -1333,6 +1339,7 @@ Vous pouvez également activer les analyses de conformité pour un environnement
 </ol>
 </div>
 <div class="paragraph">
+<div class="title">Résultat</div>
 <p>Cloud Data Sense commence l&#8217;analyse des nouveaux compartiments S3 que vous avez activés.</p>
 </div>
 </div>

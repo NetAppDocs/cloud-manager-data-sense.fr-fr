@@ -979,7 +979,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-11-15 17:35:19 +0000">11/15/2022</time>
+    <time datetime="2022-12-12 20:20:34 +0000">12/12/2022</time>
     
   
 
@@ -1006,21 +1006,25 @@
 <p>Pour commencer rapidement, suivez ces étapes ou faites défiler jusqu&#8217;aux sections restantes pour obtenir de plus amples informations.</p>
 </div>
 <div class="paragraph quick-margin-para">
+<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png" alt="Une seule"></span> Créer un connecteur</div>
 <p>Si vous n&#8217;avez pas encore de connecteur, créez-en un maintenant. Voir <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html" target="_blank" rel="noopener">"Création d&#8217;un connecteur dans AWS"</a>, <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-azure.html" target="_blank" rel="noopener">"Création d&#8217;un connecteur dans Azure"</a>, ou <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-gcp.html" target="_blank" rel="noopener">"Création d&#8217;un connecteur dans GCP"</a>.</p>
 </div>
 <div class="paragraph quick-margin-para">
 <p>Vous pouvez également <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-installing-linux.html" target="_blank" rel="noopener">"Déployez le connecteur sur site"</a> Sur un hôte Linux de votre réseau ou dans le cloud.</p>
 </div>
 <div class="paragraph quick-margin-para">
-<p>Assurez-vous que votre environnement est conforme aux conditions préalables. Cela inclut l&#8217;accès Internet sortant pour l&#8217;instance, la connectivité entre le connecteur et Cloud Data SENSE sur le port 443, etc.  prerequisites,Voir la liste complète.</p>
+<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png" alt="Deux"></span> Passer en revue les prérequis</div>
+<p>Assurez-vous que votre environnement est conforme aux conditions préalables. Cela inclut l&#8217;accès Internet sortant pour l&#8217;instance, la connectivité entre le connecteur et Cloud Data SENSE sur le port 443, etc. <a href="#passer-en-revue-les-prérequis">Voir la liste complète</a>.</p>
 </div>
 <div class="paragraph quick-margin-para">
 <p>La configuration par défaut requiert 16 vCPU pour l&#8217;instance de Cloud Data Sense. Voir <a href="concept-cloud-compliance.html#the-cloud-data-sense-instance" target="_blank" rel="noopener">"plus de détails sur le type d&#8217;instance"</a>.</p>
 </div>
 <div class="paragraph quick-margin-para">
+<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png" alt="Trois"></span> Déployez des données adaptées au cloud</div>
 <p>Lancez l&#8217;assistant d&#8217;installation pour déployer l&#8217;instance Cloud Data SENSE dans le cloud.</p>
 </div>
 <div class="paragraph quick-margin-para">
+<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png" alt="Quatre"></span> Abonnez-vous au service Cloud Data Sense</div>
 <p>Les 1 premiers To de données scanners Cloud Data SENSE dans BlueXP sont gratuits. Un abonnement BlueXP via votre fournisseur cloud Marketplace, ou une licence BYOL auprès de NetApp, est nécessaire pour continuer à analyser les données après ce point.</p>
 </div>
 </div>
@@ -1113,7 +1117,7 @@
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">https://cloudmanager.cloud.netapp.com</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">https://api.bluexp.netapp.com</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Communication avec le service BlueXP, qui inclut les comptes NetApp.</p></td>
 </tr>
 <tr>
@@ -1150,7 +1154,7 @@
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">https://cloudmanager.cloud.netapp.com</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">https://api.bluexp.netapp.com</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Communication avec le service BlueXP, qui inclut les comptes NetApp.</p></td>
 </tr>
 <tr>
@@ -1158,11 +1162,11 @@
 <td class="tableblock halign-left valign-top"><p class="tableblock">Communication avec le site Web BlueXP pour l&#8217;authentification centralisée des utilisateurs.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">https://support.compliance.cloudmanager.cloud.netapp.com/ https://hub.docker.com https://auth.docker.io https://registry-1.docker.io https://index.docker.io/ https://dseasb33srnrn.cloudfront.net/ https://production.cloudflare.docker.com/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">https://support.compliance.api.bluexp.netapp.com/ https://hub.docker.com https://auth.docker.io https://registry-1.docker.io https://index.docker.io/ https://dseasb33srnrn.cloudfront.net/ https://production.cloudflare.docker.com/</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Permet d&#8217;accéder aux images logicielles, aux manifestes, aux modèles et à l&#8217;envoi de journaux et de mesures.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">https://support.compliance.cloudmanager.cloud.netapp.com/</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">https://support.compliance.api.bluexp.netapp.com/</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Permet à NetApp de diffuser des données à partir d&#8217;enregistrements d&#8217;audit.</p></td>
 </tr>
 </tbody>
@@ -1270,9 +1274,11 @@
 </ol>
 </div>
 <div class="paragraph">
+<div class="title">Résultat</div>
 <p>BlueXP déploie l&#8217;instance Cloud Data Sense dans votre fournisseur cloud.</p>
 </div>
 <div class="paragraph">
+<div class="title">Et la suite</div>
 <p>Dans la page Configuration, vous pouvez sélectionner les sources de données à numériser.</p>
 </div>
 <div class="paragraph">
