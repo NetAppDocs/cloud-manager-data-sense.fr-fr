@@ -28,12 +28,12 @@ Plusieurs améliorations ont été ajoutées à l'installation de Data Sense sur
 
 * Certaines conditions préalables supplémentaires sont maintenant vérifiées avant que l'installation ne démarre sur un hôte sur site. Ainsi, vous vous assurez que votre système hôte est 100 % prêt à installer le logiciel Data Sense :
 +
-** vérifiez que l'espace est suffisant dans /var/lib/docker, /tmp et /opt
+** vérifiez que l'espace disponible est suffisant `/var/lib/docker`, `/tmp`, et `/opt`
 ** testez les autorisations pertinentes sur tous les dossiers requis
 
 
 * Dans la page Configuration, la section environnements de travail affiche maintenant le _ID de l'environnement de travail_ et le _scanner Group_ name. Vous devrez connaître l'ID de l'environnement de travail si vous prévoyez d'utiliser plusieurs hôtes Data Sense pour fournir une puissance de traitement supplémentaire pour analyser vos sources de données.
-* Dans la page Configuration, une nouvelle section affiche les groupes de scanner que vous avez configurés et les nœuds de scanner qui se trouvent dans chaque groupe.
+* La page Configuration affiche également les groupes de scanners que vous avez configurés et les nœuds de scanner de chaque groupe.
 
 
 https://docs.netapp.com/us-en/cloud-manager-data-sense/task-deploy-compliance-onprem.html["En savoir plus sur l'installation de Data Sense sur un serveur hôte unique et sur plusieurs hôtes"].

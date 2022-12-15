@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-deploy-compliance-onprem.html 
 keywords: cloud compliance, data sense, get started, deploy cloud data sense, outbound internet, endpoints, cloud compliance internet, web browser connectivity, cloud compliance access, privacy, compliance, on-premises 
-summary: 'Suivez quelques étapes pour déployer Cloud Data Sense sur un hôte Linux de votre réseau ou dans le cloud, qui dispose d"un accès Internet.' 
+summary: 'Suivez quelques étapes pour déployer Cloud Data Sense sur un hôte Linux de votre réseau, ou un hôte Linux dans le cloud, qui dispose d"un accès Internet.' 
 ---
 = Déployez Cloud Data Sense sur un hôte Linux avec accès Internet
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: 'Suivez quelques étapes pour déployer Cloud Data Sense sur un hôte L
 
 
 [role="lead"]
-Suivez quelques étapes pour déployer Cloud Data Sense sur un hôte Linux de votre réseau ou dans le cloud, qui dispose d'un accès Internet.
+Suivez quelques étapes pour déployer Cloud Data Sense sur un hôte Linux de votre réseau, ou un hôte Linux dans le cloud, qui dispose d'un accès Internet.
 
 L'installation sur site peut être une bonne option si vous préférez analyser les systèmes ONTAP sur site à l'aide d'une instance Data Sense également située sur site, mais ce n'est pas une exigence. Le logiciel fonctionne exactement de la même manière quelle que soit la méthode d'installation choisie.
 
@@ -86,6 +86,8 @@ Vous aurez besoin de l'adresse IP ou du nom d'hôte du système de connecteur lo
 
 Le logiciel de détection des données doit être exécuté sur un hôte qui répond à des exigences spécifiques du système d'exploitation, de la RAM, des exigences logicielles, etc. L'hôte Linux peut se trouver sur votre réseau ou dans le cloud. Data Sense n'est pas pris en charge sur un hôte partagé avec d'autres applications ; l'hôte doit être un hôte dédié.
 
+Assurez-vous de continuer d'exécuter le contrôle des données cloud. Le serveur Cloud Data Sense doit rester activé pour analyser en continu vos données.
+
 * *Système d'exploitation* : Red Hat Enterprise Linux ou CentOS versions 8.0 à 8.6
 +
 ** La version 7.8 ou 7.9 peut être utilisée, mais la version du noyau Linux doit être 4.0 ou supérieure
@@ -127,8 +129,8 @@ Si vous prévoyez d'utiliser d'autres hôtes Data Sense, ajoutez ces règles à 
 +
 ....
 firewall-cmd --permanent --add-port=2377/tcp
-firewall-cmd --permanent --add-port=7496/udp
-firewall-cmd --permanent --add-port=7496/tcp
+firewall-cmd --permanent --add-port=7946/udp
+firewall-cmd --permanent --add-port=7946/tcp
 firewall-cmd --permanent --add-port=4789/udp
 ....
 +
@@ -141,13 +143,10 @@ NOTE: L'adresse IP du système hôte Data Sense ne peut pas être modifiée apr�
 
 
 
-== Vérifier les prérequis BlueXP et Data Sense
+== Activation de l'accès Internet sortant à partir du Cloud Data SENSE
 
-Consultez les conditions préalables suivantes pour vous assurer que votre configuration est prise en charge avant de déployer Cloud Data SENSE sur un système Linux.
+Cloud Data Sense requiert un accès Internet sortant. Si votre réseau virtuel ou physique utilise un serveur proxy pour l'accès à Internet, assurez-vous que l'instance de détection de données dispose d'un accès Internet sortant pour contacter les points de terminaison suivants.
 
-Activation de l'accès Internet sortant à partir du Cloud Data SENSE:: Cloud Data Sense requiert un accès Internet sortant. Si votre réseau virtuel ou physique utilise un serveur proxy pour l'accès à Internet, assurez-vous que l'instance de détection de données dispose d'un accès Internet sortant pour contacter les points de terminaison suivants.
-+
---
 [cols="43,57"]
 |===
 | Terminaux | Objectif 
@@ -167,17 +166,6 @@ Activation de l'accès Internet sortant à partir du Cloud Data SENSE:: Cloud Da
 
 | \https://github.com/docker \https://download.docker.com \http://mirror.centos.org \http://mirrorlist.centos.org \http://mirror.centos.org/centos/7/extras/x86_64/Packages/container-selinux-2.107-3.el7.noarch.rpm | Fournit les packages requis pour l'installation. 
 |===
---
-Assurez-vous que le connecteur BlueXP dispose des autorisations requises:: Assurez-vous que le connecteur dispose d'autorisations pour déployer des ressources et créer des groupes de sécurité pour l'instance Cloud Data Sense. Vous trouverez les dernières autorisations BlueXP dans https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions.html["Règles fournies par NetApp"^].
-Assurez-vous de continuer d'exécuter le contrôle des données cloud:: Le serveur Cloud Data Sense doit rester activé pour analyser en continu vos données.
-Assurez la connectivité de votre navigateur Web au cloud Data Sense:: Une fois Cloud Data SENSE activé, assurez-vous que les utilisateurs accèdent à l'interface BlueXP à partir d'un hôte connecté à l'instance Data Sense.
-+
---
-L'instance de détection de données utilise une adresse IP privée pour s'assurer que les données indexées ne sont pas accessibles à Internet. Par conséquent, le navigateur Web que vous utilisez pour accéder à BlueXP doit disposer d'une connexion à cette adresse IP privée. Cette connexion peut provenir d'une connexion directe avec votre fournisseur de cloud (par exemple, un VPN), ou d'un hôte situé dans le même réseau que l'instance Data Sense.
-
---
-
-
 
 
 == Vérifiez que tous les ports requis sont activés
@@ -189,13 +177,13 @@ Vous devez vous assurer que tous les ports requis sont ouverts pour la communica
 | Type de connexion | Ports | Description 
 
 
-| Connecteur <> détection des données | 8080 (TCP), 443 (TCP) et 80 | Le groupe de sécurité du connecteur doit autoriser le trafic entrant et sortant via le port 443 vers et depuis l'instance de détection des données. Assurez-vous que le port 8080 est ouvert pour voir la progression de l'installation dans BlueXP. 
+| Connecteur <> détection des données | 8080 (TCP), 443 (TCP) et 80 | Le pare-feu ou les règles de routage du connecteur doivent autoriser le trafic entrant et sortant via le port 443 vers et depuis l'instance de détection des données. Assurez-vous que le port 8080 est ouvert pour voir la progression de l'installation dans BlueXP. 
 
 
 | Connecteur <> cluster ONTAP (NAS) | 443 (TCP)  a| 
 BlueXP détecte les clusters ONTAP via HTTPS. Si vous utilisez des stratégies de pare-feu personnalisées, elles doivent répondre aux exigences suivantes :
 
-* L'hôte du connecteur doit autoriser l'accès HTTPS sortant via le port 443. Si le connecteur est dans le Cloud, toutes les communications sortantes sont autorisées par le groupe de sécurité prédéfini.
+* L'hôte du connecteur doit autoriser l'accès HTTPS sortant via le port 443. Si le connecteur est dans le cloud, toutes les communications sortantes sont autorisées par le pare-feu ou les règles de routage prédéfinies.
 * Le cluster ONTAP doit autoriser l'accès HTTPS entrant via le port 443. La stratégie de pare-feu " mgmt " par défaut permet l'accès HTTPS entrant à partir de toutes les adresses IP. Si vous avez modifié cette stratégie par défaut ou si vous avez créé votre propre stratégie de pare-feu, vous devez associer le protocole HTTPS à cette politique et activer l'accès à partir de l'hôte du connecteur.
 
 
@@ -206,7 +194,7 @@ BlueXP détecte les clusters ONTAP via HTTPS. Si vous utilisez des stratégies d
 * Pour CIFS - 139 (TCP/UDP) et 445 (TCP/UDP)
 
  a| 
-La détection des données requiert une connexion réseau à chaque sous-réseau Cloud Volumes ONTAP ou système ONTAP sur site. Les groupes de sécurité pour Cloud Volumes ONTAP doivent autoriser les connexions entrantes à partir de l'instance de détection de données.
+La détection des données requiert une connexion réseau à chaque sous-réseau Cloud Volumes ONTAP ou système ONTAP sur site. Les pare-feu ou les règles de routage de Cloud Volumes ONTAP doivent autoriser les connexions entrantes depuis l'instance Data Sense.
 
 Assurez-vous que ces ports sont ouverts à l'instance de détection de données :
 
@@ -245,7 +233,7 @@ Pour les très grandes configurations dans lesquelles vous numérisez des pétao
 
 image:diagram_deploy_onprem_multi_host_internet.png["Un diagramme indiquant l'emplacement des sources de données que vous pouvez analyser lors de l'utilisation de plusieurs instances de détection de données déployées sur site avec accès à Internet."]
 
-Voir <<Préparez le système hôte Linux,Préparation du système hôte Linux>> et <<Vérifier les prérequis BlueXP et Data Sense,Vérification des prérequis>> Avant de déployer Cloud Data Sense, vous devez consulter la liste complète des exigences.
+Voir <<Préparez le système hôte Linux,Préparation du système hôte Linux>> et <<Activation de l'accès Internet sortant à partir du Cloud Data SENSE,Vérification des prérequis>> Avant de déployer Cloud Data Sense, vous devez consulter la liste complète des exigences.
 
 Les mises à niveau du logiciel Data Sense sont automatisées tant que l'instance est connectée à Internet.
 
@@ -263,7 +251,7 @@ Suivez ces étapes pour installer le logiciel Data Sense sur un hôte sur site u
 * (Facultatif) Vérifiez que le système est équipé des deux packages logiciels prérequis (Docker Engine et Python 3). Le programme d'installation installe ce logiciel s'il n'est pas déjà installé sur le système.
 * Assurez-vous que vous disposez des privilèges root sur le système Linux.
 * Si vous utilisez un proxy et qu'il effectue une interception TLS, vous devez connaître le chemin d'accès sur le système Linux Data Sense où sont stockés les certificats CA TLS.
-* Vérifiez que votre environnement hors ligne répond aux besoins <<Vérifier les prérequis BlueXP et Data Sense,autorisations et connectivité>>.
+* Vérifiez que votre environnement hors ligne répond aux besoins <<Activation de l'accès Internet sortant à partir du Cloud Data SENSE,autorisations et connectivité>>.
 
 
 .Étapes
@@ -384,7 +372,7 @@ Procédez comme suit pour installer d'autres nœuds du scanner Data Sense :
 * Vérifiez que tous vos systèmes Linux pour les nœuds du scanner sont conformes à la <<Préparez le système hôte Linux,configuration requise pour l'hôte>>.
 * (Facultatif) Vérifiez que les deux packages logiciels prérequis sont installés sur les systèmes (Docker Engine et Python 3). Le programme d'installation installe ce logiciel s'il n'est pas déjà installé sur les systèmes.
 * Assurez-vous que vous disposez des privilèges root sur les systèmes Linux.
-* Vérifiez que votre environnement répond aux exigences requises <<Vérifier les prérequis BlueXP et Data Sense,autorisations et connectivité>>.
+* Vérifiez que votre environnement répond aux exigences requises <<Activation de l'accès Internet sortant à partir du Cloud Data SENSE,autorisations et connectivité>>.
 * Vous devez disposer des adresses IP des hôtes du nœud scanner que vous ajoutez.
 * Vous devez disposer de l'adresse IP du système hôte du nœud Data Sense Manager
 * Vous devez disposer de l'adresse IP ou du nom d'hôte du système Connector, de votre ID de compte NetApp, de votre ID de client Connector et du jeton d'accès utilisateur. Si vous prévoyez d'utiliser des groupes de scanner, vous devrez connaître l'ID de l'environnement de travail pour chaque source de données de votre compte. Voir les _étapes préalables_ ci-dessous pour obtenir ces informations.
@@ -421,8 +409,8 @@ firewall-cmd --permanent --add-port=80/tcp
 firewall-cmd --permanent --add-port=8080/tcp
 firewall-cmd --permanent --add-port=443/tcp
 firewall-cmd --permanent --add-port=2377/tcp
-firewall-cmd --permanent --add-port=7496/udp
-firewall-cmd --permanent --add-port=7496/tcp
+firewall-cmd --permanent --add-port=7946/udp
+firewall-cmd --permanent --add-port=7946/tcp
 firewall-cmd --permanent --add-port=4789/udp
 firewall-cmd --reload
 ....
@@ -489,7 +477,7 @@ Une fois l'installation terminée sur tous les nœuds du scanner et qu'ils ont �
 
 . Si vous avez ajouté des nœuds de scanner à un scanner group, revenez au nœud Manager et effectuez les 2 tâches suivantes :
 +
-.. Ouvrez le fichier «/opt/netapp/Datase/working_Environment_to_scanner_group_config.yml » et entrez le mappage pour lequel les groupes de lecteurs vont analyser des environnements de travail spécifiques. Vous devez avoir l'ID _Working Environment_ pour chaque source de données. Par exemple, les entrées suivantes ajoutent 2 environnements de travail dans 2 groupes de scanner :
+.. Ouvrez le fichier «/opt/netapp/Datase/working_Environment_to_scanner_group_config.yml » et entrez le mappage pour lequel les groupes de lecteurs vont analyser des environnements de travail spécifiques. Vous devez avoir l'ID _Working Environment_ pour chaque source de données. Par exemple, les entrées suivantes ajoutent 2 environnements de travail au groupe de scanner « europe » et 2 au groupe de scanner « united_States » :
 +
 ....
 scanner group:
@@ -513,15 +501,23 @@ Tout environnement de travail qui n'est pas ajouté à la liste est analysé par
 Data Sense est configuré avec les nœuds Manager et scanner pour analyser toutes vos sources de données.
 
 .Et la suite
-Dans la page Configuration, vous pouvez sélectionner les sources de données que vous souhaitez numériser, si vous ne l'avez pas déjà fait. Si vous avez créé des groupes de scanner, chaque source de données est analysée par les nœuds du scanner dans le groupe correspondant. Vous pouvez voir le nom du groupe de lecteurs pour chaque environnement de travail dans la page Configuration.
+Dans la page Configuration, vous pouvez sélectionner les sources de données que vous souhaitez numériser, si vous ne l'avez pas déjà fait. Si vous avez créé des groupes de scanner, chaque source de données est analysée par les nœuds du scanner dans le groupe correspondant.
 
-Vous pouvez également link:task-licensing-datasense.html["Configurez les licences pour Cloud Data Sense"] à ce moment-là. Vous ne serez facturé que lorsque la quantité de données dépasse 1 To.
+Vous pouvez voir le nom du groupe de lecteurs pour chaque environnement de travail dans la page Configuration.
+
+image:screenshot_work_env_id.png["Capture d'écran de l'ID de l'environnement de travail à partir de la page Configuration du capteur de données."]
+
+Vous pouvez également afficher la liste de tous les groupes de scanner, ainsi que l'adresse IP et l'état de chaque nœud de scanner du groupe, en bas de la page Configuration.
+
+image:screenshot_scanner_groups.png["Capture d'écran répertoriant tous les groupes de scanner ainsi que l'adresse IP de chaque nœud de scanner du groupe."]
+
+C'est possible link:task-licensing-datasense.html["Configurez les licences pour Cloud Data Sense"] à ce moment-là. Vous ne serez facturé que lorsque la quantité de données dépasse 1 To.
 
 
 
 === Installation de plusieurs hôtes pour de grandes configurations
 
-Pour les très grandes configurations où vous pourrez numériser plusieurs pétaoctets de données, vous pouvez inclure plusieurs hôtes pour fournir une puissance de traitement supplémentaire. Lors de l'utilisation de plusieurs systèmes hôtes, le système principal est appelé le _Manager node_ et les systèmes supplémentaires qui fournissent une puissance de traitement supplémentaire sont appelés _scanner nodes_.
+Pour les très grandes configurations dans lesquelles vous numérisez des pétaoctets de données, vous pouvez inclure plusieurs hôtes pour bénéficier d'une puissance de traitement supplémentaire. Lors de l'utilisation de plusieurs systèmes hôtes, le système principal est appelé le _Manager node_ et les systèmes supplémentaires qui fournissent une puissance de traitement supplémentaire sont appelés _scanner nodes_.
 
 Procédez comme suit lors de l'installation du logiciel Data Sense sur plusieurs hôtes sur site.
 
@@ -529,7 +525,7 @@ Procédez comme suit lors de l'installation du logiciel Data Sense sur plusieurs
 * Vérifiez que tous vos systèmes Linux pour les nœuds Manager et scanner sont conformes à la <<Préparez le système hôte Linux,configuration requise pour l'hôte>>.
 * (Facultatif) Vérifiez que les deux packages logiciels prérequis sont installés sur les systèmes (Docker Engine et Python 3). Le programme d'installation installe ce logiciel s'il n'est pas déjà installé sur les systèmes.
 * Assurez-vous que vous disposez des privilèges root sur les systèmes Linux.
-* Vérifiez que votre environnement répond aux exigences requises <<Vérifier les prérequis BlueXP et Data Sense,autorisations et connectivité>>.
+* Vérifiez que votre environnement répond aux exigences requises <<Activation de l'accès Internet sortant à partir du Cloud Data SENSE,autorisations et connectivité>>.
 * Vous devez disposer des adresses IP des hôtes du nœud de scanner que vous prévoyez d'utiliser.
 * Les ports et protocoles suivants doivent être activés sur tous les hôtes :
 +

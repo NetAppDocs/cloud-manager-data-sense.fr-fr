@@ -150,9 +150,6 @@ Les coûts de transfert de données dépendent de votre configuration. Si l'inst
 
 Lorsque vous déployez Data Sense dans le cloud, BlueXP déploie l'instance dans le même sous-réseau que le connecteur. https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["En savoir plus sur les connecteurs."^]
 
-
-NOTE: Si le connecteur est installé sur site, il déploie l'instance Cloud Data Sense dans le même VPC ou VNet que le premier système Cloud Volumes ONTAP de la demande. Vous pouvez également installer Data Sense sur site.
-
 image:diagram_cloud_compliance_instance.png["Un diagramme présentant une instance BlueXP et une instance Cloud Data Sense exécutée dans votre fournisseur cloud."]
 
 Voici la liste des éléments suivants pour l'instance par défaut :
