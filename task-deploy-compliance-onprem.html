@@ -979,7 +979,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-12-15 14:25:00 +0000">12/15/2022</time>
+    <time datetime="2023-01-09 14:15:48 +0000">01/09/2023</time>
     
   
 
@@ -1095,7 +1095,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Système d&#8217;exploitation</strong> : Red Hat Enterprise Linux ou CentOS versions 8.0 à 8.6</p>
+<p><strong>Système d&#8217;exploitation</strong> : Red Hat Enterprise Linux ou CentOS versions 8.0 à 8.7</p>
 <div class="ulist">
 <ul>
 <li>
@@ -1136,7 +1136,7 @@
 <p><strong>Gestion des abonnements Red Hat</strong> : un système Red Hat Enterprise Linux doit être enregistré auprès de la gestion des abonnements Red Hat. S&#8217;il n&#8217;est pas enregistré, le système ne peut pas accéder aux référentiels pour mettre à jour les logiciels tiers requis au cours de l&#8217;installation.</p>
 </li>
 <li>
-<p><strong>Logiciel supplémentaire</strong> : le logiciel suivant doit être installé sur l&#8217;hôte. S&#8217;il n&#8217;existe pas déjà sur l&#8217;hôte, le programme d&#8217;installation installe le logiciel pour vous :</p>
+<p><strong>Logiciel supplémentaire</strong>: Vous devez installer le logiciel suivant sur l&#8217;hôte avant d&#8217;installer Data Sense:</p>
 <div class="ulist">
 <ul>
 <li>
@@ -1388,7 +1388,7 @@ Cloud Data Sense n&#8217;est actuellement pas en mesure d&#8217;analyser les com
 <p>Vérifiez que votre système Linux est conforme à la <a href="#préparez-le-système-hôte-linux">configuration requise pour l&#8217;hôte</a>.</p>
 </li>
 <li>
-<p>(Facultatif) Vérifiez que le système est équipé des deux packages logiciels prérequis (Docker Engine et Python 3). Le programme d&#8217;installation installe ce logiciel s&#8217;il n&#8217;est pas déjà installé sur le système.</p>
+<p>Assurez-vous que les deux packages logiciels prérequis du système sont installés (Docker Engine et Python 3).</p>
 </li>
 <li>
 <p>Assurez-vous que vous disposez des privilèges root sur le système Linux.</p>
@@ -1625,7 +1625,7 @@ Cloud Data Sense n&#8217;est actuellement pas en mesure d&#8217;analyser les com
 <p>Vérifiez que tous vos systèmes Linux pour les nœuds du scanner sont conformes à la <a href="#préparez-le-système-hôte-linux">configuration requise pour l&#8217;hôte</a>.</p>
 </li>
 <li>
-<p>(Facultatif) Vérifiez que les deux packages logiciels prérequis sont installés sur les systèmes (Docker Engine et Python 3). Le programme d&#8217;installation installe ce logiciel s&#8217;il n&#8217;est pas déjà installé sur les systèmes.</p>
+<p>Assurez-vous que les deux packages logiciels prérequis sont installés sur les systèmes (Docker Engine et Python 3).</p>
 </li>
 <li>
 <p>Assurez-vous que vous disposez des privilèges root sur les systèmes Linux.</p>
@@ -1824,13 +1824,15 @@ firewall-cmd --reload</pre>
 <p>Ouvrez le fichier «/opt/netapp/Datase/working_Environment_to_scanner_group_config.yml » et entrez le mappage pour lequel les groupes de lecteurs vont analyser des environnements de travail spécifiques. Vous devez avoir l&#8217;ID <em>Working Environment</em> pour chaque source de données. Par exemple, les entrées suivantes ajoutent 2 environnements de travail au groupe de scanner « europe » et 2 au groupe de scanner « united_States » :</p>
 <div class="literalblock">
 <div class="content">
-<pre>scanner group:
+<pre>scanner_groups:
  europe:
-   - "working_environment_id1"
-   - "working_environment_id2"
+   working_environments:
+     - "working_environment_id1"
+     - "working_environment_id2"
  united_states:
-   - "working_environment_id3"
-   - "working_environment_id4"</pre>
+   working_environments:
+     - "working_environment_id3"
+     - "working_environment_id4"</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1885,7 +1887,7 @@ firewall-cmd --reload</pre>
 <p>Vérifiez que tous vos systèmes Linux pour les nœuds Manager et scanner sont conformes à la <a href="#préparez-le-système-hôte-linux">configuration requise pour l&#8217;hôte</a>.</p>
 </li>
 <li>
-<p>(Facultatif) Vérifiez que les deux packages logiciels prérequis sont installés sur les systèmes (Docker Engine et Python 3). Le programme d&#8217;installation installe ce logiciel s&#8217;il n&#8217;est pas déjà installé sur les systèmes.</p>
+<p>Assurez-vous que les deux packages logiciels prérequis sont installés sur les systèmes (Docker Engine et Python 3).</p>
 </li>
 <li>
 <p>Assurez-vous que vous disposez des privilèges root sur les systèmes Linux.</p>
@@ -2020,7 +2022,7 @@ firewall-cmd --reload</pre>
         <div class="n-footer__copyright">
           <ul class="n-footer__copyright-list">
             <li class="n-footer__copyright-link">
-              <a href="https://www.netapp.com/us/legal/copyright.aspx">© 2022 NetApp, Inc.</a>
+              <a href="https://www.netapp.com/us/legal/copyright.aspx">© 2023 NetApp, Inc.</a>
             </li>
             <li class="n-footer__copyright-link">
               <a href="https://www.netapp.com/company/legal/terms-of-use/">Conditions générales</a>

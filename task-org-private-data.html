@@ -979,7 +979,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-12-12 20:20:34 +0000">12/12/2022</time>
+    <time datetime="2023-01-09 14:15:48 +0000">01/09/2023</time>
     
   
 
@@ -1009,7 +1009,7 @@
 <p>Grâce à la fonctionnalité « Stratégie », vous pouvez créer vos propres requêtes de recherche personnalisées afin de pouvoir voir facilement les résultats en cliquant sur un bouton.</p>
 </li>
 <li>
-<p>Vous pouvez envoyer des alertes par e-mail aux utilisateurs de BlueXP lorsque certaines stratégies critiques renvoient des résultats.</p>
+<p>Vous pouvez envoyer des alertes par e-mail à des utilisateurs BlueXP ou à toute autre adresse e-mail lorsque certaines stratégies critiques renvoient des résultats.</p>
 </li>
 </ul>
 </div>
@@ -1627,7 +1627,7 @@ Les balises attribuées aux fichiers dans Cloud Data SENSE ne sont pas liées au
 <p>Si vous le souhaitez, cochez la case pour supprimer automatiquement les fichiers qui correspondent aux paramètres de la stratégie. En savoir plus sur <a href="task-managing-highlights.html#deleting-source-files-automatically-using-policies">"suppression de fichiers source à l&#8217;aide d&#8217;une stratégie"</a>.</p>
 </li>
 <li>
-<p>Si vous souhaitez envoyer des e-mails de notification aux utilisateurs BlueXP, cochez la case correspondante et choisissez l&#8217;intervalle d&#8217;envoi de l&#8217;e-mail. En savoir plus sur <a href="task-org-private-data.html#sending-email-alerts-when-non-compliant-data-is-found">"envoi d&#8217;alertes par e-mail en fonction des résultats de règles"</a>.</p>
+<p>Si vous voulez envoyer des e-mails de notification aux utilisateurs BlueXP de votre compte, cochez la case correspondante et choisissez l&#8217;intervalle d&#8217;envoi de l&#8217;e-mail. En savoir plus sur <a href="task-org-private-data.html#sending-email-alerts-when-non-compliant-data-is-found">"envoi d&#8217;alertes par e-mail en fonction des résultats de règles"</a>.</p>
 </li>
 <li>
 <p>Si vous le souhaitez, cochez la case pour attribuer automatiquement des libellés AIP aux fichiers qui correspondent aux paramètres de la stratégie, puis sélectionnez le libellé. (Uniquement si vous avez déjà intégré des étiquettes AIP. En savoir plus sur <a href="task-org-private-data.html#categorizing-your-data-using-aip-labels">"Libellés AIP"</a>.)</p>
@@ -1651,7 +1651,7 @@ Les balises attribuées aux fichiers dans Cloud Data SENSE ne sont pas liées au
 <div class="sect2">
 <h3 id="envoi-dalertes-par-e-mail-lorsque-des-données-non-conformes-sont-trouvées">Envoi d&#8217;alertes par e-mail lorsque des données non conformes sont trouvées</h3>
 <div class="paragraph">
-<p>Cloud Data SENSE peut envoyer des alertes par e-mail aux utilisateurs BlueXP lorsque certaines stratégies critiques renvoient des résultats pour que vous puissiez recevoir des notifications afin de protéger vos données. Vous pouvez choisir d&#8217;envoyer les notifications par e-mail tous les jours, toutes les semaines ou tous les mois.</p>
+<p>Cloud Data SENSE peut envoyer des alertes par e-mail à des utilisateurs BlueXP de votre compte lorsque certaines stratégies critiques renvoient des résultats afin que vous puissiez obtenir des notifications pour protéger vos données. Vous pouvez choisir d&#8217;envoyer les notifications par e-mail tous les jours, toutes les semaines ou tous les mois.</p>
 </div>
 <div class="paragraph">
 <p>Vous pouvez configurer ce paramètre lors de la création de la stratégie ou lors de la modification d&#8217;une stratégie.</p>
@@ -1669,9 +1669,16 @@ Les balises attribuées aux fichiers dans Cloud Data SENSE ne sont pas liées au
 </div>
 </li>
 <li>
-<p>Dans la page Modifier la stratégie, cochez la case si vous souhaitez envoyer des e-mails de notification aux utilisateurs BlueXP et choisissez l&#8217;intervalle d&#8217;envoi de l&#8217;e-mail (par exemple, chaque <strong>semaine</strong>).</p>
+<p>Dans la page Modifier la stratégie :</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Cochez la case « Envoyer tous les utilisateurs dans ce compte » si vous souhaitez envoyer des e-mails de notification aux utilisateurs de votre compte BlueXP, puis choisissez l&#8217;intervalle d&#8217;envoi de l&#8217;e-mail (par exemple, <strong>tous les jours</strong>).</p>
 <div class="paragraph">
 <p><span class="image"><img src="./media/screenshot_compliance_add_email_alert_2.png" alt="Capture d&#8217;écran indiquant comment choisir les critères d&#8217;e-mail à envoyer pour la police."></span></p>
+</div>
+</li>
+</ol>
 </div>
 </li>
 <li>
@@ -1752,52 +1759,52 @@ Les balises attribuées aux fichiers dans Cloud Data SENSE ne sont pas liées au
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Données privées exposées publiquement</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">S3 : données privées exposées publiquement</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Objets S3 contenant des informations personnelles ou sensibles, avec un accès public en lecture ouvert.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">S3 public ET contient des informations personnelles ou sensibles</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">PCI DSS : données obsolètes pendant 30 jours</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PCI DSS : données obsolètes supérieure à 30 jours</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Fichiers contenant des informations de carte de crédit, modifié pour la dernière fois il y a plus de 30 jours.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Contient la carte de crédit ET la dernière modification sur 30 jours</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">HIPAA : données obsolètes de plus de 30 jours</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HIPAA : données obsolètes sur 30 jours</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Fichiers contenant des informations de santé, modifié pour la dernière fois il y a plus de 30 jours.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Contient des données de santé (définies de la même manière que dans le rapport HIPAA) ET modifiées pour la dernière fois sur 30 jours</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Les données privées sont obsolètes au fil des 7 ans</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Les données privées ont déjà dépassé les 7 ans</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Fichiers contenant des données personnelles ou sensibles, modifié pour la dernière fois il y a plus de 7 ans.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Fichiers contenant des données personnelles ou sensibles, modifié pour la dernière fois il y a plus de 7 ans</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">RGPD : citoyens européens</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Dossiers contenant plus de 5 identificateurs de citoyens d’un pays de l’UE ou tables DB contenant des identificateurs de citoyens d’un pays de l’UE.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Dossiers contenant plus de 5 identificateurs d’un (un) citoyen de l’UE ou de tables de données contenant des lignes contenant plus de 15% des colonnes avec des identificateurs de l’UE d’un pays. (Tout identifiant national des pays européens. N&#8217;inclut pas le Brésil, la Californie, le SSN des États-Unis, Israël et l&#8217;Afrique du Sud)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RGPD - citoyens européens</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dossiers contenant plus de 5 identificateurs de citoyens d&#8217;un pays de l&#8217;UE ou tables de BD contenant des identificateurs de citoyens d&#8217;un pays de l&#8217;UE.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Dossiers contenant plus de 5 identificateurs d&#8217;un (un) citoyen de l&#8217;UE ou de tables de données contenant des lignes contenant plus de 15% des colonnes avec des identificateurs d&#8217;UE d&#8217;un pays. (Tout identifiant national des pays européens. N&#8217;inclut pas le Brésil, la Californie, le SSN des États-Unis, Israël et l&#8217;Afrique du Sud)</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">CCPA – résidents de Californie</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CCPA - résidents de Californie</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Fichiers contenant plus de 10 identificateurs de permis de conduire californiens ou tables de BD contenant cet identifiant.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Fichiers contenant plus de 10 identificateurs de permis de conduire californiens OU tables DB contenant la licence de conducteur californien</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fichiers contenant plus de 10 identificateurs de permis de conduire californiens OU tables de BD contenant la licence du conducteur California</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Noms des sujets de données – risque élevé</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Noms des sujets de données - risque élevé</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Fichiers avec plus de 50 noms de sujet de données.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Fichiers avec plus de 50 noms de sujet de données</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Adresses e-mail – risque élevé</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Adresses e-mail - risque élevé</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Fichiers contenant plus de 50 adresses électroniques ou colonnes DB contenant plus de 50 % de leurs lignes contenant des adresses électroniques</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Fichiers contenant plus de 50 adresses électroniques ou colonnes DB contenant plus de 50 % de leurs lignes contenant des adresses électroniques</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Données personnelles – risque élevé</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Données personnelles - risque élevé</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Fichiers contenant plus de 20 identificateurs de données personnelles, ou colonnes de bases de données contenant plus de 50 % de leurs lignes contenant des identificateurs de données personnelles.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Fichiers avec plus de 20 colonnes personnelles ou DB avec plus de 50 % de leurs lignes contenant des colonnes personnelles</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Données personnelles sensibles – risque élevé</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Données personnelles sensibles - risque élevé</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Fichiers contenant plus de 20 identificateurs de données personnelles sensibles, ou colonnes de bases de données contenant plus de 50 % de leurs lignes contenant des données personnelles sensibles.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Les fichiers contenant plus de 20 colonnes personnelles sensibles ou DB contenant plus de 50 % de leurs lignes contenant des données personnelles sensibles</p></td>
 </tr>
@@ -1822,7 +1829,7 @@ Les balises attribuées aux fichiers dans Cloud Data SENSE ne sont pas liées au
         <div class="n-footer__copyright">
           <ul class="n-footer__copyright-list">
             <li class="n-footer__copyright-link">
-              <a href="https://www.netapp.com/us/legal/copyright.aspx">© 2022 NetApp, Inc.</a>
+              <a href="https://www.netapp.com/us/legal/copyright.aspx">© 2023 NetApp, Inc.</a>
             </li>
             <li class="n-footer__copyright-link">
               <a href="https://www.netapp.com/company/legal/terms-of-use/">Conditions générales</a>
