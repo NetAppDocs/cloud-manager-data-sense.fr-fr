@@ -228,80 +228,81 @@ image:screenshot_compliance_investigation_filtered.png["Capture d'écran des fil
 | État de l'analyse | Sélectionnez une option pour afficher la liste des fichiers en attente de première numérisation, terminés en cours de numérisation, en attente de numérisation ou qui n'ont pas pu être numérisés. 
 
 
-| Ouvrez autorisations | Sélectionnez le type d'autorisations dans les données et dans les dossiers/partages 
+| Ouvrez autorisations | Sélectionnez le type d'autorisations dans les données et dans les dossiers/partages. 
 
 
-| Autorisations utilisateur/groupe | Sélectionnez un ou plusieurs noms d'utilisateur et/ou de groupe ou entrez un nom partiel 
+| Nombre d'utilisateurs ayant accès | Sélectionnez une ou plusieurs plages de catégories pour afficher les fichiers et dossiers ouverts à un certain nombre d'utilisateurs. 
 
 
-| Propriétaire du fichier | Entrez le nom du propriétaire du fichier 
+| Autorisations utilisateur/groupe | Sélectionnez un ou plusieurs noms d'utilisateur et/ou de groupe ou entrez un nom partiel. 
 
 
-| Étiquette | Sélectionnez link:task-org-private-data.html#categorizing-your-data-using-aip-labels["Libellés AIP"] qui sont affectés à vos fichiers 
+| Propriétaire du fichier | Entrez le nom du propriétaire du fichier. 
+
+
+| Étiquette | Sélectionnez link:task-org-private-data.html#categorizing-your-data-using-aip-labels["Libellés AIP"] qui sont affectés à vos fichiers. 
 
 
 | Type d'environnement de travail | Sélectionnez le type d'environnement de travail. OneDrive, SharePoint et Google Drive sont classés dans « applications ». 
 
 
-| Nom de l'environnement de travail | Sélectionner des environnements de travail spécifiques 
+| Nom de l'environnement de travail | Sélectionner des environnements de travail spécifiques. 
 
 
-| Référentiel de stockage | Sélectionnez le référentiel de stockage, par exemple un volume ou un schéma 
+| Référentiel de stockage | Sélectionnez le référentiel de stockage, par exemple un volume ou un schéma. 
 
 
-| Chemin du fichier | Entrez un chemin partiel ou complet 
+| Chemin du fichier | Saisissez jusqu'à 20 chemins partiels ou complets que vous souhaitez inclure ou exclure de la requête. Si vous entrez à la fois inclure des chemins d'accès et exclure des chemins, Data Sense recherche d'abord tous les fichiers des chemins inclus, puis supprime les fichiers des chemins exclus, puis affiche les résultats. 
 
 
-| Catégorie | Sélectionner link:reference-private-data-categories.html#types-of-categories["types de catégories"^] 
+| Catégorie | Sélectionner link:reference-private-data-categories.html#types-of-categories["types de catégories"^]. 
 
 
-| Niveau de sensibilité | Sélectionnez le niveau de sensibilité : personnel, personnel sensible ou non sensible 
+| Niveau de sensibilité | Sélectionnez le niveau de sensibilité : personnel, personnel sensible ou non sensible. 
 
 
 | Nombre d'identificateurs | Sélectionnez la plage d'identificateurs sensibles détectés par fichier. Inclut des données personnelles et des données personnelles sensibles. Lors du filtrage dans les répertoires, Data Sense totalise les correspondances de tous les fichiers de chaque dossier (et sous-dossiers). 
 
 
-| Données personnelles | Sélectionner link:reference-private-data-categories.html#types-of-personal-data["types de données personnelles"^] 
+| Données personnelles | Sélectionner link:reference-private-data-categories.html#types-of-personal-data["types de données personnelles"^]. 
 
 
-| Données personnelles sensibles | Sélectionner link:reference-private-data-categories.html#types-of-sensitive-personal-data["types de données personnelles sensibles"^] 
+| Données personnelles sensibles | Sélectionner link:reference-private-data-categories.html#types-of-sensitive-personal-data["types de données personnelles sensibles"^]. 
 
 
-| Sujet de données | Entrez le nom complet ou l'identifiant connu d'un sujet de données 
+| Sujet de données | Saisissez le nom complet ou l'identifiant connu d'un sujet de données. 
 
 
 | Type de répertoire | Sélectionnez le type de répertoire : « partager » ou « dossier ». 
 
 
-| Type de fichier | Sélectionner link:reference-private-data-categories.html#types-of-files["types de fichiers"^] 
+| Type de fichier | Sélectionner link:reference-private-data-categories.html#types-of-files["types de fichiers"^]. 
 
 
-| Taille du fichier | Sélectionnez la plage de tailles de fichier 
+| Taille du fichier | Sélectionnez la plage de tailles de fichier. 
 
 
-| Heure de création | Sélectionnez une plage lorsque le fichier a été créé 
+| Heure de création | Sélectionnez une plage horaire au moment de la création du fichier. Vous pouvez également spécifier une plage horaire personnalisée pour affiner davantage les résultats de la recherche. 
 
 
-| Heure découverte | Sélectionnez une plage lorsque détection de données a découvert le fichier 
+| Heure découverte | Sélectionnez une plage horaire lorsque le fichier est détecté par le capteur de données. Vous pouvez également spécifier une plage horaire personnalisée pour affiner davantage les résultats de la recherche. 
 
 
-| Dernière modification | Sélectionnez une plage lorsque le fichier a été modifié pour la dernière fois 
+| Dernière modification | Sélectionnez une plage horaire pour la dernière modification du fichier. Vous pouvez également spécifier une plage horaire personnalisée pour affiner davantage les résultats de la recherche. 
 
 
-| Dernier accès | Sélectionnez une plage lorsque le fichier a été accédé pour la dernière fois. Pour les types de fichiers analysés par Data Sense, il s'agit de la dernière analyse du fichier par Data Sense. 
+| Dernier accès | Sélectionnez une plage horaire pour la dernière fois où le fichier a été accédé. Vous pouvez également spécifier une plage horaire personnalisée pour affiner davantage les résultats de la recherche. Pour les types de fichiers analysés par Data Sense, il s'agit de la dernière analyse du fichier par Data Sense. 
 
 
-| Doublons | Indiquez si le fichier est dupliqué dans les référentiels 
+| Doublons | Indiquez si le fichier est dupliqué dans les référentiels. 
 
 
-| Hachage de fichiers | Entrez le hachage du fichier pour trouver un fichier spécifique, même si le nom est différent 
+| Hachage de fichiers | Entrez le hachage du fichier pour trouver un fichier spécifique, même si le nom est différent. 
 
 
-| Étiquettes | Sélectionnez link:task-org-private-data.html#applying-tags-to-manage-your-scanned-files["la ou les balises"] qui sont affectés à vos fichiers 
+| Étiquettes | Sélectionnez link:task-org-private-data.html#applying-tags-to-manage-your-scanned-files["la ou les balises"] qui sont affectés à vos fichiers. 
 
 
-| Affecté à | Sélectionnez le nom de la personne à laquelle le fichier est affecté 
+| Affecté à | Sélectionnez le nom de la personne à laquelle le fichier est affecté. 
 |===
 
-
-Notez que les actions disponibles dans la barre de boutons et les stratégies ne sont pas prises en charge au niveau « répertoire ».

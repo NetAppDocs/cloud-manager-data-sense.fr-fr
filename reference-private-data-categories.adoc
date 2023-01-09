@@ -160,13 +160,13 @@ Notez que vous pouvez ajouter à la liste des données personnelles qui se trouv
 | Compte bancaire de la Nouvelle-Zélande | Oui. 
 
 
-| Licence de conducteur de la Nouvelle-Zélande | Oui. 
+| Permis de conduire de la Nouvelle-Zélande | Oui. 
 
 
 | Numéro IRD de Nouvelle-Zélande (ID taxe) | Oui. 
 
 
-| Numéro NHI (National Health Index) de la Nouvelle-Zélande  | Oui. 
+| Numéro NHI (National Health Index) de la Nouvelle-Zélande | Oui. 
 
 
 | Numéro de passeport de la Nouvelle-Zélande | Oui. 
@@ -207,15 +207,15 @@ Notez que vous pouvez ajouter à la liste des données personnelles qui se trouv
 
 Les données personnelles sensibles que Cloud Data Sense peuvent trouver dans les fichiers incluent la liste suivante. Les éléments de cette catégorie ne peuvent être reconnus qu'en anglais pour le moment.
 
-Référence des procédures pénales:: Données concernant les condamnations pénales et les infractions d'une personne physique.
+Référence des procédures pénales:: Données concernant les condamnations et infractions pénales d'une personne physique.
 Référence ethnique:: Données concernant l'origine raciale ou ethnique d'une personne physique.
 Référence santé:: Données concernant la santé d'une personne physique.
 Codes médicaux ICD-9-cm:: Codes utilisés dans l'industrie médicale et de la santé.
 Codes médicaux ICD-10-cm:: Codes utilisés dans l'industrie médicale et de la santé.
 Références philosophiques:: Données concernant les croyances philosophiques d'une personne naturelle.
-Opinions politiques référence:: Données concernant les opinions politiques d’une personne physique.
+Opinions politiques référence:: Données concernant les opinions politiques d'une personne physique.
 Croyances religieuses:: Données concernant les croyances religieuses d'une personne naturelle.
-Référence de la vie sexuelle ou de l'orientation:: Données concernant la vie sexuelle ou l’orientation sexuelle d’une personne physique.
+Référence de la vie sexuelle ou de l'orientation:: Données concernant la vie sexuelle ou l'orientation sexuelle d'une personne naturelle.
 
 
 
@@ -304,7 +304,7 @@ Les métadonnées suivantes sont également classées en catégories et identifi
 * Fil d'Ariane de détection des données
 * Fichiers de conception
 * Données d'application de messagerie
-* Chiffrées
+* Crypté (fichiers avec un score d'entropie élevé)
 * Exécutables
 * Données d'applications financières
 * Données d'application de santé
@@ -314,6 +314,7 @@ Les métadonnées suivantes sont également classées en catégories et identifi
 * Présentations diverses
 * Feuilles de calcul diverses
 * Divers « Inconnu »
+* Fichiers protégés par mot de passe
 * Données structurées
 * Vidéos
 * Fichiers de zéro octet
@@ -338,7 +339,7 @@ NetApp ne garantit pas une précision de 100 % des données personnelles et des 
 Selon nos tests, le tableau ci-dessous montre la précision des informations que Data Sense trouve. Nous la décomposent par _Precision_ et _rappel_:
 
 Précision:: La probabilité que le détection de données ait été correctement identifié. Par exemple, un taux de précision de 90 % pour les données personnelles signifie que 9 fichiers sur 10 identifiés comme contenant des renseignements personnels, contiennent en fait des renseignements personnels. 1 fichier sur 10 serait un faux positif.
-Rappel:: La probabilité pour le sens des données de trouver ce qu'il devrait. Par exemple, un taux de rappel de 70 % pour les données personnelles signifie que Data Sense peut identifier 7 fichiers sur 10 qui contiennent réellement des informations personnelles dans votre organisation. 30 % des données ne seront pas stockées dans le tableau de bord.
+Rappel:: La probabilité pour le sens des données de trouver ce qu'il devrait. Par exemple, un taux de rappel de 70 % pour les données personnelles signifie que Data Sense peut identifier 7 fichiers sur 10 qui contiennent réellement des informations personnelles dans votre organisation. 30 % des données semblent manquer le sens où elles ne seront pas affichées dans le tableau de bord.
 
 
 Nous améliorons constamment la précision de nos résultats. Ces améliorations seront automatiquement disponibles dans les prochaines versions de Data Sense.

@@ -20,7 +20,7 @@ Avec Cloud Data Sense, vous pouvez gérer et organiser vos données privées de 
 * Vous pouvez ajouter des balises aux fichiers que vous souhaitez marquer pour une organisation ou pour un type de suivi.
 * Vous pouvez affecter un utilisateur BlueXP à un fichier spécifique ou à plusieurs fichiers, de sorte que cette personne puisse être responsable de la gestion du fichier.
 * Grâce à la fonctionnalité « Stratégie », vous pouvez créer vos propres requêtes de recherche personnalisées afin de pouvoir voir facilement les résultats en cliquant sur un bouton.
-* Vous pouvez envoyer des alertes par e-mail aux utilisateurs de BlueXP lorsque certaines stratégies critiques renvoient des résultats.
+* Vous pouvez envoyer des alertes par e-mail à des utilisateurs BlueXP ou à toute autre adresse e-mail lorsque certaines stratégies critiques renvoient des résultats.
 
 
 
@@ -393,7 +393,7 @@ image:screenshot_compliance_save_as_highlight.png["Capture d'écran indiquant co
 +
 .. Entrez un nom et une description uniques.
 .. Si vous le souhaitez, cochez la case pour supprimer automatiquement les fichiers qui correspondent aux paramètres de la stratégie. En savoir plus sur link:task-managing-highlights.html#deleting-source-files-automatically-using-policies["suppression de fichiers source à l'aide d'une stratégie"].
-.. Si vous souhaitez envoyer des e-mails de notification aux utilisateurs BlueXP, cochez la case correspondante et choisissez l'intervalle d'envoi de l'e-mail. En savoir plus sur link:task-org-private-data.html#sending-email-alerts-when-non-compliant-data-is-found["envoi d'alertes par e-mail en fonction des résultats de règles"].
+.. Si vous voulez envoyer des e-mails de notification aux utilisateurs BlueXP de votre compte, cochez la case correspondante et choisissez l'intervalle d'envoi de l'e-mail. En savoir plus sur link:task-org-private-data.html#sending-email-alerts-when-non-compliant-data-is-found["envoi d'alertes par e-mail en fonction des résultats de règles"].
 .. Si vous le souhaitez, cochez la case pour attribuer automatiquement des libellés AIP aux fichiers qui correspondent aux paramètres de la stratégie, puis sélectionnez le libellé. (Uniquement si vous avez déjà intégré des étiquettes AIP. En savoir plus sur link:task-org-private-data.html#categorizing-your-data-using-aip-labels["Libellés AIP"].)
 .. Cliquez sur *Créer une stratégie*.
 +
@@ -410,7 +410,7 @@ La nouvelle stratégie s'affiche dans l'onglet stratégies.
 
 === Envoi d'alertes par e-mail lorsque des données non conformes sont trouvées
 
-Cloud Data SENSE peut envoyer des alertes par e-mail aux utilisateurs BlueXP lorsque certaines stratégies critiques renvoient des résultats pour que vous puissiez recevoir des notifications afin de protéger vos données. Vous pouvez choisir d'envoyer les notifications par e-mail tous les jours, toutes les semaines ou tous les mois.
+Cloud Data SENSE peut envoyer des alertes par e-mail à des utilisateurs BlueXP de votre compte lorsque certaines stratégies critiques renvoient des résultats afin que vous puissiez obtenir des notifications pour protéger vos données. Vous pouvez choisir d'envoyer les notifications par e-mail tous les jours, toutes les semaines ou tous les mois.
 
 Vous pouvez configurer ce paramètre lors de la création de la stratégie ou lors de la modification d'une stratégie.
 
@@ -421,9 +421,13 @@ Procédez comme suit pour ajouter des mises à jour par e-mail à une stratégie
 +
 image:screenshot_compliance_add_email_alert_1.png["Capture d'écran indiquant comment modifier une police existante."]
 
-. Dans la page Modifier la stratégie, cochez la case si vous souhaitez envoyer des e-mails de notification aux utilisateurs BlueXP et choisissez l'intervalle d'envoi de l'e-mail (par exemple, chaque *semaine*).
+. Dans la page Modifier la stratégie :
++
+.. Cochez la case « Envoyer tous les utilisateurs dans ce compte » si vous souhaitez envoyer des e-mails de notification aux utilisateurs de votre compte BlueXP, puis choisissez l'intervalle d'envoi de l'e-mail (par exemple, *tous les jours*).
 +
 image:screenshot_compliance_add_email_alert_2.png["Capture d'écran indiquant comment choisir les critères d'e-mail à envoyer pour la police."]
+
+
 
 . Cliquez sur *Enregistrer la stratégie* et l'intervalle auquel l'e-mail est envoyé apparaît dans la description de la stratégie.
 
@@ -479,32 +483,32 @@ Cloud Data Sense fournit plusieurs règles définies par le système :
 | Nom | Description | Logique 
 
 
-| Données privées exposées publiquement | Objets S3 contenant des informations personnelles ou sensibles, avec un accès public en lecture ouvert. | S3 public ET contient des informations personnelles ou sensibles 
+| S3 : données privées exposées publiquement | Objets S3 contenant des informations personnelles ou sensibles, avec un accès public en lecture ouvert. | S3 public ET contient des informations personnelles ou sensibles 
 
 
-| PCI DSS : données obsolètes pendant 30 jours | Fichiers contenant des informations de carte de crédit, modifié pour la dernière fois il y a plus de 30 jours. | Contient la carte de crédit ET la dernière modification sur 30 jours 
+| PCI DSS : données obsolètes supérieure à 30 jours | Fichiers contenant des informations de carte de crédit, modifié pour la dernière fois il y a plus de 30 jours. | Contient la carte de crédit ET la dernière modification sur 30 jours 
 
 
-| HIPAA : données obsolètes de plus de 30 jours | Fichiers contenant des informations de santé, modifié pour la dernière fois il y a plus de 30 jours. | Contient des données de santé (définies de la même manière que dans le rapport HIPAA) ET modifiées pour la dernière fois sur 30 jours 
+| HIPAA : données obsolètes sur 30 jours | Fichiers contenant des informations de santé, modifié pour la dernière fois il y a plus de 30 jours. | Contient des données de santé (définies de la même manière que dans le rapport HIPAA) ET modifiées pour la dernière fois sur 30 jours 
 
 
-| Les données privées sont obsolètes au fil des 7 ans | Fichiers contenant des données personnelles ou sensibles, modifié pour la dernière fois il y a plus de 7 ans. | Fichiers contenant des données personnelles ou sensibles, modifié pour la dernière fois il y a plus de 7 ans 
+| Les données privées ont déjà dépassé les 7 ans | Fichiers contenant des données personnelles ou sensibles, modifié pour la dernière fois il y a plus de 7 ans. | Fichiers contenant des données personnelles ou sensibles, modifié pour la dernière fois il y a plus de 7 ans 
 
 
-| RGPD : citoyens européens | Dossiers contenant plus de 5 identificateurs de citoyens d’un pays de l’UE ou tables DB contenant des identificateurs de citoyens d’un pays de l’UE. | Dossiers contenant plus de 5 identificateurs d’un (un) citoyen de l’UE ou de tables de données contenant des lignes contenant plus de 15% des colonnes avec des identificateurs de l’UE d’un pays. (Tout identifiant national des pays européens. N'inclut pas le Brésil, la Californie, le SSN des États-Unis, Israël et l'Afrique du Sud) 
+| RGPD - citoyens européens | Dossiers contenant plus de 5 identificateurs de citoyens d'un pays de l'UE ou tables de BD contenant des identificateurs de citoyens d'un pays de l'UE. | Dossiers contenant plus de 5 identificateurs d'un (un) citoyen de l'UE ou de tables de données contenant des lignes contenant plus de 15% des colonnes avec des identificateurs d'UE d'un pays. (Tout identifiant national des pays européens. N'inclut pas le Brésil, la Californie, le SSN des États-Unis, Israël et l'Afrique du Sud) 
 
 
-| CCPA – résidents de Californie | Fichiers contenant plus de 10 identificateurs de permis de conduire californiens ou tables de BD contenant cet identifiant. | Fichiers contenant plus de 10 identificateurs de permis de conduire californiens OU tables DB contenant la licence de conducteur californien 
+| CCPA - résidents de Californie | Fichiers contenant plus de 10 identificateurs de permis de conduire californiens ou tables de BD contenant cet identifiant. | Fichiers contenant plus de 10 identificateurs de permis de conduire californiens OU tables de BD contenant la licence du conducteur California 
 
 
-| Noms des sujets de données – risque élevé | Fichiers avec plus de 50 noms de sujet de données. | Fichiers avec plus de 50 noms de sujet de données 
+| Noms des sujets de données - risque élevé | Fichiers avec plus de 50 noms de sujet de données. | Fichiers avec plus de 50 noms de sujet de données 
 
 
-| Adresses e-mail – risque élevé | Fichiers contenant plus de 50 adresses électroniques ou colonnes DB contenant plus de 50 % de leurs lignes contenant des adresses électroniques | Fichiers contenant plus de 50 adresses électroniques ou colonnes DB contenant plus de 50 % de leurs lignes contenant des adresses électroniques 
+| Adresses e-mail - risque élevé | Fichiers contenant plus de 50 adresses électroniques ou colonnes DB contenant plus de 50 % de leurs lignes contenant des adresses électroniques | Fichiers contenant plus de 50 adresses électroniques ou colonnes DB contenant plus de 50 % de leurs lignes contenant des adresses électroniques 
 
 
-| Données personnelles – risque élevé | Fichiers contenant plus de 20 identificateurs de données personnelles, ou colonnes de bases de données contenant plus de 50 % de leurs lignes contenant des identificateurs de données personnelles. | Fichiers avec plus de 20 colonnes personnelles ou DB avec plus de 50 % de leurs lignes contenant des colonnes personnelles 
+| Données personnelles - risque élevé | Fichiers contenant plus de 20 identificateurs de données personnelles, ou colonnes de bases de données contenant plus de 50 % de leurs lignes contenant des identificateurs de données personnelles. | Fichiers avec plus de 20 colonnes personnelles ou DB avec plus de 50 % de leurs lignes contenant des colonnes personnelles 
 
 
-| Données personnelles sensibles – risque élevé | Fichiers contenant plus de 20 identificateurs de données personnelles sensibles, ou colonnes de bases de données contenant plus de 50 % de leurs lignes contenant des données personnelles sensibles. | Les fichiers contenant plus de 20 colonnes personnelles sensibles ou DB contenant plus de 50 % de leurs lignes contenant des données personnelles sensibles 
+| Données personnelles sensibles - risque élevé | Fichiers contenant plus de 20 identificateurs de données personnelles sensibles, ou colonnes de bases de données contenant plus de 50 % de leurs lignes contenant des données personnelles sensibles. | Les fichiers contenant plus de 20 colonnes personnelles sensibles ou DB contenant plus de 50 % de leurs lignes contenant des données personnelles sensibles 
 |===

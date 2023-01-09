@@ -34,7 +34,7 @@ Data SENSE fournit plusieurs outils qui peuvent vous aider dans vos efforts de c
 * Identifier une vaste portée des données personnelles sensibles, conformément aux réglementations en matière de confidentialité, RGPD, CCPA, PCI et HIPAA.
 * Répondez aux demandes d'accès aux données (DSAR, Data Subject Access Requests) en fonction de votre nom ou de votre adresse e-mail.
 * Identifiez si des identificateurs uniques de vos bases de données se trouvent dans des fichiers d'autres référentiels, en faisant simplement votre propre liste de « données personnelles » identifiées dans les analyses de détection de données.
-* Notifier les utilisateurs BlueXP par courrier électronique lorsque des fichiers contiennent certains PII (vous définissez ce critère à l'aide de link:task-org-private-data.html#controlling-your-data-using-policies["Stratégies"^]) de sorte que vous puissiez décider d'un plan d'action.
+* Avertir certains utilisateurs par e-mail lorsque des fichiers contiennent certains RP (vous définissez ce critère à l'aide de link:task-org-private-data.html#controlling-your-data-using-policies["Stratégies"^]) de sorte que vous puissiez décider d'un plan d'action.
 
 
 
@@ -59,7 +59,7 @@ Data Sense fournit des outils qui peuvent vous aider dans votre coût total de p
 
 * Amélioration de l'efficacité du stockage grâce à l'identification des données dupliquées ou non liées à l'activité. Vous pouvez utiliser ces informations pour décider si vous voulez déplacer ou supprimer certains fichiers.
 * Supprimez des fichiers qui semblent non sécurisés ou trop risqués pour l'éviter dans votre système de stockage, ou qui ont été identifiés en double. Vous pouvez utiliser _Policies_ pour supprimer automatiquement des fichiers qui correspondent à certains critères.
-* Réduisez les coûts du stockage en identifiant les données inactives que vous pouvez déplacer vers un stockage objet moins coûteux. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-data-tiering.html["En savoir plus sur le Tiering"^].
+* Réduisez les coûts du stockage en identifiant les données inactives que vous pouvez déplacer vers un stockage objet moins coûteux. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-data-tiering.html["En savoir plus sur le Tiering des systèmes Cloud Volumes ONTAP"^]. https://docs.netapp.com/us-en/cloud-manager-tiering/concept-cloud-tiering.html["En savoir plus sur le Tiering à partir des systèmes ONTAP sur site"^].
 
 
 

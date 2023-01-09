@@ -171,7 +171,6 @@
   <block id="892f73595a08cb4eef7c3e6319b7f807" category="list-text">Vous pouvez ajouter des balises aux fichiers que vous souhaitez marquer pour une organisation ou pour un type de suivi.</block>
   <block id="4641554e9ff0ab6b08e16160ca0cf9af" category="list-text">Vous pouvez affecter un utilisateur BlueXP à un fichier spécifique ou à plusieurs fichiers, de sorte que cette personne puisse être responsable de la gestion du fichier.</block>
   <block id="f9f3ed5f443ba769e31426ba3b322b22" category="list-text">Grâce à la fonctionnalité « Stratégie », vous pouvez créer vos propres requêtes de recherche personnalisées afin de pouvoir voir facilement les résultats en cliquant sur un bouton.</block>
-  <block id="ac1647b86e9a6db3e5ad68b1e0ba22a9" category="list-text">Vous pouvez envoyer des alertes par e-mail aux utilisateurs de BlueXP lorsque certaines stratégies critiques renvoient des résultats.</block>
   <block id="6dd2018793ec98bc5468877b15393d0a" category="admonition">Les fonctionnalités décrites dans cette section ne sont disponibles que si vous avez choisi d'effectuer une analyse de classification complète sur vos sources de données. Les sources de données qui ont une analyse avec mappage uniquement n'affichent pas de détails au niveau des fichiers.</block>
   <block id="a8d43af62606e8592f9d1aabd661626f" category="section-title">Dois-je utiliser des étiquettes ou des étiquettes ?</block>
   <block id="27d752ee9d73358e68313a41c75232eb" category="paragraph">Vous trouverez ci-dessous une comparaison du balisage Data Sense et de l'étiquetage Azure information protection.</block>
@@ -190,7 +189,6 @@
   <block id="297d1b6c4f0dca560e7de55a7695e6b4" category="paragraph">Vous pouvez gérer les étiquettes AIP dans les fichiers que Cloud Data SENSE analyse si vous vous êtes abonné <block ref="2366c206354427dcda3be6923339236d" category="inline-link-macro-rx"></block>. AIP vous permet de classer et de protéger les documents et les fichiers en appliquant des étiquettes au contenu. Data Sense vous permet d'afficher les étiquettes déjà affectées aux fichiers, d'ajouter des étiquettes aux fichiers et de modifier les étiquettes lorsqu'une étiquette existe déjà.</block>
   <block id="2473b4a68e8fb944fa5afe552e508d00" category="paragraph">Cloud Data SENSE prend en charge les libellés AIP dans les types de fichiers suivants : .DOC, .DOCX, .PDF, .PPTX, .XLS, XLSX.</block>
   <block id="3115aebdd180a7f37b3394bf8996ca30" category="list-text">Vous ne pouvez pas modifier actuellement les étiquettes dans des fichiers de plus de 30 Mo. Pour OneDrive, SharePoint et Google Drive, la taille maximale de fichier est de 4 Mo.</block>
-  <block id="80b4732b42c9c04d16bcddade3a9f773" category="list-text">Si un fichier a un libellé qui n'existe plus dans AIP, Cloud Data SENSE le considère comme un fichier sans étiquette.</block>
   <block id="fae289ef9204f7c3119e084615a6d53f" category="list-text">Si vous avez déployé Data Sense dans une région gouvernementale ou dans un emplacement sur site sans accès à Internet (également connu sous le nom de site sombre), la fonctionnalité AIP label n'est pas disponible.</block>
   <block id="96238d4f93a120c69c563c428e826a69" category="section-title">Intégration des libellés AIP dans votre espace de travail</block>
   <block id="66419de72b8ef9b668dec88e9b2fdc45" category="inline-link-macro">sources des données</block>
@@ -349,7 +347,6 @@
   <block id="69afb208b3f73c16d486210229cfd874" category="inline-link-macro">suppression de fichiers source à l'aide d'une stratégie</block>
   <block id="e6d68873555c37c43798e1e7f7b8513e" category="list-text">Si vous le souhaitez, cochez la case pour supprimer automatiquement les fichiers qui correspondent aux paramètres de la stratégie. En savoir plus sur <block ref="30e6ed97d290e57f0e75d9e6322eb503" category="inline-link-macro-rx"></block>.</block>
   <block id="ed0c49068f9d7e929a30f26c6d8c4a8b" category="inline-link-macro">envoi d'alertes par e-mail en fonction des résultats de règles</block>
-  <block id="8beb1a28cedad4a62270cd87cb0fb73f" category="list-text">Si vous souhaitez envoyer des e-mails de notification aux utilisateurs BlueXP, cochez la case correspondante et choisissez l'intervalle d'envoi de l'e-mail. En savoir plus sur <block ref="aa3b63c453483f75d4311c7c0137128e" category="inline-link-macro-rx"></block>.</block>
   <block id="9d85612840e00794629f6dce90aa22fa" category="inline-link-macro">Libellés AIP</block>
   <block id="aebde29cfdfa1930a437316c54f45e0d" category="list-text">Si vous le souhaitez, cochez la case pour attribuer automatiquement des libellés AIP aux fichiers qui correspondent aux paramètres de la stratégie, puis sélectionnez le libellé. (Uniquement si vous avez déjà intégré des étiquettes AIP. En savoir plus sur <block ref="b0becded2b1c1949046ca8118d27118b" category="inline-link-macro-rx"></block>.)</block>
   <block id="fdc2c96185d2a7c98ab81a927c827edb" category="list-text">Cliquez sur *Créer une stratégie*.</block>
@@ -357,12 +354,10 @@
   <block id="23e34b6c117b6fd91abb568e48195e27" category="paragraph"><block ref="23e34b6c117b6fd91abb568e48195e27" category="inline-image-macro-rx" type="image"></block></block>
   <block id="f124f85896ac18194a54f85b2d21b888" category="paragraph">La nouvelle stratégie s'affiche dans l'onglet stratégies.</block>
   <block id="44b09c7ed11f8b8bc1b6c565396ae51f" category="section-title">Envoi d'alertes par e-mail lorsque des données non conformes sont trouvées</block>
-  <block id="07a798a9ca59b7a89db396e7fb102645" category="paragraph">Cloud Data SENSE peut envoyer des alertes par e-mail aux utilisateurs BlueXP lorsque certaines stratégies critiques renvoient des résultats pour que vous puissiez recevoir des notifications afin de protéger vos données. Vous pouvez choisir d'envoyer les notifications par e-mail tous les jours, toutes les semaines ou tous les mois.</block>
   <block id="f77f93b662e07d2958780dffbc360ec3" category="paragraph">Vous pouvez configurer ce paramètre lors de la création de la stratégie ou lors de la modification d'une stratégie.</block>
   <block id="831a96e5f215f39fdd445625f868bf58" category="paragraph">Procédez comme suit pour ajouter des mises à jour par e-mail à une stratégie existante.</block>
   <block id="e611dc00053c0d54bc07aac02db6bc88" category="list-text">Dans la page liste des stratégies, cliquez sur *Modifier* pour la stratégie dans laquelle vous souhaitez ajouter (ou modifier) le paramètre de messagerie.</block>
   <block id="c571987ecae94d2bfb6d63b5fb99a1c9" category="paragraph"><block ref="c571987ecae94d2bfb6d63b5fb99a1c9" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="aa9fdbbe260aeca6e8e9574845857dc1" category="list-text">Dans la page Modifier la stratégie, cochez la case si vous souhaitez envoyer des e-mails de notification aux utilisateurs BlueXP et choisissez l'intervalle d'envoi de l'e-mail (par exemple, chaque *semaine*).</block>
   <block id="ba7f20906bacf4fde87c14d7628aaec2" category="inline-image-macro">Capture d'écran indiquant comment choisir les critères d'e-mail à envoyer pour la police.</block>
   <block id="9cc0943710c206f20a91720ffe09f7bf" category="paragraph"><block ref="9cc0943710c206f20a91720ffe09f7bf" category="inline-image-macro-rx" type="image"></block></block>
   <block id="03edddfdd703f81e66c3ec945cdf1ae4" category="list-text">Cliquez sur *Enregistrer la stratégie* et l'intervalle auquel l'e-mail est envoyé apparaît dans la description de la stratégie.</block>
@@ -388,33 +383,19 @@
   <block id="0355dfb20b3acefa20b9a10ad61da835" category="paragraph">Cloud Data Sense fournit plusieurs règles définies par le système :</block>
   <block id="49ee3087348e8d44e1feda1917443987" category="cell">Nom</block>
   <block id="35ba1271dff4019593d3034c929e1bbc" category="cell">Logique</block>
-  <block id="bb627ad08bda16be7fcbd5d9ac5c68c2" category="cell">Données privées exposées publiquement</block>
   <block id="6d8581e73b26d09315e4b727a68517a9" category="cell">Objets S3 contenant des informations personnelles ou sensibles, avec un accès public en lecture ouvert.</block>
   <block id="9fed1100c53a7ff82737d8ea58a70762" category="cell">S3 public ET contient des informations personnelles ou sensibles</block>
-  <block id="9768bf8d35c1624bc02674d01e47437c" category="cell">PCI DSS : données obsolètes pendant 30 jours</block>
   <block id="d9feeb683678a852eb16c7ad8b7bcf31" category="cell">Fichiers contenant des informations de carte de crédit, modifié pour la dernière fois il y a plus de 30 jours.</block>
   <block id="e96296b0712e5a5809c0ef17fe6eb940" category="cell">Contient la carte de crédit ET la dernière modification sur 30 jours</block>
-  <block id="a37ab45c54567a1ed3511db25126b9f5" category="cell">HIPAA : données obsolètes de plus de 30 jours</block>
   <block id="b73569024ca700234ae0e5e825744c4f" category="cell">Fichiers contenant des informations de santé, modifié pour la dernière fois il y a plus de 30 jours.</block>
   <block id="28ba9ca568a4c86b74c28031eceed9cf" category="cell">Contient des données de santé (définies de la même manière que dans le rapport HIPAA) ET modifiées pour la dernière fois sur 30 jours</block>
-  <block id="9ff2a34bbcb8bdd9a9e2ea552c1f65c4" category="cell">Les données privées sont obsolètes au fil des 7 ans</block>
   <block id="0658572f595df4673d537d6a8a8b1a1a" category="cell">Fichiers contenant des données personnelles ou sensibles, modifié pour la dernière fois il y a plus de 7 ans.</block>
   <block id="2e54b6ea8f6706e7beb9350d62e23178" category="cell">Fichiers contenant des données personnelles ou sensibles, modifié pour la dernière fois il y a plus de 7 ans</block>
-  <block id="245b1cb769234b0bf16b4606f4e3c4e3" category="cell">RGPD : citoyens européens</block>
-  <block id="901ff5eafbbfa39f4535c8c93b55ab1a" category="cell">Dossiers contenant plus de 5 identificateurs de citoyens d’un pays de l’UE ou tables DB contenant des identificateurs de citoyens d’un pays de l’UE.</block>
-  <block id="6797dffa43cd3b9fb4dbf293f60ec899" category="cell">Dossiers contenant plus de 5 identificateurs d’un (un) citoyen de l’UE ou de tables de données contenant des lignes contenant plus de 15% des colonnes avec des identificateurs de l’UE d’un pays. (Tout identifiant national des pays européens. N'inclut pas le Brésil, la Californie, le SSN des États-Unis, Israël et l'Afrique du Sud)</block>
-  <block id="76b2ceb7c3304c3d74f8a3c67204664f" category="cell">CCPA – résidents de Californie</block>
-  <block id="a3ca33cb61cb831167e837897d598032" category="cell">Fichiers contenant plus de 10 identificateurs de permis de conduire californiens ou tables de BD contenant cet identifiant.</block>
-  <block id="f2c60575d291087562b14b07d6a573a5" category="cell">Fichiers contenant plus de 10 identificateurs de permis de conduire californiens OU tables DB contenant la licence de conducteur californien</block>
-  <block id="56162cf47a2c6ac40b81b81d2e8a8f6e" category="cell">Noms des sujets de données – risque élevé</block>
   <block id="dc33521f475dd5a7293f3917bf0af42f" category="cell">Fichiers avec plus de 50 noms de sujet de données.</block>
   <block id="803f715ed99c292cad7695adc28eb9d6" category="cell">Fichiers avec plus de 50 noms de sujet de données</block>
-  <block id="a2742dcb5483765bc9185da19e4e4287" category="cell">Adresses e-mail – risque élevé</block>
   <block id="692c6580584ac112966355c5be17619f" category="cell">Fichiers contenant plus de 50 adresses électroniques ou colonnes DB contenant plus de 50 % de leurs lignes contenant des adresses électroniques</block>
-  <block id="43684d46343749eea79e764abdb4b9c8" category="cell">Données personnelles – risque élevé</block>
   <block id="f01867afcb6e04d62f44ff0ba1bea1a8" category="cell">Fichiers contenant plus de 20 identificateurs de données personnelles, ou colonnes de bases de données contenant plus de 50 % de leurs lignes contenant des identificateurs de données personnelles.</block>
   <block id="8f08d4145d6e3a493a3fa4cd9e22247f" category="cell">Fichiers avec plus de 20 colonnes personnelles ou DB avec plus de 50 % de leurs lignes contenant des colonnes personnelles</block>
-  <block id="049c171b1dc7d32860afb59cd0dfc6bd" category="cell">Données personnelles sensibles – risque élevé</block>
   <block id="9b81ccdb2be13f884e301547dfac52b2" category="cell">Fichiers contenant plus de 20 identificateurs de données personnelles sensibles, ou colonnes de bases de données contenant plus de 50 % de leurs lignes contenant des données personnelles sensibles.</block>
   <block id="d3566f9763235eb9dbff68cd1220088a" category="cell">Les fichiers contenant plus de 20 colonnes personnelles sensibles ou DB contenant plus de 50 % de leurs lignes contenant des données personnelles sensibles</block>
   <block id="808cffec2f45e3cd0fe5a90bfcca1530" category="summary">Data Sense offre de nombreuses façons d'ajouter une liste personnalisée des « données personnelles » que Data Sense identifiera dans les futures analyses, vous permettant ainsi d'avoir une vision globale de l'emplacement des données potentiellement sensibles dans les fichiers de votre entreprise.</block>
@@ -508,8 +489,6 @@
   <block id="0b395d802cf1edb9750015b9c8375c64" category="list-text">&lt;nom_modèle&gt; = nom qui apparaîtra dans l'interface utilisateur de détection de données. Assurez-vous que le nom identifie ce que le regex est conçu pour trouver. Le nom doit contenir au moins une lettre et peut comporter jusqu'à 70 caractères.</block>
   <block id="91199f34eda51a07db5d7713309a5577" category="list-text">&lt;Regular_expression&gt; = ce peut être n'importe quelle expression régulière légale.</block>
   <block id="c0860cd77b783ac8ccb3c6de19266e83" category="paragraph">Notez que nous testons chaque nouveau regex pour vérifier s'il est trop large et qu'il renverrait trop de correspondances. Si c'est le cas, le message suivant apparaît :</block>
-  <block id="4767339e389eb1fa075ecdec5d1ec320" category="paragraph">Vous pouvez utiliser l'option *-f* à la fin de la ligne de commande si vous voulez ajouter avec force le regex à Data Sense - même si nous pensons qu'il est trop large.</block>
-  <block id="1c247fabef1a02cfb25e0c5a09f1ce81" category="paragraph">L'ID du produit est un numéro à 12 chiffres commençant par 201 ; l'expression régulière est donc *\b201\d{9}\b*. Et vous voulez que le texte de l'interface utilisateur de détection de données identifie ce modèle comme *ID produit interne*.</block>
   <block id="ce52796a17167ca6f97268ee7baaa0de" category="paragraph">Pour voir où vos ID de produit internes sont mentionnés dans tous vos fichiers, entrez les commandes suivantes.</block>
   <block id="5e0b61460f50f9b62d95b060b2f3f8d2" category="inline-image-macro">Capture d'écran montrant un exemple de résultats regex personnalisés dans le volet Résultats de l'enquête.</block>
   <block id="f0957a103fdf829c95e6748bbaec5b4a" category="paragraph"><block ref="f0957a103fdf829c95e6748bbaec5b4a" category="inline-image-macro-rx" type="image"></block></block>
@@ -707,7 +686,6 @@
   <block id="fa6b601b2fb4e3e5c7b466ecb8bd70ac" category="paragraph">Cette erreur peut signifier que le compte NSS et la société d'enregistrement auquel il est associé n'est pas la même société d'enregistrement pour le numéro de série du compte BlueXP (par exemple 960xxxx) ou le numéro de série de l'environnement de travail. Vous pouvez consulter votre liste de comptes NSS en haut du formulaire *Créer un dossier* pour trouver la correspondance appropriée, ou vous pouvez demander de l'aide en utilisant l'une des options suivantes :</block>
   <block id="e01df0b4dfd95eba2c59333419e4fac6" category="list-text">Utilisez le chat du produit</block>
   <block id="639be990cfca56ab4b63685d8bacd437" category="list-text">Soumettre un dossier non technique à<block ref="2298f47e4dad19a3156da7ce6116d9b1" category="inline-link-rx"></block></block>
-  <block id="a0d932b5085e493a71dbcdcc11a705b4" category="summary">Cette FAQ peut vous aider si vous cherchez simplement une réponse rapide à une question.</block>
   <block id="eab720ff04548794ffc2cbbd9f06daf4" category="doc">Les questions les plus fréquemment posées à propos des données du cloud sont pertinentes</block>
   <block id="16e954ea4b2a186e8af05353fc80e766" category="section-title">Service cloud Data Sense</block>
   <block id="a2f50def832b70c62c50463d59218053" category="paragraph">Les questions suivantes présentent une compréhension générale du sens des données du cloud.</block>
@@ -716,7 +694,6 @@
   <block id="a47191a447cfd30eaac5f91623a8e2e1" category="paragraph">Cloud Data Sense est une offre cloud qui utilise la technologie d'intelligence artificielle (IA) pour vous aider à comprendre le contexte des données et à identifier les données sensibles dans vos systèmes de stockage. Les systèmes peuvent être des environnements de travail que vous avez ajoutés à BlueXP Canvas et de nombreux types de sources de données que Data Sense peut accéder sur vos réseaux. <block ref="098fc5cd7fc00ea7f0929a4918ac3fdc" category="inline-link-macro-rx"></block>.</block>
   <block id="71f9b1308ab675e9dd6df174e1a60f18" category="paragraph">Cloud Data SENSE fournit des paramètres prédéfinis (par exemple, des types d'informations sensibles et des catégories) pour respecter les nouvelles réglementations en matière de conformité des données concernant la confidentialité et la sensibilité des données, notamment le RGPD, la loi CCPA, HIPAA.</block>
   <block id="0139d044fd0b961e3b07aa66f52b5e57" category="section-title">Comment fonctionne Cloud Data Sense ?</block>
-  <block id="fbfd2fbbd4f85dce01ccde33810c06c4" category="paragraph">Cloud Data Sense déploie une autre couche d'intelligence artificielle avec votre système et vos systèmes de stockage BlueXP. Il analyse ensuite les données sur des volumes, des compartiments, des bases de données, ainsi que d'autres comptes de stockage, et indexe les informations exploitables concernant les données. Data Sense exploite à la fois l'intelligence artificielle et le traitement du langage naturel, contrairement aux solutions alternatives habituellement développées autour d'expressions régulières et de la mise en correspondance de modèles. Cloud Data Sense utilise l'IA pour comprendre les données de façon contextuelle et assurer une détection et une classification précises. Elle est axée sur l'IA, car elle est conçue pour répondre aux besoins de types et d'évolutivité des données modernes. Il comprend également le contexte des données afin d'assurer une découverte et une classification solides et précises.</block>
   <block id="197b9359d5eb91a4bad52b6e13342baf" category="inline-link-macro">Découvrez le fonctionnement de Cloud Data SENSE</block>
   <block id="428c1d3f0ce473e653a96441ff156c7f" category="paragraph"><block ref="6aa08568cbc533e43d34ee014a159a69" category="inline-link-macro-rx"></block>.</block>
   <block id="941d93d741b2550833570d67f7262c4c" category="section-title">Quelles sont les utilisations courantes du Cloud Data Sense ?</block>
@@ -755,7 +732,6 @@
   <block id="d59048f21fd887ad520398ce677be586" category="inline-link-macro">En savoir plus &gt;&gt;</block>
   <block id="91aef07a29d8068140e7dca06bec6d9d" category="list-text">Fournit des informations sur la confidentialité à partir de vos données et un score de risque lié à la confidentialité. <block ref="890a798f73fe571345d1ff7c58a08844" category="inline-link-macro-rx"></block>.</block>
   <block id="3a3337f232548d40f54052862077499b" category="list-text">Rapport de demande d'accès au sujet des données</block>
-  <block id="eeec57ad13401b39337794c5e3d5ffa6" category="list-text">Vous permet d'extraire un rapport de tous les fichiers contenant des informations concernant le nom spécifique ou l'identifiant personnel d'un sujet de données. <block ref="ce887aadf58ec6a0a140db57b924eac0" category="inline-link-macro-rx"></block>.</block>
   <block id="14167b2f4f95b7ebdb671b9dc719f2b4" category="list-text">Rapport PCI DSS</block>
   <block id="39630dece802514e5f7336bcbbf0ac6f" category="list-text">Vous aide à identifier la distribution des informations de carte de crédit dans vos dossiers. <block ref="ef3bace538be6eee30a3e48516637cf7" category="inline-link-macro-rx"></block>.</block>
   <block id="0fbc5c9a0ab1eecf4064d4ae4ef04fe5" category="list-text">Rapport HIPAA</block>
@@ -767,9 +743,7 @@
   <block id="c50a6cbc569afa1deaa247aaeb038787" category="section-title">Les performances d'acquisition varient-t-elles ?</block>
   <block id="b2cb0dfc268db5acb28e7fc82122b4ef" category="inline-link-macro">Instance Cloud Data SENSE</block>
   <block id="477cc4915054f9673449fba3eb8237f7" category="inline-link-macro">Déployer des solutions Cloud Data est logique</block>
-  <block id="38f627c4b21375a40c92925baf7924e3" category="paragraph">Les performances de l'analyse peuvent varier en fonction de la bande passante réseau et de la taille moyenne des fichiers dans votre environnement. Elle peut également dépendre des caractéristiques de taille du système hôte (dans le cloud ou sur site). Voir <block ref="ba79215ce103197616664775b93ba86f" category="inline-link-macro-rx"></block> et <block ref="1cff0a801d1de3ceb2e474846f005821" category="inline-link-macro-rx"></block> pour en savoir plus.</block>
   <block id="992e3ca84c2944a0dbcaf7e99231a50e" category="inline-link-macro">Voir la différence entre une acquisition de cartographie et une acquisition de classification</block>
-  <block id="def0998b91888f6c8913daf5857514fe" category="paragraph">Lors de l'ajout initial de nouvelles sources de données, vous pouvez également choisir d'effectuer uniquement une analyse de « mappage » au lieu d'une analyse de « classification » complète. Le mappage peut être effectué très rapidement sur vos sources de données car il n'accède pas aux fichiers pour voir les données à l'intérieur. <block ref="51b8d4ed20a0bce6d8202eb3e674faa5" category="inline-link-macro-rx"></block>.</block>
   <block id="2ff213cf58060ebbba92ce3d8cb5f2fe" category="section-title">Gestion et confidentialité des données cloud SENSE</block>
   <block id="98cbc012ffb904cb276a1e79d6cda97a" category="paragraph">Les questions suivantes fournissent des informations sur la façon de gérer les paramètres de détection et de confidentialité des données dans le cloud.</block>
   <block id="a3b503a46334e3fb2ab7ae78049e483b" category="section-title">Comment activer le sens des données du cloud ?</block>
@@ -781,7 +755,6 @@
   <block id="4c0a2c9670f1474a8413f5c72bb8acfc" category="paragraph">Vous pouvez désactiver Cloud Data Sense lors de l'analyse d'un environnement de travail, d'une base de données, d'un groupe de partage de fichiers, d'un compte OneDrive ou d'un compte SharePoint individuel à partir de la page Data Sense Configuration.</block>
   <block id="7a833d41d59abd430a8a21760722d14a" category="paragraph"><block ref="57d1ac548ab885ff197c8b0634f5bdfc" category="inline-link-macro-rx"></block>.</block>
   <block id="551187f69bb192d7df69d2113a8acac4" category="admonition">Pour supprimer complètement l'instance Cloud Data SENSE, vous pouvez supprimer manuellement l'instance Data Sense du portail de votre fournisseur cloud ou sur site.</block>
-  <block id="dd742fd59ea51a52070d76e5deb35cf8" category="section-title">Puis-je personnaliser le service en fonction des besoins de mon entreprise ?</block>
   <block id="eab4d10a40c49ac7fa1a3daf5756345e" category="paragraph">Cloud Data Sense fournit des informations prêtes à l'emploi pour vos données. Ces informations peuvent être extraites et utilisées en fonction des besoins de votre entreprise.</block>
   <block id="9b56b6585b58c04286323169a1091805" category="paragraph">En outre, Data Sense offre de nombreuses façons d'ajouter une liste personnalisée de « données personnelles » que Data Sense identifiera dans les analyses, ce qui vous donne une idée complète de l'emplacement des données potentiellement sensibles dans les fichiers _All_ de votre entreprise.</block>
   <block id="4bffcf343de88a6b5edf887e57a5c59e" category="list-text">Vous pouvez ajouter des identificateurs uniques basés sur des colonnes spécifiques dans les bases de données que vous scannez -- nous appelons cela *Data Fusion*.</block>
@@ -793,16 +766,13 @@
   <block id="b1f65700494451606ff0a8c99ec0733d" category="paragraph">En outre, si vous souhaitez autoriser certains utilisateurs à simplement afficher les résultats d'analyse de détection de données sans pouvoir gérer les paramètres de détection de données, vous pouvez attribuer à ces utilisateurs le rôle Cloud Compliance Viewer.</block>
   <block id="70e4204451ab8b7224b342245071bd70" category="paragraph"><block ref="8b78b4503f012c98d9a7bad6859a8875" category="inline-link-macro-rx"></block>.</block>
   <block id="c0f907bdf9a6cc93e97081efb1ad0ba0" category="section-title">Quelqu'un peut-il accéder aux données privées envoyées entre mon navigateur et Data Sense ?</block>
-  <block id="90ecb8f144bb75027d2645db76b9c80e" category="paragraph">Non Les données privées envoyées entre votre navigateur et l'instance Data Sense sont sécurisées par un cryptage de bout en bout, ce qui signifie que NetApp et des tiers ne peuvent pas les lire. NetApp Data Sense ne partagera aucune donnée ou aucun résultat sauf si vous en faites la demande et que vous approuvez les accès.</block>
   <block id="ae64bece015f15eb39e95575c833f8d3" category="section-title">Que se passe-t-il si le Tiering des données est activé sur vos volumes ONTAP ?</block>
   <block id="2de4e78513aa5bfeb890fe4ddc3ec775" category="paragraph">Vous pouvez activer la détection des données cloud sur les systèmes ONTAP qui transférant les données inactives vers le stockage objet. Lorsque le Tiering est activé, Data Sense analyse toutes les données (sur des disques et les données inactives hiérarchisées vers le stockage objet).</block>
   <block id="7245782d4f1eb0db394d9f1f8ae02b2c" category="paragraph">L'analyse de conformité ne chauffe pas les données inactives : elles restent inactives et hiérarchisées vers le stockage objet.</block>
   <block id="a7865b20d9097d32d555ae9b2251ef31" category="section-title">Cloud Data SENSE peut-il envoyer des notifications à mon entreprise ?</block>
   <block id="9e476387322a5c250893cf9c5c4ce78c" category="inline-link-macro">Stratégies</block>
-  <block id="029e2772a2a4cb0ce3e90281c227cf24" category="paragraph">Oui. En association avec la fonction stratégies, vous pouvez envoyer des alertes par e-mail aux utilisateurs BlueXP (tous les jours, toutes les semaines ou tous les mois) lorsqu'une police renvoie des résultats afin de recevoir des notifications pour protéger vos données. En savoir plus sur <block ref="0a2fc0f403ef4a50a3606f593b466bde" category="inline-link-macro-rx"></block>.</block>
   <block id="0a351d661588dd9301518a85a687c4dc" category="paragraph">Vous pouvez également télécharger des rapports de statut à partir de la page gouvernance et de la page Investigation que vous pouvez partager en interne dans votre organisation.</block>
   <block id="2a19be2b476a8e80b3ee67f3237bdef2" category="section-title">Cloud Data Sense peut-il fonctionner avec les étiquettes AIP que j'ai intégrées dans mes fichiers ?</block>
-  <block id="170074f761e651b98302125c2a5a72c1" category="paragraph">Oui. Vous pouvez gérer les étiquettes AIP dans les fichiers que Cloud Data SENSE analyse si vous vous êtes abonné <block ref="2366c206354427dcda3be6923339236d" category="inline-link-macro-rx"></block>. Vous pouvez afficher les libellés déjà affectés aux fichiers, ajouter des libellés aux fichiers et modifier les libellés existants.</block>
   <block id="399d9d9194e5aac73d00fdd68d88fed1" category="paragraph"><block ref="d2df47398690701c36c48ad6a1a06ca4" category="inline-link-macro-rx"></block>.</block>
   <block id="1e99ed6a00e6ef3956359cd96c54b66c" category="section-title">Types de systèmes source et de types de données</block>
   <block id="9648ab08d5b3fccc9c9ca3160e445cda" category="paragraph">Les questions suivantes se rapportent aux types de stockage pouvant être analysés et aux types de données analysées.</block>
@@ -849,7 +819,6 @@
   <block id="59aab28b54594c59dab8d19afd9478e4" category="inline-link">tarifs</block>
   <block id="d593d438e7fbece83184e3d6d94b77d8" category="paragraph">Voir<block ref="6bbe1a830896033f3d42bc42c545c572" category="inline-link-rx"></block> pour plus d'informations.</block>
   <block id="df633ebdc2836fc65b2b5c8df3071fad" category="section-title">Que se passe-t-il si la limite de capacité BYOL est atteinte ?</block>
-  <block id="58455ce9c1fb7906220e35f5849d83c1" category="paragraph">Si vous atteignez une limite de capacité BYOL, Data Sense continue à fonctionner, mais l'accès aux tableaux de bord est bloqué de sorte que vous ne puissiez pas afficher les informations concernant vos données numérisées. Seule la page de configuration est disponible au cas où vous souhaitez réduire le nombre de volumes analysés afin d'augmenter votre capacité de stockage sous la limite de licence. Vous devez renouveler votre licence BYOL pour rétablir l'accès complet à Data Sense.</block>
   <block id="f56912566696fa3cc8524bcac5febbeb" category="section-title">Déploiement de connecteurs</block>
   <block id="f92115ef83b34980e3bba84c1a861bac" category="paragraph">Les questions suivantes concernent le connecteur BlueXP.</block>
   <block id="c6dbaaf1bef168a38de37623edb997f7" category="section-title">Quel est le connecteur ?</block>
@@ -860,7 +829,6 @@
   <block id="51604d985a41a8e2115db8de3eb4b40f" category="list-text">Pour l'analyse des données dans Cloud Volumes ONTAP dans GCP, vous utilisez un connecteur dans GCP.</block>
   <block id="f4fb039a49b8c7eb94cbf1c2e74a625f" category="list-text">Lors de l'analyse des données dans des systèmes ONTAP sur site, des partages de fichiers non NetApp, un stockage objet S3 générique, des bases de données, des dossiers OneDrive, des comptes SharePoint et des comptes Google Drive, vous pouvez utiliser un connecteur dans tous ces emplacements cloud.</block>
   <block id="267b476717c1665614f57e91725c67ff" category="inline-link">Plusieurs connecteurs</block>
-  <block id="47b38df4edf7a31520897ce7498de0a0" category="paragraph">Donc, si vous disposez de données à plusieurs de ces emplacements, vous devrez peut-être les utiliser<block ref="61272ee1a17c9c174cf490124a0940a3" category="inline-link-rx"></block>.</block>
   <block id="0908d2929b9ac231d6e9a69ca517b2e3" category="section-title">Puis-je déployer le connecteur sur mon propre hôte ?</block>
   <block id="a54d3bccf6c646c46c072ad1fc403cb6" category="inline-link">Déployez le connecteur sur site</block>
   <block id="45c9d2d43a741ab63e518aa05e11fa70" category="paragraph">Oui. C'est possible<block ref="cc74d10e9becb23436e4fcec6c3105c6" category="inline-link-rx"></block> Sur un hôte Linux de votre réseau ou dans le cloud. Si vous envisagez de déployer Data Sense sur site, vous pouvez aussi installer le connecteur sur site, mais ce n'est pas obligatoire.</block>
@@ -894,7 +862,6 @@
   <block id="3a1ce1b3df0ddd54818235c5f83820d9" category="list-text">Identifier une vaste portée des données personnelles sensibles, conformément aux réglementations en matière de confidentialité, RGPD, CCPA, PCI et HIPAA.</block>
   <block id="aa1b21b925a987e64de4f7ff816313c0" category="list-text">Répondez aux demandes d'accès aux données (DSAR, Data Subject Access Requests) en fonction de votre nom ou de votre adresse e-mail.</block>
   <block id="b0eb7209de1c7007992716e29fe58da5" category="list-text">Identifiez si des identificateurs uniques de vos bases de données se trouvent dans des fichiers d'autres référentiels, en faisant simplement votre propre liste de « données personnelles » identifiées dans les analyses de détection de données.</block>
-  <block id="ec3687c7555fdcc0744e8594fe15048c" category="list-text">Notifier les utilisateurs BlueXP par courrier électronique lorsque des fichiers contiennent certains PII (vous définissez ce critère à l'aide de <block ref="0a2fc0f403ef4a50a3606f593b466bde" category="inline-link-macro-rx"></block>) de sorte que vous puissiez décider d'un plan d'action.</block>
   <block id="947194b810ea64bcea87e2425aed8a89" category="section-title">Renforcez la sécurité</block>
   <block id="d3359a9aa3e07091cc3b695ce623afb6" category="paragraph">Le sens des données permet d'identifier les données susceptibles d'être consultées à des fins criminelles. Vous pouvez utiliser Data Sense pour :</block>
   <block id="7aa9c47f42013735e3c5573eb7004a9d" category="list-text">Identifiez tous les fichiers et répertoires (partages et dossiers) avec les autorisations ouvertes exposées à l'ensemble de votre organisation ou au public.</block>
@@ -907,8 +874,6 @@
   <block id="5df73f30ee77990aa89c16d3484cbec4" category="paragraph">Data Sense fournit des outils qui peuvent vous aider dans votre coût total de possession (TCO) du stockage. Vous pouvez utiliser Data Sense pour :</block>
   <block id="17e4f6fc55d9d61a5481011f4bc71a46" category="list-text">Amélioration de l'efficacité du stockage grâce à l'identification des données dupliquées ou non liées à l'activité. Vous pouvez utiliser ces informations pour décider si vous voulez déplacer ou supprimer certains fichiers.</block>
   <block id="1dd59d53f98a1d164f58cb70191c512b" category="list-text">Supprimez des fichiers qui semblent non sécurisés ou trop risqués pour l'éviter dans votre système de stockage, ou qui ont été identifiés en double. Vous pouvez utiliser _Policies_ pour supprimer automatiquement des fichiers qui correspondent à certains critères.</block>
-  <block id="4adf15614982e126334e7fcb5609beb6" category="inline-link">En savoir plus sur le Tiering</block>
-  <block id="2ec592d707b81ee084ad77b364a2f19b" category="list-text">Réduisez les coûts du stockage en identifiant les données inactives que vous pouvez déplacer vers un stockage objet moins coûteux.<block ref="1c87834aa441e9ddec7d154f9ed3550f" category="inline-link-rx"></block>.</block>
   <block id="0539321f76da9af4cf373049cff32281" category="section-title">Accélérez la migration des données</block>
   <block id="031851f09928a9ba770d9a60621692bb" category="paragraph">Data Sense peut être utilisé pour analyser les données sur site avant de les migrer vers le cloud public ou privé. Vous pouvez utiliser Data Sense pour :</block>
   <block id="802346cffb7edd26cc64835acbf1e825" category="list-text">Permet d'afficher la taille des données et si l'une des données contient des informations sensibles avant de les déplacer.</block>
@@ -1937,7 +1902,6 @@
   <block id="dc647eb65e6711e155375218212b3964" category="cell">Mot de passe</block>
   <block id="89212175aaa6a47307131ef3a6bbaa3c" category="cell">Identifiants nationaux</block>
   <block id="9ffceb20e382df6e4587add0d24af321" category="cell">TFN australien (Numéro de dossier fiscal)</block>
-  <block id="9308bcab83008e639f95b088d89b11c4" category="cell">Permis de conduire australien</block>
   <block id="67863eec6ed398cda366fe555c1746bd" category="cell">Numéro d'assurance-maladie australien</block>
   <block id="bba082dd43baad5296b00863b2fd871e" category="cell">Numéro de passeport australien</block>
   <block id="a5ac06cc7292326b3b7f482e54b446be" category="cell">SSN autrichien</block>
@@ -1972,9 +1936,7 @@
   <block id="541c7d40487ee0cbc7519f086686ed77" category="cell">Numéro du Service national de santé (NHS)</block>
   <block id="0e03a64a4a78cbeacfa2d9a80a300d92" category="cell">Permis de conduire de New York</block>
   <block id="1ce92447664cc42f3e2c04aaf8570862" category="cell">Compte bancaire de la Nouvelle-Zélande</block>
-  <block id="fd9022553098e5fa6a8b25ae3a2dc65d" category="cell">Licence de conducteur de la Nouvelle-Zélande</block>
   <block id="2be885677b02540592a1f44b87ee5fb9" category="cell">Numéro IRD de Nouvelle-Zélande (ID taxe)</block>
-  <block id="52c2b4f82109d0afee40fe69db9a8cbe" category="cell">Numéro NHI (National Health Index) de la Nouvelle-Zélande </block>
   <block id="3c266b4db1bf588305e19eddcef36116" category="cell">Numéro de passeport de la Nouvelle-Zélande</block>
   <block id="bd93a09830c25b248cdcde078ab9d834" category="cell">ID polonais (PESEL)</block>
   <block id="76ef617b831576bd6b9ce432af78c4a6" category="cell">Numéro d'identification fiscale portugais (FNI)</block>
@@ -1989,22 +1951,15 @@
   <block id="0ff635b15f7fdd9403b351ffc3d0c2a1" category="section-title">Types de données personnelles sensibles</block>
   <block id="b14a1801297548a365efb89c7bd8874b" category="paragraph">Les données personnelles sensibles que Cloud Data Sense peuvent trouver dans les fichiers incluent la liste suivante. Les éléments de cette catégorie ne peuvent être reconnus qu'en anglais pour le moment.</block>
   <block id="98d51623eb7c03f43fa0678301f5efd4" category="list-text">Référence des procédures pénales</block>
-  <block id="37b32e89145a837709bfc61e3defdf71" category="list-text">Données concernant les condamnations pénales et les infractions d'une personne physique.</block>
   <block id="369810982fcd806bbde0147f11c0364d" category="list-text">Référence ethnique</block>
-  <block id="8919f6c07c25e456aa0ed53b5b10b39e" category="list-text">Données concernant l'origine raciale ou ethnique d'une personne physique.</block>
   <block id="4d0838c277b16e4c72ecafbaf587b10f" category="list-text">Référence santé</block>
-  <block id="c9501f4f2cb501d1c74fe64616a839eb" category="list-text">Données concernant la santé d'une personne physique.</block>
   <block id="f23c75cf09f52ec14b1d9b58cc0fe32c" category="list-text">Codes médicaux ICD-9-cm</block>
   <block id="ea13a98b7046850c04c07db39e39139c" category="list-text">Codes utilisés dans l'industrie médicale et de la santé.</block>
   <block id="94eba79711527a8cc4882b225301c4d1" category="list-text">Codes médicaux ICD-10-cm</block>
   <block id="3a2343e75371abf39ce11f0ae877ef3b" category="list-text">Références philosophiques</block>
-  <block id="9e04f8c9855ebe80f93fddbee2924791" category="list-text">Données concernant les croyances philosophiques d'une personne naturelle.</block>
   <block id="e02ca0fa6e286458f0e6d2d8ab570cbe" category="list-text">Opinions politiques référence</block>
-  <block id="41333852b82ec27222db841d68d4405c" category="list-text">Données concernant les opinions politiques d’une personne physique.</block>
   <block id="9c816fac79e497eaa62bbb4a3adddfc1" category="list-text">Croyances religieuses</block>
-  <block id="4202036daa48dbe473aac72c370f5a63" category="list-text">Données concernant les croyances religieuses d'une personne naturelle.</block>
   <block id="1126ae684e7f83d7ad03320e3339f2e4" category="list-text">Référence de la vie sexuelle ou de l'orientation</block>
-  <block id="a420f1bb8aaa0d65aa0d19afa8ece091" category="list-text">Données concernant la vie sexuelle ou l’orientation sexuelle d’une personne physique.</block>
   <block id="3b59f947bb18be76ff03ca45ee9db241" category="section-title">Types de catégories</block>
   <block id="82355eab158a61a75b39fa1ecb5f9d01" category="paragraph">Il classe les données dans le cloud comme suit. La plupart de ces catégories peuvent être reconnues en anglais, allemand et espagnol.</block>
   <block id="3adbdb3ac060038aa0e6e6c138ef9873" category="cell">Catégorie</block>
@@ -2051,7 +2006,6 @@
   <block id="3b2d0e0dc31143e6f51b137fffa0f7a2" category="list-text">Fil d'Ariane de détection des données</block>
   <block id="5656b1e2824ccc307842bdbfcce33f69" category="list-text">Fichiers de conception</block>
   <block id="b5b1c75f892d4dcc8edd5a8e28d9762a" category="list-text">Données d'application de messagerie</block>
-  <block id="def09fa4a833717d38298eb37c861af8" category="list-text">Chiffrées</block>
   <block id="01d90e538560c2994d5d9c87e034a52a" category="list-text">Données d'applications financières</block>
   <block id="d97029382d191e3f165a54df3d2ffbc9" category="list-text">Données d'application de santé</block>
   <block id="1fff7d0267e317efd36ddf5f7e241931" category="list-text">Documents divers</block>
@@ -2068,7 +2022,6 @@
   <block id="be5edab59de4ea30531374e506b03822" category="list-text">Précision</block>
   <block id="9e9dbe4095e6d9d42f40376813ebf180" category="list-text">La probabilité que le détection de données ait été correctement identifié. Par exemple, un taux de précision de 90 % pour les données personnelles signifie que 9 fichiers sur 10 identifiés comme contenant des renseignements personnels, contiennent en fait des renseignements personnels. 1 fichier sur 10 serait un faux positif.</block>
   <block id="69eb3025218859c5cdddb82869b9edee" category="list-text">Rappel</block>
-  <block id="912d74e8bc95d15396c9c506ba3baff2" category="list-text">La probabilité pour le sens des données de trouver ce qu'il devrait. Par exemple, un taux de rappel de 70 % pour les données personnelles signifie que Data Sense peut identifier 7 fichiers sur 10 qui contiennent réellement des informations personnelles dans votre organisation. 30 % des données ne seront pas stockées dans le tableau de bord.</block>
   <block id="3334410b97f8ef448fe29459f3ce91c6" category="paragraph">Nous améliorons constamment la précision de nos résultats. Ces améliorations seront automatiquement disponibles dans les prochaines versions de Data Sense.</block>
   <block id="071b1bc331e11423355c278905f6831a" category="cell">Données personnelles - général</block>
   <block id="9638a8654641975a891da2b96b1c5edd" category="cell">90 à 95 %</block>
@@ -2312,7 +2265,6 @@
   <block id="ae8f9609c5884d9f4db4d05e14862cd4" category="inline-link">Basculer entre les connecteurs</block>
   <block id="42d1c021036734670ca245849e323735" category="admonition">Cloud Data Sense n'est actuellement pas en mesure d'analyser les compartiments S3, Azure NetApp Files ou FSX pour ONTAP lorsque le logiciel est installé sur site. Dans ce cas, vous devez déployer un connecteur et une instance de Data Sense dans le cloud et<block ref="7ef29812cbbbb10ee35427be73d0c671" category="inline-link-rx"></block> pour les différentes sources de données.</block>
   <block id="34dc49ad79c5d0ec1f3c661ca216a2a5" category="paragraph">Suivez ces étapes pour installer le logiciel Data Sense sur un hôte sur site unique.</block>
-  <block id="7199b645acc24a52b20f838d1ed9b928" category="list-text">(Facultatif) Vérifiez que le système est équipé des deux packages logiciels prérequis (Docker Engine et Python 3). Le programme d'installation installe ce logiciel s'il n'est pas déjà installé sur le système.</block>
   <block id="ed2556b43fbc83ef9623cb9a52ff0389" category="list-text">Téléchargez le logiciel Cloud Data SENSE sur le<block ref="0a75c5e2697813218978a09f1ac8297e" category="inline-link-rx"></block>. Le fichier que vous devez sélectionner est nommé *DATASESNSE-INSTALLER-&lt;version&gt;.tar.gz*.</block>
   <block id="bbdb5f5f026c712f36de4a68700316f5" category="list-text">Copiez le fichier d'installation sur l'hôte Linux que vous envisagez d'utiliser (à l'aide de<block ref="8a444a43bdf534c0c6338bb7809659b3" prefix=" " category="inline-code"></block> ou une autre méthode).</block>
   <block id="213c26a534506d1ae60070296a0343e1" category="list-text">Dans BlueXP, sélectionnez *gouvernance &gt; Classification*.</block>
@@ -2354,7 +2306,6 @@
   <block id="37151576493b3aebc74476f19e767278" category="list-text">Si vous avez défini un scanner group, sur le nœud Manager :</block>
   <block id="5a838e350187be3ad79ae1b63fe95a2b" category="list-text">Ouvrez le fichier « environnement_de_travail_vers_scanner_groupe_config.yml » et définissez les environnements de travail qui seront analysés par chaque groupe de scanner</block>
   <block id="02d7e4f0f1520dae85025d3974fbed76" category="list-text">Vérifiez que tous vos systèmes Linux pour les nœuds du scanner sont conformes à la <block ref="2d54aecca24274aa47c2fb620cd7d497" category="inline-xref-macro-rx"></block>.</block>
-  <block id="9e1ecd43547b653bae3907b8b91d78bf" category="list-text">(Facultatif) Vérifiez que les deux packages logiciels prérequis sont installés sur les systèmes (Docker Engine et Python 3). Le programme d'installation installe ce logiciel s'il n'est pas déjà installé sur les systèmes.</block>
   <block id="b24a973a5aa3fefd5ec9cba471feff39" category="list-text">Vous devez disposer des adresses IP des hôtes du nœud scanner que vous ajoutez.</block>
   <block id="381a200bbbe3c44cfbf711f7668b21fe" category="list-text">Vous devez disposer de l'adresse IP du système hôte du nœud Data Sense Manager</block>
   <block id="e498e68245d2d68d5d4b94b2fd3a608f" category="paragraph">Procédez comme suit pour obtenir l'ID de compte NetApp, l'ID client Connector, le nom du serveur Connector et le jeton d'accès utilisateur nécessaires à l'ajout de nœuds de scanner.</block>
@@ -2471,7 +2422,6 @@
   <block id="afae08b9f3014d73a3bf7e0c201b2b36" category="section-title">Cinq nouveaux types de données personnelles de la Nouvelle-Zélande sont identifiés par Data Sense</block>
   <block id="3b4b0faa54186ef002c6026e97e51a10" category="paragraph">Data Sense peut identifier et catégoriser les fichiers contenant les types de données suivants :</block>
   <block id="c189819be34e41f0ac712261c4bb10b0" category="list-text">Numéro de compte bancaire de la Nouvelle-Zélande</block>
-  <block id="57d4e061073cf52ee992a5523c0e31cb" category="list-text">Numéro de permis de conduire de la Nouvelle-Zélande</block>
   <block id="8900e436e6a12ce71aa703bf1c8be02c" category="inline-link-macro">Consultez tous les types de données personnelles que Data Sense peut identifier dans vos données</block>
   <block id="c8c8337bd5f0527c7ba4b08117f3d96f" category="paragraph"><block ref="44b442fb31109b9e2fdef6fe3589adf6" category="inline-link-macro-rx"></block>.</block>
   <block id="8d3dd83a131924f6dd08fdea2d8e7828" category="section-title">Possibilité d'ajouter un fichier de navigation pour indiquer pourquoi un fichier a été déplacé</block>
@@ -2492,7 +2442,6 @@
   <block id="a90ca4eb6ddb2e74f2c65cdc04cc3fbb" category="paragraph">Auparavant, vous pouviez afficher les types d'autorisations ouvertes accordées sur des fichiers individuels. Vous pouvez maintenant afficher une liste de tous les utilisateurs ou groupes qui ont accès aux répertoires (dossiers et partages de fichiers) et aux types d'autorisations dont ils disposent.<block ref="b60fb470aa4bdcc4f286155f14ead62c" category="inline-link-rx"></block>.</block>
   <block id="6a3dc819e6a301f028d6d27063bb3b04" category="section-title">Vous pouvez « suspendre » la numérisation d'un référentiel pour arrêter temporairement la numérisation de certains contenus</block>
   <block id="1c32547b30cc36869742df049964326d" category="inline-link">Découvrez comment interrompre et reprendre l'acquisition</block>
-  <block id="686ab925b6e810c9c0fd8f818fda9d3f" category="paragraph">La mise en pause de l'acquisition signifie que Data Sense n'effectue pas d'acquisition future sur des ajouts ou des modifications d'un volume ou d'un compartiment, mais que tous les résultats actuels seront toujours disponibles dans le système.<block ref="a7d93e406d54440657820ff66e02fe00" category="inline-link-rx"></block>.</block>
   <block id="c249f6d964b8afde45218a63824a58eb" category="paragraph">Data Sense peut identifier et classer les fichiers contenant les données de licence du conducteur de l'Indiana, de New York et du Texas. <block ref="44b442fb31109b9e2fdef6fe3589adf6" category="inline-link-macro-rx"></block>.</block>
   <block id="a3096c7d9e0dca154e6250efb3ce3736" category="section-title">Les stratégies renvoient maintenant des répertoires qui correspondent aux critères de recherche</block>
   <block id="9fadb6e2508d92e954b40d39c36e9687" category="inline-link">En savoir plus sur la création de règles</block>
@@ -2757,59 +2706,35 @@
   <block id="d55969f99169fb1ccecedd45e530342d" category="cell">État de l'analyse</block>
   <block id="133617814b053dc465cdc57c432b1756" category="cell">Sélectionnez une option pour afficher la liste des fichiers en attente de première numérisation, terminés en cours de numérisation, en attente de numérisation ou qui n'ont pas pu être numérisés.</block>
   <block id="ce7a0235b268c4eaa207fb036462b6a0" category="cell">Ouvrez autorisations</block>
-  <block id="234e430c736f07d10569c360fb740db6" category="cell">Sélectionnez le type d'autorisations dans les données et dans les dossiers/partages</block>
   <block id="11103ebc3d212c95261e2603bcb74624" category="cell">Autorisations utilisateur/groupe</block>
-  <block id="1a81671798e285bd46fa9b2aa3c86d00" category="cell">Sélectionnez un ou plusieurs noms d'utilisateur et/ou de groupe ou entrez un nom partiel</block>
   <block id="7593aaae27016a1a6e673834742f688c" category="cell">Propriétaire du fichier</block>
-  <block id="041e6d70f8356e275da0ead58dccdf88" category="cell">Entrez le nom du propriétaire du fichier</block>
   <block id="b021df6aac4654c454f46c77646e745f" category="cell">Étiquette</block>
-  <block id="c9b82f90ba4459b8fcdadccfbe372539" category="cell">Sélectionnez <block ref="b0becded2b1c1949046ca8118d27118b" category="inline-link-macro-rx"></block> qui sont affectés à vos fichiers</block>
   <block id="d9104233b7c0bd37d4c7d710debdd552" category="cell">Type d'environnement de travail</block>
   <block id="78ed85a2b36b215d69761df3caf130df" category="cell">Sélectionnez le type d'environnement de travail. OneDrive, SharePoint et Google Drive sont classés dans « applications ».</block>
   <block id="424c7d928317581f5f55ac74c144b45a" category="cell">Nom de l'environnement de travail</block>
-  <block id="e9a13f10d7b028f52966f59cde41518f" category="cell">Sélectionner des environnements de travail spécifiques</block>
   <block id="5da8b466834d55ddcdf18f51655016b9" category="cell">Référentiel de stockage</block>
-  <block id="546dfd83236bdaec8635098165334215" category="cell">Sélectionnez le référentiel de stockage, par exemple un volume ou un schéma</block>
   <block id="5da9dcd1cb9325e60a8744a544371fd3" category="cell">Chemin du fichier</block>
-  <block id="18645e81cac35a5353abf701f8a143b5" category="cell">Entrez un chemin partiel ou complet</block>
   <block id="dad25b649a281b9705d7fbdfc91bb96c" category="inline-link-macro">types de catégories</block>
-  <block id="0e44b2b774524434cca65d00db4db5b6" category="cell">Sélectionner <block ref="d4eabbd4fb9268c1389fccae66300714" category="inline-link-macro-rx"></block></block>
   <block id="86171ac828a961155f1ccf4dfa1eb93f" category="cell">Niveau de sensibilité</block>
-  <block id="a3e2b4b381ddb4550a30923ee80c5bd7" category="cell">Sélectionnez le niveau de sensibilité : personnel, personnel sensible ou non sensible</block>
   <block id="26ec7ebe8b7297e79affc05b3e89352b" category="cell">Nombre d'identificateurs</block>
   <block id="2c967160785c40cca46a7d4cade36507" category="cell">Sélectionnez la plage d'identificateurs sensibles détectés par fichier. Inclut des données personnelles et des données personnelles sensibles. Lors du filtrage dans les répertoires, Data Sense totalise les correspondances de tous les fichiers de chaque dossier (et sous-dossiers).</block>
   <block id="d0902d27bce16ddeb2cb9c788db8ddcd" category="cell">Données personnelles</block>
   <block id="7a3dcbf3ed229470d34578d4f4f6fc43" category="inline-link-macro">types de données personnelles</block>
-  <block id="4fcae143243cf4e0c0e7aacf6294e13a" category="cell">Sélectionner <block ref="1b5fb6ede432593c04dc0306b78c1e56" category="inline-link-macro-rx"></block></block>
   <block id="7c65cc06bc9ebcd449c8956bcf440d87" category="cell">Données personnelles sensibles</block>
   <block id="22d9005388d9e535daefed3f2e693f8c" category="inline-link-macro">types de données personnelles sensibles</block>
-  <block id="1da3d4bf2d9a543d087ae38adeb8d861" category="cell">Sélectionner <block ref="ea8f57582e4e2ddb4974e03972a326d7" category="inline-link-macro-rx"></block></block>
   <block id="6e264db6b651951b08b9d4e4d7a39d66" category="cell">Sujet de données</block>
-  <block id="94e2cf1b9ae8761f9a169cbf6d254ace" category="cell">Entrez le nom complet ou l'identifiant connu d'un sujet de données</block>
   <block id="c3a9830be43f6515257f3979e66816fd" category="cell">Type de répertoire</block>
-  <block id="9091f9c1f743dae16df2f0455ff3be56" category="cell">Sélectionnez le type de répertoire : « partager » ou « dossier ».</block>
   <block id="e539fd665e202f536325140d87d7bf72" category="cell">Type de fichier</block>
   <block id="928f61e49cd944376fa6750b67a9050e" category="inline-link-macro">types de fichiers</block>
-  <block id="fd08a48ceb257d93135aef5c0e163610" category="cell">Sélectionner <block ref="4a178e0468c164aff717ffc6699fa1c6" category="inline-link-macro-rx"></block></block>
   <block id="a00fe904aecabd4bff74d8776e6da2c5" category="cell">Taille du fichier</block>
-  <block id="e191f11e5142cd09289e8b8eb4a444d3" category="cell">Sélectionnez la plage de tailles de fichier</block>
   <block id="171f0707519d57cefcbb271e1ecffd3c" category="cell">Heure de création</block>
-  <block id="94535da589767aed7a3566ffc91b39fd" category="cell">Sélectionnez une plage lorsque le fichier a été créé</block>
   <block id="ffee492fc0ef4b414798708835feada8" category="cell">Heure découverte</block>
-  <block id="323788a99ce6208cb1a3416cef2985db" category="cell">Sélectionnez une plage lorsque détection de données a découvert le fichier</block>
   <block id="84ba4cf46c874b0b5951eb3b75298329" category="cell">Dernière modification</block>
-  <block id="20e7afdbbd33993f4e2e59612e461db1" category="cell">Sélectionnez une plage lorsque le fichier a été modifié pour la dernière fois</block>
   <block id="a9f801b2760a798eee18ba63dccf3ba6" category="cell">Dernier accès</block>
-  <block id="ea7f521962f8eb77567e2f09e34053c5" category="cell">Sélectionnez une plage lorsque le fichier a été accédé pour la dernière fois. Pour les types de fichiers analysés par Data Sense, il s'agit de la dernière analyse du fichier par Data Sense.</block>
   <block id="763275034b3bde5ad4f0fb074a35e741" category="cell">Doublons</block>
-  <block id="ee3ae9516151c6012c7652565dfd0088" category="cell">Indiquez si le fichier est dupliqué dans les référentiels</block>
   <block id="116279f96a5a5a07b36a9ed5e3b30ae8" category="cell">Hachage de fichiers</block>
-  <block id="eb173689f884b625c2ebc512044eaa1f" category="cell">Entrez le hachage du fichier pour trouver un fichier spécifique, même si le nom est différent</block>
   <block id="f8a85ed4966ec4306b4e58f3bd439410" category="inline-link-macro">la ou les balises</block>
-  <block id="2ee519be0f1e6f6176e28f4d0dc72a02" category="cell">Sélectionnez <block ref="d459f7b3039eb26458088e9c5f84d9e6" category="inline-link-macro-rx"></block> qui sont affectés à vos fichiers</block>
   <block id="0056a7841e032922f086add6ff46bdf7" category="cell">Affecté à</block>
-  <block id="91b1c67fd436922743b5db9b97cac01a" category="cell">Sélectionnez le nom de la personne à laquelle le fichier est affecté</block>
-  <block id="24f81a8dd0e927be2bf9fb46e2588281" category="paragraph">Notez que les actions disponibles dans la barre de boutons et les stratégies ne sont pas prises en charge au niveau « répertoire ».</block>
   <block id="30d965eef5ba25c6b9998ae38270b43e" category="doc">Mentions légales</block>
   <block id="e9c44bbfd795a5d63d74c6a77afee70d" category="paragraph">Les mentions légales donnent accès aux déclarations de copyright, aux marques, aux brevets, etc.</block>
   <block id="6016a2b341113bf496b719905398ecd2" category="section-title">Droits d'auteur</block>
@@ -2918,7 +2843,6 @@
   <block id="ae52b22627bc20f5bd1f0ae7399f808a" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block> Passer en revue les prérequis Data Sense</block>
   <block id="5145a29bff9f5d1e0a1fc1ca423ecea3" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block> Téléchargez et déployez Data Sense</block>
   <block id="dc557754b902711b46f03bde4f8cd281" category="paragraph-title"><block ref="beadfa85a2fdca06b91edc1131c603e6" category="inline-image-macro-rx" type="image"></block> Abonnez-vous au service Cloud Data Sense</block>
-  <block id="09d9d4a9e8c1c823f1c15443ff20382a" category="list-text">*Système d'exploitation* : Red Hat Enterprise Linux ou CentOS versions 8.0 à 8.6</block>
   <block id="369bb58f2fbc4fcfb60a188e89ca29e3" category="list-text">Le système d'exploitation doit pouvoir installer le moteur Docker</block>
   <block id="792c9336a56fa746327b500536c3ac74" category="list-text">*Disque* : SSD avec 500 Gio disponible sur /, ou</block>
   <block id="f1c885ee2358fbb418dfe35e68a4002a" category="list-text">*RAM* : 64 Go (la mémoire d'échange doit être désactivée sur l'hôte)</block>
@@ -3000,7 +2924,6 @@
   <block id="04e234c985524a78187de245502e592b" category="paragraph">Le logiciel de détection des données doit être exécuté sur un hôte qui répond à des exigences spécifiques du système d'exploitation, de la RAM, des exigences logicielles, etc. L'hôte Linux peut se trouver sur votre réseau ou dans le cloud. Data Sense n'est pas pris en charge sur un hôte partagé avec d'autres applications ; l'hôte doit être un hôte dédié.</block>
   <block id="5b028b19d86301024ced75afef69e66d" category="list-text">Le système d'exploitation doit pouvoir installer le moteur docker</block>
   <block id="1c92a0c0cd35f6a2ac3eae778656a791" category="list-text">*Gestion des abonnements Red Hat* : un système Red Hat Enterprise Linux doit être enregistré auprès de la gestion des abonnements Red Hat. S'il n'est pas enregistré, le système ne peut pas accéder aux référentiels pour mettre à jour les logiciels tiers requis au cours de l'installation.</block>
-  <block id="33ae97607a5852c9d67f0dadc6c961ca" category="list-text">*Logiciel supplémentaire* : le logiciel suivant doit être installé sur l'hôte. S'il n'existe pas déjà sur l'hôte, le programme d'installation installe le logiciel pour vous :</block>
   <block id="f24b544287fed82f5888fff45246cb27" category="paragraph">Si vous prévoyez d'utiliser d'autres hôtes Data Sense, ajoutez ces règles à votre système principal à l'heure actuelle :</block>
   <block id="7e9d35e7187b767f275e31d6a5cf324c" category="paragraph">Si vous utilisez plusieurs hôtes Data Sense pour fournir une puissance de traitement supplémentaire pour analyser vos sources de données, vous devez activer des ports/protocoles supplémentaires. <block ref="3be03acda87575f8178f170dc170b26c" category="inline-link-macro-rx"></block>.</block>
   <block id="3ce88af879db89d6da43dca91e5ac2a6" category="list-text">Si vous utilisez un proxy et qu'il effectue une interception TLS, vous devez connaître le chemin d'accès sur le système Linux Data Sense où sont stockés les certificats CA TLS.</block>
@@ -3031,4 +2954,93 @@
   <block id="e046fe016499c2584ccbc85ec4b21f9d" category="inline-image-macro">Capture d'écran répertoriant tous les groupes de scanner ainsi que l'adresse IP de chaque nœud de scanner du groupe.</block>
   <block id="dace7436ca5a83360d9bbd7d056c44bd" category="paragraph"><block ref="dace7436ca5a83360d9bbd7d056c44bd" category="inline-image-macro-rx" type="image"></block></block>
   <block id="d780548e828596e2a46211d87c5a2909" category="paragraph">C'est possible <block ref="f05debecbc76a97697e3cf4388733167" category="inline-link-macro-rx"></block> à ce moment-là. Vous ne serez facturé que lorsque la quantité de données dépasse 1 To.</block>
+  <block id="50e51bdb9274c5704404f14dc8b7e114" category="list-text">Avertir certains utilisateurs par e-mail lorsque des fichiers contiennent certains RP (vous définissez ce critère à l'aide de <block ref="0a2fc0f403ef4a50a3606f593b466bde" category="inline-link-macro-rx"></block>) de sorte que vous puissiez décider d'un plan d'action.</block>
+  <block id="d54227dbf49473f423d5988bdb7771ff" category="inline-link">En savoir plus sur le Tiering des systèmes Cloud Volumes ONTAP</block>
+  <block id="aeaf9676bf6ac22ff407af9053be1238" category="inline-link">En savoir plus sur le Tiering à partir des systèmes ONTAP sur site</block>
+  <block id="7a120914c03f44c0510fb37c3a4130dd" category="list-text">Réduisez les coûts du stockage en identifiant les données inactives que vous pouvez déplacer vers un stockage objet moins coûteux.<block ref="3d81b5b5d603ea4b1368feff62e3ead0" category="inline-link-rx"></block>.<block ref="7352e09cdfe02b104fd014f47f71d967" category="inline-link-rx"></block>.</block>
+  <block id="a33f1b61e65aad9cca86d3578cf3028a" category="cell">Sélectionnez le type d'autorisations dans les données et dans les dossiers/partages.</block>
+  <block id="81593873baa2c232be0bc3600b554eb3" category="cell">Nombre d'utilisateurs ayant accès</block>
+  <block id="0ffaed104783fa77dca7b463b63d6a3d" category="cell">Sélectionnez une ou plusieurs plages de catégories pour afficher les fichiers et dossiers ouverts à un certain nombre d'utilisateurs.</block>
+  <block id="71336345482d82fac965748940e9723b" category="cell">Sélectionnez un ou plusieurs noms d'utilisateur et/ou de groupe ou entrez un nom partiel.</block>
+  <block id="ff149397e3b0b14099015d624d39c42d" category="cell">Entrez le nom du propriétaire du fichier.</block>
+  <block id="5e11b9767e7bd2c58f38d60ac9f67f80" category="cell">Sélectionnez <block ref="b0becded2b1c1949046ca8118d27118b" category="inline-link-macro-rx"></block> qui sont affectés à vos fichiers.</block>
+  <block id="c670f11fe2007eb5c3be88dd2f27af16" category="cell">Sélectionner des environnements de travail spécifiques.</block>
+  <block id="5bf1893d83226372ff2fad4fcb1c9ae2" category="cell">Sélectionnez le référentiel de stockage, par exemple un volume ou un schéma.</block>
+  <block id="e980323c9092e1f118449edafa2ceb15" category="cell">Saisissez jusqu'à 20 chemins partiels ou complets que vous souhaitez inclure ou exclure de la requête. Si vous entrez à la fois inclure des chemins d'accès et exclure des chemins, Data Sense recherche d'abord tous les fichiers des chemins inclus, puis supprime les fichiers des chemins exclus, puis affiche les résultats.</block>
+  <block id="01c40954af185b794e35d719875d3a7a" category="cell">Sélectionner <block ref="d4eabbd4fb9268c1389fccae66300714" category="inline-link-macro-rx"></block>.</block>
+  <block id="cc8f113115a15a733dabb8452c0006ca" category="cell">Sélectionnez le niveau de sensibilité : personnel, personnel sensible ou non sensible.</block>
+  <block id="858f7504093c180b7179d29d8e1200d9" category="cell">Sélectionner <block ref="1b5fb6ede432593c04dc0306b78c1e56" category="inline-link-macro-rx"></block>.</block>
+  <block id="efbc704c741274e96fb34f9918eea9bc" category="cell">Sélectionner <block ref="ea8f57582e4e2ddb4974e03972a326d7" category="inline-link-macro-rx"></block>.</block>
+  <block id="e9f27357b5c27ea5a56801efd544f2d7" category="cell">Saisissez le nom complet ou l'identifiant connu d'un sujet de données.</block>
+  <block id="6dd0ccfe2edc5e0affb1f92d200d803f" category="cell">Sélectionnez le type de répertoire : « partager » ou « dossier ».</block>
+  <block id="af1d33c2d159e6129aa8d5cec06d9e66" category="cell">Sélectionner <block ref="4a178e0468c164aff717ffc6699fa1c6" category="inline-link-macro-rx"></block>.</block>
+  <block id="7e1e60231552d76c5626d3b5ad9519d3" category="cell">Sélectionnez la plage de tailles de fichier.</block>
+  <block id="9b5e1fda139121eaa435619d67e14fd7" category="cell">Sélectionnez une plage horaire au moment de la création du fichier. Vous pouvez également spécifier une plage horaire personnalisée pour affiner davantage les résultats de la recherche.</block>
+  <block id="9a0f4bd0f77ffaa6f3beb585c8d18994" category="cell">Sélectionnez une plage horaire lorsque le fichier est détecté par le capteur de données. Vous pouvez également spécifier une plage horaire personnalisée pour affiner davantage les résultats de la recherche.</block>
+  <block id="55e421a96ef89113e0aa27aebfaa73aa" category="cell">Sélectionnez une plage horaire pour la dernière modification du fichier. Vous pouvez également spécifier une plage horaire personnalisée pour affiner davantage les résultats de la recherche.</block>
+  <block id="4e4be7e4053f318985404b5ad48beff4" category="cell">Sélectionnez une plage horaire pour la dernière fois où le fichier a été accédé. Vous pouvez également spécifier une plage horaire personnalisée pour affiner davantage les résultats de la recherche. Pour les types de fichiers analysés par Data Sense, il s'agit de la dernière analyse du fichier par Data Sense.</block>
+  <block id="936baf22f04cffa654fef2a2806e8fcd" category="cell">Indiquez si le fichier est dupliqué dans les référentiels.</block>
+  <block id="6c19be59705b1afb4e5b6315b9a0d84e" category="cell">Entrez le hachage du fichier pour trouver un fichier spécifique, même si le nom est différent.</block>
+  <block id="fdd455d725fb278b4fe9d43c83722f88" category="cell">Sélectionnez <block ref="d459f7b3039eb26458088e9c5f84d9e6" category="inline-link-macro-rx"></block> qui sont affectés à vos fichiers.</block>
+  <block id="396e873f2847657ab91854cd3443d47e" category="cell">Sélectionnez le nom de la personne à laquelle le fichier est affecté.</block>
+  <block id="fdf2788bf7f989d9f8956d46160abea0" category="list-text">*Système d'exploitation* : Red Hat Enterprise Linux ou CentOS versions 8.0 à 8.7</block>
+  <block id="e57c13b9d9d82321ef540f00ada2dc8c" category="list-text">&lt;proximity_words&gt; = mots se trouvant à moins de 300 caractères du motif que vous recherchez (avant ou après le motif trouvé) pour aider à affiner la précision des résultats. Chaque mot est séparé par une virgule (,).</block>
+  <block id="df20dd9030c6ddada288b6ad4c67a8ef" category="paragraph">Vous pouvez utiliser l'option *-f* à la fin de la ligne de commande si vous voulez ajouter avec force le regex à Data Sense - même si nous pensons qu'il est trop large. Vous pouvez également utiliser l'option "-p" pour essayer de raffiner les résultats de la recherche.</block>
+  <block id="7b364c1840c2eff35e06ff4fa4503e36" category="paragraph">L'ID du produit est un numéro à 12 chiffres commençant par 201, par exemple "201123456789". L'expression régulière est donc *\b201\d{9}\b*. Et vous voulez que le texte dans l'interface utilisateur de Data Sense identifie ce modèle comme *ID produit interne*. Et nous allons ajouter les mots de proximité "ID produit" et "identifiant".</block>
+  <block id="ef566437fd42a378331d4f798dff6f8a" category="paragraph">La sortie de cette commande est :</block>
+  <block id="542947c94dac5ea97aa3f3323ad86f25" category="cell">Permis de conduire australien</block>
+  <block id="15ed3f23837f7e98eb87015b76063af1" category="cell">Permis de conduire de la Nouvelle-Zélande</block>
+  <block id="6e7f259c1c7d110bc303264a6e6061a8" category="cell">Numéro NHI (National Health Index) de la Nouvelle-Zélande</block>
+  <block id="eee8240ee2489053f1b73dc1c725bc30" category="list-text">Données concernant les condamnations et infractions pénales d'une personne physique.</block>
+  <block id="8c91af16b200cd5f170a0c293f6c8c10" category="list-text">Données concernant l'origine raciale ou ethnique d'une personne physique.</block>
+  <block id="fa9e0f66f09e924c8d185b0c3f264c96" category="list-text">Données concernant la santé d'une personne physique.</block>
+  <block id="21b44c1ea87d2453923ecdda08fbf204" category="list-text">Données concernant les croyances philosophiques d'une personne naturelle.</block>
+  <block id="09695dd2eeacedaa3efcdb4907f651ba" category="list-text">Données concernant les opinions politiques d'une personne physique.</block>
+  <block id="93bdcf06c4b4aa8c6c1c5863c54998be" category="list-text">Données concernant les croyances religieuses d'une personne naturelle.</block>
+  <block id="29ba89564fc652396b0a0ef333c039bf" category="list-text">Données concernant la vie sexuelle ou l'orientation sexuelle d'une personne naturelle.</block>
+  <block id="43b0a31f7bbdb0db052e57796301b990" category="list-text">Crypté (fichiers avec un score d'entropie élevé)</block>
+  <block id="d9c711e681dca1e6422cd0a91260f448" category="list-text">Fichiers protégés par mot de passe</block>
+  <block id="b503acdec2e98cc1c6f1e7c5d9ddbeb1" category="list-text">La probabilité pour le sens des données de trouver ce qu'il devrait. Par exemple, un taux de rappel de 70 % pour les données personnelles signifie que Data Sense peut identifier 7 fichiers sur 10 qui contiennent réellement des informations personnelles dans votre organisation. 30 % des données semblent manquer le sens où elles ne seront pas affichées dans le tableau de bord.</block>
+  <block id="b1151aae9531d2f5e85d085e8878cea6" category="summary">Cette FAQ peut vous aider si vous cherchez juste une réponse rapide à une question.</block>
+  <block id="728e96f7d8b432ec8169e686d7cef795" category="paragraph">Cloud Data Sense déploie une autre couche d'intelligence artificielle avec votre système et vos systèmes de stockage BlueXP. Il analyse ensuite les données sur des volumes, des compartiments, des bases de données, ainsi que d'autres comptes de stockage, et indexe les informations exploitables concernant les données. Data Sense exploite à la fois l'intelligence artificielle et le traitement du langage naturel, contrairement aux solutions alternatives habituellement développées autour d'expressions régulières et de la mise en correspondance de modèles.</block>
+  <block id="d79fc2808ec15f17eb06b530fbc42e08" category="paragraph">Cloud Data Sense utilise l'IA pour comprendre les données de façon contextuelle et assurer une détection et une classification précises. Elle est axée sur l'IA, car elle est conçue pour répondre aux besoins de types et d'évolutivité des données modernes. Il comprend également le contexte des données afin d'assurer une découverte et une classification solides et précises.</block>
+  <block id="257ce5cea33f6025c745b8be7cfdabb7" category="list-text">Vous permet d'extraire un rapport de tous les fichiers contenant des informations concernant le nom spécifique ou l'identifiant personnel d'un sujet de données. <block ref="ce887aadf58ec6a0a140db57b924eac0" category="inline-link-macro-rx"></block>.</block>
+  <block id="8b910a2b6442673756042f3448361fcc" category="paragraph">Les performances de l'analyse peuvent varier en fonction de la bande passante réseau et de la taille moyenne des fichiers dans votre environnement. Elle peut également dépendre des caractéristiques de taille du système hôte (dans le cloud ou sur site). Voir <block ref="ba79215ce103197616664775b93ba86f" category="inline-link-macro-rx"></block> et <block ref="1cff0a801d1de3ceb2e474846f005821" category="inline-link-macro-rx"></block> pour en savoir plus.</block>
+  <block id="4cefd69158974e4aee3260041ff258d4" category="paragraph">Lors de l'ajout initial de nouvelles sources de données, vous pouvez également choisir d'effectuer uniquement une analyse de « mappage » au lieu d'une analyse de « classification » complète. Le mappage peut être effectué très rapidement sur vos sources de données car il n'accède pas aux fichiers pour voir les données à l'intérieur. <block ref="51b8d4ed20a0bce6d8202eb3e674faa5" category="inline-link-macro-rx"></block>.</block>
+  <block id="0c3df620e5f733002f5c1ad4579a8153" category="section-title">Puis-je personnaliser le service en fonction des besoins de mon entreprise ?</block>
+  <block id="787f680b28a951f7c27c3d60fc4deba7" category="paragraph">Non Les données privées envoyées entre votre navigateur et l'instance Data Sense sont sécurisées par un cryptage de bout en bout, ce qui signifie que NetApp et des tiers ne peuvent pas les lire. Il est inutile de communiquer des données ou des résultats à NetApp, sauf si vous en faites la demande et approuvez les demandes d'accès.</block>
+  <block id="be708482143e1a632f86625ad9d5f985" category="paragraph">Oui. En association avec la fonction stratégies, vous pouvez envoyer des alertes par e-mail aux utilisateurs BlueXP (tous les jours, toutes les semaines ou tous les mois) ou à toute autre adresse e-mail lorsqu'une police renvoie des résultats pour que vous puissiez obtenir des notifications afin de protéger vos données. En savoir plus sur <block ref="0a2fc0f403ef4a50a3606f593b466bde" category="inline-link-macro-rx"></block>.</block>
+  <block id="048951d0dcc8dac7d3052b4251c3a49c" category="paragraph">Oui. Vous pouvez gérer les étiquettes AIP dans les fichiers que Cloud Data SENSE analyse si vous vous êtes abonné<block ref="dc81bb027ada9d4ecc15bb9933242e3a" category="inline-link-rx"></block>. Vous pouvez afficher les libellés déjà affectés aux fichiers, ajouter des libellés aux fichiers et modifier les libellés existants.</block>
+  <block id="ac72ea445437d7985cf7cfd438bfae5b" category="paragraph">Si vous atteignez une limite de capacité BYOL, Data Sense continue à fonctionner, mais l'accès aux tableaux de bord est bloqué de sorte que vous ne puissiez afficher aucune information concernant vos données scannées. Seule la page de configuration est disponible au cas où vous souhaitez réduire le nombre de volumes analysés afin d'augmenter votre capacité de stockage sous la limite de licence. Vous devez renouveler votre licence BYOL pour rétablir l'accès complet à Data Sense.</block>
+  <block id="d6e4cbf0a56fc8c55a32c1540faee3e4" category="paragraph">Donc, si vous disposez de données à plusieurs de ces emplacements, vous devrez peut-être les utiliser<block ref="666b387130f125264ee326f0a4738ff7" category="inline-link-rx"></block>.</block>
+  <block id="042d6a5acaf1a16f91ab258697afa46c" category="list-text">Vous pouvez envoyer des alertes par e-mail à des utilisateurs BlueXP ou à toute autre adresse e-mail lorsque certaines stratégies critiques renvoient des résultats.</block>
+  <block id="dd5495a2a1bd2c271297d93d4feec5f0" category="list-text">Si un fichier a un libellé qui n'existe plus dans AIP, Cloud Data SENSE le considère comme un fichier sans étiquette.</block>
+  <block id="77b468348f66c4ec44fb9f239b70f78f" category="list-text">Si vous voulez envoyer des e-mails de notification aux utilisateurs BlueXP de votre compte, cochez la case correspondante et choisissez l'intervalle d'envoi de l'e-mail. En savoir plus sur <block ref="aa3b63c453483f75d4311c7c0137128e" category="inline-link-macro-rx"></block>.</block>
+  <block id="719c5f27c509dcbb26618669f0941757" category="paragraph">Cloud Data SENSE peut envoyer des alertes par e-mail à des utilisateurs BlueXP de votre compte lorsque certaines stratégies critiques renvoient des résultats afin que vous puissiez obtenir des notifications pour protéger vos données. Vous pouvez choisir d'envoyer les notifications par e-mail tous les jours, toutes les semaines ou tous les mois.</block>
+  <block id="0f45f5e9392cad0f6f0647364c3255a6" category="list-text">Dans la page Modifier la stratégie :</block>
+  <block id="8e77c496ba7cea76c0e1e5ce3797b5fd" category="list-text">Cochez la case « Envoyer tous les utilisateurs dans ce compte » si vous souhaitez envoyer des e-mails de notification aux utilisateurs de votre compte BlueXP, puis choisissez l'intervalle d'envoi de l'e-mail (par exemple, *tous les jours*).</block>
+  <block id="096cbc59642308b2b360d46b2fe32336" category="cell">S3 : données privées exposées publiquement</block>
+  <block id="199ce6d2f5756d8386133698d8a0167d" category="cell">PCI DSS : données obsolètes supérieure à 30 jours</block>
+  <block id="14e7d3cf16e036365503290423116713" category="cell">HIPAA : données obsolètes sur 30 jours</block>
+  <block id="88a8fc10a4a6b28d78fc1e400182ead7" category="cell">Les données privées ont déjà dépassé les 7 ans</block>
+  <block id="ec8b470280b749361b5f17f66c37f2d1" category="cell">RGPD - citoyens européens</block>
+  <block id="60053e7e80058ff9b98a2eb044d59147" category="cell">Dossiers contenant plus de 5 identificateurs de citoyens d'un pays de l'UE ou tables de BD contenant des identificateurs de citoyens d'un pays de l'UE.</block>
+  <block id="f7a3b7dbd401968ccc9110d0def68d9e" category="cell">Dossiers contenant plus de 5 identificateurs d'un (un) citoyen de l'UE ou de tables de données contenant des lignes contenant plus de 15% des colonnes avec des identificateurs d'UE d'un pays. (Tout identifiant national des pays européens. N'inclut pas le Brésil, la Californie, le SSN des États-Unis, Israël et l'Afrique du Sud)</block>
+  <block id="47cda3153750b148ac7acfe73a1f2628" category="cell">CCPA - résidents de Californie</block>
+  <block id="4e312634cb386d9d4172a3e4521c37f2" category="cell">Fichiers contenant plus de 10 identificateurs de permis de conduire californiens ou tables de BD contenant cet identifiant.</block>
+  <block id="d88e06e21102f19cbd38c115fdb573d9" category="cell">Fichiers contenant plus de 10 identificateurs de permis de conduire californiens OU tables de BD contenant la licence du conducteur California</block>
+  <block id="85198c4138d424a195c0c9dd0b22bd8f" category="cell">Noms des sujets de données - risque élevé</block>
+  <block id="688de20ddbb7b2207a9c3999989be28b" category="cell">Adresses e-mail - risque élevé</block>
+  <block id="d55a6a9af72cb1355db97941acafb865" category="cell">Données personnelles - risque élevé</block>
+  <block id="39dcf805c803eacb6e35a6ea5e8cb25d" category="cell">Données personnelles sensibles - risque élevé</block>
+  <block id="91edc807a7157b7f0159521433ea5b0f" category="section-title">9 janvier 2023 (version 1.19)</block>
+  <block id="738f7059231d5fe5c1e22879f52682fd" category="section-title">Trois nouveaux filtres sont disponibles dans la page Data Investigation</block>
+  <block id="a05ecd168005e0205e52b540a66b4208" category="paragraph">De nouveaux filtres sont disponibles pour affiner les résultats affichés dans la page recherche de données :</block>
+  <block id="d40d8569fcb40c761c8217de218391ba" category="list-text">Le filtre « nombre d'utilisateurs avec accès » indique quels fichiers et dossiers sont ouverts à un certain nombre d'utilisateurs. Vous pouvez choisir une plage de nombres pour affiner les résultats, par exemple pour voir quels fichiers sont accessibles par 51-100 utilisateurs.</block>
+  <block id="142c1e7e965016b6fe04e45f8ae01209" category="list-text">Les filtres « heure créée », « heure découverte », « dernière modification » et « dernier accès » vous permettent désormais de créer une plage de dates personnalisée au lieu de sélectionner une plage de jours prédéfinie. Par exemple, vous pouvez rechercher des fichiers avec une "heure de création" "plus de 6 mois", ou avec une "date de dernière modification" dans les "10 derniers jours".</block>
+  <block id="e2abff3453b8cf47fe2cb0886e10722b" category="list-text">Le filtre "chemin du fichier" vous permet maintenant de spécifier les chemins que vous souhaitez exclure des résultats de la requête filtrée. Si vous entrez des chemins pour inclure et exclure certaines données, Data Sense recherche d'abord tous les fichiers des chemins inclus, puis supprime les fichiers des chemins exclus, puis affiche les résultats.</block>
+  <block id="248b219562d5c677bea769543286aaf9" category="list-text">Numéro de permis de conduire de la Nouvelle-Zélande</block>
+  <block id="3f69bac652b22744f89b8727420c50db" category="paragraph">La mise en pause de l'acquisition signifie que Data SENSE n'effectue pas d'acquisition ultérieure sur tout ajout ou modification d'un volume ou d'un compartiment, mais que tous les résultats actuels seront toujours disponibles dans le système.<block ref="a7d93e406d54440657820ff66e02fe00" category="inline-link-rx"></block>.</block>
+  <block id="1a70f847ca98ead8008196451ddb3173" category="list-text">Assurez-vous que les deux packages logiciels prérequis du système sont installés (Docker Engine et Python 3).</block>
+  <block id="dc398b6dfc944aa53fc80c488796fb93" category="list-text">Assurez-vous que les deux packages logiciels prérequis sont installés sur les systèmes (Docker Engine et Python 3).</block>
 </blocks>

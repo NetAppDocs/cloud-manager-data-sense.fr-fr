@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: faq-cloud-compliance.html 
 keywords: faq, frequently asked questions, questions, cloud compliance, data sense 
-summary: Cette FAQ peut vous aider si vous cherchez simplement une réponse rapide à une question. 
+summary: Cette FAQ peut vous aider si vous cherchez juste une réponse rapide à une question. 
 ---
 = Les questions les plus fréquemment posées à propos des données du cloud sont pertinentes
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: Cette FAQ peut vous aider si vous cherchez simplement une réponse rapi
 
 
 [role="lead"]
-Cette FAQ peut vous aider si vous cherchez simplement une réponse rapide à une question.
+Cette FAQ peut vous aider si vous cherchez juste une réponse rapide à une question.
 
 
 
@@ -34,7 +34,9 @@ Cloud Data SENSE fournit des paramètres prédéfinis (par exemple, des types d'
 
 === Comment fonctionne Cloud Data Sense ?
 
-Cloud Data Sense déploie une autre couche d'intelligence artificielle avec votre système et vos systèmes de stockage BlueXP. Il analyse ensuite les données sur des volumes, des compartiments, des bases de données, ainsi que d'autres comptes de stockage, et indexe les informations exploitables concernant les données. Data Sense exploite à la fois l'intelligence artificielle et le traitement du langage naturel, contrairement aux solutions alternatives habituellement développées autour d'expressions régulières et de la mise en correspondance de modèles. Cloud Data Sense utilise l'IA pour comprendre les données de façon contextuelle et assurer une détection et une classification précises. Elle est axée sur l'IA, car elle est conçue pour répondre aux besoins de types et d'évolutivité des données modernes. Il comprend également le contexte des données afin d'assurer une découverte et une classification solides et précises.
+Cloud Data Sense déploie une autre couche d'intelligence artificielle avec votre système et vos systèmes de stockage BlueXP. Il analyse ensuite les données sur des volumes, des compartiments, des bases de données, ainsi que d'autres comptes de stockage, et indexe les informations exploitables concernant les données. Data Sense exploite à la fois l'intelligence artificielle et le traitement du langage naturel, contrairement aux solutions alternatives habituellement développées autour d'expressions régulières et de la mise en correspondance de modèles.
+
+Cloud Data Sense utilise l'IA pour comprendre les données de façon contextuelle et assurer une détection et une classification précises. Elle est axée sur l'IA, car elle est conçue pour répondre aux besoins de types et d'évolutivité des données modernes. Il comprend également le contexte des données afin d'assurer une découverte et une classification solides et précises.
 
 link:concept-cloud-compliance.html["Découvrez le fonctionnement de Cloud Data SENSE"^].
 
@@ -185,7 +187,7 @@ link:concept-cloud-compliance.html#user-access-to-compliance-information["En sav
 
 === Quelqu'un peut-il accéder aux données privées envoyées entre mon navigateur et Data Sense ?
 
-Non Les données privées envoyées entre votre navigateur et l'instance Data Sense sont sécurisées par un cryptage de bout en bout, ce qui signifie que NetApp et des tiers ne peuvent pas les lire. NetApp Data Sense ne partagera aucune donnée ou aucun résultat sauf si vous en faites la demande et que vous approuvez les accès.
+Non Les données privées envoyées entre votre navigateur et l'instance Data Sense sont sécurisées par un cryptage de bout en bout, ce qui signifie que NetApp et des tiers ne peuvent pas les lire. Il est inutile de communiquer des données ou des résultats à NetApp, sauf si vous en faites la demande et approuvez les demandes d'accès.
 
 
 
@@ -199,7 +201,7 @@ L'analyse de conformité ne chauffe pas les données inactives : elles restent i
 
 === Cloud Data SENSE peut-il envoyer des notifications à mon entreprise ?
 
-Oui. En association avec la fonction stratégies, vous pouvez envoyer des alertes par e-mail aux utilisateurs BlueXP (tous les jours, toutes les semaines ou tous les mois) lorsqu'une police renvoie des résultats afin de recevoir des notifications pour protéger vos données. En savoir plus sur link:task-org-private-data.html#controlling-your-data-using-policies["Stratégies"^].
+Oui. En association avec la fonction stratégies, vous pouvez envoyer des alertes par e-mail aux utilisateurs BlueXP (tous les jours, toutes les semaines ou tous les mois) ou à toute autre adresse e-mail lorsqu'une police renvoie des résultats pour que vous puissiez obtenir des notifications afin de protéger vos données. En savoir plus sur link:task-org-private-data.html#controlling-your-data-using-policies["Stratégies"^].
 
 Vous pouvez également télécharger des rapports de statut à partir de la page gouvernance et de la page Investigation que vous pouvez partager en interne dans votre organisation.
 
@@ -207,7 +209,7 @@ Vous pouvez également télécharger des rapports de statut à partir de la page
 
 === Cloud Data Sense peut-il fonctionner avec les étiquettes AIP que j'ai intégrées dans mes fichiers ?
 
-Oui. Vous pouvez gérer les étiquettes AIP dans les fichiers que Cloud Data SENSE analyse si vous vous êtes abonné link:https://azure.microsoft.com/en-us/services/information-protection/["Protection des informations Azure (AIP)"^]. Vous pouvez afficher les libellés déjà affectés aux fichiers, ajouter des libellés aux fichiers et modifier les libellés existants.
+Oui. Vous pouvez gérer les étiquettes AIP dans les fichiers que Cloud Data SENSE analyse si vous vous êtes abonné https://azure.microsoft.com/en-us/services/information-protection/["Protection des informations Azure (AIP)"^]. Vous pouvez afficher les libellés déjà affectés aux fichiers, ajouter des libellés aux fichiers et modifier les libellés existants.
 
 link:task-org-private-data.html#categorizing-your-data-using-aip-labels["En savoir plus >>"^].
 
@@ -321,7 +323,7 @@ Voir https://cloud.netapp.com/netapp-cloud-data-sense#Pricing["tarifs"^] pour pl
 
 === Que se passe-t-il si la limite de capacité BYOL est atteinte ?
 
-Si vous atteignez une limite de capacité BYOL, Data Sense continue à fonctionner, mais l'accès aux tableaux de bord est bloqué de sorte que vous ne puissiez pas afficher les informations concernant vos données numérisées. Seule la page de configuration est disponible au cas où vous souhaitez réduire le nombre de volumes analysés afin d'augmenter votre capacité de stockage sous la limite de licence. Vous devez renouveler votre licence BYOL pour rétablir l'accès complet à Data Sense.
+Si vous atteignez une limite de capacité BYOL, Data Sense continue à fonctionner, mais l'accès aux tableaux de bord est bloqué de sorte que vous ne puissiez afficher aucune information concernant vos données scannées. Seule la page de configuration est disponible au cas où vous souhaitez réduire le nombre de volumes analysés afin d'augmenter votre capacité de stockage sous la limite de licence. Vous devez renouveler votre licence BYOL pour rétablir l'accès complet à Data Sense.
 
 
 
@@ -345,7 +347,7 @@ Il s'agit d'un logiciel exécuté sur une instance de calcul dans votre compte c
 * Lors de l'analyse des données dans des systèmes ONTAP sur site, des partages de fichiers non NetApp, un stockage objet S3 générique, des bases de données, des dossiers OneDrive, des comptes SharePoint et des comptes Google Drive, vous pouvez utiliser un connecteur dans tous ces emplacements cloud.
 
 
-Donc, si vous disposez de données à plusieurs de ces emplacements, vous devrez peut-être les utiliser https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html#when-to-use-multiple-connectors["Plusieurs connecteurs"].
+Donc, si vous disposez de données à plusieurs de ces emplacements, vous devrez peut-être les utiliser https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html#when-to-use-multiple-connectors["Plusieurs connecteurs"^].
 
 
 

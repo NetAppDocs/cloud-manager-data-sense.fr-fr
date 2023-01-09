@@ -88,7 +88,7 @@ Le logiciel de détection des données doit être exécuté sur un hôte qui ré
 
 Assurez-vous de continuer d'exécuter le contrôle des données cloud. Le serveur Cloud Data Sense doit rester activé pour analyser en continu vos données.
 
-* *Système d'exploitation* : Red Hat Enterprise Linux ou CentOS versions 8.0 à 8.6
+* *Système d'exploitation* : Red Hat Enterprise Linux ou CentOS versions 8.0 à 8.7
 +
 ** La version 7.8 ou 7.9 peut être utilisée, mais la version du noyau Linux doit être 4.0 ou supérieure
 ** Le système d'exploitation doit pouvoir installer le moteur docker
@@ -107,7 +107,7 @@ Assurez-vous de continuer d'exécuter le contrôle des données cloud. Le serveu
 Notez que vous pouvez déployer Data Sense sur un système avec moins de processeurs et moins de RAM, mais il y a des limites lors de l'utilisation de ces systèmes. Voir link:concept-cloud-compliance.html#using-a-smaller-instance-type["Utilisation d'un type d'instance plus petit"] pour plus d'informations.
 
 * *Gestion des abonnements Red Hat* : un système Red Hat Enterprise Linux doit être enregistré auprès de la gestion des abonnements Red Hat. S'il n'est pas enregistré, le système ne peut pas accéder aux référentiels pour mettre à jour les logiciels tiers requis au cours de l'installation.
-* *Logiciel supplémentaire* : le logiciel suivant doit être installé sur l'hôte. S'il n'existe pas déjà sur l'hôte, le programme d'installation installe le logiciel pour vous :
+* *Logiciel supplémentaire*: Vous devez installer le logiciel suivant sur l'hôte avant d'installer Data Sense:
 +
 ** Docker Engine version 19 ou ultérieure. https://docs.docker.com/engine/install/["Voir les instructions d'installation"^].
 ** Python 3 version 3.6 ou ultérieure. https://www.python.org/downloads/["Voir les instructions d'installation"^].
@@ -248,7 +248,7 @@ Suivez ces étapes pour installer le logiciel Data Sense sur un hôte sur site u
 
 .Ce dont vous avez besoin
 * Vérifiez que votre système Linux est conforme à la <<Préparez le système hôte Linux,configuration requise pour l'hôte>>.
-* (Facultatif) Vérifiez que le système est équipé des deux packages logiciels prérequis (Docker Engine et Python 3). Le programme d'installation installe ce logiciel s'il n'est pas déjà installé sur le système.
+* Assurez-vous que les deux packages logiciels prérequis du système sont installés (Docker Engine et Python 3).
 * Assurez-vous que vous disposez des privilèges root sur le système Linux.
 * Si vous utilisez un proxy et qu'il effectue une interception TLS, vous devez connaître le chemin d'accès sur le système Linux Data Sense où sont stockés les certificats CA TLS.
 * Vérifiez que votre environnement hors ligne répond aux besoins <<Activation de l'accès Internet sortant à partir du Cloud Data SENSE,autorisations et connectivité>>.
@@ -370,7 +370,7 @@ Procédez comme suit pour installer d'autres nœuds du scanner Data Sense :
 
 .Ce dont vous avez besoin
 * Vérifiez que tous vos systèmes Linux pour les nœuds du scanner sont conformes à la <<Préparez le système hôte Linux,configuration requise pour l'hôte>>.
-* (Facultatif) Vérifiez que les deux packages logiciels prérequis sont installés sur les systèmes (Docker Engine et Python 3). Le programme d'installation installe ce logiciel s'il n'est pas déjà installé sur les systèmes.
+* Assurez-vous que les deux packages logiciels prérequis sont installés sur les systèmes (Docker Engine et Python 3).
 * Assurez-vous que vous disposez des privilèges root sur les systèmes Linux.
 * Vérifiez que votre environnement répond aux exigences requises <<Activation de l'accès Internet sortant à partir du Cloud Data SENSE,autorisations et connectivité>>.
 * Vous devez disposer des adresses IP des hôtes du nœud scanner que vous ajoutez.
@@ -480,13 +480,15 @@ Une fois l'installation terminée sur tous les nœuds du scanner et qu'ils ont �
 .. Ouvrez le fichier «/opt/netapp/Datase/working_Environment_to_scanner_group_config.yml » et entrez le mappage pour lequel les groupes de lecteurs vont analyser des environnements de travail spécifiques. Vous devez avoir l'ID _Working Environment_ pour chaque source de données. Par exemple, les entrées suivantes ajoutent 2 environnements de travail au groupe de scanner « europe » et 2 au groupe de scanner « united_States » :
 +
 ....
-scanner group:
+scanner_groups:
  europe:
-   - "working_environment_id1"
-   - "working_environment_id2"
+   working_environments:
+     - "working_environment_id1"
+     - "working_environment_id2"
  united_states:
-   - "working_environment_id3"
-   - "working_environment_id4"
+   working_environments:
+     - "working_environment_id3"
+     - "working_environment_id4"
 ....
 +
 Tout environnement de travail qui n'est pas ajouté à la liste est analysé par le groupe « par défaut ». Vous devez avoir au moins un gestionnaire ou un nœud de scanner dans le groupe « par défaut ».
@@ -523,7 +525,7 @@ Procédez comme suit lors de l'installation du logiciel Data Sense sur plusieurs
 
 .Ce dont vous avez besoin
 * Vérifiez que tous vos systèmes Linux pour les nœuds Manager et scanner sont conformes à la <<Préparez le système hôte Linux,configuration requise pour l'hôte>>.
-* (Facultatif) Vérifiez que les deux packages logiciels prérequis sont installés sur les systèmes (Docker Engine et Python 3). Le programme d'installation installe ce logiciel s'il n'est pas déjà installé sur les systèmes.
+* Assurez-vous que les deux packages logiciels prérequis sont installés sur les systèmes (Docker Engine et Python 3).
 * Assurez-vous que vous disposez des privilèges root sur les systèmes Linux.
 * Vérifiez que votre environnement répond aux exigences requises <<Activation de l'accès Internet sortant à partir du Cloud Data SENSE,autorisations et connectivité>>.
 * Vous devez disposer des adresses IP des hôtes du nœud de scanner que vous prévoyez d'utiliser.

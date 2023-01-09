@@ -18,6 +18,23 @@ Découvrez les nouveautés du Cloud Data sens.
 
 
 
+== 9 janvier 2023 (version 1.19)
+
+
+
+=== Trois nouveaux filtres sont disponibles dans la page Data Investigation
+
+De nouveaux filtres sont disponibles pour affiner les résultats affichés dans la page recherche de données :
+
+* Le filtre « nombre d'utilisateurs avec accès » indique quels fichiers et dossiers sont ouverts à un certain nombre d'utilisateurs. Vous pouvez choisir une plage de nombres pour affiner les résultats, par exemple pour voir quels fichiers sont accessibles par 51-100 utilisateurs.
+* Les filtres « heure créée », « heure découverte », « dernière modification » et « dernier accès » vous permettent désormais de créer une plage de dates personnalisée au lieu de sélectionner une plage de jours prédéfinie. Par exemple, vous pouvez rechercher des fichiers avec une "heure de création" "plus de 6 mois", ou avec une "date de dernière modification" dans les "10 derniers jours".
+* Le filtre "chemin du fichier" vous permet maintenant de spécifier les chemins que vous souhaitez exclure des résultats de la requête filtrée. Si vous entrez des chemins pour inclure et exclure certaines données, Data Sense recherche d'abord tous les fichiers des chemins inclus, puis supprime les fichiers des chemins exclus, puis affiche les résultats.
+
+
+https://docs.netapp.com/us-en/cloud-manager-data-sense/task-controlling-private-data.html#filtering-data-in-the-data-investigation-page["Voir la liste de tous les filtres que vous pouvez utiliser pour examiner vos données"].
+
+
+
 == 11 décembre 2022 (version 1.18)
 
 
@@ -113,7 +130,7 @@ Data Sense peut identifier et catégoriser les fichiers contenant les types de d
 * Numéro de compte bancaire de la Nouvelle-Zélande
 * Numéro de permis de conduire de la Nouvelle-Zélande
 * Numéro IRD de Nouvelle-Zélande (ID taxe)
-* Numéro NHI (National Health Index) de la Nouvelle-Zélande 
+* Numéro NHI (National Health Index) de la Nouvelle-Zélande
 * Numéro de passeport de la Nouvelle-Zélande
 
 
@@ -163,7 +180,7 @@ Auparavant, vous pouviez afficher les types d'autorisations ouvertes accordées 
 
 === Vous pouvez « suspendre » la numérisation d'un référentiel pour arrêter temporairement la numérisation de certains contenus
 
-La mise en pause de l'acquisition signifie que Data Sense n'effectue pas d'acquisition future sur des ajouts ou des modifications d'un volume ou d'un compartiment, mais que tous les résultats actuels seront toujours disponibles dans le système. https://docs.netapp.com/us-en/cloud-manager-data-sense/task-managing-repo-scanning.html#pausing-and-resuming-scanning-for-a-repository["Découvrez comment interrompre et reprendre l'acquisition"].
+La mise en pause de l'acquisition signifie que Data SENSE n'effectue pas d'acquisition ultérieure sur tout ajout ou modification d'un volume ou d'un compartiment, mais que tous les résultats actuels seront toujours disponibles dans le système. https://docs.netapp.com/us-en/cloud-manager-data-sense/task-managing-repo-scanning.html#pausing-and-resuming-scanning-for-a-repository["Découvrez comment interrompre et reprendre l'acquisition"].
 
 
 

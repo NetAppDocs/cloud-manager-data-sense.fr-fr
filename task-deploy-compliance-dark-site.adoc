@@ -86,7 +86,7 @@ Si vous n'avez pas encore de connecteur BlueXP installé sur votre site hors lig
 
 Le logiciel de détection des données doit être exécuté sur un hôte qui répond à des exigences spécifiques du système d'exploitation, de la RAM, des exigences logicielles, etc. Data Sense n'est pas pris en charge sur un hôte partagé avec d'autres applications ; l'hôte doit être un hôte dédié.
 
-* *Système d'exploitation* : Red Hat Enterprise Linux ou CentOS versions 8.0 à 8.6
+* *Système d'exploitation* : Red Hat Enterprise Linux ou CentOS versions 8.0 à 8.7
 +
 ** La version 7.8 ou 7.9 peut être utilisée, mais la version du noyau Linux doit être 4.0 ou supérieure
 ** Le système d'exploitation doit pouvoir installer le moteur Docker
