@@ -52,7 +52,7 @@ Téléchargez le logiciel Cloud Data SENSE sur le site de support NetApp et copi
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Quatre"] Abonnez-vous au service Cloud Data Sense
 [role="quick-margin-para"]
-Les 1 premiers To de données scanners Cloud Data SENSE dans BlueXP sont gratuits. Un abonnement à votre fournisseur cloud Marketplace, ou une licence BYOL de NetApp, est nécessaire pour continuer l'analyse des données après ce point.
+Les 1 premiers To de données analysés par Cloud Data Sense dans BlueXP sont gratuits pendant 30 jours. Un abonnement à votre fournisseur cloud Marketplace, ou une licence BYOL de NetApp, est nécessaire pour continuer l'analyse des données après ce point.
 
 
 
@@ -323,7 +323,7 @@ S'il y a une connectivité sur le port 8080 entre la machine hôte et l'instance
 .Et la suite
 Dans la page Configuration, vous pouvez sélectionner les sources de données à numériser.
 
-Vous pouvez également link:task-licensing-datasense.html["Configurez les licences pour Cloud Data Sense"] à ce moment-là. Vous ne serez facturé que lorsque la quantité de données dépasse 1 To.
+Vous pouvez également link:task-licensing-datasense.html["Configurez les licences pour Cloud Data Sense"] à ce moment-là. Vous ne serez facturé que lorsque votre essai gratuit de 30 jours se terminera.
 
 
 
@@ -513,7 +513,7 @@ Vous pouvez également afficher la liste de tous les groupes de scanner, ainsi q
 
 image:screenshot_scanner_groups.png["Capture d'écran répertoriant tous les groupes de scanner ainsi que l'adresse IP de chaque nœud de scanner du groupe."]
 
-C'est possible link:task-licensing-datasense.html["Configurez les licences pour Cloud Data Sense"] à ce moment-là. Vous ne serez facturé que lorsque la quantité de données dépasse 1 To.
+C'est possible link:task-licensing-datasense.html["Configurez les licences pour Cloud Data Sense"] à ce moment-là. Vous ne serez facturé que lorsque votre essai gratuit de 30 jours se terminera.
 
 
 
@@ -587,4 +587,4 @@ Le programme d'installation de Cloud Data Sense termine l'installation des packa
 .Et la suite
 Dans la page Configuration, vous pouvez sélectionner les sources de données à numériser.
 
-Vous pouvez également link:task-licensing-datasense.html["Configurez les licences pour Cloud Data Sense"] à ce moment-là. Vous ne serez facturé que lorsque la quantité de données dépasse 1 To.
+Vous pouvez également link:task-licensing-datasense.html["Configurez les licences pour Cloud Data Sense"] à ce moment-là. Vous ne serez facturé que lorsque votre essai gratuit de 30 jours se terminera.

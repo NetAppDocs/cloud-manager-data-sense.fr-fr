@@ -29,7 +29,7 @@ Par défaut, les tableaux de bord Cloud Data Sense affichent des données de con
 
 == Rapport d'évaluation des risques pour la confidentialité
 
-Le rapport d’évaluation des risques pour la protection de la vie privée fournit une vue d’ensemble de l’état des risques pour la confidentialité de votre organisation, conformément aux réglementations en matière de confidentialité, telles que le Règlement sur la protection de la vie privée et l’ACFPC. Le rapport contient les informations suivantes :
+Le rapport d'évaluation des risques pour la confidentialité fournit une vue d'ensemble de l'état des risques pour la confidentialité de votre entreprise, conformément aux réglementations en matière de confidentialité, telles que le Règlement général de l'Union européenne sur la protection des données et la loi CCPA. Le rapport contient les informations suivantes :
 
 Statut de conformité:: A <<Indice de gravité,indice de gravité>> et la distribution des données, qu'elles soient non sensibles, personnelles ou sensibles.
 Présentation de l'évaluation:: Une ventilation des types de données personnelles ainsi que des catégories de données.
@@ -137,7 +137,7 @@ Cloud Data SENSE génère un rapport PDF que vous pouvez consulter et envoyer à
 
 == Rapport HIPAA
 
-Le rapport HIPAA (Health Insurance Portability and Accountability Act) peut vous aider à identifier les fichiers contenant des informations sur la santé. Il est conçu pour aider votre organisation à respecter les lois HIPAA sur la protection des données personnelles. Le « Cloud Data SENSE » inclut plusieurs aspects :
+Le rapport HIPAA (Health Insurance Portability and Accountability Act) peut vous aider à identifier les fichiers contenant des informations sur la santé. Il est conçu pour aider votre organisation à respecter les lois HIPAA en matière de confidentialité des données. Le « Cloud Data SENSE » inclut plusieurs aspects :
 
 * Modèle de référence de santé
 * Code médical ICD-10-cm
@@ -202,6 +202,8 @@ image:screenshot_compliance_data_mapping_report_button.png["Capture d'écran du 
 
 .Résultat
 Cloud Data SENSE génère un rapport PDF que vous pouvez consulter et envoyer à d'autres groupes, le cas échéant.
+
+Notez que vous pouvez personnaliser le nom de la société qui apparaît sur la première page du rapport en haut de la page détection de données en cliquant sur image:screenshot_gallery_options.gif["Bouton plus"] Puis cliquez sur *changer le nom de l'entreprise*.
 
 
 

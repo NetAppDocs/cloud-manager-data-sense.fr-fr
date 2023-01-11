@@ -72,7 +72,7 @@ Téléchargez le logiciel Cloud Data SENSE sur le site de support NetApp et copi
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Quatre"] Abonnez-vous au service Cloud Data Sense
 [role="quick-margin-para"]
-Les 1 premiers To de données scanners Cloud Data SENSE dans BlueXP sont gratuits. Une licence NetApp BYOL est requise pour continuer l'analyse des données après ce point.
+Les 1 premiers To de données analysés par Cloud Data Sense dans BlueXP sont gratuits pendant 30 jours. Une licence NetApp BYOL est requise pour continuer l'analyse des données après ce point.
 
 
 
@@ -316,7 +316,7 @@ S'il y a une connectivité sur le port 8080 entre la machine hôte et l'instance
 .Et la suite
 Dans la page Configuration, vous pouvez sélectionner local link:task-getting-started-compliance.html["Clusters ONTAP sur site"] et link:task-scanning-databases.html["les bases de données"] que vous voulez numériser.
 
-Vous pouvez également link:task-licensing-datasense.html#use-a-cloud-data-sense-byol-license["Configurez les licences BYOL pour Cloud Data Sense"] À partir de la page du porte-monnaie numérique. Vous ne serez facturé que lorsque la quantité de données dépasse 1 To.
+Vous pouvez également link:task-licensing-datasense.html#use-a-cloud-data-sense-byol-license["Configurez les licences BYOL pour Cloud Data Sense"] À partir de la page du porte-monnaie numérique. Vous ne serez facturé que lorsque votre essai gratuit de 30 jours se terminera.
 
 
 
@@ -390,7 +390,7 @@ Le programme d'installation de Cloud Data Sense termine l'installation des packa
 .Et la suite
 Dans la page Configuration, vous pouvez sélectionner local link:task-getting-started-compliance.html["Clusters ONTAP sur site"] et locales link:task-scanning-databases.html["les bases de données"] que vous voulez numériser.
 
-Vous pouvez également link:task-licensing-datasense.html#use-a-cloud-data-sense-byol-license["Configurez les licences BYOL pour Cloud Data Sense"] À partir de la page du porte-monnaie numérique. Vous ne serez facturé que lorsque la quantité de données dépasse 1 To.
+Vous pouvez également link:task-licensing-datasense.html#use-a-cloud-data-sense-byol-license["Configurez les licences BYOL pour Cloud Data Sense"] À partir de la page du porte-monnaie numérique. Vous ne serez facturé que lorsque votre essai gratuit de 30 jours se terminera.
 
 
 

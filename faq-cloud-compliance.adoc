@@ -311,7 +311,7 @@ Les questions suivantes se rapportent aux licences et aux coûts pour utiliser C
 
 === Quel est le coût des données cloud ?
 
-Le coût d'utilisation des données du cloud SENSE dépend de la quantité de données que vous scannez. Les 1 premiers To de données analysés par Data Sense dans un espace de travail BlueXP sont gratuits. Une fois cette limite atteinte, vous aurez besoin de l'une des options suivantes pour poursuivre l'analyse des données sur 1 To :
+Le coût d'utilisation des données du cloud SENSE dépend de la quantité de données que vous scannez. Les 1 premiers To de données analysés par Data Sense dans un espace de travail BlueXP sont gratuits pendant 30 jours. Après avoir atteint l'une ou l'autre limite, vous aurez besoin de l'une des options suivantes pour poursuivre l'acquisition des données :
 
 * Un abonnement à la liste BlueXP Marketplace de votre fournisseur cloud, ou
 * Modèle BYOL (Bring Your Own License) de NetApp
