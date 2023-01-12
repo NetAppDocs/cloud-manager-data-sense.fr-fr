@@ -255,7 +255,7 @@ Procédez comme suit lors de l'installation du logiciel Data Sense sur un hôte 
 tar -xzf DataSense-offline-bundle-v1.16.1.tar.gz
 ----
 +
-Ceci extrait le logiciel requis et le fichier d'installation réel *DATASENNSE-INSTALLER-V1.16.1.tar.gz*.
+Ceci extrait le logiciel requis et le fichier d'installation réel *cc_onsite_installer.tar.gz*.
 
 . Lancez BlueXP et sélectionnez *gouvernance > Classification*.
 . Cliquez sur *Activer détection de données*.
@@ -274,7 +274,7 @@ image:screenshot_cloud_compliance_deploy_darksite.png["Capture d'écran du bouto
 +
 [source, cli]
 ----
-tar -xzf DATASENSE-INSTALLER-V1.16.1.tar.gz
+tar -xzf cc_onprem_installer.tar.gz
 ----
 . Lorsque le programme d'installation vous le demande, vous pouvez entrer les valeurs requises dans une série d'invites, ou vous pouvez fournir les paramètres requis comme arguments de ligne de commande au programme d'installation :
 +
@@ -374,7 +374,7 @@ Par exemple, cette commande ajoute 3 nœuds de scanner :
 
 . Sur *chaque hôte de nœud du scanner* :
 +
-.. Copiez le fichier d'installation de Data Sense (*DATASENSE-INSTALLER-<version>.tar.gz*) sur l'ordinateur hôte.
+.. Copiez le fichier d'installation de Data Sense (*cc_onsite_installer.tar.gz*) sur la machine hôte.
 .. Décompressez le fichier d'installation.
 .. Collez et exécutez la commande que vous avez copiée à l'étape 3.
 +
@@ -413,13 +413,13 @@ Le logiciel Data Sense étant mis à jour régulièrement avec de nouvelles fonc
 tar -xvf DataSense-offline-bundle-v1.16.1.tar.gz
 ----
 +
-Ceci extrait le fichier d'installation *DATASESNSE-INSTALLER-V1.16.1.tar.gz*.
+Ceci extrait le fichier d'installation *cc_onsite_installer.tar.gz*.
 
 . Décompressez le fichier d'installation sur la machine hôte, par exemple :
 +
 [source, cli]
 ----
-tar -xzf DATASENSE-INSTALLER-V1.16.1.tar.gz
+tar -xzf cc_onprem_installer.tar.gz
 ----
 +
 Ceci extrait le script de mise à niveau *start_darksite_upgrade.sh* et tout logiciel tiers requis.

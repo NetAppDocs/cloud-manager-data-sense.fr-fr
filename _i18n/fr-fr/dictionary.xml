@@ -77,7 +77,6 @@
   <block id="a52e4cb36e71ec4390255e3ab7c8e576" category="list-text">Sur un système configuré sur Internet, téléchargez le logiciel Cloud Data Sense à partir du<block ref="0a75c5e2697813218978a09f1ac8297e" category="inline-link-rx"></block>. Le fichier que vous devez sélectionner est nommé *DataSense-Offline-bundle-&lt;version&gt;.tar.gz*.</block>
   <block id="efa6f10157137475f11a46219066d662" category="list-text">Copiez le pack d'installation sur l'hôte Linux que vous envisagez d'utiliser sur le site sombre.</block>
   <block id="1eecc2fcccd4fcb3cadd8bec3044d3bb" category="list-text">Décompressez le programme d'installation sur la machine hôte, par exemple :</block>
-  <block id="2152258e1def6997a945ef8261b66bcc" category="paragraph">Ceci extrait le logiciel requis et le fichier d'installation réel *DATASENNSE-INSTALLER-V1.16.1.tar.gz*.</block>
   <block id="99bc31b68f8a295277219d11cfd94709" category="list-text">Lancez BlueXP et sélectionnez *gouvernance &gt; Classification*.</block>
   <block id="cce26d229722c6ca9257990a7091d9c0" category="list-text">Cliquez sur *Activer détection de données*.</block>
   <block id="af9d594fa710dc13ae352e89ff99e6a8" category="inline-image-macro">Capture d'écran indiquant de sélectionner le bouton pour activer le détection de données cloud.</block>
@@ -142,7 +141,6 @@
   <block id="743663a45dfd2f9237dfcf266bf499a6" category="list-text">Avant la fin de l'installation du nœud Manager, une boîte de dialogue affiche la commande d'installation requise pour les nœuds du scanner. Copiez la commande et enregistrez-la dans un fichier texte. Par exemple :</block>
   <block id="bb70d223e1e51328f09038d97ad81b07" category="paragraph"><block ref="2478484d96d8c17b7752fd15d3b26f12" prefix="" category="inline-code"></block></block>
   <block id="611c763bf4c9dbb7098d6afa814b754f" category="list-text">Sur *chaque hôte de nœud du scanner* :</block>
-  <block id="7dcbe0be3e8e2a9fd658d871499bd050" category="list-text">Copiez le fichier d'installation de Data Sense (*DATASENSE-INSTALLER-&lt;version&gt;.tar.gz*) sur l'ordinateur hôte.</block>
   <block id="d3d41a6c99806d8a969b69a369935644" category="list-text">Décompressez le fichier d'installation.</block>
   <block id="05c158c3674b19417f2abea1a13ea2f3" category="list-text">Collez et exécutez la commande que vous avez copiée à l'étape 3.</block>
   <block id="184b6c7c3567a8ecd4dd8971fff94bfa" category="paragraph">Une fois l'installation terminée sur tous les nœuds du scanner et qu'ils ont été associés au nœud du gestionnaire, l'installation du nœud du gestionnaire se termine également.</block>
@@ -156,7 +154,6 @@
   <block id="1512503c318779a183367c2326a24f21" category="list-text">Vérifiez que votre logiciel On-site Connector a été mis à niveau vers la dernière version disponible.<block ref="ce22b55d293a0e07097135e6515924b6" category="inline-link-rx"></block>.</block>
   <block id="f3f3a447ad50dc92c9c962b1bd43a5df" category="list-text">Copiez le pack logiciel sur l'hôte Linux où Data Sense est installé sur le site sombre.</block>
   <block id="58ac2a8543e710f81085aa9e92e7cd0c" category="list-text">Décompressez le pack logiciel sur la machine hôte, par exemple :</block>
-  <block id="eb2cb5912ef10d2dcff7761bde0a5ace" category="paragraph">Ceci extrait le fichier d'installation *DATASESNSE-INSTALLER-V1.16.1.tar.gz*.</block>
   <block id="cdc2b03f6ffa90a892ff07e03233975d" category="paragraph">Ceci extrait le script de mise à niveau *start_darksite_upgrade.sh* et tout logiciel tiers requis.</block>
   <block id="85455891651214d50e704a4b3e9dde66" category="list-text">Exécutez le script de mise à niveau sur la machine hôte, par exemple :</block>
   <block id="f9a54a028ecb31a5408553dd45e64952" category="paragraph">Le logiciel Data Sense est mis à niveau sur votre hôte. La mise à jour peut prendre entre 5 et 10 minutes.</block>
@@ -3044,4 +3041,7 @@
   <block id="d16229fe4c13eabaf4888e33502b9f43" category="paragraph">Vous pouvez également <block ref="f05debecbc76a97697e3cf4388733167" category="inline-link-macro-rx"></block> à ce moment-là. Vous ne serez facturé que lorsque votre essai gratuit de 30 jours se terminera.</block>
   <block id="68b93206d7f113e3a7eb3b6c41df6f6e" category="paragraph">C'est possible <block ref="f05debecbc76a97697e3cf4388733167" category="inline-link-macro-rx"></block> à ce moment-là. Vous ne serez facturé que lorsque votre essai gratuit de 30 jours se terminera.</block>
   <block id="4836df02e5a10e2b5f7369a02cc815e2" category="paragraph">Les 1 premiers To de données analysés par Cloud Data Sense dans BlueXP sont gratuits pendant 30 jours. Un abonnement BlueXP via votre fournisseur cloud Marketplace, ou une licence BYOL auprès de NetApp, est nécessaire pour continuer à analyser les données après ce point.</block>
+  <block id="8b3b2b670034ec0279cb937c145f257a" category="paragraph">Ceci extrait le logiciel requis et le fichier d'installation réel *cc_onsite_installer.tar.gz*.</block>
+  <block id="6cc29d8f722610f8a1e880227931a300" category="list-text">Copiez le fichier d'installation de Data Sense (*cc_onsite_installer.tar.gz*) sur la machine hôte.</block>
+  <block id="7b8f90ccd6fc9dda39797ae84ca7f14d" category="paragraph">Ceci extrait le fichier d'installation *cc_onsite_installer.tar.gz*.</block>
 </blocks>
